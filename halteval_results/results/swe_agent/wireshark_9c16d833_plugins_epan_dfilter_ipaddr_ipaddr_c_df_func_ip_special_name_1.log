@@ -1,0 +1,794 @@
+2026-06-16 13:47:43,033 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=UNKNOWN_NAME
+2026-06-16 13:47:43,033 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=run
+2026-06-16 13:47:43,190 - root - [INFO] - run.py:148 - repo_task - Model: VllmModel
+2026-06-16 13:47:43,234 - root - [INFO] - run.py:158 - repo_task - Agent: ForagerAgentLocateFunctionCodeAndDep
+2026-06-16 13:47:43,234 - root - [INFO] - run.py:172 - repo_task - Using VMVMBackend, image=vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest
+2026-06-16 13:47:43,234 - root - [INFO] - des_container.py:76 - lease_vm - Leasing VM with client-id=wireshark_9c16d833_plugins_epan_dfilter_ipaddr_ipaddr_c_df_func_ip_special_name_1, ttl_secs=500
+2026-06-16 13:47:44,320 - root - [INFO] - des_container.py:87 - lease_vm - VM leased in 1.09s: session_id={"vmvm_session":{"id":"019ed0b0-103f-7b93-9755-b29b7fd46857","ipAddr":"2803:6084:c8c0:b56:8afd:8616:500:0","vaagentPort":23795,"vmPort":21190,"vaagentHostname":"twshared27547.06.gtn3.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|16121806539984002760|0|faas.C04749555E7A31E4FEF9B48CF4EB11A9|7472640408021956637","tw_task_handle":"tsp_gtn/faas/workerpool_crackerjack_prod_bgm_ces_tier_1/5920","region_shortname":"gtn"},"auth_token":{"paseto":"v4.public.eyJzdWIiOiIwMTllZDBiMC0xMDNmLTdiOTMtOTc1NS1iMjliN2ZkNDY4NTciLCJleHAiOiIyMDI2LTA2LTE3VDEzOjQ3OjQ0WiIsIm5iZiI6IjIwMjYtMDYtMTZUMTM6NDc6NDRaIiwiaWF0IjoiMjAyNi0wNi0xNlQxMzo0Nzo0NC4wNTEyODUzNzIrMDA6MDAifWr7Wp1fl5pfgVdpRRdw3N_jsezLFMY51MRsVIAejttwSQHDl9Gw6ocXhLHdxYmcSrTocWvO_WoNbbuuz9NVBAc.eyJpcCI6IjI4MDM6NjA4NDpjOGMwOmI1Njo4YWZkOjg2MTY6NTAwOjAiLCJmYWFzX2ludm9jYXRpb25faWQiOiI0fGdsb2JhbHxhc3luY18yMzQ3NjQxfGRlc19nZW5lcmFsX3RpZXJfcHJvZHwxNjEyMTgwNjUzOTk4NDAwMjc2MHwwfGZhYXMuQzA0NzQ5NTU1RTdBMzFFNEZFRjlCNDhDRjRFQjExQTl8NzQ3MjY0MDQwODAyMTk1NjYzNyIsInRlbmFudCI6ImFzeW5jXzIzNDc2NDEiLCJwb3J0IjoiMjExOTAifQ"}}
+2026-06-16 13:47:44,320 - root - [INFO] - des_container.py:195 - load_image - Pulling image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest on VMVM
+2026-06-16 13:49:45,698 - root - [INFO] - des_container.py:203 - load_image - Image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest pulled successfully
+2026-06-16 13:49:47,403 - root - [INFO] - des_container.py:221 - run_container - Container started: b6806cbc96633e144428cfad891203a7959b6ac8c80f26b1642d1a5a58ae2621
+2026-06-16 13:49:47,403 - root - [INFO] - des_container.py:565 - _heartbeat_loop - VMVM heartbeat thread started
+2026-06-16 13:49:47,420 - root - [INFO] - forager_locate_function_code_and_dep.py:294 - run - Starting analysis for df_func_ip_special_name in plugins/epan/dfilter/ipaddr/ipaddr.c
+2026-06-16 13:49:47,420 - root - [INFO] - forager_locate_function_code_and_dep.py:208 - prepare_cpp_container - ========== Preparing C++ container ==========
+2026-06-16 13:49:47,420 - root - [DEBUG] - forager_locate_function_code_and_dep.py:211 - prepare_cpp_container - Setting up env variables
+2026-06-16 13:49:47,421 - root - [DEBUG] - des_container.py:308 - command - DES command: 'export WINDOW=100 && export OVERLAP=2 && export CURRENT_LINE=0 && export CURRENT'
+2026-06-16 13:49:48,987 - root - [DEBUG] - forager_locate_function_code_and_dep.py:220 - prepare_cpp_container - Importing agent tools in container
+2026-06-16 13:49:50,591 - root - [DEBUG] - des_container.py:385 - put - DES put: 6243 bytes to /opt/tools/defaults.sh
+2026-06-16 13:49:56,264 - root - [DEBUG] - des_container.py:308 - command - DES command: 'source /opt/tools/defaults.sh'
+2026-06-16 13:49:59,528 - root - [DEBUG] - des_container.py:385 - put - DES put: 5735 bytes to /opt/tools/search.sh
+2026-06-16 13:50:05,067 - root - [DEBUG] - des_container.py:308 - command - DES command: 'source /opt/tools/search.sh'
+2026-06-16 13:50:08,113 - root - [DEBUG] - des_container.py:308 - command - DES command: 'export PATH=/opt/tools:$PATH'
+2026-06-16 13:50:09,476 - root - [INFO] - forager_locate_function_code_and_dep.py:225 - prepare_cpp_container - Uploading submit_prediction command
+2026-06-16 13:50:09,476 - root - [DEBUG] - des_container.py:385 - put - DES put: 74 bytes to /usr/local/bin/submit_prediction
+2026-06-16 13:50:31,638 - root - [DEBUG] - des_container.py:308 - command - DES command: 'chmod +x /usr/local/bin/submit_prediction'
+2026-06-16 13:50:33,241 - root - [DEBUG] - des_container.py:308 - command - DES command: "which submit_prediction || echo 'Not in PATH'"
+2026-06-16 13:50:34,668 - root - [INFO] - forager_locate_function_code_and_dep.py:237 - prepare_cpp_container - Script in PATH: /usr/local/bin/submit_prediction
+2026-06-16 13:50:34,669 - root - [DEBUG] - des_container.py:308 - command - DES command: "export GIT_AUTHOR_NAME='CI Bot' && export GIT_AUTHOR_EMAIL='ci-bot@yourdomain.co"
+2026-06-16 13:50:36,254 - root - [DEBUG] - forager_locate_function_code_and_dep.py:256 - prepare_cpp_container - Creating /workspace directory
+2026-06-16 13:50:36,254 - root - [DEBUG] - des_container.py:308 - command - DES command: 'mkdir -p /workspace'
+2026-06-16 13:50:37,649 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cd /workspace'
+2026-06-16 13:50:39,240 - root - [DEBUG] - forager_locate_function_code_and_dep.py:196 - _init_prompt - Task prompt:
+Your task is to predict whether the function `df_func_ip_special_name` in the C++ file `plugins/epan/dfilter/ipaddr/ipaddr.c` will:
+- **Terminate** for all inputs, OR
+- **Diverge** for some inputs (enter a non-terminating loop)
+
+**Important:** This is a **read-only code analysis task**. You may only use shell commands to view files. Do not execute any C++ code or modify any files. Only use commands like `cat`, `grep`, `find`, `ls`, `cd`, `head`, `tail`, `git`, etc.
+
+## STEP 1: Clone the Repository
+
+First, clone the repository and checkout the specific commit:
+```bash
+git clone https://github.com/wireshark/wireshark /workspace/wireshark && cd /workspace/wireshark && git checkout 9c16d833f0e23e7464ac995acb61a8b4e3c51d59
+```
+
+## STEP 2: Examine the Function
+
+Navigate to the repository and examine the function using read-only commands. Examples:
+```bash
+cd /workspace/wireshark
+cat plugins/epan/dfilter/ipaddr/ipaddr.c                              # View the entire file
+grep -n "df_func_ip_special_name" plugins/epan/dfilter/ipaddr/ipaddr.c    # Find the function's line number
+grep -A 50 "df_func_ip_special_name" plugins/epan/dfilter/ipaddr/ipaddr.c # View the function plus 50 lines after (of course you can view more).
+```
+
+## STEP 3: Analyze Dependencies
+Important: The function may call other functions, use external types, or depend on macros defined elsewhere. You must examine these dependencies to fully understand the code's behavior.
+- Find and read helper functions called within the target function
+- Examine header files for type definitions and macros
+- Check struct/class definitions to understand data types
+- Trace function pointers to their implementations
+
+Finding dependencies:
+```bash
+grep -rn "function_name" /workspace/wireshark/
+find . -name "*.h" | xargs grep "TypeName"
+cat path/to/header.h
+```
+
+## STEP 4: Classify the Function
+**"T" (Terminates)** - Function terminates for all possible inputs:
+- No blocking synchronization calls. All loops have reachable exit conditions. Loop variables progress correctly toward exit. Proper bounds checking and error handling
+**"NT" (Non-Termination)** - Designed to block or loop indefinitely (can be intentional by the user or a bug). Examples:
+- Thread synchronization primitives. Locks. Condition variables. Event loops or server loops that run until external signal.
+Worker thread functions waiting for tasks or termination signals.
+- Loop variable never modified or modified in wrong direction. `while(1)` or `for(;;)` without reachable `break` or `return`.
+Unbounded I/O operations without proper termination checks. Missing loop increment/decrement statements.
+
+## STEP 5: Submit Your Prediction
+
+When ready, submit your classification:
+```bash
+submit_prediction '{"function_name": "df_func_ip_special_name", "file_path": "plugins/epan/dfilter/ipaddr/ipaddr.c", "prediction": "<T|NT>", "p_non_terminating": <0-100>, "confidence": "<high|medium|low>", "reason": "<one concise sentence>"}'
+```
+
+**Field definitions:**
+- `prediction`: "T" if the function terminates for all inputs, "NT" if it can loop/block indefinitely
+- `p_non_terminating`: integer 0–100 — your estimated probability (in %) that the function is non-terminating
+- `confidence`: "high" if the evidence is clear and unambiguous, "medium" if there is some uncertainty, "low" if the code is hard to fully trace or the behavior is unclear
+- `reason`: one concise sentence explaining the key factor driving your prediction
+
+**Guidelines:**
+- Execute one command per response in triple backticks
+- Read all relevant source and header files before making a prediction
+- Trace data flow to understand where loop bounds and conditions come from
+- Consider edge cases: zero values, type overflows, null pointers, EOF conditions
+- Only submit your prediction when you have thoroughly analyzed the code
+- Begin by cloning the repository
+2026-06-16 13:50:39,240 - root - [INFO] - forager_base.py:342 - start_trajectory - =========== Starting new trajectory ==========
+2026-06-16 13:50:39,240 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 1
+2026-06-16 13:50:39,240 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:50:41,027 - root - [INFO] - logging.py:31 - log_time - Took 1.79s
+2026-06-16 13:50:41,032 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'git clone https://github.com/w' (timeout=120)
+2026-06-16 13:50:41,033 - root - [DEBUG] - des_container.py:308 - command - DES command: 'git clone https://github.com/wireshark/wireshark /workspace/wireshark && cd /wor'
+2026-06-16 13:51:49,080 - root - [DEBUG] - des_container.py:572 - _heartbeat_loop - VMVM heartbeat sent
+2026-06-16 13:52:55,022 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 13:52:55,022 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 2
+2026-06-16 13:52:55,022 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:52:55,339 - root - [INFO] - logging.py:31 - log_time - Took 0.32s
+2026-06-16 13:52:55,343 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cd /workspace/wireshark\n' (timeout=120)
+2026-06-16 13:52:55,343 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cd /workspace/wireshark\n'
+2026-06-16 13:52:56,958 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 13:52:56,958 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 3
+2026-06-16 13:52:56,958 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:52:57,310 - root - [INFO] - logging.py:31 - log_time - Took 0.35s
+2026-06-16 13:52:57,316 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cat plugins/epan/dfilter/ipadd' (timeout=120)
+2026-06-16 13:52:57,316 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cat plugins/epan/dfilter/ipaddr/ipaddr.c\n'
+2026-06-16 13:52:58,860 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /* ipaddr.c
+ *
+ * Copyright 2023, João Valverde <j@v6e.pt>
+ *
+ * Wireshark - Network traffic analyzer
+ * By Gerald Combs <gerald@wireshark.org>
+ * Copyright 1998 Gerald Combs
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ */
+
+#define WS_BUILD_DLL
+#include <wireshark.h>
+#include <wsutil/plugins.h>
+#include <epan/dfilter/dfilter-plugin.h>
+#include <epan/iana-ip.h>
+#include <epan/exceptions.h>
+
+#ifndef PLUGIN_VERSION
+#define PLUGIN_VERSION "0.0.0"
+#endif
+
+WS_DLL_PUBLIC_DEF const char plugin_version[] = PLUGIN_VERSION;
+WS_DLL_PUBLIC_DEF const int plugin_want_major = WIRESHARK_VERSION_MAJOR;
+WS_DLL_PUBLIC_DEF const int plugin_want_minor = WIRESHARK_VERSION_MINOR;
+
+WS_DLL_PUBLIC void plugin_register(void);
+WS_DLL_PUBLIC uint32_t plugin_describe(void);
+
+typedef bool (*ip_is_func_t)(fvalue_t *);
+
+static const struct ws_iana_ip_special_block *
+lookup_block(fvalue_t *fv)
+{
+    switch (fvalue_type_ftenum(fv)) {
+        case FT_IPv4:
+            return ws_iana_ipv4_special_block_lookup(fvalue_get_ipv4(fv)->addr);
+        case FT_IPv6:
+            return ws_iana_ipv6_special_block_lookup(&fvalue_get_ipv6(fv)->addr);
+        default:
+            break;
+    }
+    ws_assert_not_reached();
+}
+
+static bool
+df_func_ip_special_name(GSList *stack, uint32_t arg_count _U_, df_cell_t *retval)
+{
+    GPtrArray *arg;
+    fvalue_t *fv_res;
+    const struct ws_iana_ip_special_block *ptr;
+
+    ws_assert(arg_count == 1);
+    arg = stack->data;
+    if (arg == NULL)
+        return false;
+
+    for (unsigned i = 0; i < arg->len; i++) {
+        ptr = lookup_block(arg->pdata[i]);
+        if (ptr == NULL)
+            continue;
+        fv_res = fvalue_new(FT_STRING);
+        fvalue_set_string(fv_res, ptr->name);
+        df_cell_append(retval, fv_res);
+    }
+
+    return !df_cell_is_empty(retval);
+}
+
+static bool
+df_func_ip_special_mask(GSList *stack, uint32_t arg_count _U_, df_cell_t *retval)
+{
+    GPtrArray *arg;
+    fvalue_t *fv_res;
+    const struct ws_iana_ip_special_block *ptr;
+    uint32_t mask;
+
+    ws_assert(arg_count == 1);
+    arg = stack->data;
+    if (arg == NULL)
+        return false;
+
+    for (unsigned i = 0; i < arg->len; i++) {
+        ptr = lookup_block(arg->pdata[i]);
+        if (ptr == NULL)
+            continue;
+        mask = 0;
+        if (ptr->reserved > 0)
+            mask |= (1UL << 0);
+        if (ptr->global > 0)
+            mask |= (1UL << 1);
+        if (ptr->forwardable > 0)
+            mask |= (1UL << 2);
+        if (ptr->destination > 0)
+            mask |= (1UL << 3);
+        if (ptr->source > 0)
+            mask |= (1UL << 4);
+        fv_res = fvalue_new(FT_UINT32);
+        fvalue_set_uinteger(fv_res, mask);
+        df_cell_append(retval, fv_res);
+    }
+
+    return !df_cell_is_empty(retval);
+}
+
+static bool
+ip_is_link_local(fvalue_t *fv)
+{
+    switch (fvalue_type_ftenum(fv)) {
+        case FT_IPv4:
+            return in4_addr_is_link_local(fvalue_get_ipv4(fv)->addr);
+        case FT_IPv6:
+            return in6_addr_is_linklocal(&fvalue_get_ipv6(fv)->addr);
+        default:
+            break;
+    }
+    ws_assert_not_reached();
+}
+
+static bool
+ip_is_multicast(fvalue_t *fv)
+{
+    switch (fvalue_type_ftenum(fv)) {
+        case FT_IPv4:
+            return in4_addr_is_multicast(fvalue_get_ipv4(fv)->addr);
+        case FT_IPv6:
+            return in6_addr_is_multicast(&fvalue_get_ipv6(fv)->addr);
+        default:
+            break;
+    }
+    ws_assert_not_reached();
+}
+
+static bool
+ipv4_is_rfc1918(fvalue_t *fv)
+{
+    switch (fvalue_type_ftenum(fv)) {
+        case FT_IPv4:
+            return in4_addr_is_private(fvalue_get_ipv4(fv)->addr);
+        case FT_IPv6:
+            return false;
+        default:
+            break;
+    }
+    ws_assert_not_reached();
+
+}
+
+static bool
+ipv6_is_ula(fvalue_t *fv)
+{
+    switch (fvalue_type_ftenum(fv)) {
+        case FT_IPv4:
+            return false;
+        case FT_IPv6:
+            return in6_addr_is_uniquelocal(&fvalue_get_ipv6(fv)->addr);
+        default:
+            break;
+    }
+    ws_assert_not_reached();
+}
+
+static bool
+df_func_ip_is_any(GSList *stack, uint32_t arg_count _U_, df_cell_t *retval, ip_is_func_t is_func)
+{
+    GPtrArray *arg;
+    fvalue_t *fv_res;
+
+    ws_assert(arg_count == 1);
+    arg = stack->data;
+    if (arg == NULL)
+        return false;
+
+    for (unsigned i = 0; i < arg->len; i++) {
+        fv_res = fvalue_new(FT_BOOLEAN);
+        fvalue_set_uinteger64(fv_res, is_func(arg->pdata[i]));
+        df_cell_append(retval, fv_res);
+    }
+
+    return !df_cell_is_empty(retval);
+}
+
+static bool
+df_func_ip_is_link_local(GSList *stack, uint32_t arg_count _U_, df_cell_t *retval)
+{
+    return df_func_ip_is_any(stack, arg_count, retval, ip_is_link_local);
+}
+
+static bool
+df_func_ip_is_multicast(GSList *stack, uint32_t arg_count _U_, df_cell_t *retval)
+{
+    return df_func_ip_is_any(stack, arg_count, retval, ip_is_multicast);
+}
+
+static bool
+df_func_ip_is_rfc1918(GSList *stack, uint32_t arg_count _U_, df_cell_t *retval)
+{
+    return df_func_ip_is_any(stack, arg_count, retval, ipv4_is_rfc1918);
+}
+
+static bool
+df_func_ip_is_ula(GSList *stack, uint32_t arg_count _U_, df_cell_t *retval)
+{
+    return df_func_ip_is_any(stack, arg_count, retval, ipv6_is_ula);
+}
+
+#define IPv4 1
+#define IPv6 2
+#define Both 3
+
+static bool
+check_which(ftenum_t ftype, int which)
+{
+    switch (which) {
+        case IPv4: return ftype == FT_IPv4;
+        case IPv6: return ftype == FT_IPv6;
+        case Both: return ftype == FT_IPv4 || ftype == FT_IPv6;
+        default:
+            break;
+    }
+    ws_assert_not_reached();
+}
+
+static const char *
+print_which(int which)
+{
+    switch (which) {
+        case IPv4: return "IPv4";
+        case IPv6: return "IPv6";
+        case Both: return "IPv4/IPv6";
+        default:
+            break;
+    }
+    ws_assert_not_reached();
+}
+
+static void
+check_ip_field(dfwork_t *dfw, const char *func_name, ftenum_t logical_ftype _U_,
+                            GSList *param_list, df_loc_t func_loc, int which)
+{
+    ws_assert(g_slist_length(param_list) == 1);
+    stnode_t *param = param_list->data;
+    volatile ftenum_t ftype;
+    volatile bool failed = false;
+
+    /* logical_ftype as passed in is the return_ftype of the function.
+     * We want to coerce the parameters to IP addresses, if necessary.
+     */
+    switch (which) {
+        case IPv4:
+            ftype = df_semcheck_param(dfw, func_name, FT_IPv4, param, func_loc);
+            break;
+        case IPv6:
+            ftype = df_semcheck_param(dfw, func_name, FT_IPv6, param, func_loc);
+            break;
+        case Both:
+            /* df_semcheck_param only coerces literals and strings to one
+             * type, and throws a TypeError on failure. We need to test both.
+             */
+            TRY {
+                ftype = df_semcheck_param(dfw, func_name, FT_IPv4, param, func_loc);
+            } CATCH(TypeError) {
+                failed = true;
+            }
+            ENDTRY;
+            /* We can't nest TRY blocks due to variable shadowing */
+            if (failed) {
+                df_error_free(&dfw->error);
+                TRY {
+                    ftype = df_semcheck_param(dfw, func_name, FT_IPv6, param, func_loc);
+                }
+                CATCH(TypeError) {
+                    /* Replace the error message with one that mentions that
+                     * both IPv4 and IPv6 are supported. We cannot THROW here,
+                     * only RETHROW, so do not use dfunc_fail.
+                     * XXX - The messages in ftype-ipv[46].c are cleverer in
+                     * that they check for CIDR/prefix and only add the part
+                     * up to but not including the first slash. We could do
+                     * that here.
+                     */
+                    df_error_free(&dfw->error);
+                    dfilter_fail(dfw, DF_ERROR_GENERIC, stnode_location(param), "\"%s\" is not a valid hostname or %s address.", stnode_todisplay(param), print_which(which));
+                    RETHROW;
+                }
+                ENDTRY;
+            }
+            break;
+        default:
+            ws_assert_not_reached();
+            break;
+    }
+    if (check_which(ftype, which)) {
+        return;
+    }
+    dfunc_fail(dfw, param, "Only %s fields can be used as a parameter for %s()",
+                                print_which(which), func_name);
+}
+
+static ftenum_t
+semcheck_ip_special_name(dfwork_t *dfw, const char *func_name, ftenum_t logical_ftype,
+                            GSList *param_list, df_loc_t func_loc)
+{
+    check_ip_field(dfw, func_name, logical_ftype, param_list, func_loc, Both);
+    return FT_STRING;
+}
+
+static ftenum_t
+semcheck_ip_special_mask(dfwork_t *dfw, const char *func_name, ftenum_t logical_ftype,
+                            GSList *param_list, df_loc_t func_loc)
+{
+    check_ip_field(dfw, func_name, logical_ftype, param_list, func_loc, Both);
+    return FT_UINT32;
+}
+
+static ftenum_t
+semcheck_is_ip_field(dfwork_t *dfw, const char *func_name, ftenum_t logical_ftype,
+                            GSList *param_list, df_loc_t func_loc)
+{
+    check_ip_field(dfw, func_name, logical_ftype, param_list, func_loc, Both);
+    return FT_BOOLEAN;
+}
+
+static ftenum_t
+semcheck_is_ipv4_field(dfwork_t *dfw, const char *func_name, ftenum_t logical_ftype,
+                            GSList *param_list, df_loc_t func_loc)
+{
+    check_ip_field(dfw, func_name, logical_ftype, param_list, func_loc, IPv4);
+    return FT_BOOLEAN;
+}
+
+static ftenum_t
+semcheck_is_ipv6_field(dfwork_t *dfw, const char *func_name, ftenum_t logical_ftype,
+                            GSList *param_list, df_loc_t func_loc)
+{
+    check_ip_field(dfw, func_name, logical_ftype, param_list, func_loc, IPv6);
+    return FT_BOOLEAN;
+}
+
+static df_func_def_t func_ip_special_name = {
+    "ip_special_name",
+    df_func_ip_special_name,
+    1, 1,
+    FT_STRING,
+    semcheck_ip_special_name,
+};
+
+static df_func_def_t func_ip_special_mask = {
+    "ip_special_mask",
+    df_func_ip_special_mask,
+    1, 1,
+    FT_UINT32,
+    semcheck_ip_special_mask,
+};
+
+static df_func_def_t func_ip_is_link_local = {
+    "ip_linklocal",
+    df_func_ip_is_link_local,
+    1, 1,
+    FT_BOOLEAN,
+    semcheck_is_ip_field,
+};
+
+static df_func_def_t func_ip_is_multicast = {
+    "ip_multicast",
+    df_func_ip_is_multicast,
+    1, 1,
+    FT_BOOLEAN,
+    semcheck_is_ip_field,
+};
+
+static df_func_def_t func_ip_is_rfc1918 = {
+    "ip_rfc1918",
+    df_func_ip_is_rfc1918,
+    1, 1,
+    FT_BOOLEAN,
+    semcheck_is_ipv4_field,
+};
+
+static df_func_def_t func_ip_is_ula = {
+    "ip_ula",
+    df_func_ip_is_ula,
+    1, 1,
+    FT_BOOLEAN,
+    semcheck_is_ipv6_field,
+};
+
+static void
+init(void)
+{
+    df_func_register(&func_ip_special_name);
+    df_func_register(&func_ip_special_mask);
+    df_func_register(&func_ip_is_link_local);
+    df_func_register(&func_ip_is_multicast);
+    df_func_register(&func_ip_is_rfc1918);
+    df_func_register(&func_ip_is_ula);
+}
+
+static void
+cleanup(void)
+{
+    df_func_deregister(&func_ip_special_name);
+    df_func_deregister(&func_ip_special_mask);
+    df_func_deregister(&func_ip_is_link_local);
+    df_func_deregister(&func_ip_is_multicast);
+    df_func_deregister(&func_ip_is_rfc1918);
+    df_func_deregister(&func_ip_is_ula);
+}
+
+void
+plugin_register(void)
+{
+    static dfilter_plugin plug;
+
+    plug.init = init;
+    plug.cleanup = cleanup;
+    dfilter_plugins_register(&plug);
+}
+
+uint32_t
+plugin_describe(void)
+{
+    return WS_PLUGIN_DESC_DFILTER;
+}
+2026-06-16 13:52:58,860 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 4
+2026-06-16 13:52:58,860 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:52:59,515 - root - [INFO] - logging.py:31 - log_time - Took 0.66s
+2026-06-16 13:52:59,518 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -n "df_func_ip_special_na' (timeout=120)
+2026-06-16 13:52:59,519 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -n "df_func_ip_special_name" plugins/epan/dfilter/ipaddr/ipaddr.c\n'
+2026-06-16 13:53:17,253 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 47:df_func_ip_special_name(GSList *stack, uint32_t arg_count _U_, df_cell_t *retval)
+341:    df_func_ip_special_name,
+2026-06-16 13:53:17,253 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 5
+2026-06-16 13:53:17,253 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:53:17,894 - root - [INFO] - logging.py:31 - log_time - Took 0.64s
+2026-06-16 13:53:17,897 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -A 30 "df_func_ip_special' (timeout=120)
+2026-06-16 13:53:17,897 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -A 30 "df_func_ip_special_name" plugins/epan/dfilter/ipaddr/ipaddr.c\n'
+2026-06-16 13:53:19,306 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: df_func_ip_special_name(GSList *stack, uint32_t arg_count _U_, df_cell_t *retval)
+{
+    GPtrArray *arg;
+    fvalue_t *fv_res;
+    const struct ws_iana_ip_special_block *ptr;
+
+    ws_assert(arg_count == 1);
+    arg = stack->data;
+    if (arg == NULL)
+        return false;
+
+    for (unsigned i = 0; i < arg->len; i++) {
+        ptr = lookup_block(arg->pdata[i]);
+        if (ptr == NULL)
+            continue;
+        fv_res = fvalue_new(FT_STRING);
+        fvalue_set_string(fv_res, ptr->name);
+        df_cell_append(retval, fv_res);
+    }
+
+    return !df_cell_is_empty(retval);
+}
+
+static bool
+df_func_ip_special_mask(GSList *stack, uint32_t arg_count _U_, df_cell_t *retval)
+{
+    GPtrArray *arg;
+    fvalue_t *fv_res;
+    const struct ws_iana_ip_special_block *ptr;
+    uint32_t mask;
+
+--
+    df_func_ip_special_name,
+    1, 1,
+    FT_STRING,
+    semcheck_ip_special_name,
+};
+
+static df_func_def_t func_ip_special_mask = {
+    "ip_special_mask",
+    df_func_ip_special_mask,
+    1, 1,
+    FT_UINT32,
+    semcheck_ip_special_mask,
+};
+
+static df_func_def_t func_ip_is_link_local = {
+    "ip_linklocal",
+    df_func_ip_is_link_local,
+    1, 1,
+    FT_BOOLEAN,
+    semcheck_is_ip_field,
+};
+
+static df_func_def_t func_ip_is_multicast = {
+    "ip_multicast",
+    df_func_ip_is_multicast,
+    1, 1,
+    FT_BOOLEAN,
+    semcheck_is_ip_field,
+};
+
+static df_func_def_t func_ip_is_rfc1918 = {
+2026-06-16 13:53:19,306 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 6
+2026-06-16 13:53:19,306 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:53:19,832 - root - [INFO] - logging.py:31 - log_time - Took 0.53s
+2026-06-16 13:53:19,835 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -A 20 "lookup_block" plug' (timeout=120)
+2026-06-16 13:53:19,835 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -A 20 "lookup_block" plugins/epan/dfilter/ipaddr/ipaddr.c\n'
+2026-06-16 13:53:21,441 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: lookup_block(fvalue_t *fv)
+{
+    switch (fvalue_type_ftenum(fv)) {
+        case FT_IPv4:
+            return ws_iana_ipv4_special_block_lookup(fvalue_get_ipv4(fv)->addr);
+        case FT_IPv6:
+            return ws_iana_ipv6_special_block_lookup(&fvalue_get_ipv6(fv)->addr);
+        default:
+            break;
+    }
+    ws_assert_not_reached();
+}
+
+static bool
+df_func_ip_special_name(GSList *stack, uint32_t arg_count _U_, df_cell_t *retval)
+{
+    GPtrArray *arg;
+    fvalue_t *fv_res;
+    const struct ws_iana_ip_special_block *ptr;
+
+    ws_assert(arg_count == 1);
+--
+        ptr = lookup_block(arg->pdata[i]);
+        if (ptr == NULL)
+            continue;
+        fv_res = fvalue_new(FT_STRING);
+        fvalue_set_string(fv_res, ptr->name);
+        df_cell_append(retval, fv_res);
+    }
+
+    return !df_cell_is_empty(retval);
+}
+
+static bool
+df_func_ip_special_mask(GSList *stack, uint32_t arg_count _U_, df_cell_t *retval)
+{
+    GPtrArray *arg;
+    fvalue_t *fv_res;
+    const struct ws_iana_ip_special_block *ptr;
+    uint32_t mask;
+
+    ws_assert(arg_count == 1);
+    arg = stack->data;
+--
+        ptr = lookup_block(arg->pdata[i]);
+        if (ptr == NULL)
+            continue;
+        mask = 0;
+        if (ptr->reserved > 0)
+            mask |= (1UL << 0);
+        if (ptr->global > 0)
+            mask |= (1UL << 1);
+        if (ptr->forwardable > 0)
+            mask |= (1UL << 2);
+        if (ptr->destination > 0)
+            mask |= (1UL << 3);
+        if (ptr->source > 0)
+            mask |= (1UL << 4);
+        fv_res = fvalue_new(FT_UINT32);
+        fvalue_set_uinteger(fv_res, mask);
+        df_cell_append(retval, fv_res);
+    }
+
+    return !df_cell_is_empty(retval);
+}
+2026-06-16 13:53:21,441 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 7
+2026-06-16 13:53:21,441 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:53:22,165 - root - [INFO] - logging.py:31 - log_time - Took 0.72s
+2026-06-16 13:53:22,169 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'find /workspace/wireshark -nam' (timeout=120)
+2026-06-16 13:53:22,169 - root - [DEBUG] - des_container.py:308 - command - DES command: 'find /workspace/wireshark -name "*.h" | xargs grep -l "GPtrArray" | head -5\n'
+2026-06-16 13:53:23,975 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /workspace/wireshark/capture/capture_sync.h
+/workspace/wireshark/epan/dfilter/dfilter-int.h
+/workspace/wireshark/epan/dfilter/dfilter.h
+/workspace/wireshark/epan/dfilter/dfunctions.h
+/workspace/wireshark/epan/dfilter/dfvm.h
+2026-06-16 13:53:23,975 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 8
+2026-06-16 13:53:23,975 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:53:24,683 - root - [INFO] - logging.py:31 - log_time - Took 0.71s
+2026-06-16 13:53:24,686 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'find /workspace/wireshark -nam' (timeout=120)
+2026-06-16 13:53:24,687 - root - [DEBUG] - des_container.py:308 - command - DES command: 'find /workspace/wireshark -name "*.h" | xargs grep -l "struct.*GPtrArray" | head'
+2026-06-16 13:53:26,195 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 13:53:26,196 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 9
+2026-06-16 13:53:26,196 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:53:26,887 - root - [INFO] - logging.py:31 - log_time - Took 0.69s
+2026-06-16 13:53:26,891 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -r "GPtrArray" /workspace' (timeout=120)
+2026-06-16 13:53:26,891 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -r "GPtrArray" /workspace/wireshark/epan/dfilter/ --include="*.h" | head -5'
+2026-06-16 13:53:28,296 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /workspace/wireshark/epan/dfilter/dfilter-int.h:	GPtrArray *array;
+/workspace/wireshark/epan/dfilter/dfilter-int.h:	GPtrArray *ptr;
+/workspace/wireshark/epan/dfilter/dfilter-int.h:	GPtrArray	*insns;
+/workspace/wireshark/epan/dfilter/dfilter-int.h:	GPtrArray	*deprecated;
+/workspace/wireshark/epan/dfilter/dfilter-int.h:	GPtrArray	*deprecated;
+2026-06-16 13:53:28,296 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 10
+2026-06-16 13:53:28,296 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:53:28,737 - root - [INFO] - logging.py:31 - log_time - Took 0.44s
+2026-06-16 13:53:28,740 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'head -50 /workspace/wireshark/' (timeout=120)
+2026-06-16 13:53:28,740 - root - [DEBUG] - des_container.py:308 - command - DES command: 'head -50 /workspace/wireshark/epan/dfilter/dfilter-int.h\n'
+2026-06-16 13:53:30,550 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /** @file
+ *
+ * Wireshark - Network traffic analyzer
+ * By Gerald Combs <gerald@wireshark.org>
+ * Copyright 2001 Gerald Combs
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ */
+
+#ifndef DFILTER_INT_H
+#define DFILTER_INT_H
+
+#include "dfilter.h"
+#include "syntax-tree.h"
+
+#include <epan/proto.h>
+#include <stdio.h>
+
+typedef struct {
+	const header_field_info *hfinfo;
+	fvalue_t *value;
+	int proto_layer_num;
+} df_reference_t;
+
+typedef struct {
+	GPtrArray *array;
+} df_cell_t;
+
+typedef struct {
+	GPtrArray *ptr;
+	unsigned idx;
+} df_cell_iter_t;
+
+/* Passed back to user */
+struct epan_dfilter {
+	GPtrArray	*insns;
+	unsigned	num_registers;
+	df_cell_t	*registers;
+	int		*interesting_fields;
+	int		num_interesting_fields;
+	GPtrArray	*deprecated;
+	GSList		*warnings;
+	char		*expanded_text;
+	GHashTable	*references;
+	GHashTable	*raw_references;
+	char		*syntax_tree_str;
+	/* Used to pass arguments to functions. List of Lists (list of registers). */
+	GSList		*function_stack;
+	GSList		*set_stack;
+	ftenum_t	 ret_type;
+2026-06-16 13:53:30,550 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 11
+2026-06-16 13:53:30,550 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:53:34,406 - root - [INFO] - logging.py:31 - log_time - Took 3.86s
+2026-06-16 13:53:34,410 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -rn "df_cell_is_empty" /w' (timeout=120)
+2026-06-16 13:53:34,410 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -rn "df_cell_is_empty" /workspace/wireshark/epan/dfilter/ --include="*.h" |'
+2026-06-16 13:53:36,083 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /workspace/wireshark/epan/dfilter/dfilter-int.h:187:df_cell_is_empty(const df_cell_t *rp);
+2026-06-16 13:53:36,084 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 12
+2026-06-16 13:53:36,084 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:53:38,951 - root - [INFO] - logging.py:31 - log_time - Took 2.87s
+2026-06-16 13:53:38,957 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'submit_prediction \'{"function_' (timeout=120)
+2026-06-16 13:53:38,957 - root - [DEBUG] - des_container.py:308 - command - DES command: 'submit_prediction \'{"function_name": "df_func_ip_special_name", "file_path": "pl'
+2026-06-16 13:53:40,452 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: !!submit!!
+{"function_name": "df_func_ip_special_name", "file_path": "plugins/epan/dfilter/ipaddr/ipaddr.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "The function contains a bounded loop with a clear termination condition based on the fixed length of a GPtrArray."}
+SUBMISSION_COMPLETE
+2026-06-16 13:53:40,452 - root - [INFO] - forager_base.py:408 - start_trajectory - Success regex matched in environment output: SUBMISSION_COMPLETE
+2026-06-16 13:53:40,452 - root - [INFO] - forager_locate_function_code_and_dep.py:51 - extract_submission - Found !!submit!! marker in environ item
+2026-06-16 13:53:40,452 - root - [DEBUG] - forager_locate_function_code_and_dep.py:52 - extract_submission - Item output: !!submit!!
+{"function_name": "df_func_ip_special_name", "file_path": "plugins/epan/dfilter/ipaddr/ipaddr.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "The function contains a bounded loop with a clear termination condition based on the fixed length of a GPtrArray."}
+SUBMISSION_COMPLETE
+2026-06-16 13:53:40,452 - root - [INFO] - forager_locate_function_code_and_dep.py:80 - extract_submission - Matched JSON string: {"function_name": "df_func_ip_special_name", "file_path": "plugins/epan/dfilter/ipaddr/ipaddr.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "The function contains a bounded loop with a clear termination condition based on the fixed length of a GPtrArray."}
+2026-06-16 13:53:40,452 - root - [INFO] - forager_locate_function_code_and_dep.py:82 - extract_submission - Extracted submission from environ: {'function_name': 'df_func_ip_special_name', 'file_path': 'plugins/epan/dfilter/ipaddr/ipaddr.c', 'prediction': 'T', 'p_non_terminating': 0, 'confidence': 'high', 'reason': 'The function contains a bounded loop with a clear termination condition based on the fixed length of a GPtrArray.'}
+2026-06-16 13:53:40,452 - root - [INFO] - forager_locate_function_code_and_dep.py:162 - process_run - Submission validation: {'correct_function_name': True, 'correct_path': True, 'provided_prediction': True}
+2026-06-16 13:53:40,453 - root - [INFO] - forager_locate_function_code_and_dep.py:326 - run - All validation checks passed
+2026-06-16 13:53:40,453 - root - [INFO] - forager_locate_function_code_and_dep.py:347 - run - Run completed with outcome: success
+2026-06-16 13:53:40,457 - root - [INFO] - des_container.py:428 - shutdown - Shutting down DES container b6806cbc96633e144428cfad891203a7959b6ac8c80f26b1642d1a5a58ae2621
+2026-06-16 13:53:40,458 - root - [INFO] - des_container.py:576 - _heartbeat_loop - VMVM heartbeat thread exiting
+2026-06-16 13:54:21,156 - root - [INFO] - des_container.py:228 - release_vm - Releasing VMVM session {"vmvm_session":{"id":"019ed0b0-103f-7b93-9755-b29b7fd46857","ipAddr":"2803:6084:c8c0:b56:8afd:8616:500:0","vaagentPort":23795,"vmPort":21190,"vaagentHostname":"twshared27547.06.gtn3.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|16121806539984002760|0|faas.C04749555E7A31E4FEF9B48CF4EB11A9|7472640408021956637","tw_task_handle":"tsp_gtn/faas/workerpool_crackerjack_prod_bgm_ces_tier_1/5920","region_shortname":"gtn"},"auth_token":{"paseto":"v4.public.eyJzdWIiOiIwMTllZDBiMC0xMDNmLTdiOTMtOTc1NS1iMjliN2ZkNDY4NTciLCJleHAiOiIyMDI2LTA2LTE3VDEzOjQ3OjQ0WiIsIm5iZiI6IjIwMjYtMDYtMTZUMTM6NDc6NDRaIiwiaWF0IjoiMjAyNi0wNi0xNlQxMzo0Nzo0NC4wNTEyODUzNzIrMDA6MDAifWr7Wp1fl5pfgVdpRRdw3N_jsezLFMY51MRsVIAejttwSQHDl9Gw6ocXhLHdxYmcSrTocWvO_WoNbbuuz9NVBAc.eyJpcCI6IjI4MDM6NjA4NDpjOGMwOmI1Njo4YWZkOjg2MTY6NTAwOjAiLCJmYWFzX2ludm9jYXRpb25faWQiOiI0fGdsb2JhbHxhc3luY18yMzQ3NjQxfGRlc19nZW5lcmFsX3RpZXJfcHJvZHwxNjEyMTgwNjUzOTk4NDAwMjc2MHwwfGZhYXMuQzA0NzQ5NTU1RTdBMzFFNEZFRjlCNDhDRjRFQjExQTl8NzQ3MjY0MDQwODAyMTk1NjYzNyIsInRlbmFudCI6ImFzeW5jXzIzNDc2NDEiLCJwb3J0IjoiMjExOTAifQ"}}
+2026-06-16 13:54:24,073 - root - [INFO] - des_container.py:238 - release_vm - VMVM session released
+2026-06-16 13:54:24,073 - root - [INFO] - run.py:224 - repo_task - Finishing repo: wireshark_9c16d833_plugins_epan_dfilter_ipaddr_ipaddr_c_df_func_ip_special_name_1

@@ -1,0 +1,1527 @@
+2026-06-16 13:59:49,730 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=UNKNOWN_NAME
+2026-06-16 13:59:49,730 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=run
+2026-06-16 13:59:49,904 - root - [INFO] - run.py:148 - repo_task - Model: VllmModel
+2026-06-16 13:59:49,938 - root - [INFO] - run.py:158 - repo_task - Agent: ForagerAgentLocateFunctionCodeAndDep
+2026-06-16 13:59:49,938 - root - [INFO] - run.py:172 - repo_task - Using VMVMBackend, image=vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest
+2026-06-16 13:59:49,938 - root - [INFO] - des_container.py:76 - lease_vm - Leasing VM with client-id=wireshark_9c16d833_extcap_parser_c_extcap_tokenize_sentences_1, ttl_secs=500
+2026-06-16 14:00:09,002 - root - [INFO] - des_container.py:87 - lease_vm - VM leased in 19.06s: session_id={"vmvm_session":{"id":"019ed0bb-2935-7990-b00c-e3dc05757fb0","ipAddr":"2803:6080:2138:3164:da43:b315:500:0","vaagentPort":32263,"vmPort":19554,"vaagentHostname":"twshared61297.33.atn1.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|16121806539984002760|0|faas.D04ED958E8F4877673F00FFF68F28796|7472647059104206154","tw_task_handle":"tsp_atn/faas/workerpool_crackerjack_prod_bgm_ces_tier_1/87","region_shortname":"atn"},"auth_token":{"paseto":"v4.public.eyJleHAiOiIyMDI2LTA2LTE3VDEzOjU5OjUwWiIsImlhdCI6IjIwMjYtMDYtMTZUMTM6NTk6NTAuOTgyMzYyOTg4KzAwOjAwIiwibmJmIjoiMjAyNi0wNi0xNlQxMzo1OTo1MFoiLCJzdWIiOiIwMTllZDBiYi0yOTM1LTc5OTAtYjAwYy1lM2RjMDU3NTdmYjAifS726VqDb5SMJlmxjW-u3aUpTQQJQ4UFT2ar_SjN_IjksL4jZ-uwkYYwM_S1bxxioZfRHf3oT2Pih35xoOuqUgU.eyJ0ZW5hbnQiOiJhc3luY18yMzQ3NjQxIiwiaXAiOiIyODAzOjYwODA6MjEzODozMTY0OmRhNDM6YjMxNTo1MDA6MCIsInBvcnQiOiIxOTU1NCIsImZhYXNfaW52b2NhdGlvbl9pZCI6IjR8Z2xvYmFsfGFzeW5jXzIzNDc2NDF8ZGVzX2dlbmVyYWxfdGllcl9wcm9kfDE2MTIxODA2NTM5OTg0MDAyNzYwfDB8ZmFhcy5EMDRFRDk1OEU4RjQ4Nzc2NzNGMDBGRkY2OEYyODc5Nnw3NDcyNjQ3MDU5MTA0MjA2MTU0In0"}}
+2026-06-16 14:00:09,003 - root - [INFO] - des_container.py:195 - load_image - Pulling image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest on VMVM
+2026-06-16 14:01:58,206 - root - [INFO] - des_container.py:203 - load_image - Image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest pulled successfully
+2026-06-16 14:02:15,759 - root - [INFO] - des_container.py:221 - run_container - Container started: a3511eb3dc419719e8c4828d9303bd0f61a9e01dfd4baad6b14ad7fa83b25217
+2026-06-16 14:02:15,760 - root - [INFO] - des_container.py:565 - _heartbeat_loop - VMVM heartbeat thread started
+2026-06-16 14:02:15,761 - root - [INFO] - forager_locate_function_code_and_dep.py:294 - run - Starting analysis for extcap_tokenize_sentences in extcap_parser.c
+2026-06-16 14:02:15,761 - root - [INFO] - forager_locate_function_code_and_dep.py:208 - prepare_cpp_container - ========== Preparing C++ container ==========
+2026-06-16 14:02:15,761 - root - [DEBUG] - forager_locate_function_code_and_dep.py:211 - prepare_cpp_container - Setting up env variables
+2026-06-16 14:02:15,761 - root - [DEBUG] - des_container.py:308 - command - DES command: 'export WINDOW=100 && export OVERLAP=2 && export CURRENT_LINE=0 && export CURRENT'
+2026-06-16 14:02:17,341 - root - [DEBUG] - forager_locate_function_code_and_dep.py:220 - prepare_cpp_container - Importing agent tools in container
+2026-06-16 14:02:18,702 - root - [DEBUG] - des_container.py:385 - put - DES put: 6243 bytes to /opt/tools/defaults.sh
+2026-06-16 14:02:40,119 - root - [DEBUG] - des_container.py:308 - command - DES command: 'source /opt/tools/defaults.sh'
+2026-06-16 14:02:43,009 - root - [DEBUG] - des_container.py:385 - put - DES put: 5735 bytes to /opt/tools/search.sh
+2026-06-16 14:03:20,690 - root - [DEBUG] - des_container.py:308 - command - DES command: 'source /opt/tools/search.sh'
+2026-06-16 14:03:39,512 - root - [DEBUG] - des_container.py:308 - command - DES command: 'export PATH=/opt/tools:$PATH'
+2026-06-16 14:03:56,985 - root - [INFO] - forager_locate_function_code_and_dep.py:225 - prepare_cpp_container - Uploading submit_prediction command
+2026-06-16 14:03:56,985 - root - [DEBUG] - des_container.py:385 - put - DES put: 74 bytes to /usr/local/bin/submit_prediction
+2026-06-16 14:04:03,866 - root - [DEBUG] - des_container.py:308 - command - DES command: 'chmod +x /usr/local/bin/submit_prediction'
+2026-06-16 14:04:05,377 - root - [DEBUG] - des_container.py:308 - command - DES command: "which submit_prediction || echo 'Not in PATH'"
+2026-06-16 14:04:06,852 - root - [INFO] - forager_locate_function_code_and_dep.py:237 - prepare_cpp_container - Script in PATH: /usr/local/bin/submit_prediction
+2026-06-16 14:04:06,853 - root - [DEBUG] - des_container.py:308 - command - DES command: "export GIT_AUTHOR_NAME='CI Bot' && export GIT_AUTHOR_EMAIL='ci-bot@yourdomain.co"
+2026-06-16 14:04:08,419 - root - [DEBUG] - forager_locate_function_code_and_dep.py:256 - prepare_cpp_container - Creating /workspace directory
+2026-06-16 14:04:08,419 - root - [DEBUG] - des_container.py:308 - command - DES command: 'mkdir -p /workspace'
+2026-06-16 14:04:09,917 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cd /workspace'
+2026-06-16 14:04:11,533 - root - [DEBUG] - forager_locate_function_code_and_dep.py:196 - _init_prompt - Task prompt:
+Your task is to predict whether the function `extcap_tokenize_sentences` in the C++ file `extcap_parser.c` will:
+- **Terminate** for all inputs, OR
+- **Diverge** for some inputs (enter a non-terminating loop)
+
+**Important:** This is a **read-only code analysis task**. You may only use shell commands to view files. Do not execute any C++ code or modify any files. Only use commands like `cat`, `grep`, `find`, `ls`, `cd`, `head`, `tail`, `git`, etc.
+
+## STEP 1: Clone the Repository
+
+First, clone the repository and checkout the specific commit:
+```bash
+git clone https://github.com/wireshark/wireshark /workspace/wireshark && cd /workspace/wireshark && git checkout 9c16d833f0e23e7464ac995acb61a8b4e3c51d59
+```
+
+## STEP 2: Examine the Function
+
+Navigate to the repository and examine the function using read-only commands. Examples:
+```bash
+cd /workspace/wireshark
+cat extcap_parser.c                              # View the entire file
+grep -n "extcap_tokenize_sentences" extcap_parser.c    # Find the function's line number
+grep -A 50 "extcap_tokenize_sentences" extcap_parser.c # View the function plus 50 lines after (of course you can view more).
+```
+
+## STEP 3: Analyze Dependencies
+Important: The function may call other functions, use external types, or depend on macros defined elsewhere. You must examine these dependencies to fully understand the code's behavior.
+- Find and read helper functions called within the target function
+- Examine header files for type definitions and macros
+- Check struct/class definitions to understand data types
+- Trace function pointers to their implementations
+
+Finding dependencies:
+```bash
+grep -rn "function_name" /workspace/wireshark/
+find . -name "*.h" | xargs grep "TypeName"
+cat path/to/header.h
+```
+
+## STEP 4: Classify the Function
+**"T" (Terminates)** - Function terminates for all possible inputs:
+- No blocking synchronization calls. All loops have reachable exit conditions. Loop variables progress correctly toward exit. Proper bounds checking and error handling
+**"NT" (Non-Termination)** - Designed to block or loop indefinitely (can be intentional by the user or a bug). Examples:
+- Thread synchronization primitives. Locks. Condition variables. Event loops or server loops that run until external signal.
+Worker thread functions waiting for tasks or termination signals.
+- Loop variable never modified or modified in wrong direction. `while(1)` or `for(;;)` without reachable `break` or `return`.
+Unbounded I/O operations without proper termination checks. Missing loop increment/decrement statements.
+
+## STEP 5: Submit Your Prediction
+
+When ready, submit your classification:
+```bash
+submit_prediction '{"function_name": "extcap_tokenize_sentences", "file_path": "extcap_parser.c", "prediction": "<T|NT>", "p_non_terminating": <0-100>, "confidence": "<high|medium|low>", "reason": "<one concise sentence>"}'
+```
+
+**Field definitions:**
+- `prediction`: "T" if the function terminates for all inputs, "NT" if it can loop/block indefinitely
+- `p_non_terminating`: integer 0–100 — your estimated probability (in %) that the function is non-terminating
+- `confidence`: "high" if the evidence is clear and unambiguous, "medium" if there is some uncertainty, "low" if the code is hard to fully trace or the behavior is unclear
+- `reason`: one concise sentence explaining the key factor driving your prediction
+
+**Guidelines:**
+- Execute one command per response in triple backticks
+- Read all relevant source and header files before making a prediction
+- Trace data flow to understand where loop bounds and conditions come from
+- Consider edge cases: zero values, type overflows, null pointers, EOF conditions
+- Only submit your prediction when you have thoroughly analyzed the code
+- Begin by cloning the repository
+2026-06-16 14:04:11,533 - root - [INFO] - forager_base.py:342 - start_trajectory - =========== Starting new trajectory ==========
+2026-06-16 14:04:11,533 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 1
+2026-06-16 14:04:11,534 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:04:12,899 - root - [INFO] - logging.py:31 - log_time - Took 1.37s
+2026-06-16 14:04:12,906 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'git clone https://github.com/w' (timeout=120)
+2026-06-16 14:04:12,906 - root - [DEBUG] - des_container.py:308 - command - DES command: 'git clone https://github.com/wireshark/wireshark /workspace/wireshark && cd /wor'
+2026-06-16 14:04:17,239 - root - [DEBUG] - des_container.py:572 - _heartbeat_loop - VMVM heartbeat sent
+2026-06-16 14:06:09,655 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 14:06:09,655 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 2
+2026-06-16 14:06:09,655 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:06:09,886 - root - [INFO] - logging.py:31 - log_time - Took 0.23s
+2026-06-16 14:06:09,890 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cd /workspace/wireshark\n' (timeout=120)
+2026-06-16 14:06:09,890 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cd /workspace/wireshark\n'
+2026-06-16 14:06:11,210 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 14:06:11,210 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 3
+2026-06-16 14:06:11,210 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:06:11,407 - root - [INFO] - logging.py:31 - log_time - Took 0.20s
+2026-06-16 14:06:11,410 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'find . -name "extcap_parser.c"' (timeout=120)
+2026-06-16 14:06:11,410 - root - [DEBUG] - des_container.py:308 - command - DES command: 'find . -name "extcap_parser.c"\n'
+2026-06-16 14:06:18,552 - root - [DEBUG] - des_container.py:572 - _heartbeat_loop - VMVM heartbeat sent
+2026-06-16 14:06:28,761 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: ./extcap_parser.c
+2026-06-16 14:06:28,762 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 4
+2026-06-16 14:06:28,762 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:06:28,928 - root - [INFO] - logging.py:31 - log_time - Took 0.17s
+2026-06-16 14:06:28,931 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cat extcap_parser.c\n' (timeout=120)
+2026-06-16 14:06:28,932 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cat extcap_parser.c\n'
+2026-06-16 14:06:30,222 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /* extcap_parser.c
+ *
+ * Routines for extcap external capture
+ * Copyright 2013, Mike Ryan <mikeryan@lacklustre.net>
+ *
+ * Wireshark - Network traffic analyzer
+ * By Gerald Combs <gerald@wireshark.org>
+ * Copyright 1998 Gerald Combs
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ */
+
+#include <config.h>
+#define WS_LOG_DOMAIN LOG_DOMAIN_EXTCAP
+
+#include <stdio.h>
+#include <glib.h>
+#include <string.h>
+
+#include "ui/iface_toolbar.h"
+#include "wsutil/strtoi.h"
+
+#include "extcap.h"
+#include "extcap_parser.h"
+#include "ws_attributes.h"
+
+void extcap_printf_complex(extcap_complex *comp) {
+    char *ret = extcap_get_complex_as_string(comp);
+    printf("%s", ret);
+    g_free(ret);
+}
+
+char *extcap_get_complex_as_string(extcap_complex *comp) {
+    return (comp ? g_strdup(comp->_val) : NULL);
+}
+
+extcap_complex *extcap_parse_complex(extcap_arg_type complex_type,
+                                     const char *data) {
+
+    extcap_complex *rc = g_new0(extcap_complex, 1);
+
+    rc->_val = g_strdup(data);
+    rc->complex_type = complex_type;
+
+    return rc;
+}
+
+bool extcap_compare_is_default(extcap_arg *element, extcap_complex *test) {
+    if (element == NULL || element->default_complex == NULL || test == NULL)
+        return false;
+
+    if (g_strcmp0(element->default_complex->_val, test->_val) == 0)
+        return true;
+
+    return false;
+}
+
+void extcap_free_complex(extcap_complex *comp) {
+    if (comp)
+        g_free(comp->_val);
+    g_free(comp);
+}
+
+int extcap_complex_get_int(extcap_complex *comp) {
+    if (comp == NULL || comp->_val == NULL || comp->complex_type != EXTCAP_ARG_INTEGER)
+        return (int)0;
+
+    return (int) g_ascii_strtoll(comp->_val, NULL, 10);
+}
+
+unsigned extcap_complex_get_uint(extcap_complex *comp) {
+    if (comp == NULL || comp->_val == NULL || comp->complex_type != EXTCAP_ARG_UNSIGNED)
+        return (unsigned)0;
+    return (unsigned) g_ascii_strtoull(comp->_val, NULL, 10);
+}
+
+int64_t extcap_complex_get_long(extcap_complex *comp) {
+    if (comp == NULL || comp->_val == NULL || comp->complex_type != EXTCAP_ARG_LONG)
+        return (int64_t)0;
+    return g_ascii_strtoll(comp->_val, NULL, 10);
+}
+
+double extcap_complex_get_double(extcap_complex *comp) {
+    if (comp == NULL || comp->_val == NULL || comp->complex_type != EXTCAP_ARG_DOUBLE)
+        return (double)0;
+    return g_strtod(comp->_val, NULL);
+}
+
+static bool matches_regex(const char *pattern, const char *subject) {
+    if (!g_utf8_validate(subject, -1, NULL))
+        return false;
+    return g_regex_match_simple(pattern, subject, (GRegexCompileFlags) (G_REGEX_CASELESS), (GRegexMatchFlags)0);
+}
+
+bool extcap_complex_get_bool(extcap_complex *comp) {
+    if (comp == NULL || comp->_val == NULL)
+        return false;
+
+    if (comp->complex_type != EXTCAP_ARG_BOOLEAN && comp->complex_type != EXTCAP_ARG_BOOLFLAG)
+        return false;
+
+    return matches_regex(EXTCAP_BOOLEAN_REGEX, comp->_val);
+}
+
+char *extcap_complex_get_string(extcap_complex *comp) {
+    /* Not checking for argument type, to use this method as fallback if only strings are needed */
+    return comp != NULL ? comp->_val : NULL;
+}
+
+static extcap_token_sentence *extcap_tokenize_sentence(const char *s) {
+    GRegex *regex = NULL;
+    GMatchInfo *match_info = NULL;
+    GError *error = NULL;
+    char *param_value = NULL;
+    unsigned param_type = EXTCAP_PARAM_UNKNOWN;
+
+    if (!g_utf8_validate(s, -1, NULL))
+        return NULL;
+
+    extcap_token_sentence *rs = g_new0(extcap_token_sentence, 1);
+
+    rs->sentence = NULL;
+
+    /* Regex for catching just the allowed values for sentences */
+    if ((regex = g_regex_new("^[\\t| ]*(arg|value|interface|extcap|dlt|control)(?=[\\t| ]+\\{)",
+                             (GRegexCompileFlags) (G_REGEX_CASELESS),
+                             (GRegexMatchFlags) 0, NULL)) != NULL) {
+        g_regex_match(regex, s, (GRegexMatchFlags) 0, &match_info);
+
+        if (g_match_info_matches(match_info))
+            rs->sentence = g_match_info_fetch(match_info, 0);
+
+        g_match_info_free(match_info);
+        g_regex_unref(regex);
+    }
+    /* No valid sentence found, exiting here */
+    if (rs->sentence == NULL) {
+        g_free(rs);
+        return NULL;
+    }
+
+    rs->param_list = g_hash_table_new_full(g_direct_hash, g_direct_equal, NULL, g_free);
+
+    /* Capture the argument and the value of the list. This will ensure,
+     * that regex patterns given to {validation=} are parsed correctly,
+     * as long as }{ does not occur within the pattern */
+    regex = g_regex_new("\\{([a-zA-Z_-]*?)\\=(.*?)\\}(?=\\{|$|\\s)",
+                        (GRegexCompileFlags) (G_REGEX_CASELESS),
+                        (GRegexMatchFlags) 0, NULL);
+    if (regex != NULL) {
+        g_regex_match_full(regex, s, -1, 0, (GRegexMatchFlags) 0, &match_info, &error);
+        while (g_match_info_matches(match_info)) {
+            char *arg = g_match_info_fetch(match_info, 1);
+
+            if (arg == NULL)
+                break;
+
+            param_value = g_match_info_fetch(match_info, 2);
+
+            if (g_ascii_strcasecmp(arg, "number") == 0) {
+                param_type = EXTCAP_PARAM_ARGNUM;
+            } else if (g_ascii_strcasecmp(arg, "call") == 0) {
+                param_type = EXTCAP_PARAM_CALL;
+            } else if (g_ascii_strcasecmp(arg, "display") == 0) {
+                param_type = EXTCAP_PARAM_DISPLAY;
+            } else if (g_ascii_strcasecmp(arg, "type") == 0) {
+                param_type = EXTCAP_PARAM_TYPE;
+            } else if (g_ascii_strcasecmp(arg, "arg") == 0) {
+                param_type = EXTCAP_PARAM_ARG;
+            } else if (g_ascii_strcasecmp(arg, "default") == 0) {
+                param_type = EXTCAP_PARAM_DEFAULT;
+            } else if (g_ascii_strcasecmp(arg, "value") == 0) {
+                param_type = EXTCAP_PARAM_VALUE;
+            } else if (g_ascii_strcasecmp(arg, "range") == 0) {
+                param_type = EXTCAP_PARAM_RANGE;
+            } else if (g_ascii_strcasecmp(arg, "tooltip") == 0) {
+                param_type = EXTCAP_PARAM_TOOLTIP;
+            } else if (g_ascii_strcasecmp(arg, "placeholder") == 0) {
+                param_type = EXTCAP_PARAM_PLACEHOLDER;
+            } else if (g_ascii_strcasecmp(arg, "mustexist") == 0) {
+                param_type = EXTCAP_PARAM_FILE_MUSTEXIST;
+            } else if (g_ascii_strcasecmp(arg, "fileext") == 0) {
+                param_type = EXTCAP_PARAM_FILE_EXTENSION;
+            } else if (g_ascii_strcasecmp(arg, "group") == 0) {
+                param_type = EXTCAP_PARAM_GROUP;
+            } else if (g_ascii_strcasecmp(arg, "name") == 0) {
+                param_type = EXTCAP_PARAM_NAME;
+            } else if (g_ascii_strcasecmp(arg, "enabled") == 0) {
+                param_type = EXTCAP_PARAM_ENABLED;
+            } else if (g_ascii_strcasecmp(arg, "parent") == 0) {
+                param_type = EXTCAP_PARAM_PARENT;
+            } else if (g_ascii_strcasecmp(arg, "reload") == 0) {
+                param_type = EXTCAP_PARAM_RELOAD;
+            } else if (g_ascii_strcasecmp(arg, "configurable") == 0) {
+                param_type = EXTCAP_PARAM_CONFIGURABLE;
+            } else if (g_ascii_strcasecmp(arg, "prefix") == 0) {
+                param_type = EXTCAP_PARAM_PREFIX;
+            } else if (g_ascii_strcasecmp(arg, "required") == 0) {
+                param_type = EXTCAP_PARAM_REQUIRED;
+            } else if (g_ascii_strcasecmp(arg, "save") == 0) {
+                param_type = EXTCAP_PARAM_SAVE;
+            } else if (g_ascii_strcasecmp(arg, "validation") == 0) {
+                param_type = EXTCAP_PARAM_VALIDATION;
+            } else if (g_ascii_strcasecmp(arg, "version") == 0) {
+                param_type = EXTCAP_PARAM_VERSION;
+            } else if (g_ascii_strcasecmp(arg, "help") == 0) {
+                param_type = EXTCAP_PARAM_HELP;
+            } else if (g_ascii_strcasecmp(arg, "control") == 0) {
+                param_type = EXTCAP_PARAM_CONTROL;
+            } else if (g_ascii_strcasecmp(arg, "role") == 0) {
+                param_type = EXTCAP_PARAM_ROLE;
+            } else {
+                param_type = EXTCAP_PARAM_UNKNOWN;
+            }
+
+            g_hash_table_insert(rs->param_list, ENUM_KEY(param_type), param_value);
+
+            g_match_info_next(match_info, &error);
+            g_free(arg);
+        }
+        g_match_info_free(match_info);
+        g_regex_unref(regex);
+    }
+
+    return rs;
+}
+
+static GList *extcap_tokenize_sentences(const char *s) {
+
+    GList *sentences = NULL;
+    extcap_token_sentence *item = NULL;
+    char **list, **list_iter;
+
+    list_iter = list = g_strsplit(s, "\n", 0);
+    while (*list_iter != NULL) {
+        item = extcap_tokenize_sentence(*list_iter);
+        if (item)
+            sentences = g_list_append(sentences, item);
+        list_iter++;
+    }
+
+    g_strfreev(list);
+
+    return sentences;
+}
+
+static void extcap_free_value(extcap_value *v) {
+    if (v == NULL)
+        return;
+
+    g_free(v->call);
+    g_free(v->display);
+    g_free(v->parent);
+
+    g_free(v);
+}
+
+static void extcap_free_valuelist(void *data, void *user_data _U_) {
+    extcap_free_value((extcap_value *) data);
+}
+
+void extcap_free_arg(extcap_arg *a) {
+
+    if (a == NULL)
+        return;
+
+    g_free(a->call);
+    g_free(a->display);
+    g_free(a->tooltip);
+    g_free(a->placeholder);
+    g_free(a->fileextension);
+    g_free(a->regexp);
+    g_free(a->group);
+    g_free(a->device_name);
+
+    if (a->range_start != NULL)
+        extcap_free_complex(a->range_start);
+
+    if (a->range_end != NULL)
+        extcap_free_complex(a->range_end);
+
+    if (a->default_complex != NULL)
+        extcap_free_complex(a->default_complex);
+
+    g_list_foreach(a->values, (GFunc) extcap_free_valuelist, NULL);
+    g_list_free(a->values);
+    g_free(a);
+}
+
+static void extcap_free_toolbar_value(iface_toolbar_value *value)
+{
+    if (value == NULL)
+    {
+        return;
+    }
+
+    g_free(value->value);
+    g_free(value->display);
+    g_free(value);
+}
+
+void extcap_free_toolbar_control(iface_toolbar_control *control)
+{
+    if (control == NULL)
+    {
+        return;
+    }
+
+    g_free(control->display);
+    g_free(control->validation);
+    g_free(control->tooltip);
+    g_free(control->placeholder);
+    if (control->ctrl_type == INTERFACE_TYPE_STRING) {
+        g_free(control->default_value.string);
+    }
+    g_list_free_full(control->values, (GDestroyNotify)extcap_free_toolbar_value);
+    g_free(control);
+}
+
+void extcap_free_arg_list(GList *a) {
+    g_list_free_full(a, (GDestroyNotify)extcap_free_arg);
+}
+
+static int glist_find_numbered_arg(const void *listelem, const void *needle) {
+    if (((const extcap_arg *) listelem)->arg_num == *((const int *) needle))
+        return 0;
+    return 1;
+}
+
+static int glist_find_numbered_control(const void *listelem, const void *needle) {
+    if (((const iface_toolbar_control *) listelem)->num == *((const int *) needle))
+        return 0;
+    return 1;
+}
+
+static void extcap_free_tokenized_sentence(void *s, void *user_data _U_) {
+    extcap_token_sentence *t = (extcap_token_sentence *)s;
+
+    if (t == NULL)
+        return;
+
+    g_free(t->sentence);
+    g_hash_table_destroy(t->param_list);
+    g_free(t);
+}
+
+static void extcap_free_tokenized_sentences(GList *sentences) {
+    if (sentences == NULL)
+        return;
+
+    g_list_foreach(sentences, extcap_free_tokenized_sentence, NULL);
+    g_list_free(sentences);
+}
+
+static extcap_value *extcap_parse_value_sentence(extcap_token_sentence *s) {
+    extcap_value *value = NULL;
+    char *param_value = NULL;
+
+    int tint = 0;
+
+    if (s == NULL)
+        return value;
+
+    if (g_ascii_strcasecmp(s->sentence, "value") == 0) {
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_ARG)))
+                == NULL) {
+            printf("no arg in VALUE sentence\n");
+            return NULL;
+        }
+
+        if (sscanf(param_value, "%d", &tint) != 1) {
+            printf("invalid arg in VALUE sentence\n");
+            return NULL;
+        }
+
+        value = g_new0(extcap_value, 1);
+        value->arg_num = tint;
+        value->enabled = true;
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_VALUE)))
+                == NULL) {
+            /* printf("no value in VALUE sentence\n"); */
+            extcap_free_value(value);
+            return NULL;
+        }
+        value->call = g_strdup(param_value);
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_DISPLAY)))
+                == NULL) {
+            /* printf("no display in VALUE sentence\n"); */
+            extcap_free_value(value);
+            return NULL;
+        }
+        value->display = g_strdup(param_value);
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_PARENT)))
+                != NULL) {
+            value->parent = g_strdup(param_value);
+        }
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_DEFAULT)))
+                != NULL) {
+            /* printf("found default value\n"); */
+            value->is_default = matches_regex(EXTCAP_BOOLEAN_REGEX, param_value);
+        }
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_ENABLED)))
+                != NULL) {
+            value->enabled = matches_regex(EXTCAP_BOOLEAN_REGEX, param_value);
+        }
+    }
+
+    return value;
+}
+
+static extcap_arg *extcap_parse_arg_sentence(GList *args, extcap_token_sentence *s) {
+    char *param_value = NULL;
+
+    extcap_arg *target_arg = NULL;
+    extcap_value *value = NULL;
+    GList *entry = NULL;
+
+    extcap_sentence_type sent = EXTCAP_SENTENCE_UNKNOWN;
+
+    if (s == NULL)
+        return target_arg;
+
+    if (g_ascii_strcasecmp(s->sentence, "arg") == 0) {
+        sent = EXTCAP_SENTENCE_ARG;
+        /* printf("ARG sentence\n"); */
+    } else if (g_ascii_strcasecmp(s->sentence, "value") == 0) {
+        sent = EXTCAP_SENTENCE_VALUE;
+        /* printf("VALUE sentence\n"); */
+    }
+
+    if (sent == EXTCAP_SENTENCE_ARG) {
+        target_arg = g_new0(extcap_arg, 1);
+        target_arg->arg_type = EXTCAP_ARG_UNKNOWN;
+        target_arg->save = true;
+        target_arg->configurable = false;
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_ARGNUM))) == NULL) {
+            extcap_free_arg(target_arg);
+            return NULL;
+        }
+
+        if (sscanf(param_value, "%d", &(target_arg->arg_num)) != 1) {
+            extcap_free_arg(target_arg);
+            return NULL;
+        }
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_CALL))) == NULL) {
+            extcap_free_arg(target_arg);
+            return NULL;
+        }
+        target_arg->call = g_strdup(param_value);
+
+        /* No value only parameters allowed */
+        if (strlen(target_arg->call) == 0) {
+            extcap_free_arg(target_arg);
+            return NULL;
+        }
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_DISPLAY))) == NULL) {
+            extcap_free_arg(target_arg);
+            return NULL;
+        }
+        target_arg->display = g_strdup(param_value);
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_TOOLTIP)))
+                != NULL) {
+            target_arg->tooltip = g_strdup(param_value);
+        }
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_PLACEHOLDER)))
+                != NULL) {
+            target_arg->placeholder = g_strdup(param_value);
+        }
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_FILE_MUSTEXIST)))
+                != NULL) {
+            target_arg->fileexists = matches_regex(EXTCAP_BOOLEAN_REGEX, param_value);
+        }
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_FILE_EXTENSION)))
+                != NULL) {
+            target_arg->fileextension = g_strdup(param_value);
+        }
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_VALIDATION)))
+                != NULL) {
+            target_arg->regexp = g_strdup(param_value);
+        }
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_GROUP)))
+                != NULL) {
+            target_arg->group = g_strdup(param_value);
+        }
+
+        if ((param_value = (char*)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_PREFIX)))
+            != NULL) {
+            target_arg->prefix = g_strdup(param_value);
+        }
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_REQUIRED)))
+                != NULL) {
+            if (g_strcmp0(param_value, EXTCAP_PARAM_REQUIRED_SUFFICIENT) == 0)
+            {
+                target_arg->is_required = false;
+                target_arg->is_sufficient = true;
+            }
+            else
+            {
+                target_arg->is_required = matches_regex(EXTCAP_BOOLEAN_REGEX, param_value);
+            }
+        }
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_TYPE)))
+                == NULL) {
+            /* printf("no type in ARG sentence\n"); */
+            extcap_free_arg(target_arg);
+            return NULL;
+        }
+
+        if (g_ascii_strcasecmp(param_value, "integer") == 0) {
+            target_arg->arg_type = EXTCAP_ARG_INTEGER;
+        } else if (g_ascii_strcasecmp(param_value, "unsigned") == 0) {
+            target_arg->arg_type = EXTCAP_ARG_UNSIGNED;
+        } else if (g_ascii_strcasecmp(param_value, "long") == 0) {
+            target_arg->arg_type = EXTCAP_ARG_LONG;
+        } else if (g_ascii_strcasecmp(param_value, "double") == 0) {
+            target_arg->arg_type = EXTCAP_ARG_DOUBLE;
+        } else if (g_ascii_strcasecmp(param_value, "boolean") == 0) {
+            target_arg->arg_type = EXTCAP_ARG_BOOLEAN;
+        } else if (g_ascii_strcasecmp(param_value, "boolflag") == 0) {
+            target_arg->arg_type = EXTCAP_ARG_BOOLFLAG;
+        } else if (g_ascii_strcasecmp(param_value, "selector") == 0) {
+            target_arg->arg_type = EXTCAP_ARG_SELECTOR;
+        } else if (g_ascii_strcasecmp(param_value, "editselector") == 0) {
+            target_arg->arg_type = EXTCAP_ARG_EDIT_SELECTOR;
+        } else if (g_ascii_strcasecmp(param_value, "radio") == 0) {
+            target_arg->arg_type = EXTCAP_ARG_RADIO;
+        } else if (g_ascii_strcasecmp(param_value, "string") == 0) {
+            target_arg->arg_type = EXTCAP_ARG_STRING;
+        } else if (g_ascii_strcasecmp(param_value, "password") == 0) {
+            /* Password is never saved because is mapped to PREF_PASSWORD later */
+            target_arg->arg_type = EXTCAP_ARG_PASSWORD;
+        } else if (g_ascii_strcasecmp(param_value, "fileselect") == 0) {
+            target_arg->arg_type = EXTCAP_ARG_FILESELECT;
+        } else if (g_ascii_strcasecmp(param_value, "multicheck") == 0) {
+            target_arg->arg_type = EXTCAP_ARG_MULTICHECK;
+        } else if (g_ascii_strcasecmp(param_value, "table") == 0) {
+            target_arg->arg_type = EXTCAP_ARG_TABLE;
+        } else if (g_ascii_strcasecmp(param_value, "timestamp") == 0) {
+            target_arg->arg_type = EXTCAP_ARG_TIMESTAMP;
+        } else {
+            printf("invalid type %s in ARG sentence\n", param_value);
+            extcap_free_arg(target_arg);
+            return NULL;
+        }
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_SAVE)))
+                != NULL) {
+            target_arg->save = matches_regex(EXTCAP_BOOLEAN_REGEX, param_value);
+        }
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_RELOAD)))
+                != NULL) {
+            target_arg->reload = matches_regex(EXTCAP_BOOLEAN_REGEX, param_value);
+        }
+
+        if ((param_value = (char*)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_CONFIGURABLE)))
+            != NULL) {
+            target_arg->configurable = matches_regex(EXTCAP_BOOLEAN_REGEX, param_value);
+        }
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_RANGE)))
+                != NULL) {
+            char *cp = g_strstr_len(param_value, -1, ",");
+
+            if (cp == NULL) {
+                printf("invalid range, expected value,value got %s\n",
+                       param_value);
+                extcap_free_arg(target_arg);
+                return NULL;
+            }
+
+            if ((target_arg->range_start = extcap_parse_complex(
+                                               target_arg->arg_type, param_value)) == NULL) {
+                printf("invalid range, expected value,value got %s\n",
+                       param_value);
+                extcap_free_arg(target_arg);
+                return NULL;
+            }
+
+            if ((target_arg->range_end = extcap_parse_complex(
+                                             target_arg->arg_type, cp + 1)) == NULL) {
+                printf("invalid range, expected value,value got %s\n",
+                       param_value);
+                extcap_free_arg(target_arg);
+                return NULL;
+            }
+        }
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_DEFAULT)))
+                != NULL) {
+            if (target_arg->arg_type != EXTCAP_ARG_MULTICHECK && target_arg->arg_type != EXTCAP_ARG_TABLE &&
+                target_arg->arg_type != EXTCAP_ARG_SELECTOR)
+            {
+                if ((target_arg->default_complex = extcap_parse_complex(
+                                                       target_arg->arg_type, param_value)) == NULL) {
+                    printf("invalid default, couldn't parse %s\n", param_value);
+                }
+            }
+        }
+
+    } else if (sent == EXTCAP_SENTENCE_VALUE) {
+        value = extcap_parse_value_sentence(s);
+        if (value == NULL)
+            return NULL;
+
+        if ((entry = g_list_find_custom(args, &value->arg_num, glist_find_numbered_arg))
+                == NULL) {
+            printf("couldn't find arg %d in list for VALUE sentence\n", value->arg_num);
+            return NULL;
+        }
+
+        ((extcap_arg *) entry->data)->values = g_list_append(
+                ((extcap_arg *) entry->data)->values, value);
+
+        return NULL;
+    }
+
+    return target_arg;
+}
+
+GList *extcap_parse_args(char *output) {
+    GList *result = NULL;
+    GList *walker = NULL;
+    GList *temp = NULL;
+
+    walker = extcap_tokenize_sentences(output);
+    temp = walker;
+
+    while (walker) {
+        extcap_arg *ra = NULL;
+        extcap_token_sentence *sentence = (extcap_token_sentence *)walker->data;
+
+        if ((ra = extcap_parse_arg_sentence(result, sentence)) != NULL)
+            result = g_list_append(result, (void *) ra);
+
+        walker = g_list_next(walker);
+    }
+
+    extcap_free_tokenized_sentences(temp);
+
+    return result;
+}
+
+GList *extcap_parse_values(char *output) {
+    GList *result = NULL;
+    GList *walker = NULL;
+    GList *temp = NULL;
+
+    walker = extcap_tokenize_sentences(output);
+    temp = walker;
+
+    while (walker) {
+        extcap_value *ra = NULL;
+        extcap_token_sentence *sentence = (extcap_token_sentence *)walker->data;
+
+        if ((ra = extcap_parse_value_sentence(sentence)) != NULL)
+            result = g_list_append(result, (void *) ra);
+
+        walker = g_list_next(walker);
+    }
+
+    extcap_free_tokenized_sentences(temp);
+
+    return result;
+}
+
+static extcap_interface *extcap_parse_interface_sentence(extcap_token_sentence *s) {
+    extcap_sentence_type sent = EXTCAP_SENTENCE_UNKNOWN;
+    char *param_value = NULL;
+    extcap_interface *ri = NULL;
+
+    if (s == NULL)
+        return NULL;
+
+    if (g_ascii_strcasecmp(s->sentence, "interface") == 0) {
+        sent = EXTCAP_SENTENCE_INTERFACE;
+    } else if (g_ascii_strcasecmp(s->sentence, "extcap") == 0) {
+        sent = EXTCAP_SENTENCE_EXTCAP;
+    }
+
+    if (sent == EXTCAP_SENTENCE_UNKNOWN)
+        return NULL;
+
+    ri = g_new0(extcap_interface, 1);
+
+    ri->if_type = sent;
+
+    if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_VALUE)))
+            == NULL && sent == EXTCAP_SENTENCE_INTERFACE) {
+        printf("No value in INTERFACE sentence\n");
+        g_free(ri);
+        return NULL;
+    }
+    ri->call = g_strdup(param_value);
+
+    if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_DISPLAY)))
+            == NULL && sent == EXTCAP_SENTENCE_INTERFACE) {
+        printf("No display in INTERFACE sentence\n");
+        g_free(ri->call);
+        g_free(ri);
+        return NULL;
+    }
+    ri->display = g_strdup(param_value);
+
+    if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_VERSION)))
+            != NULL) {
+        ri->version = g_strdup(param_value);
+    }
+
+    if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_HELP)))
+            != NULL) {
+        ri->help = g_strdup(param_value);
+    }
+
+    return ri;
+}
+
+static iface_toolbar_control *extcap_parse_control_sentence(GList *control_items, extcap_token_sentence *s)
+{
+    extcap_sentence_type sent = EXTCAP_SENTENCE_UNKNOWN;
+    char *param_value = NULL;
+    iface_toolbar_control *control = NULL;
+    iface_toolbar_value *value = NULL;
+    GList *entry = NULL;
+    uint32_t num = 0;
+
+    if (s == NULL)
+        return NULL;
+
+    if (g_ascii_strcasecmp(s->sentence, "control") == 0) {
+        sent = EXTCAP_SENTENCE_CONTROL;
+    } else if (g_ascii_strcasecmp(s->sentence, "value") == 0) {
+        sent = EXTCAP_SENTENCE_VALUE;
+    }
+
+    if (sent == EXTCAP_SENTENCE_UNKNOWN)
+        return NULL;
+
+    if (sent == EXTCAP_SENTENCE_CONTROL) {
+        control = g_new0(iface_toolbar_control, 1);
+        control->ctrl_type = INTERFACE_TYPE_UNKNOWN;
+
+        param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_ARGNUM));
+        if (param_value == NULL) {
+            extcap_free_toolbar_control(control);
+            return NULL;
+        }
+
+        if (!ws_strtou32(param_value, NULL, &num)) {
+            extcap_free_toolbar_control(control);
+            return NULL;
+        }
+        control->num = (int)num;
+
+        param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_DISPLAY));
+        if (param_value == NULL) {
+            extcap_free_toolbar_control(control);
+            return NULL;
+        }
+        control->display = g_strdup(param_value);
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_VALIDATION)))
+            != NULL) {
+            control->validation = g_strdup(param_value);
+        }
+
+        if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_REQUIRED)))
+            != NULL) {
+            control->is_required = matches_regex(EXTCAP_BOOLEAN_REGEX, param_value);
+        }
+
+        param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_TOOLTIP));
+        control->tooltip = g_strdup(param_value);
+
+        param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_PLACEHOLDER));
+        control->placeholder = g_strdup(param_value);
+
+        param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_TYPE));
+        if (param_value == NULL) {
+            extcap_free_toolbar_control(control);
+            return NULL;
+        }
+
+        extcap_arg_type arg_type = EXTCAP_ARG_UNKNOWN;
+        if (g_ascii_strcasecmp(param_value, "boolean") == 0) {
+            control->ctrl_type = INTERFACE_TYPE_BOOLEAN;
+            arg_type = EXTCAP_ARG_BOOLEAN;
+        } else if (g_ascii_strcasecmp(param_value, "button") == 0) {
+            control->ctrl_type = INTERFACE_TYPE_BUTTON;
+        } else if (g_ascii_strcasecmp(param_value, "selector") == 0) {
+            control->ctrl_type = INTERFACE_TYPE_SELECTOR;
+        } else if (g_ascii_strcasecmp(param_value, "string") == 0) {
+            control->ctrl_type = INTERFACE_TYPE_STRING;
+            arg_type = EXTCAP_ARG_STRING;
+        } else {
+            printf("invalid type %s in CONTROL sentence\n", param_value);
+            extcap_free_toolbar_control(control);
+            return NULL;
+        }
+
+        param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_ROLE));
+        if (param_value != NULL) {
+            if (g_ascii_strcasecmp(param_value, "control") == 0) {
+                control->ctrl_role = INTERFACE_ROLE_CONTROL;
+            } else if (g_ascii_strcasecmp(param_value, "help") == 0) {
+                control->ctrl_role = INTERFACE_ROLE_HELP;
+            } else if (g_ascii_strcasecmp(param_value, "logger") == 0) {
+                control->ctrl_role = INTERFACE_ROLE_LOGGER;
+            } else if (g_ascii_strcasecmp(param_value, "restore") == 0) {
+                control->ctrl_role = INTERFACE_ROLE_RESTORE;
+            } else {
+                printf("invalid role %s in CONTROL sentence\n", param_value);
+                control->ctrl_role = INTERFACE_ROLE_UNKNOWN;
+            }
+        } else {
+            /* Default role */
+            control->ctrl_role = INTERFACE_ROLE_CONTROL;
+        }
+
+        param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_DEFAULT));
+        if (param_value != NULL) {
+            if (arg_type != EXTCAP_ARG_UNKNOWN) {
+                extcap_complex *complex = extcap_parse_complex(arg_type, param_value);
+                if (complex != NULL) {
+                    if (arg_type == EXTCAP_ARG_BOOLEAN) {
+                        control->default_value.boolean = extcap_complex_get_bool(complex);
+                    } else if (arg_type == EXTCAP_ARG_STRING) {
+                        control->default_value.string = g_strdup(complex->_val);
+                    }
+                    extcap_free_complex(complex);
+                } else {
+                    printf("invalid default, couldn't parse %s\n", param_value);
+                }
+            }
+        }
+
+    } else if (sent == EXTCAP_SENTENCE_VALUE) {
+        param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_CONTROL));
+        if (param_value == NULL) {
+            printf("no control in VALUE sentence\n");
+            return NULL;
+        }
+
+        if (!ws_strtou32(param_value, NULL, &num)) {
+            extcap_free_toolbar_control(control);
+            return NULL;
+        }
+
+        entry = g_list_find_custom(control_items, &num, glist_find_numbered_control);
+        if (entry == NULL) {
+            printf("couldn't find control %u in list for VALUE sentence\n", num);
+            return NULL;
+        }
+
+        value = g_new0(iface_toolbar_value, 1);
+        value->num = (int)num;
+
+        param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_VALUE));
+        if (param_value == NULL) {
+            extcap_free_toolbar_value(value);
+            return NULL;
+        }
+        value->value = g_strdup(param_value);
+
+        param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_DISPLAY));
+        if (param_value == NULL) {
+            extcap_free_toolbar_value(value);
+            return NULL;
+        }
+        value->display = g_strdup(param_value);
+
+        param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_DEFAULT));
+        if (param_value != NULL) {
+            value->is_default = matches_regex(EXTCAP_BOOLEAN_REGEX, param_value);
+        }
+
+        control = (iface_toolbar_control *)entry->data;
+        control->values = g_list_append(control->values, value);
+
+        return NULL;
+    }
+
+    return control;
+}
+
+GList *extcap_parse_interfaces(char *output, GList **control_items) {
+
+    GList *result = NULL;
+    GList *tokens = NULL;
+    GList *walker = extcap_tokenize_sentences(output);
+    tokens = walker;
+
+    while (walker) {
+        extcap_interface *ri = NULL;
+        iface_toolbar_control *ti = NULL;
+        extcap_token_sentence *if_sentence = (extcap_token_sentence *) walker->data;
+
+        if (if_sentence) {
+            if ((g_ascii_strcasecmp(if_sentence->sentence, "interface") == 0) ||
+                (g_ascii_strcasecmp(if_sentence->sentence, "extcap") == 0))
+            {
+                if ((ri = extcap_parse_interface_sentence(if_sentence))) {
+                    result = g_list_append(result, ri);
+                }
+            } else if (control_items &&
+                       ((g_ascii_strcasecmp(if_sentence->sentence, "control") == 0) ||
+                        (g_ascii_strcasecmp(if_sentence->sentence, "value") == 0)))
+            {
+                if ((ti = extcap_parse_control_sentence(*control_items, if_sentence))) {
+                    *control_items = g_list_append(*control_items, ti);
+                }
+            }
+        }
+
+        walker = g_list_next(walker);
+    }
+
+    extcap_free_tokenized_sentences(tokens);
+
+    return result;
+}
+
+/* Parse a tokenized set of sentences and validate, looking for DLT definitions */
+static extcap_dlt *extcap_parse_dlt_sentence(extcap_token_sentence *s) {
+    char *param_value = NULL;
+    extcap_sentence_type sent = EXTCAP_SENTENCE_UNKNOWN;
+    extcap_dlt *result = NULL;
+
+    if (s == NULL)
+        return result;
+
+    if (g_ascii_strcasecmp(s->sentence, "dlt") == 0) {
+        sent = EXTCAP_SENTENCE_DLT;
+    }
+
+    if (sent == EXTCAP_SENTENCE_UNKNOWN)
+        return result;
+
+    result = g_new0(extcap_dlt, 1);
+
+    result->number = -1;
+    result->name = NULL;
+    result->display = NULL;
+
+    if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_ARGNUM)))
+            == NULL) {
+        printf("No number in DLT sentence\n");
+        g_free(result);
+        return NULL;
+    }
+    if (sscanf(param_value, "%d", &(result->number)) != 1) {
+        printf("Invalid number in DLT sentence\n");
+        g_free(result);
+        return NULL;
+    }
+
+    if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_NAME)))
+            == NULL) {
+        printf("No name in DLT sentence\n");
+        g_free(result);
+        return NULL;
+    }
+    result->name = g_strdup(param_value);
+
+    if ((param_value = (char *)g_hash_table_lookup(s->param_list, ENUM_KEY(EXTCAP_PARAM_DISPLAY)))
+            == NULL) {
+        printf("No display in DLT sentence\n");
+        g_free(result->name);
+        g_free(result);
+        return NULL;
+    }
+    result->display = g_strdup(param_value);
+
+    return result;
+}
+
+GList *extcap_parse_dlts(char *output) {
+
+    GList *walker = NULL;
+    GList *temp = NULL;
+    GList *result = NULL;
+
+    walker = extcap_tokenize_sentences(output);
+
+    temp = walker;
+
+    while (walker) {
+        extcap_dlt *data = NULL;
+
+        if ((data = extcap_parse_dlt_sentence((extcap_token_sentence *)walker->data)) != NULL)
+            result = g_list_append(result, data);
+
+        walker = g_list_next(walker);
+    }
+
+    extcap_free_tokenized_sentences(temp);
+
+    return result;
+}
+
+/*
+ * Editor modelines  -  https://www.wireshark.org/tools/modelines.html
+ *
+ * Local variables:
+ * c-basic-offset: 4
+ * tab-width: 8
+ * indent-tabs-mode: nil
+ * End:
+ *
+ * vi: set shiftwidth=4 tabstop=8 expandtab:
+ * :indentSize=4:tabSize=8:noTabs=true:
+ */
+2026-06-16 14:06:30,222 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 5
+2026-06-16 14:06:30,222 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:06:30,931 - root - [INFO] - logging.py:31 - log_time - Took 0.71s
+2026-06-16 14:06:30,934 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -n "extcap_tokenize_sente' (timeout=120)
+2026-06-16 14:06:30,934 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -n "extcap_tokenize_sentences" /workspace/wireshark/extcap_parser.c\n'
+2026-06-16 14:06:32,558 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 228:static GList *extcap_tokenize_sentences(const char *s) {
+643:    walker = extcap_tokenize_sentences(output);
+666:    walker = extcap_tokenize_sentences(output);
+907:    GList *walker = extcap_tokenize_sentences(output);
+1000:    walker = extcap_tokenize_sentences(output);
+2026-06-16 14:06:32,558 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 6
+2026-06-16 14:06:32,558 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:06:33,339 - root - [INFO] - logging.py:31 - log_time - Took 0.78s
+2026-06-16 14:06:33,344 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -A 25 "static GList \\*ext' (timeout=120)
+2026-06-16 14:06:33,344 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -A 25 "static GList \\*extcap_tokenize_sentences" /workspace/wireshark/extca'
+2026-06-16 14:06:34,923 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: static GList *extcap_tokenize_sentences(const char *s) {
+
+    GList *sentences = NULL;
+    extcap_token_sentence *item = NULL;
+    char **list, **list_iter;
+
+    list_iter = list = g_strsplit(s, "\n", 0);
+    while (*list_iter != NULL) {
+        item = extcap_tokenize_sentence(*list_iter);
+        if (item)
+            sentences = g_list_append(sentences, item);
+        list_iter++;
+    }
+
+    g_strfreev(list);
+
+    return sentences;
+}
+
+static void extcap_free_value(extcap_value *v) {
+    if (v == NULL)
+        return;
+
+    g_free(v->call);
+    g_free(v->display);
+    g_free(v->parent);
+2026-06-16 14:06:34,923 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 7
+2026-06-16 14:06:34,923 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:06:35,499 - root - [INFO] - logging.py:31 - log_time - Took 0.58s
+2026-06-16 14:06:35,503 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -A 50 "static extcap_toke' (timeout=120)
+2026-06-16 14:06:35,503 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -A 50 "static extcap_token_sentence \\*extcap_tokenize_sentence" /workspace/'
+2026-06-16 14:06:37,001 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: static extcap_token_sentence *extcap_tokenize_sentence(const char *s) {
+    GRegex *regex = NULL;
+    GMatchInfo *match_info = NULL;
+    GError *error = NULL;
+    char *param_value = NULL;
+    unsigned param_type = EXTCAP_PARAM_UNKNOWN;
+
+    if (!g_utf8_validate(s, -1, NULL))
+        return NULL;
+
+    extcap_token_sentence *rs = g_new0(extcap_token_sentence, 1);
+
+    rs->sentence = NULL;
+
+    /* Regex for catching just the allowed values for sentences */
+    if ((regex = g_regex_new("^[\\t| ]*(arg|value|interface|extcap|dlt|control)(?=[\\t| ]+\\{)",
+                             (GRegexCompileFlags) (G_REGEX_CASELESS),
+                             (GRegexMatchFlags) 0, NULL)) != NULL) {
+        g_regex_match(regex, s, (GRegexMatchFlags) 0, &match_info);
+
+        if (g_match_info_matches(match_info))
+            rs->sentence = g_match_info_fetch(match_info, 0);
+
+        g_match_info_free(match_info);
+        g_regex_unref(regex);
+    }
+    /* No valid sentence found, exiting here */
+    if (rs->sentence == NULL) {
+        g_free(rs);
+        return NULL;
+    }
+
+    rs->param_list = g_hash_table_new_full(g_direct_hash, g_direct_equal, NULL, g_free);
+
+    /* Capture the argument and the value of the list. This will ensure,
+     * that regex patterns given to {validation=} are parsed correctly,
+     * as long as }{ does not occur within the pattern */
+    regex = g_regex_new("\\{([a-zA-Z_-]*?)\\=(.*?)\\}(?=\\{|$|\\s)",
+                        (GRegexCompileFlags) (G_REGEX_CASELESS),
+                        (GRegexMatchFlags) 0, NULL);
+    if (regex != NULL) {
+        g_regex_match_full(regex, s, -1, 0, (GRegexMatchFlags) 0, &match_info, &error);
+        while (g_match_info_matches(match_info)) {
+            char *arg = g_match_info_fetch(match_info, 1);
+
+            if (arg == NULL)
+                break;
+
+            param_value = g_match_info_fetch(match_info, 2);
+
+            if (g_ascii_strcasecmp(arg, "number") == 0) {
+2026-06-16 14:06:37,002 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 8
+2026-06-16 14:06:37,002 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:06:37,635 - root - [INFO] - logging.py:31 - log_time - Took 0.63s
+2026-06-16 14:06:37,647 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'find /workspace/wireshark -nam' (timeout=120)
+2026-06-16 14:06:37,647 - root - [DEBUG] - des_container.py:308 - command - DES command: 'find /workspace/wireshark -name "*.h" | xargs grep -l "extcap_token_sentence\\|EX'
+2026-06-16 14:06:39,255 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /workspace/wireshark/extcap_parser.h
+2026-06-16 14:06:39,255 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 9
+2026-06-16 14:06:39,255 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:06:39,560 - root - [INFO] - logging.py:31 - log_time - Took 0.31s
+2026-06-16 14:06:39,564 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cat /workspace/wireshark/extca' (timeout=120)
+2026-06-16 14:06:39,564 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cat /workspace/wireshark/extcap_parser.h\n'
+2026-06-16 14:06:40,970 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /** @file
+ *
+ * Wireshark - Network traffic analyzer
+ * By Gerald Combs <gerald@wireshark.org>
+ * Copyright 1998 Gerald Combs
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ */
+
+#ifndef __EXTCAP_PARSER_H__
+#define __EXTCAP_PARSER_H__
+
+#include <stdio.h>
+#include <glib.h>
+#include <string.h>
+
+#include "ui/iface_toolbar.h"
+
+typedef enum {
+    EXTCAP_SENTENCE_UNKNOWN,
+    EXTCAP_SENTENCE_ARG,
+    EXTCAP_SENTENCE_VALUE,
+    EXTCAP_SENTENCE_EXTCAP,
+    EXTCAP_SENTENCE_INTERFACE,
+    EXTCAP_SENTENCE_DLT,
+    EXTCAP_SENTENCE_CONTROL
+} extcap_sentence_type;
+
+typedef enum {
+    /* Simple types */
+    EXTCAP_ARG_UNKNOWN,
+    EXTCAP_ARG_INTEGER,
+    EXTCAP_ARG_UNSIGNED,
+    EXTCAP_ARG_LONG,
+    EXTCAP_ARG_DOUBLE,
+    EXTCAP_ARG_BOOLEAN,
+    EXTCAP_ARG_BOOLFLAG,
+    EXTCAP_ARG_STRING,
+    EXTCAP_ARG_PASSWORD,
+    /* Complex GUI types which are populated with value sentences */
+    EXTCAP_ARG_SELECTOR,
+    EXTCAP_ARG_EDIT_SELECTOR,
+    EXTCAP_ARG_RADIO,
+    EXTCAP_ARG_MULTICHECK,
+    EXTCAP_ARG_TABLE,
+    EXTCAP_ARG_FILESELECT,
+    EXTCAP_ARG_TIMESTAMP
+} extcap_arg_type;
+
+typedef enum {
+    /* value types */
+    EXTCAP_PARAM_UNKNOWN,
+    EXTCAP_PARAM_ARGNUM,
+    EXTCAP_PARAM_CALL,
+    EXTCAP_PARAM_DISPLAY,
+    EXTCAP_PARAM_TYPE,
+    EXTCAP_PARAM_ARG,
+    EXTCAP_PARAM_DEFAULT,
+    EXTCAP_PARAM_VALUE,
+    EXTCAP_PARAM_RANGE,
+    EXTCAP_PARAM_TOOLTIP,
+    EXTCAP_PARAM_PLACEHOLDER,
+    EXTCAP_PARAM_NAME,
+    EXTCAP_PARAM_ENABLED,
+    EXTCAP_PARAM_FILE_MUSTEXIST,
+    EXTCAP_PARAM_FILE_EXTENSION,
+    EXTCAP_PARAM_GROUP,
+    EXTCAP_PARAM_PARENT,
+    EXTCAP_PARAM_REQUIRED,
+    EXTCAP_PARAM_RELOAD,
+    EXTCAP_PARAM_CONFIGURABLE,
+    EXTCAP_PARAM_PREFIX,
+    EXTCAP_PARAM_SAVE,
+    EXTCAP_PARAM_VALIDATION,
+    EXTCAP_PARAM_VERSION,
+    EXTCAP_PARAM_HELP,
+    EXTCAP_PARAM_CONTROL,
+    EXTCAP_PARAM_ROLE
+} extcap_param_type;
+
+#define ENUM_KEY(s) GUINT_TO_POINTER((unsigned)s)
+
+/* Values for a given sentence; values are all stored as a call
+ * and a value string, or a valid range, so we only need to store
+ * those and repeat them */
+typedef struct _extcap_value {
+    int arg_num;
+
+    char *call;
+    char *display;
+    bool enabled;
+    bool is_default;
+    char *parent;
+} extcap_value;
+
+/* Complex-ish struct for storing complex values */
+typedef struct _extcap_complex {
+    extcap_arg_type complex_type;
+    char * _val;
+} extcap_complex;
+
+/* required=sufficient has a special meaning */
+#define EXTCAP_PARAM_REQUIRED_SUFFICIENT "sufficient"
+
+/* An argument sentence and accompanying options */
+typedef struct _extcap_arg {
+    int arg_num;
+
+    char *call;
+    char *display;
+    char *tooltip;
+    char *placeholder;
+
+    char * fileextension;
+    bool fileexists;
+
+    bool is_required;
+    bool is_sufficient;
+    bool save;
+
+    bool reload;
+
+    bool configurable;
+    char * prefix;
+
+    char * regexp;
+
+    char * group;
+
+    extcap_arg_type arg_type;
+
+    extcap_complex *range_start;
+    extcap_complex *range_end;
+    extcap_complex *default_complex;
+
+    char ** pref_valptr; /**< A copy of the pointer containing the current preference value. */
+    char * device_name;
+
+    GList * values;
+} extcap_arg;
+
+typedef struct _extcap_interface {
+    char * call;
+    char * display;
+    char * version;
+    char * help;
+    char * extcap_path;
+
+    extcap_sentence_type if_type;
+} extcap_interface;
+
+typedef struct _extcap_dlt {
+    int number;
+    char *name;
+    char *display;
+} extcap_dlt;
+
+typedef struct _extcap_token_sentence {
+    char *sentence;
+
+    GHashTable *param_list;
+} extcap_token_sentence;
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/* Parse a string into a complex type */
+extcap_complex *extcap_parse_complex(extcap_arg_type complex_type,
+        const char *data);
+
+/* Free a complex */
+void extcap_free_complex(extcap_complex *comp);
+
+/* Print a complex value out for debug */
+void extcap_printf_complex(extcap_complex *comp);
+
+/*
+ * Return a string representation of a complex type
+ * Caller is responsible for calling g_free on the returned string
+ */
+char *extcap_get_complex_as_string(extcap_complex *comp);
+
+int extcap_complex_get_int(extcap_complex *comp);
+unsigned extcap_complex_get_uint(extcap_complex *comp);
+int64_t extcap_complex_get_long(extcap_complex *comp);
+double extcap_complex_get_double(extcap_complex *comp);
+bool extcap_complex_get_bool(extcap_complex *comp);
+char *extcap_complex_get_string(extcap_complex *comp);
+
+/* compares the default value of an element with a given parameter */
+bool extcap_compare_is_default(extcap_arg *element, extcap_complex *test);
+
+
+/* Free a single argument */
+void extcap_free_arg(extcap_arg *a);
+
+/* Free entire toolbar control structure */
+void extcap_free_toolbar_control(iface_toolbar_control *control);
+
+/* Free an entire arg list */
+void extcap_free_arg_list(GList *a);
+
+
+/** Parser for extcap data */
+
+/* Parse all sentences for args and values */
+GList * extcap_parse_args(char *output);
+
+/* Parse all sentences for values */
+GList * extcap_parse_values(char *output);
+
+/* Parse all sentences for interfaces */
+GList * extcap_parse_interfaces(char *output, GList **control_items);
+
+/* Parse all sentences for DLTs */
+GList * extcap_parse_dlts(char *output);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif
+
+/*
+ * Editor modelines  -  https://www.wireshark.org/tools/modelines.html
+ *
+ * Local variables:
+ * c-basic-offset: 4
+ * tab-width: 8
+ * indent-tabs-mode: nil
+ * End:
+ *
+ * vi: set shiftwidth=4 tabstop=8 expandtab:
+ * :indentSize=4:tabSize=8:noTabs=true:
+ */
+2026-06-16 14:06:40,971 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 10
+2026-06-16 14:06:40,971 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:06:45,181 - root - [INFO] - logging.py:31 - log_time - Took 4.21s
+2026-06-16 14:06:45,184 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -rn "g_strsplit" /workspa' (timeout=120)
+2026-06-16 14:06:45,184 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -rn "g_strsplit" /workspace/wireshark/ | head -3\n'
+2026-06-16 14:06:48,215 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /workspace/wireshark/dumpcap.c:5094:    options = g_strsplit_set(opt, ",", 4);
+/workspace/wireshark/editcap.c:1539:            char **splitted = g_strsplit(ws_optarg, ",", 2);
+/workspace/wireshark/epan/color_filters.c:103:    fg_colors = g_strsplit(prefs.gui_colorized_fg, ",", -1);
+2026-06-16 14:06:48,216 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 11
+2026-06-16 14:06:48,216 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:06:50,770 - root - [INFO] - logging.py:31 - log_time - Took 2.55s
+2026-06-16 14:06:50,775 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'submit_prediction \'{"function_' (timeout=120)
+2026-06-16 14:06:50,775 - root - [DEBUG] - des_container.py:308 - command - DES command: 'submit_prediction \'{"function_name": "extcap_tokenize_sentences", "file_path": "'
+2026-06-16 14:07:08,300 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: !!submit!!
+{"function_name": "extcap_tokenize_sentences", "file_path": "extcap_parser.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function performs a simple linear scan of input lines using g_strsplit which always produces a finite, NULL-terminated array, ensuring the while loop will always terminate."}
+SUBMISSION_COMPLETE
+2026-06-16 14:07:08,300 - root - [INFO] - forager_base.py:408 - start_trajectory - Success regex matched in environment output: SUBMISSION_COMPLETE
+2026-06-16 14:07:08,300 - root - [INFO] - forager_locate_function_code_and_dep.py:51 - extract_submission - Found !!submit!! marker in environ item
+2026-06-16 14:07:08,300 - root - [DEBUG] - forager_locate_function_code_and_dep.py:52 - extract_submission - Item output: !!submit!!
+{"function_name": "extcap_tokenize_sentences", "file_path": "extcap_parser.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function performs a simple linear scan of input lines using g_strsplit which always produces a finite, NULL-terminated array, ensuring the while loop will always terminate."}
+SUBMISSION_COMPLETE
+2026-06-16 14:07:08,301 - root - [INFO] - forager_locate_function_code_and_dep.py:80 - extract_submission - Matched JSON string: {"function_name": "extcap_tokenize_sentences", "file_path": "extcap_parser.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function performs a simple linear scan of input lines using g_strsplit which always produces a finite, NULL-terminated array, ensuring the while loop will always terminate."}
+2026-06-16 14:07:08,301 - root - [INFO] - forager_locate_function_code_and_dep.py:82 - extract_submission - Extracted submission from environ: {'function_name': 'extcap_tokenize_sentences', 'file_path': 'extcap_parser.c', 'prediction': 'T', 'p_non_terminating': 0, 'confidence': 'high', 'reason': 'Function performs a simple linear scan of input lines using g_strsplit which always produces a finite, NULL-terminated array, ensuring the while loop will always terminate.'}
+2026-06-16 14:07:08,301 - root - [INFO] - forager_locate_function_code_and_dep.py:162 - process_run - Submission validation: {'correct_function_name': True, 'correct_path': True, 'provided_prediction': True}
+2026-06-16 14:07:08,301 - root - [INFO] - forager_locate_function_code_and_dep.py:326 - run - All validation checks passed
+2026-06-16 14:07:08,301 - root - [INFO] - forager_locate_function_code_and_dep.py:347 - run - Run completed with outcome: success
+2026-06-16 14:07:08,306 - root - [INFO] - des_container.py:428 - shutdown - Shutting down DES container a3511eb3dc419719e8c4828d9303bd0f61a9e01dfd4baad6b14ad7fa83b25217
+2026-06-16 14:07:08,306 - root - [INFO] - des_container.py:576 - _heartbeat_loop - VMVM heartbeat thread exiting
+2026-06-16 14:07:32,333 - root - [INFO] - des_container.py:228 - release_vm - Releasing VMVM session {"vmvm_session":{"id":"019ed0bb-2935-7990-b00c-e3dc05757fb0","ipAddr":"2803:6080:2138:3164:da43:b315:500:0","vaagentPort":32263,"vmPort":19554,"vaagentHostname":"twshared61297.33.atn1.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|16121806539984002760|0|faas.D04ED958E8F4877673F00FFF68F28796|7472647059104206154","tw_task_handle":"tsp_atn/faas/workerpool_crackerjack_prod_bgm_ces_tier_1/87","region_shortname":"atn"},"auth_token":{"paseto":"v4.public.eyJleHAiOiIyMDI2LTA2LTE3VDEzOjU5OjUwWiIsImlhdCI6IjIwMjYtMDYtMTZUMTM6NTk6NTAuOTgyMzYyOTg4KzAwOjAwIiwibmJmIjoiMjAyNi0wNi0xNlQxMzo1OTo1MFoiLCJzdWIiOiIwMTllZDBiYi0yOTM1LTc5OTAtYjAwYy1lM2RjMDU3NTdmYjAifS726VqDb5SMJlmxjW-u3aUpTQQJQ4UFT2ar_SjN_IjksL4jZ-uwkYYwM_S1bxxioZfRHf3oT2Pih35xoOuqUgU.eyJ0ZW5hbnQiOiJhc3luY18yMzQ3NjQxIiwiaXAiOiIyODAzOjYwODA6MjEzODozMTY0OmRhNDM6YjMxNTo1MDA6MCIsInBvcnQiOiIxOTU1NCIsImZhYXNfaW52b2NhdGlvbl9pZCI6IjR8Z2xvYmFsfGFzeW5jXzIzNDc2NDF8ZGVzX2dlbmVyYWxfdGllcl9wcm9kfDE2MTIxODA2NTM5OTg0MDAyNzYwfDB8ZmFhcy5EMDRFRDk1OEU4RjQ4Nzc2NzNGMDBGRkY2OEYyODc5Nnw3NDcyNjQ3MDU5MTA0MjA2MTU0In0"}}
+2026-06-16 14:07:51,346 - root - [INFO] - des_container.py:238 - release_vm - VMVM session released
+2026-06-16 14:07:51,347 - root - [INFO] - run.py:224 - repo_task - Finishing repo: wireshark_9c16d833_extcap_parser_c_extcap_tokenize_sentences_1

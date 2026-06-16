@@ -1,0 +1,611 @@
+2026-06-16 13:43:26,497 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=UNKNOWN_NAME
+2026-06-16 13:43:26,497 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=run
+2026-06-16 13:43:26,682 - root - [INFO] - run.py:148 - repo_task - Model: VllmModel
+2026-06-16 13:43:26,710 - root - [INFO] - run.py:158 - repo_task - Agent: ForagerAgentLocateFunctionCodeAndDep
+2026-06-16 13:43:26,710 - root - [INFO] - run.py:172 - repo_task - Using VMVMBackend, image=vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest
+2026-06-16 13:43:26,710 - root - [INFO] - des_container.py:76 - lease_vm - Leasing VM with client-id=wireshark_9c16d833_epan_dissectors_packet-ssh_c_ssh_choose_enc_mac_1, ttl_secs=500
+2026-06-16 13:43:29,806 - root - [INFO] - des_container.py:87 - lease_vm - VM leased in 3.10s: session_id={"vmvm_session":{"id":"019ed0ac-1a74-7b81-b81f-efd1af585356","ipAddr":"2803:6082:88a0:a2aa:7b8a:ca17:500:0","vaagentPort":26508,"vmPort":14471,"vaagentHostname":"twshared0512.02.zhu2.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|16121806539984002760|0|faas.0A4889FB598A406BFB7941EBA55ADFAA|7472644559912662570","tw_task_handle":"tsp_zhu/faas/workerpool_crackerjack_prod_bgm_ces_tier_1/50","region_shortname":"zhu"},"auth_token":{"paseto":"v4.public.eyJleHAiOiIyMDI2LTA2LTE3VDEzOjQzOjI3WiIsIm5iZiI6IjIwMjYtMDYtMTZUMTM6NDM6MjdaIiwiaWF0IjoiMjAyNi0wNi0xNlQxMzo0MzoyNy42MzA4NDMwNjYrMDA6MDAiLCJzdWIiOiIwMTllZDBhYy0xYTc0LTdiODEtYjgxZi1lZmQxYWY1ODUzNTYifWs-5wRiSl1jOprgacssnakJ9qWNpScqwxhtaqsZJkxvSTgMDlFjytNRRWFFsdFknb6buSYmX9eDgRkv-p3fZQ8.eyJ0ZW5hbnQiOiJhc3luY18yMzQ3NjQxIiwiZmFhc19pbnZvY2F0aW9uX2lkIjoiNHxnbG9iYWx8YXN5bmNfMjM0NzY0MXxkZXNfZ2VuZXJhbF90aWVyX3Byb2R8MTYxMjE4MDY1Mzk5ODQwMDI3NjB8MHxmYWFzLjBBNDg4OUZCNTk4QTQwNkJGQjc5NDFFQkE1NUFERkFBfDc0NzI2NDQ1NTk5MTI2NjI1NzAiLCJwb3J0IjoiMTQ0NzEiLCJpcCI6IjI4MDM6NjA4Mjo4OGEwOmEyYWE6N2I4YTpjYTE3OjUwMDowIn0"}}
+2026-06-16 13:43:29,806 - root - [INFO] - des_container.py:195 - load_image - Pulling image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest on VMVM
+2026-06-16 13:45:32,707 - root - [INFO] - des_container.py:203 - load_image - Image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest pulled successfully
+2026-06-16 13:45:34,165 - root - [INFO] - des_container.py:221 - run_container - Container started: 6dd40706561aa1c6ff81953b89e0bdc24808f50a708db51724e4a833c686721d
+2026-06-16 13:45:34,165 - root - [INFO] - des_container.py:565 - _heartbeat_loop - VMVM heartbeat thread started
+2026-06-16 13:45:34,172 - root - [INFO] - forager_locate_function_code_and_dep.py:294 - run - Starting analysis for ssh_choose_enc_mac in epan/dissectors/packet-ssh.c
+2026-06-16 13:45:34,172 - root - [INFO] - forager_locate_function_code_and_dep.py:208 - prepare_cpp_container - ========== Preparing C++ container ==========
+2026-06-16 13:45:34,172 - root - [DEBUG] - forager_locate_function_code_and_dep.py:211 - prepare_cpp_container - Setting up env variables
+2026-06-16 13:45:34,172 - root - [DEBUG] - des_container.py:308 - command - DES command: 'export WINDOW=100 && export OVERLAP=2 && export CURRENT_LINE=0 && export CURRENT'
+2026-06-16 13:45:51,634 - root - [DEBUG] - forager_locate_function_code_and_dep.py:220 - prepare_cpp_container - Importing agent tools in container
+2026-06-16 13:45:53,031 - root - [DEBUG] - des_container.py:385 - put - DES put: 6243 bytes to /opt/tools/defaults.sh
+2026-06-16 13:45:58,557 - root - [DEBUG] - des_container.py:308 - command - DES command: 'source /opt/tools/defaults.sh'
+2026-06-16 13:46:01,282 - root - [DEBUG] - des_container.py:385 - put - DES put: 5735 bytes to /opt/tools/search.sh
+2026-06-16 13:46:07,018 - root - [DEBUG] - des_container.py:308 - command - DES command: 'source /opt/tools/search.sh'
+2026-06-16 13:46:26,261 - root - [DEBUG] - des_container.py:308 - command - DES command: 'export PATH=/opt/tools:$PATH'
+2026-06-16 13:46:43,639 - root - [INFO] - forager_locate_function_code_and_dep.py:225 - prepare_cpp_container - Uploading submit_prediction command
+2026-06-16 13:46:43,639 - root - [DEBUG] - des_container.py:385 - put - DES put: 74 bytes to /usr/local/bin/submit_prediction
+2026-06-16 13:46:48,974 - root - [DEBUG] - des_container.py:308 - command - DES command: 'chmod +x /usr/local/bin/submit_prediction'
+2026-06-16 13:46:50,514 - root - [DEBUG] - des_container.py:308 - command - DES command: "which submit_prediction || echo 'Not in PATH'"
+2026-06-16 13:46:51,891 - root - [INFO] - forager_locate_function_code_and_dep.py:237 - prepare_cpp_container - Script in PATH: /usr/local/bin/submit_prediction
+2026-06-16 13:46:51,891 - root - [DEBUG] - des_container.py:308 - command - DES command: "export GIT_AUTHOR_NAME='CI Bot' && export GIT_AUTHOR_EMAIL='ci-bot@yourdomain.co"
+2026-06-16 13:46:53,489 - root - [DEBUG] - forager_locate_function_code_and_dep.py:256 - prepare_cpp_container - Creating /workspace directory
+2026-06-16 13:46:53,489 - root - [DEBUG] - des_container.py:308 - command - DES command: 'mkdir -p /workspace'
+2026-06-16 13:46:55,230 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cd /workspace'
+2026-06-16 13:46:56,751 - root - [DEBUG] - forager_locate_function_code_and_dep.py:196 - _init_prompt - Task prompt:
+Your task is to predict whether the function `ssh_choose_enc_mac` in the C++ file `epan/dissectors/packet-ssh.c` will:
+- **Terminate** for all inputs, OR
+- **Diverge** for some inputs (enter a non-terminating loop)
+
+**Important:** This is a **read-only code analysis task**. You may only use shell commands to view files. Do not execute any C++ code or modify any files. Only use commands like `cat`, `grep`, `find`, `ls`, `cd`, `head`, `tail`, `git`, etc.
+
+## STEP 1: Clone the Repository
+
+First, clone the repository and checkout the specific commit:
+```bash
+git clone https://github.com/wireshark/wireshark /workspace/wireshark && cd /workspace/wireshark && git checkout 9c16d833f0e23e7464ac995acb61a8b4e3c51d59
+```
+
+## STEP 2: Examine the Function
+
+Navigate to the repository and examine the function using read-only commands. Examples:
+```bash
+cd /workspace/wireshark
+cat epan/dissectors/packet-ssh.c                              # View the entire file
+grep -n "ssh_choose_enc_mac" epan/dissectors/packet-ssh.c    # Find the function's line number
+grep -A 50 "ssh_choose_enc_mac" epan/dissectors/packet-ssh.c # View the function plus 50 lines after (of course you can view more).
+```
+
+## STEP 3: Analyze Dependencies
+Important: The function may call other functions, use external types, or depend on macros defined elsewhere. You must examine these dependencies to fully understand the code's behavior.
+- Find and read helper functions called within the target function
+- Examine header files for type definitions and macros
+- Check struct/class definitions to understand data types
+- Trace function pointers to their implementations
+
+Finding dependencies:
+```bash
+grep -rn "function_name" /workspace/wireshark/
+find . -name "*.h" | xargs grep "TypeName"
+cat path/to/header.h
+```
+
+## STEP 4: Classify the Function
+**"T" (Terminates)** - Function terminates for all possible inputs:
+- No blocking synchronization calls. All loops have reachable exit conditions. Loop variables progress correctly toward exit. Proper bounds checking and error handling
+**"NT" (Non-Termination)** - Designed to block or loop indefinitely (can be intentional by the user or a bug). Examples:
+- Thread synchronization primitives. Locks. Condition variables. Event loops or server loops that run until external signal.
+Worker thread functions waiting for tasks or termination signals.
+- Loop variable never modified or modified in wrong direction. `while(1)` or `for(;;)` without reachable `break` or `return`.
+Unbounded I/O operations without proper termination checks. Missing loop increment/decrement statements.
+
+## STEP 5: Submit Your Prediction
+
+When ready, submit your classification:
+```bash
+submit_prediction '{"function_name": "ssh_choose_enc_mac", "file_path": "epan/dissectors/packet-ssh.c", "prediction": "<T|NT>", "p_non_terminating": <0-100>, "confidence": "<high|medium|low>", "reason": "<one concise sentence>"}'
+```
+
+**Field definitions:**
+- `prediction`: "T" if the function terminates for all inputs, "NT" if it can loop/block indefinitely
+- `p_non_terminating`: integer 0–100 — your estimated probability (in %) that the function is non-terminating
+- `confidence`: "high" if the evidence is clear and unambiguous, "medium" if there is some uncertainty, "low" if the code is hard to fully trace or the behavior is unclear
+- `reason`: one concise sentence explaining the key factor driving your prediction
+
+**Guidelines:**
+- Execute one command per response in triple backticks
+- Read all relevant source and header files before making a prediction
+- Trace data flow to understand where loop bounds and conditions come from
+- Consider edge cases: zero values, type overflows, null pointers, EOF conditions
+- Only submit your prediction when you have thoroughly analyzed the code
+- Begin by cloning the repository
+2026-06-16 13:46:56,751 - root - [INFO] - forager_base.py:342 - start_trajectory - =========== Starting new trajectory ==========
+2026-06-16 13:46:56,751 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 1
+2026-06-16 13:46:56,751 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:46:58,073 - root - [INFO] - logging.py:31 - log_time - Took 1.32s
+2026-06-16 13:46:58,077 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'git clone https://github.com/w' (timeout=120)
+2026-06-16 13:46:58,078 - root - [DEBUG] - des_container.py:308 - command - DES command: 'git clone https://github.com/wireshark/wireshark /workspace/wireshark && cd /wor'
+2026-06-16 13:47:35,812 - root - [DEBUG] - des_container.py:572 - _heartbeat_loop - VMVM heartbeat sent
+2026-06-16 13:49:12,859 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 13:49:12,859 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 2
+2026-06-16 13:49:12,859 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:49:13,075 - root - [INFO] - logging.py:31 - log_time - Took 0.22s
+2026-06-16 13:49:13,079 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cd /workspace/wireshark\n' (timeout=120)
+2026-06-16 13:49:13,079 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cd /workspace/wireshark\n'
+2026-06-16 13:49:14,667 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 13:49:14,667 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 3
+2026-06-16 13:49:14,667 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:49:14,933 - root - [INFO] - logging.py:31 - log_time - Took 0.27s
+2026-06-16 13:49:14,937 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -n "ssh_choose_enc_mac" e' (timeout=120)
+2026-06-16 13:49:14,937 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -n "ssh_choose_enc_mac" epan/dissectors/packet-ssh.c\n'
+2026-06-16 13:49:16,265 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 942:static void ssh_choose_enc_mac(struct ssh_flow_data *global_data);
+1768:        ssh_choose_enc_mac(global_data);
+1820:            ssh_choose_enc_mac(global_data);
+1882:        ssh_choose_enc_mac(global_data);
+2094:        ssh_choose_enc_mac(global_data);
+3454:ssh_choose_enc_mac(struct ssh_flow_data *global_data)
+2026-06-16 13:49:16,265 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 4
+2026-06-16 13:49:16,265 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:49:16,768 - root - [INFO] - logging.py:31 - log_time - Took 0.50s
+2026-06-16 13:49:16,771 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -A 100 "ssh_choose_enc_ma' (timeout=120)
+2026-06-16 13:49:16,772 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -A 100 "ssh_choose_enc_mac(struct ssh_flow_data *global_data)" epan/dissect'
+2026-06-16 13:49:34,349 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 13:49:34,349 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 5
+2026-06-16 13:49:34,349 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:49:34,996 - root - [INFO] - logging.py:31 - log_time - Took 0.65s
+2026-06-16 13:49:34,999 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: "sed -n '3454,3550p' epan/disse" (timeout=120)
+2026-06-16 13:49:34,999 - root - [DEBUG] - des_container.py:308 - command - DES command: "sed -n '3454,3550p' epan/dissectors/packet-ssh.c\n"
+2026-06-16 13:49:36,465 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: ssh_choose_enc_mac(struct ssh_flow_data *global_data)
+{
+    for(int peer_cnt=0;peer_cnt<2;peer_cnt++){
+        struct ssh_peer_data * peer_data = &global_data->peer_data[peer_cnt];
+        ssh_choose_algo(global_data->peer_data[CLIENT_PEER_DATA].enc_proposals[peer_cnt],
+                        global_data->peer_data[SERVER_PEER_DATA].enc_proposals[peer_cnt],
+                        &peer_data->enc);
+        /* some ciphers have their own MAC so the "negotiated" one is meaningless */
+        if(peer_data->enc && (0 == strcmp(peer_data->enc, "aes128-gcm@openssh.com") ||
+                              0 == strcmp(peer_data->enc, "aes256-gcm@openssh.com"))) {
+            peer_data->mac = wmem_strdup(wmem_file_scope(), (const char *)"<implicit>");
+            peer_data->mac_length = 16;
+            peer_data->length_is_plaintext = 1;
+        }
+        else if(peer_data->enc && 0 == strcmp(peer_data->enc, "chacha20-poly1305@openssh.com")) {
+            peer_data->mac = wmem_strdup(wmem_file_scope(), (const char *)"<implicit>");
+            peer_data->mac_length = 16;
+        }
+        else {
+            ssh_choose_algo(global_data->peer_data[CLIENT_PEER_DATA].mac_proposals[peer_cnt],
+                            global_data->peer_data[SERVER_PEER_DATA].mac_proposals[peer_cnt],
+                            &peer_data->mac);
+            ssh_set_mac_length(peer_data);
+        }
+        ssh_choose_algo(global_data->peer_data[CLIENT_PEER_DATA].comp_proposals[peer_cnt],
+                        global_data->peer_data[SERVER_PEER_DATA].comp_proposals[peer_cnt],
+                        &peer_data->comp);
+    }
+
+    ssh_decryption_set_cipher_id(&global_data->peer_data[CLIENT_PEER_DATA]);
+    ssh_decryption_set_mac_id(&global_data->peer_data[CLIENT_PEER_DATA]);
+    ssh_decryption_set_cipher_id(&global_data->peer_data[SERVER_PEER_DATA]);
+    ssh_decryption_set_mac_id(&global_data->peer_data[SERVER_PEER_DATA]);
+}
+
+static void
+ssh_decryption_set_cipher_id(struct ssh_peer_data *peer)
+{
+    char *cipher_name = peer->enc;
+
+    if (!cipher_name) {
+        peer->cipher = NULL;
+        ws_debug("ERROR: cipher_name is NULL");
+    } else if (0 == strcmp(cipher_name, "chacha20-poly1305@openssh.com")) { // add chacha20-poly1305@openssh.com
+        peer->cipher_id = GCRY_CIPHER_CHACHA20;
+    } else if (0 == strcmp(cipher_name, "chacha20-poly1305")) { // add chacha20-poly1305
+        peer->cipher_id = GCRY_CIPHER_CHACHA20;
+    } else if (0 == strcmp(cipher_name, "aes128-gcm@openssh.com")) {
+        peer->cipher_id = CIPHER_AES128_GCM;
+    } else if (0 == strcmp(cipher_name, "aes128-gcm")) {
+        peer->cipher_id = CIPHER_AES128_GCM;
+    } else if (0 == strcmp(cipher_name, "aes256-gcm@openssh.com")) {
+        peer->cipher_id = CIPHER_AES256_GCM;
+    } else if (0 == strcmp(cipher_name, "aes256-gcm")) {
+        peer->cipher_id = CIPHER_AES256_GCM;
+    } else if (0 == strcmp(cipher_name, "aes128-cbc")) {
+        peer->cipher_id = CIPHER_AES128_CBC;
+    } else if (0 == strcmp(cipher_name, "aes192-cbc")) {
+        peer->cipher_id = CIPHER_AES192_CBC;
+    } else if (0 == strcmp(cipher_name, "aes256-cbc")) {
+        peer->cipher_id = CIPHER_AES256_CBC;
+    } else if (0 == strcmp(cipher_name, "aes128-ctr")) {
+        peer->cipher_id = CIPHER_AES128_CTR;
+    } else if (0 == strcmp(cipher_name, "aes192-ctr")) {
+        peer->cipher_id = CIPHER_AES192_CTR;
+    } else if (0 == strcmp(cipher_name, "aes256-ctr")) {
+        peer->cipher_id = CIPHER_AES256_CTR;
+    } else if (0 == strcmp(cipher_name, "none")) {
+        peer->cipher_id = CIPHER_NULL;
+        peer->length_is_plaintext = 1;
+    } else {
+        peer->cipher = NULL;
+        ws_debug("decryption not supported: %s", cipher_name);
+    }
+}
+
+static void
+ssh_decryption_set_mac_id(struct ssh_peer_data *peer)
+{
+    char *mac_name = peer->mac;
+
+    if (!mac_name) {
+        peer->mac = NULL;
+        ws_debug("ERROR: mac_name is NULL");
+    } else if (0 == strcmp(mac_name, "hmac-sha2-256")) {
+        peer->mac_id = CIPHER_MAC_SHA2_256;
+    } else {
+        ws_debug("decryption MAC not supported: %s", mac_name);
+    }
+}
+
+static bool
+gcry_cipher_destroy_cb(wmem_allocator_t *allocator _U_, wmem_cb_event_t event _U_, void *user_data)
+{
+    gcry_cipher_hd_t hd = (gcry_cipher_hd_t)user_data;
+
+    gcry_cipher_close(hd);
+2026-06-16 13:49:36,465 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 6
+2026-06-16 13:49:36,465 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:49:37,142 - root - [INFO] - logging.py:31 - log_time - Took 0.68s
+2026-06-16 13:49:37,150 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -n "ssh_choose_algo\\|ssh_' (timeout=120)
+2026-06-16 13:49:37,150 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -n "ssh_choose_algo\\|ssh_set_mac_length" epan/dissectors/packet-ssh.c\n'
+2026-06-16 13:49:37,277 - root - [DEBUG] - des_container.py:572 - _heartbeat_loop - VMVM heartbeat sent
+2026-06-16 13:49:38,546 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 915:static bool ssh_choose_algo(char *client, char *server, char **result);
+916:static void ssh_set_mac_length(struct ssh_peer_data *peer_data);
+2310:ssh_set_mac_length(struct ssh_peer_data *peer_data)
+2411:ssh_choose_algo(char *client, char *server, char **result)
+2556:        global_data->ext_kex_strict = ssh_choose_algo(
+3458:        ssh_choose_algo(global_data->peer_data[CLIENT_PEER_DATA].enc_proposals[peer_cnt],
+3473:            ssh_choose_algo(global_data->peer_data[CLIENT_PEER_DATA].mac_proposals[peer_cnt],
+3476:            ssh_set_mac_length(peer_data);
+3478:        ssh_choose_algo(global_data->peer_data[CLIENT_PEER_DATA].comp_proposals[peer_cnt],
+2026-06-16 13:49:38,546 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 7
+2026-06-16 13:49:38,546 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:49:39,054 - root - [INFO] - logging.py:31 - log_time - Took 0.51s
+2026-06-16 13:49:39,061 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: "sed -n '2411,2450p' epan/disse" (timeout=120)
+2026-06-16 13:49:39,061 - root - [DEBUG] - des_container.py:308 - command - DES command: "sed -n '2411,2450p' epan/dissectors/packet-ssh.c\n"
+2026-06-16 13:49:56,659 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: ssh_choose_algo(char *client, char *server, char **result)
+{
+    char **server_strings = NULL;
+    char **client_strings = NULL;
+    char **step;
+    GSList *server_list = NULL;
+
+    static const char* client_strict = "kex-strict-c-v00@openssh.com";
+    static const char* server_strict = "kex-strict-s-v00@openssh.com";
+    bool kex_strict = false;
+
+    if (!client || !server || !result || *result)
+        return false;
+
+    server_strings = g_strsplit(server, ",", 0);
+    for (step = server_strings; *step; step++) {
+        server_list = g_slist_append(server_list, *step);
+    }
+
+    client_strings = g_strsplit(client, ",", 0);
+    for (step = client_strings; *step; step++) {
+        GSList *agreed;
+        if ((agreed = g_slist_find_custom(server_list, *step, ssh_gslist_compare_strings))) {
+            *result = wmem_strdup(wmem_file_scope(), (const char *)agreed->data);
+            break;
+        }
+    }
+
+    /* Check for the OpenSSH strict key exchange extension designed to
+     * mitigate the Terrapin attack by resetting the packet sequence
+     * number to zero after a SSH2_MSG_NEWKEYS message.
+     * https://www.openssh.com/txt/release-9.6
+     * Also see PROTOCOL in the OpenSSH source distribution.
+     *
+     * OpenSSH says this is activated "when an endpoint that supports this
+     * extension observes this algorithm name in a peer's KEXINIT packet".
+     * We'll have to assume that any endpoint that supports this also
+     * indicates support for it in its own first SSH2_MSG_KEXINIT.
+     */
+    if (g_strv_contains((const char* const*)client_strings, client_strict) &&
+2026-06-16 13:49:56,659 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 8
+2026-06-16 13:49:56,659 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:49:57,194 - root - [INFO] - logging.py:31 - log_time - Took 0.53s
+2026-06-16 13:49:57,197 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: "sed -n '2450,2480p' epan/disse" (timeout=120)
+2026-06-16 13:49:57,197 - root - [DEBUG] - des_container.py:308 - command - DES command: "sed -n '2450,2480p' epan/dissectors/packet-ssh.c\n"
+2026-06-16 13:50:14,848 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response:     if (g_strv_contains((const char* const*)client_strings, client_strict) &&
+        g_strv_contains((const char* const*)server_strings, server_strict)) {
+
+        kex_strict = true;
+    }
+
+    g_strfreev(client_strings);
+    g_slist_free(server_list);
+    g_strfreev(server_strings);
+
+    return kex_strict;
+}
+
+static int
+ssh_dissect_key_init(tvbuff_t *tvb, packet_info *pinfo, int offset,
+        proto_tree *tree, int is_response, struct ssh_flow_data *global_data)
+{
+    int start_offset = offset;
+    int payload_length;
+    wmem_strbuf_t *hassh_algo;
+    char   *hassh;
+
+    proto_item *tf, *ti;
+    proto_tree *key_init_tree;
+
+    struct ssh_peer_data *peer_data = &global_data->peer_data[is_response];
+
+    key_init_tree = proto_tree_add_subtree(tree, tvb, offset, -1, ett_key_init, &tf, "Algorithms");
+    if (!PINFO_FD_VISITED(pinfo)) {
+        peer_data->bn_cookie = ssh_kex_make_bignum(tvb_get_ptr(tvb, offset, 16), 16);
+    }
+2026-06-16 13:50:14,848 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 9
+2026-06-16 13:50:14,848 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:50:15,314 - root - [INFO] - logging.py:31 - log_time - Took 0.47s
+2026-06-16 13:50:15,318 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: "sed -n '2310,2340p' epan/disse" (timeout=120)
+2026-06-16 13:50:15,318 - root - [DEBUG] - des_container.py:308 - command - DES command: "sed -n '2310,2340p' epan/dissectors/packet-ssh.c\n"
+2026-06-16 13:50:16,661 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: ssh_set_mac_length(struct ssh_peer_data *peer_data)
+{
+    char *size_str;
+    uint32_t size = 0;
+    char *mac_name = peer_data->mac;
+    char *strip;
+
+    if (!mac_name)
+        return;
+
+    /* wmem_strdup() never returns NULL */
+    mac_name = wmem_strdup(NULL, (const char *)mac_name);
+
+    /* strip trailing "-etm@openssh.com" or "@openssh.com" */
+    strip = strstr(mac_name, "-etm@openssh.com");
+    if (strip) {
+        peer_data->length_is_plaintext = 1;
+        *strip = '\0';
+    }
+    else {
+        strip = strstr(mac_name, "@openssh.com");
+        if (strip) *strip = '\0';
+    }
+
+    size_str = g_strrstr(mac_name, "-");
+    if (size_str && ws_strtou32(size_str + 1, NULL, &size) && size > 0 && size % 8 == 0) {
+        peer_data->mac_length = size / 8;
+    }
+    else if (strcmp(mac_name, "hmac-sha1") == 0) {
+        peer_data->mac_length = 20;
+    }
+2026-06-16 13:50:16,661 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 10
+2026-06-16 13:50:16,661 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:50:17,143 - root - [INFO] - logging.py:31 - log_time - Took 0.48s
+2026-06-16 13:50:17,147 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -n "struct ssh_flow_data\\' (timeout=120)
+2026-06-16 13:50:17,147 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -n "struct ssh_flow_data\\|struct ssh_peer_data" epan/dissectors/packet-ssh.'
+2026-06-16 13:50:34,760 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 141:struct ssh_peer_data {
+188:    struct ssh_flow_data * global_data;
+191:struct ssh_flow_data {
+201:            struct ssh_flow_data *global_data);
+206:    struct ssh_peer_data peer_data[2];
+872:        struct ssh_flow_data *global_data);
+876:        struct ssh_flow_data *global_data,
+880:        struct ssh_flow_data *global_data,
+884:        struct ssh_flow_data *global_data,
+889:        struct ssh_flow_data *global_data);
+892:        struct ssh_flow_data *global_data);
+895:        struct ssh_flow_data *global_data);
+898:        struct ssh_flow_data *global_data);
+901:        struct ssh_flow_data *global_data);
+903:ssh_read_e_pq(tvbuff_t *tvb, int offset, struct ssh_flow_data *global_data);
+905:ssh_read_f_pq(tvbuff_t *tvb, int offset, struct ssh_flow_data *global_data);
+907:        struct ssh_flow_data *global_data,
+911:        struct ssh_peer_data *peer_data, int offset, proto_tree *tree);
+913:        struct ssh_peer_data *peer_data,
+916:static void ssh_set_mac_length(struct ssh_peer_data *peer_data);
+917:static void ssh_set_kex_specific_dissector(struct ssh_flow_data *global_data);
+925:        struct ssh_flow_data *global_data);
+927:        struct ssh_flow_data *global_data);
+929:static void ssh_keylog_hash_write_secret(struct ssh_flow_data *global_data, wmem_allocator_t* tmp_allocator);
+937:        struct ssh_flow_data *global_data);
+940:        ssh_bignum *result_key, struct ssh_flow_data *global_data, unsigned we_need);
+942:static void ssh_choose_enc_mac(struct ssh_flow_data *global_data);
+943:static void ssh_decryption_set_cipher_id(struct ssh_peer_data *peer);
+944:static void ssh_decryption_setup_cipher(struct ssh_peer_data *peer,
+946:static void ssh_decryption_set_mac_id(struct ssh_peer_data *peer);
+947:static void ssh_decryption_setup_mac(struct ssh_peer_data *peer,
+952:        struct ssh_peer_data *peer_data, int offset);
+957:        struct ssh_peer_data *peer_data, proto_tree *tree,
+960:        int offset, struct ssh_peer_data *peer_data, proto_item *msg_type_tree, unsigned msg_code);
+962:        int offset, struct ssh_peer_data *peer_data, proto_item *msg_type_tree);
+968:        struct ssh_peer_data *peer_data, int offset, proto_item *msg_type_tree,
+973:        int offset, struct ssh_peer_data *peer_data, proto_item *msg_type_tree, unsigned msg_code);
+979:static void create_channel(struct ssh_peer_data *peer_data, uint32_t recipient_channel, uint32_t sender_channel);
+980:static ssh_channel_info_t* get_channel_info_for_channel(struct ssh_peer_data *peer_data, uint32_t recipient_channel);
+981:static void set_subdissector_for_channel(struct ssh_peer_data *peer_data, uint32_t recipient_channel, const uint8_t* subsystem_name);
+1009:ssh_set_server(struct ssh_flow_data *global_data, address *addr, uint32_t port)
+1016:ssh_packet_from_server(struct ssh_flow_data *session, const packet_info *pinfo)
+1031:ssh_peer_data_from_server(struct ssh_peer_data* peer_data) {
+1047:    struct ssh_flow_data *global_data = NULL;
+1048:    struct ssh_peer_data *peer_data;
+1054:    global_data = (struct ssh_flow_data *)conversation_get_proto_data(conversation, proto_ssh);
+1056:        global_data = wmem_new0(wmem_file_scope(), struct ssh_flow_data);
+1203:        struct ssh_flow_data *global_data,
+1210:    struct ssh_peer_data *peer_data = &global_data->peer_data[is_response];
+1281:        struct ssh_flow_data *global_data,
+1291:    struct ssh_peer_data *peer_data = &global_data->peer_data[is_response];
+1425:                     struct ssh_flow_data *global_data)
+1495:                     struct ssh_flow_data *global_data)
+1555:        struct ssh_flow_data *global_data,
+1569:    struct ssh_peer_data *peer_data = &global_data->peer_data[is_response];
+1740:        struct ssh_flow_data *global_data)
+1782:        struct ssh_flow_data *global_data)
+1855:        struct ssh_flow_data *global_data)
+1896:        struct ssh_flow_data *global_data _U_)
+1978:        struct ssh_flow_data *global_data)
+2164:        struct ssh_peer_data *peer_data, int offset, proto_tree *tree)
+2191:        struct ssh_peer_data *peer_data,
+2230:        struct ssh_flow_data *global_data,
+2310:ssh_set_mac_length(struct ssh_peer_data *peer_data)
+2354:static void ssh_set_kex_specific_dissector(struct ssh_flow_data *global_data)
+2465:        proto_tree *tree, int is_response, struct ssh_flow_data *global_data)
+2475:    struct ssh_peer_data *peer_data = &global_data->peer_data[is_response];
+2862:ssh_read_e(tvbuff_t *tvb, int offset, struct ssh_flow_data *global_data)
+2875:ssh_read_f(tvbuff_t *tvb, int offset, struct ssh_flow_data *global_data)
+2888:ssh_read_e_pq(tvbuff_t *tvb, int offset, struct ssh_flow_data *global_data)
+2913:ssh_read_f_pq(tvbuff_t *tvb, int offset, struct ssh_flow_data *global_data)
+2953:ssh_keylog_hash_write_secret(struct ssh_flow_data *global_data, wmem_allocator_t* tmp_allocator)
+3358:        unsigned hash_length, struct ssh_flow_data *global_data)
+3367:        struct ssh_peer_data * peer_data = &global_data->peer_data[peer_cnt];
+3408:        struct ssh_flow_data *global_data, unsigned we_need)
+3454:ssh_choose_enc_mac(struct ssh_flow_data *global_data)
+3457:        struct ssh_peer_data * peer_data = &global_data->peer_data[peer_cnt];
+3490:ssh_decryption_set_cipher_id(struct ssh_peer_data *peer)
+3531:ssh_decryption_set_mac_id(struct ssh_peer_data *peer)
+3556:ssh_decryption_setup_cipher(struct ssh_peer_data *peer_data,
+3721:ssh_decryption_setup_mac(struct ssh_peer_data *peer_data,
+3803:ssh_calc_mac(struct ssh_peer_data *peer_data, uint32_t seqnr, uint8_t* data, uint32_t datalen, uint8_t* calc_mac)
+3859:        struct ssh_peer_data *peer_data, int offset)
+4280:        struct ssh_peer_data *peer_data, proto_tree *tree,
+4533:        int offset, struct ssh_peer_data *peer_data, proto_item *msg_type_tree, unsigned msg_code)
+4594:        int offset, struct ssh_peer_data *peer_data, proto_item *msg_type_tree)
+5290:        struct ssh_peer_data *peer_data _U_, proto_tree *tree,
+5428:        struct ssh_peer_data *peer_data, int offset, proto_tree *msg_type_tree,
+5618:static struct ssh_peer_data*
+5619:get_other_peer_data(struct ssh_peer_data *peer_data)
+5632:create_channel(struct ssh_peer_data *peer_data, uint32_t recipient_channel, uint32_t sender_channel)
+5654:    struct ssh_peer_data *other_peer_data = get_other_peer_data(peer_data);
+5664:get_channel_info_for_channel(struct ssh_peer_data *peer_data, uint32_t recipient_channel)
+5675:set_subdissector_for_channel(struct ssh_peer_data *peer_data, uint32_t recipient_channel, const uint8_t* subsystem_name)
+5702:        struct ssh_peer_data *other_peer_data = get_other_peer_data(peer_data);
+5758:        int offset, struct ssh_peer_data *peer_data, proto_item *msg_type_tree, unsigned msg_code) {
+2026-06-16 13:50:34,760 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 11
+2026-06-16 13:50:34,760 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:50:35,397 - root - [INFO] - logging.py:31 - log_time - Took 0.64s
+2026-06-16 13:50:35,402 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: "sed -n '141,160p' epan/dissect" (timeout=120)
+2026-06-16 13:50:35,402 - root - [DEBUG] - des_container.py:308 - command - DES command: "sed -n '141,160p' epan/dissectors/packet-ssh.c\n"
+2026-06-16 13:50:37,114 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: struct ssh_peer_data {
+    unsigned   counter;
+
+    uint32_t frame_version_start;
+    uint32_t frame_version_end;
+
+    uint32_t frame_key_start;
+    uint32_t frame_key_end;
+    int frame_key_end_offset;
+
+    char*  kex_proposal;
+
+    /* For all subsequent proposals,
+       [0] is client-to-server and [1] is server-to-client. */
+#define CLIENT_TO_SERVER_PROPOSAL 0
+#define SERVER_TO_CLIENT_PROPOSAL 1
+
+    char*  mac_proposals[2];
+    char*  mac;
+    int     mac_length;
+2026-06-16 13:50:37,115 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 12
+2026-06-16 13:50:37,115 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:50:37,812 - root - [INFO] - logging.py:31 - log_time - Took 0.70s
+2026-06-16 13:50:37,816 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: "sed -n '141,200p' epan/dissect" (timeout=120)
+2026-06-16 13:50:37,816 - root - [DEBUG] - des_container.py:308 - command - DES command: "sed -n '141,200p' epan/dissectors/packet-ssh.c\n"
+2026-06-16 13:50:39,229 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: struct ssh_peer_data {
+    unsigned   counter;
+
+    uint32_t frame_version_start;
+    uint32_t frame_version_end;
+
+    uint32_t frame_key_start;
+    uint32_t frame_key_end;
+    int frame_key_end_offset;
+
+    char*  kex_proposal;
+
+    /* For all subsequent proposals,
+       [0] is client-to-server and [1] is server-to-client. */
+#define CLIENT_TO_SERVER_PROPOSAL 0
+#define SERVER_TO_CLIENT_PROPOSAL 1
+
+    char*  mac_proposals[2];
+    char*  mac;
+    int     mac_length;
+
+    char*  enc_proposals[2];
+    char*  enc;
+
+    char*  comp_proposals[2];
+    char*  comp;
+
+    int     length_is_plaintext;
+
+    // see libgcrypt source, gcrypt.h:gcry_cipher_algos
+    unsigned         cipher_id;
+    unsigned         mac_id;
+    // chacha20 needs two cipher handles
+    gcry_cipher_hd_t cipher, cipher_2;
+    unsigned         sequence_number;
+    ssh_bignum      *bn_cookie;
+    uint8_t          iv[12];
+    uint8_t          hmac_iv[DIGEST_MAX_SIZE];
+    unsigned         hmac_iv_len;
+
+    unsigned int     rekey_trigger_frame;  // for storing new KEXINIT frame value when REKEY
+    bool             rekey_pending;  // trace REKEY
+    uint8_t          plain0[16];
+    bool             plain0_valid;
+
+    wmem_map_t      *channel_info; /**< Map of sender channel numbers to recipient numbers. */
+    wmem_map_t      *channel_handles; /**< Map of recipient channel numbers to subdissector handles. */
+    struct ssh_flow_data * global_data;
+};
+
+struct ssh_flow_data {
+    unsigned   version;
+
+    /* The address/port of the server */
+    address srv_addr;
+    unsigned srv_port;
+
+    char*  kex;
+    int   (*kex_specific_dissector)(uint8_t msg_code, tvbuff_t *tvb,
+            packet_info *pinfo, int offset, proto_tree *tree,
+2026-06-16 13:50:39,229 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 13
+2026-06-16 13:50:39,229 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:50:39,767 - root - [INFO] - logging.py:31 - log_time - Took 0.54s
+2026-06-16 13:50:39,771 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: "sed -n '191,220p' epan/dissect" (timeout=120)
+2026-06-16 13:50:39,771 - root - [DEBUG] - des_container.py:308 - command - DES command: "sed -n '191,220p' epan/dissectors/packet-ssh.c\n"
+2026-06-16 13:50:57,369 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: struct ssh_flow_data {
+    unsigned   version;
+
+    /* The address/port of the server */
+    address srv_addr;
+    unsigned srv_port;
+
+    char*  kex;
+    int   (*kex_specific_dissector)(uint8_t msg_code, tvbuff_t *tvb,
+            packet_info *pinfo, int offset, proto_tree *tree,
+            struct ssh_flow_data *global_data);
+
+    /* [0] is client's, [1] is server's */
+#define CLIENT_PEER_DATA 0
+#define SERVER_PEER_DATA 1
+    struct ssh_peer_data peer_data[2];
+
+    char            *session_id;
+    unsigned        session_id_length;
+    ssh_bignum      *kex_e;
+    ssh_bignum      *kex_f;
+    ssh_bignum      *kex_gex_p;                 // Group modulo
+    ssh_bignum      *kex_gex_g;                 // Group generator
+    ssh_bignum      *secret;
+    wmem_array_t    *kex_client_version;
+    wmem_array_t    *kex_server_version;
+    wmem_array_t    *kex_client_key_exchange_init;
+    wmem_array_t    *kex_server_key_exchange_init;
+    wmem_array_t    *kex_server_host_key_blob;
+    wmem_array_t    *kex_gex_bits_min;
+2026-06-16 13:50:57,369 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 14
+2026-06-16 13:50:57,369 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:51:00,426 - root - [INFO] - logging.py:31 - log_time - Took 3.06s
+2026-06-16 13:51:00,431 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'submit_prediction \'{"function_' (timeout=120)
+2026-06-16 13:51:00,431 - root - [DEBUG] - des_container.py:308 - command - DES command: 'submit_prediction \'{"function_name": "ssh_choose_enc_mac", "file_path": "epan/di'
+2026-06-16 13:51:01,840 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: !!submit!!
+{"function_name": "ssh_choose_enc_mac", "file_path": "epan/dissectors/packet-ssh.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function contains a fixed-size loop that executes exactly twice with well-defined exit conditions and deterministic operations."}
+SUBMISSION_COMPLETE
+2026-06-16 13:51:01,840 - root - [INFO] - forager_base.py:408 - start_trajectory - Success regex matched in environment output: SUBMISSION_COMPLETE
+2026-06-16 13:51:01,840 - root - [INFO] - forager_locate_function_code_and_dep.py:51 - extract_submission - Found !!submit!! marker in environ item
+2026-06-16 13:51:01,840 - root - [DEBUG] - forager_locate_function_code_and_dep.py:52 - extract_submission - Item output: !!submit!!
+{"function_name": "ssh_choose_enc_mac", "file_path": "epan/dissectors/packet-ssh.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function contains a fixed-size loop that executes exactly twice with well-defined exit conditions and deterministic operations."}
+SUBMISSION_COMPLETE
+2026-06-16 13:51:01,841 - root - [INFO] - forager_locate_function_code_and_dep.py:80 - extract_submission - Matched JSON string: {"function_name": "ssh_choose_enc_mac", "file_path": "epan/dissectors/packet-ssh.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function contains a fixed-size loop that executes exactly twice with well-defined exit conditions and deterministic operations."}
+2026-06-16 13:51:01,841 - root - [INFO] - forager_locate_function_code_and_dep.py:82 - extract_submission - Extracted submission from environ: {'function_name': 'ssh_choose_enc_mac', 'file_path': 'epan/dissectors/packet-ssh.c', 'prediction': 'T', 'p_non_terminating': 0, 'confidence': 'high', 'reason': 'Function contains a fixed-size loop that executes exactly twice with well-defined exit conditions and deterministic operations.'}
+2026-06-16 13:51:01,841 - root - [INFO] - forager_locate_function_code_and_dep.py:162 - process_run - Submission validation: {'correct_function_name': True, 'correct_path': True, 'provided_prediction': True}
+2026-06-16 13:51:01,841 - root - [INFO] - forager_locate_function_code_and_dep.py:326 - run - All validation checks passed
+2026-06-16 13:51:01,841 - root - [INFO] - forager_locate_function_code_and_dep.py:347 - run - Run completed with outcome: success
+2026-06-16 13:51:01,848 - root - [INFO] - des_container.py:428 - shutdown - Shutting down DES container 6dd40706561aa1c6ff81953b89e0bdc24808f50a708db51724e4a833c686721d
+2026-06-16 13:51:01,848 - root - [INFO] - des_container.py:576 - _heartbeat_loop - VMVM heartbeat thread exiting
+2026-06-16 13:51:26,441 - root - [INFO] - des_container.py:228 - release_vm - Releasing VMVM session {"vmvm_session":{"id":"019ed0ac-1a74-7b81-b81f-efd1af585356","ipAddr":"2803:6082:88a0:a2aa:7b8a:ca17:500:0","vaagentPort":26508,"vmPort":14471,"vaagentHostname":"twshared0512.02.zhu2.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|16121806539984002760|0|faas.0A4889FB598A406BFB7941EBA55ADFAA|7472644559912662570","tw_task_handle":"tsp_zhu/faas/workerpool_crackerjack_prod_bgm_ces_tier_1/50","region_shortname":"zhu"},"auth_token":{"paseto":"v4.public.eyJleHAiOiIyMDI2LTA2LTE3VDEzOjQzOjI3WiIsIm5iZiI6IjIwMjYtMDYtMTZUMTM6NDM6MjdaIiwiaWF0IjoiMjAyNi0wNi0xNlQxMzo0MzoyNy42MzA4NDMwNjYrMDA6MDAiLCJzdWIiOiIwMTllZDBhYy0xYTc0LTdiODEtYjgxZi1lZmQxYWY1ODUzNTYifWs-5wRiSl1jOprgacssnakJ9qWNpScqwxhtaqsZJkxvSTgMDlFjytNRRWFFsdFknb6buSYmX9eDgRkv-p3fZQ8.eyJ0ZW5hbnQiOiJhc3luY18yMzQ3NjQxIiwiZmFhc19pbnZvY2F0aW9uX2lkIjoiNHxnbG9iYWx8YXN5bmNfMjM0NzY0MXxkZXNfZ2VuZXJhbF90aWVyX3Byb2R8MTYxMjE4MDY1Mzk5ODQwMDI3NjB8MHxmYWFzLjBBNDg4OUZCNTk4QTQwNkJGQjc5NDFFQkE1NUFERkFBfDc0NzI2NDQ1NTk5MTI2NjI1NzAiLCJwb3J0IjoiMTQ0NzEiLCJpcCI6IjI4MDM6NjA4Mjo4OGEwOmEyYWE6N2I4YTpjYTE3OjUwMDowIn0"}}
+2026-06-16 13:51:29,438 - root - [INFO] - des_container.py:238 - release_vm - VMVM session released
+2026-06-16 13:51:29,438 - root - [INFO] - run.py:224 - repo_task - Finishing repo: wireshark_9c16d833_epan_dissectors_packet-ssh_c_ssh_choose_enc_mac_1

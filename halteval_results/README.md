@@ -52,6 +52,8 @@ results/                      # eval outputs (one JSON line per function + `pred
   agentic/
     agentic_claude_code_opus_4_7.jsonl
     agentic_codex_gpt_5_5.jsonl
+  swe_agent/                  # SWE-agent regime — raw per-function *_success/_failure.json
+    swe_agent_qwen3_coder_30b.jsonl   # aggregated predictions (one row per function)
 repos/                        # bare git-clone cache (gitignored, recreated by the evals)
 ```
 
@@ -99,6 +101,12 @@ Sorted by **AUC-ROC (primary metric)**. Class balance: 57 NT / 130 T (30.5 % pos
 | Claude Opus 4.7 (zero-shot)     | `zero_shot_eval.py`   | 0.901 | 0.661 | 0.818 | 0.861 |
 | Codex GPT-5.5 (agentic)         | `codex_eval.py`       | 0.843 | 0.455 | 0.674 | 0.679 |
 | GPT-5.5 (zero-shot)             | `zero_shot_eval.py`   | 0.835 | 0.492 | 0.708 | 0.717 |
+| Qwen3-Coder-30B (SWE-agent)¹    | external pipeline     | 0.508 | 0.044 | 0.452 | 0.703 |
+
+¹ **Qwen3-Coder-30B-A3B-Instruct**, SWE-agent regime. Scored on the **155 / 187** functions it
+returned a verdict for — the agent produced **no prediction for 32** (30 run failures/read-only
+errors + 2 with no result file); those are excluded from the metrics above (treating them as
+wrong instead gives accuracy 109/187 = 0.583). Results in `results/swe_agent/`.
 
 ### Per-class precision / recall / F1
 
@@ -108,6 +116,7 @@ Sorted by **AUC-ROC (primary metric)**. Class balance: 57 NT / 130 T (30.5 % pos
 | Claude Opus 4.7 (zero-shot)     | 0.897 | 0.614 | 0.729 | 0.851 | 0.969 | 0.906 |
 | Codex GPT-5.5 (agentic)         | 0.486 | 0.912 | 0.634 | 0.938 | 0.577 | 0.714 |
 | GPT-5.5 (zero-shot)             | 0.520 | 0.895 | 0.658 | 0.933 | 0.638 | 0.758 |
+| Qwen3-Coder-30B (SWE-agent)¹    | 0.400 | 0.044 | 0.080 | 0.713 | 0.973 | 0.823 |
 
 **AUC-ROC is the primary metric** — it is computed from the model's
 `p_non_terminating` score (NT = positive class) and, unlike accuracy or MCC, is both
@@ -135,14 +144,19 @@ mean of the NT and T F1. **NT** = non-terminating, **T** = terminating.
   0.48–0.52). Both confirm that the weak per-class numbers stem from where the decision
   boundary sits, not from poor ranking — which is exactly why AUC-ROC is the fairer
   headline metric here.
+- **Qwen3-Coder-30B (SWE-agent) performs at chance (AUC 0.508).** Unlike the frontier
+  models, it does not rank functions better than random and is heavily biased toward `T`
+  (150 T vs 5 NT predictions → NT recall 0.044). It also failed to return a verdict on
+  32 / 187 functions. The open small model is not competitive on this task in this regime.
 
 ### Validation
 
-All four result files carry a `p_non_terminating` score for every one of the 187 cases
-(187 matched, 0 unmatched), and all reported numbers reproduce exactly from
+The four frontier-model result files carry a `p_non_terminating` score for every one of the
+187 cases (187 matched, 0 unmatched), and all reported numbers reproduce exactly from
 `scripts/shared/score.py`. AUC-ROC was additionally cross-checked with an independent rank-based
 (trapezoidal ROC) computation, and MCC and the per-class precision/recall against a direct
-confusion-matrix calculation — all agree to 4 decimals.
+confusion-matrix calculation — all agree to 4 decimals. The Qwen3-Coder-30B SWE-agent row is
+scored the same way but on the 155 / 187 cases with a returned verdict (32 had none).
 
 > Note: `scripts/shared/score.py` uses `X | None` type syntax and requires Python ≥ 3.10
 > (run with e.g. `python3.12`).

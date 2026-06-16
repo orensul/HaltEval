@@ -1,0 +1,833 @@
+2026-06-16 13:59:25,070 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=UNKNOWN_NAME
+2026-06-16 13:59:25,070 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=run
+2026-06-16 13:59:25,257 - root - [INFO] - run.py:148 - repo_task - Model: VllmModel
+2026-06-16 13:59:25,290 - root - [INFO] - run.py:158 - repo_task - Agent: ForagerAgentLocateFunctionCodeAndDep
+2026-06-16 13:59:25,290 - root - [INFO] - run.py:172 - repo_task - Using VMVMBackend, image=vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest
+2026-06-16 13:59:25,290 - root - [INFO] - des_container.py:76 - lease_vm - Leasing VM with client-id=proftpd_5194296d_src_throttle_c_pr_throttle_init_1, ttl_secs=500
+2026-06-16 13:59:26,259 - root - [INFO] - des_container.py:87 - lease_vm - VM leased in 0.97s: session_id={"vmvm_session":{"id":"019ed0ba-c4fd-74f3-aa49-b48269b64bbb","ipAddr":"2803:6082:58b0:2b77:2459:1e14:500:0","vaagentPort":30695,"vmPort":15116,"vaagentHostname":"twshared75902.01.dkl1.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|16121806539984002760|0|faas.21449BF125D87E97109EDF969F4B78A8|7472603716804530183","tw_task_handle":"tsp_dkl/faas/workerpool_crackerjack_prod_bgm_ces/12790","region_shortname":"dkl"},"auth_token":{"paseto":"v4.public.eyJzdWIiOiIwMTllZDBiYS1jNGZkLTc0ZjMtYWE0OS1iNDgyNjliNjRiYmIiLCJpYXQiOiIyMDI2LTA2LTE2VDEzOjU5OjI2LjEwMDk5ODY0NyswMDowMCIsImV4cCI6IjIwMjYtMDYtMTdUMTM6NTk6MjZaIiwibmJmIjoiMjAyNi0wNi0xNlQxMzo1OToyNloifWZLJtC75cDXuZDiGqYBMCWqIyapLKQNBKyKGbrBFK0Z0OGn38HJW7naikDUwH1S6zDgaaEkvM2H4vjgj9GfeQw.eyJ0ZW5hbnQiOiJhc3luY18yMzQ3NjQxIiwiaXAiOiIyODAzOjYwODI6NThiMDoyYjc3OjI0NTk6MWUxNDo1MDA6MCIsInBvcnQiOiIxNTExNiIsImZhYXNfaW52b2NhdGlvbl9pZCI6IjR8Z2xvYmFsfGFzeW5jXzIzNDc2NDF8ZGVzX2dlbmVyYWxfdGllcl9wcm9kfDE2MTIxODA2NTM5OTg0MDAyNzYwfDB8ZmFhcy4yMTQ0OUJGMTI1RDg3RTk3MTA5RURGOTY5RjRCNzhBOHw3NDcyNjAzNzE2ODA0NTMwMTgzIn0"}}
+2026-06-16 13:59:26,259 - root - [INFO] - des_container.py:195 - load_image - Pulling image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest on VMVM
+2026-06-16 14:01:02,799 - root - [INFO] - des_container.py:203 - load_image - Image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest pulled successfully
+2026-06-16 14:01:06,664 - root - [INFO] - des_container.py:221 - run_container - Container started: 6456cd3f9cb83c901a60059ef5a467052424a55d902badac386664cfa3537574
+2026-06-16 14:01:06,664 - root - [INFO] - des_container.py:565 - _heartbeat_loop - VMVM heartbeat thread started
+2026-06-16 14:01:06,665 - root - [INFO] - forager_locate_function_code_and_dep.py:294 - run - Starting analysis for pr_throttle_init in src/throttle.c
+2026-06-16 14:01:06,665 - root - [INFO] - forager_locate_function_code_and_dep.py:208 - prepare_cpp_container - ========== Preparing C++ container ==========
+2026-06-16 14:01:06,665 - root - [DEBUG] - forager_locate_function_code_and_dep.py:211 - prepare_cpp_container - Setting up env variables
+2026-06-16 14:01:06,666 - root - [DEBUG] - des_container.py:308 - command - DES command: 'export WINDOW=100 && export OVERLAP=2 && export CURRENT_LINE=0 && export CURRENT'
+2026-06-16 14:01:09,985 - root - [DEBUG] - forager_locate_function_code_and_dep.py:220 - prepare_cpp_container - Importing agent tools in container
+2026-06-16 14:01:13,921 - root - [DEBUG] - des_container.py:385 - put - DES put: 6243 bytes to /opt/tools/defaults.sh
+2026-06-16 14:01:22,880 - root - [DEBUG] - des_container.py:308 - command - DES command: 'source /opt/tools/defaults.sh'
+2026-06-16 14:01:25,702 - root - [DEBUG] - des_container.py:385 - put - DES put: 5735 bytes to /opt/tools/search.sh
+2026-06-16 14:01:47,936 - root - [DEBUG] - des_container.py:308 - command - DES command: 'source /opt/tools/search.sh'
+2026-06-16 14:01:52,053 - root - [DEBUG] - des_container.py:308 - command - DES command: 'export PATH=/opt/tools:$PATH'
+2026-06-16 14:01:53,339 - root - [INFO] - forager_locate_function_code_and_dep.py:225 - prepare_cpp_container - Uploading submit_prediction command
+2026-06-16 14:01:53,339 - root - [DEBUG] - des_container.py:385 - put - DES put: 74 bytes to /usr/local/bin/submit_prediction
+2026-06-16 14:02:15,149 - root - [DEBUG] - des_container.py:308 - command - DES command: 'chmod +x /usr/local/bin/submit_prediction'
+2026-06-16 14:02:16,711 - root - [DEBUG] - des_container.py:308 - command - DES command: "which submit_prediction || echo 'Not in PATH'"
+2026-06-16 14:02:18,203 - root - [INFO] - forager_locate_function_code_and_dep.py:237 - prepare_cpp_container - Script in PATH: /usr/local/bin/submit_prediction
+2026-06-16 14:02:18,203 - root - [DEBUG] - des_container.py:308 - command - DES command: "export GIT_AUTHOR_NAME='CI Bot' && export GIT_AUTHOR_EMAIL='ci-bot@yourdomain.co"
+2026-06-16 14:02:19,575 - root - [DEBUG] - forager_locate_function_code_and_dep.py:256 - prepare_cpp_container - Creating /workspace directory
+2026-06-16 14:02:19,575 - root - [DEBUG] - des_container.py:308 - command - DES command: 'mkdir -p /workspace'
+2026-06-16 14:02:20,908 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cd /workspace'
+2026-06-16 14:02:22,321 - root - [DEBUG] - forager_locate_function_code_and_dep.py:196 - _init_prompt - Task prompt:
+Your task is to predict whether the function `pr_throttle_init` in the C++ file `src/throttle.c` will:
+- **Terminate** for all inputs, OR
+- **Diverge** for some inputs (enter a non-terminating loop)
+
+**Important:** This is a **read-only code analysis task**. You may only use shell commands to view files. Do not execute any C++ code or modify any files. Only use commands like `cat`, `grep`, `find`, `ls`, `cd`, `head`, `tail`, `git`, etc.
+
+## STEP 1: Clone the Repository
+
+First, clone the repository and checkout the specific commit:
+```bash
+git clone https://github.com/proftpd/proftpd /workspace/proftpd && cd /workspace/proftpd && git checkout 5194296d8ecb7e9b1e53b5b5545b303a5deb320a
+```
+
+## STEP 2: Examine the Function
+
+Navigate to the repository and examine the function using read-only commands. Examples:
+```bash
+cd /workspace/proftpd
+cat src/throttle.c                              # View the entire file
+grep -n "pr_throttle_init" src/throttle.c    # Find the function's line number
+grep -A 50 "pr_throttle_init" src/throttle.c # View the function plus 50 lines after (of course you can view more).
+```
+
+## STEP 3: Analyze Dependencies
+Important: The function may call other functions, use external types, or depend on macros defined elsewhere. You must examine these dependencies to fully understand the code's behavior.
+- Find and read helper functions called within the target function
+- Examine header files for type definitions and macros
+- Check struct/class definitions to understand data types
+- Trace function pointers to their implementations
+
+Finding dependencies:
+```bash
+grep -rn "function_name" /workspace/proftpd/
+find . -name "*.h" | xargs grep "TypeName"
+cat path/to/header.h
+```
+
+## STEP 4: Classify the Function
+**"T" (Terminates)** - Function terminates for all possible inputs:
+- No blocking synchronization calls. All loops have reachable exit conditions. Loop variables progress correctly toward exit. Proper bounds checking and error handling
+**"NT" (Non-Termination)** - Designed to block or loop indefinitely (can be intentional by the user or a bug). Examples:
+- Thread synchronization primitives. Locks. Condition variables. Event loops or server loops that run until external signal.
+Worker thread functions waiting for tasks or termination signals.
+- Loop variable never modified or modified in wrong direction. `while(1)` or `for(;;)` without reachable `break` or `return`.
+Unbounded I/O operations without proper termination checks. Missing loop increment/decrement statements.
+
+## STEP 5: Submit Your Prediction
+
+When ready, submit your classification:
+```bash
+submit_prediction '{"function_name": "pr_throttle_init", "file_path": "src/throttle.c", "prediction": "<T|NT>", "p_non_terminating": <0-100>, "confidence": "<high|medium|low>", "reason": "<one concise sentence>"}'
+```
+
+**Field definitions:**
+- `prediction`: "T" if the function terminates for all inputs, "NT" if it can loop/block indefinitely
+- `p_non_terminating`: integer 0–100 — your estimated probability (in %) that the function is non-terminating
+- `confidence`: "high" if the evidence is clear and unambiguous, "medium" if there is some uncertainty, "low" if the code is hard to fully trace or the behavior is unclear
+- `reason`: one concise sentence explaining the key factor driving your prediction
+
+**Guidelines:**
+- Execute one command per response in triple backticks
+- Read all relevant source and header files before making a prediction
+- Trace data flow to understand where loop bounds and conditions come from
+- Consider edge cases: zero values, type overflows, null pointers, EOF conditions
+- Only submit your prediction when you have thoroughly analyzed the code
+- Begin by cloning the repository
+2026-06-16 14:02:22,321 - root - [INFO] - forager_base.py:342 - start_trajectory - =========== Starting new trajectory ==========
+2026-06-16 14:02:22,321 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 1
+2026-06-16 14:02:22,321 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:02:23,543 - root - [INFO] - logging.py:31 - log_time - Took 1.22s
+2026-06-16 14:02:23,549 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'git clone https://github.com/p' (timeout=120)
+2026-06-16 14:02:23,549 - root - [DEBUG] - des_container.py:308 - command - DES command: 'git clone https://github.com/proftpd/proftpd /workspace/proftpd && cd /workspace'
+2026-06-16 14:02:46,881 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 14:02:46,881 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 2
+2026-06-16 14:02:46,881 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:02:47,085 - root - [INFO] - logging.py:31 - log_time - Took 0.20s
+2026-06-16 14:02:47,088 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cd /workspace/proftpd\n' (timeout=120)
+2026-06-16 14:02:47,089 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cd /workspace/proftpd\n'
+2026-06-16 14:02:48,459 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 14:02:48,459 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 3
+2026-06-16 14:02:48,459 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:02:48,653 - root - [INFO] - logging.py:31 - log_time - Took 0.19s
+2026-06-16 14:02:48,658 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cat src/throttle.c\n' (timeout=120)
+2026-06-16 14:02:48,658 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cat src/throttle.c\n'
+2026-06-16 14:02:50,341 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /*
+ * ProFTPD - FTP server daemon
+ * Copyright (c) 2008-2023 The ProFTPD Project team
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Suite 500, Boston, MA 02110-1335, USA.
+ *
+ * As a special exemption, The ProFTPD Project and other respective copyright
+ * holders give permission to link this program with OpenSSL, and distribute
+ * the resulting executable, without including the source code for OpenSSL in
+ * the source distribution.
+ */
+
+/* TransferRate throttling */
+
+#include "conf.h"
+
+/* Transfer rate variables */
+static long double xfer_rate_kbps = 0.0, xfer_rate_bps = 0.0;
+static off_t xfer_rate_freebytes = 0.0;
+static int have_xfer_rate = FALSE;
+static unsigned int xfer_rate_scoreboard_updates = 0;
+
+/* Very similar to the {block,unblock}_signals() function, this masks most
+ * of the same signals -- except for TERM.  This allows a throttling process
+ * to be killed by the admin.
+ */
+static void xfer_rate_sigmask(int block) {
+  static sigset_t sig_set;
+
+  if (block) {
+    sigemptyset(&sig_set);
+
+    sigaddset(&sig_set, SIGCHLD);
+    sigaddset(&sig_set, SIGUSR1);
+    sigaddset(&sig_set, SIGINT);
+    sigaddset(&sig_set, SIGQUIT);
+#ifdef SIGIO
+    sigaddset(&sig_set, SIGIO);
+#endif /* SIGIO */
+#ifdef SIGBUS
+    sigaddset(&sig_set, SIGBUS);
+#endif /* SIGBUS */
+    sigaddset(&sig_set, SIGHUP);
+
+    while (sigprocmask(SIG_BLOCK, &sig_set, NULL) < 0) {
+      if (errno == EINTR) {
+        pr_signals_handle();
+        continue;
+      }
+
+      break;
+    }
+
+  } else {
+    while (sigprocmask(SIG_UNBLOCK, &sig_set, NULL) < 0) {
+      if (errno == EINTR) {
+        pr_signals_handle();
+        continue;
+      }
+
+      break;
+    }
+  }
+}
+
+/* Returns the difference, in milliseconds, between the given timeval and
+ * now.
+ */
+static long xfer_rate_since(struct timeval *then) {
+  struct timeval now;
+  gettimeofday(&now, NULL);
+
+  return (((now.tv_sec - then->tv_sec) * 1000L) +
+    ((now.tv_usec - then->tv_usec) / 1000L));
+}
+
+int pr_throttle_have_rate(void) {
+  return have_xfer_rate;
+}
+
+void pr_throttle_init(cmd_rec *cmd) {
+  config_rec *c = NULL;
+  char *xfer_cmd = NULL;
+  unsigned char have_user_rate = FALSE, have_group_rate = FALSE,
+    have_class_rate = FALSE;
+  unsigned int precedence = 0;
+
+  /* Make sure the variables are (re)initialized */
+  xfer_rate_kbps = xfer_rate_bps = 0.0;
+  xfer_rate_freebytes = 0;
+  xfer_rate_scoreboard_updates = 0;
+  have_xfer_rate = FALSE;
+
+  c = find_config(CURRENT_CONF, CONF_PARAM, "TransferRate", FALSE);
+
+  /* Note: need to cycle through all the matching config_recs, and using
+   * the information from the current config_rec only if it matches
+   * the target *and* has a higher precedence than any of the previously
+   * found config_recs.
+   */
+  while (c) {
+    char **cmdlist = (char **) c->argv[0];
+    int matched_cmd = FALSE;
+
+    pr_signals_handle();
+
+    /* Does this TransferRate apply to the current command?  Note: this
+     * could be made more efficient by using bitmasks rather than string
+     * comparisons.
+     */
+    for (xfer_cmd = *cmdlist; xfer_cmd; xfer_cmd = *(cmdlist++)) {
+      if (strcasecmp(xfer_cmd, cmd->argv[0]) == 0) {
+        matched_cmd = TRUE;
+        break;
+      }
+    }
+
+    /* No -- continue on to the next TransferRate. */
+    if (!matched_cmd) {
+      c = find_config_next(c, c->next, CONF_PARAM, "TransferRate", FALSE);
+      continue;
+    }
+
+    if (c->argc > 4) {
+      if (strcasecmp(c->argv[4], "user") == 0) {
+        if (pr_expr_eval_user_or((char **) &c->argv[5]) == TRUE &&
+            *((unsigned int *) c->argv[3]) > precedence) {
+
+          /* Set the precedence. */
+          precedence = *((unsigned int *) c->argv[3]);
+
+          xfer_rate_kbps = *((long double *) c->argv[1]);
+          xfer_rate_freebytes = *((off_t *) c->argv[2]);
+          have_xfer_rate = TRUE;
+          have_user_rate = TRUE;
+          have_group_rate = have_class_rate = FALSE;
+        }
+
+      } else if (strcasecmp(c->argv[4], "group") == 0) {
+        if (pr_expr_eval_group_and((char **) &c->argv[5]) == TRUE &&
+            *((unsigned int *) c->argv[3]) > precedence) {
+
+          /* Set the precedence. */
+          precedence = *((unsigned int *) c->argv[3]);
+
+          xfer_rate_kbps = *((long double *) c->argv[1]);
+          xfer_rate_freebytes = *((off_t *) c->argv[2]);
+          have_xfer_rate = TRUE;
+          have_group_rate = TRUE;
+          have_user_rate = have_class_rate = FALSE;
+        }
+
+      } else if (strcasecmp(c->argv[4], "class") == 0) {
+        if (pr_expr_eval_class_or((char **) &c->argv[5]) == TRUE &&
+          *((unsigned int *) c->argv[3]) > precedence) {
+
+          /* Set the precedence. */
+          precedence = *((unsigned int *) c->argv[3]);
+
+          xfer_rate_kbps = *((long double *) c->argv[1]);
+          xfer_rate_freebytes = *((off_t *) c->argv[2]);
+          have_xfer_rate = TRUE;
+          have_class_rate = TRUE;
+          have_user_rate = have_group_rate = FALSE;
+        }
+      }
+
+    } else {
+      if (*((unsigned int *) c->argv[3]) > precedence) {
+        /* Set the precedence. */
+        precedence = *((unsigned int *) c->argv[3]);
+
+        xfer_rate_kbps = *((long double *) c->argv[1]);
+        xfer_rate_freebytes = *((off_t *) c->argv[2]);
+        have_xfer_rate = TRUE;
+        have_user_rate = have_group_rate = have_class_rate = FALSE;
+      }
+    }
+
+    c = find_config_next(c, c->next, CONF_PARAM, "TransferRate", FALSE);
+  }
+
+  /* Print out a helpful debugging message. */
+  if (have_xfer_rate) {
+    pr_log_debug(DEBUG3, "TransferRate (%.3Lf KB/s, %" PR_LU
+        " bytes free) in effect%s", xfer_rate_kbps,
+      (pr_off_t) xfer_rate_freebytes,
+      have_user_rate ? " for current user" :
+      have_group_rate ? " for current group" :
+      have_class_rate ? " for current class" : "");
+
+    /* Convert the configured Kbps to bytes per usec, for use later.
+     * The 1024.0 factor converts for Kbytes to bytes, and the
+     * 1000000.0 factor converts from secs to usecs.
+     */
+    xfer_rate_bps = xfer_rate_kbps * 1024.0;
+  }
+}
+
+void pr_throttle_pause(off_t xferlen, int update_scoreboard, off_t xfer_done) {
+  long ideal = 0, elapsed = 0;
+  off_t orig_xferlen = xferlen;
+
+  if (XFER_ABORTED) {
+    return;
+  }
+
+  /* Calculate the time interval since the transfer of data started. */
+  elapsed = xfer_rate_since(&session.xfer.start_time);
+
+  /* Perform no throttling if no throttling has been configured. */
+  if (!have_xfer_rate) {
+    xfer_rate_scoreboard_updates++;
+
+    if (update_scoreboard == TRUE ||
+        xfer_rate_scoreboard_updates % PR_TUNABLE_XFER_SCOREBOARD_UPDATES == 0) {
+      /* Update the scoreboard. */
+      pr_scoreboard_entry_update(session.pid,
+        PR_SCORE_XFER_LEN, orig_xferlen,
+        PR_SCORE_XFER_DONE, xfer_done,
+        PR_SCORE_XFER_ELAPSED, (unsigned long) elapsed,
+        NULL);
+
+      xfer_rate_scoreboard_updates = 0;
+    }
+
+    return;
+  }
+
+  /* Give credit for any configured freebytes. */
+  if (xferlen > 0 &&
+      xfer_rate_freebytes > 0) {
+
+    if (xferlen > xfer_rate_freebytes) {
+      /* Decrement the number of bytes transferred by the freebytes, so that
+       * any throttling does not take into account the freebytes.
+       */
+      xferlen -= xfer_rate_freebytes;
+
+    } else {
+      xfer_rate_scoreboard_updates++;
+
+      /* The number of bytes transferred is less than the freebytes.  Just
+       * update the scoreboard -- no throttling needed.
+       */
+
+      if (update_scoreboard == TRUE ||
+          xfer_rate_scoreboard_updates % PR_TUNABLE_XFER_SCOREBOARD_UPDATES == 0) {
+        pr_scoreboard_entry_update(session.pid,
+          PR_SCORE_XFER_LEN, orig_xferlen,
+          PR_SCORE_XFER_DONE, xfer_done,
+          PR_SCORE_XFER_ELAPSED, (unsigned long) elapsed,
+          NULL);
+
+        xfer_rate_scoreboard_updates = 0;
+      }
+
+      return;
+    }
+  }
+
+  ideal = xferlen * 1000L / xfer_rate_bps;
+
+  if (ideal > elapsed) {
+    struct timeval tv;
+
+    /* Setup for the select.  We use select() instead of usleep() because it
+     * seems to be far more portable across platforms.
+     *
+     * ideal and elapsed are in milleconds, but tv_usec will be microseconds,
+     * so be sure to convert properly.
+     */
+    tv.tv_usec = (ideal - elapsed) * 1000;
+    tv.tv_sec = tv.tv_usec / 1000000L;
+    tv.tv_usec = tv.tv_usec % 1000000L;
+
+    pr_log_debug(DEBUG7, "transferring too fast, delaying %ld sec%s, %ld usecs",
+      (long int) tv.tv_sec, tv.tv_sec == 1 ? "" : "s", (long int) tv.tv_usec);
+
+    /* No interruptions, please... */
+    xfer_rate_sigmask(TRUE);
+
+    if (select(0, NULL, NULL, NULL, &tv) < 0) {
+      int xerrno = errno;
+
+      if (XFER_ABORTED) {
+        pr_log_pri(PR_LOG_NOTICE, "throttling interrupted, transfer aborted");
+        xfer_rate_sigmask(FALSE);
+        return;
+      }
+
+      /* At this point, we've probably been interrupted by one of the few
+       * signals not masked off, e.g. SIGTERM.
+       */
+      if (xerrno != EINTR) {
+        pr_log_debug(DEBUG0, "unable to throttle bandwidth: %s",
+          strerror(xerrno));
+      }
+    }
+
+    xfer_rate_sigmask(FALSE);
+    pr_signals_handle();
+
+    /* Update the scoreboard. */
+    pr_scoreboard_entry_update(session.pid,
+      PR_SCORE_XFER_LEN, orig_xferlen,
+      PR_SCORE_XFER_DONE, xfer_done,
+      PR_SCORE_XFER_ELAPSED, (unsigned long) ideal,
+      NULL);
+
+  } else {
+    /* Update the scoreboard. */
+    pr_scoreboard_entry_update(session.pid,
+      PR_SCORE_XFER_LEN, orig_xferlen,
+      PR_SCORE_XFER_DONE, xfer_done,
+      PR_SCORE_XFER_ELAPSED, (unsigned long) elapsed,
+      NULL);
+  }
+}
+2026-06-16 14:02:50,342 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 4
+2026-06-16 14:02:50,342 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:02:50,990 - root - [INFO] - logging.py:31 - log_time - Took 0.65s
+2026-06-16 14:02:50,994 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -n "pr_throttle_init" src' (timeout=120)
+2026-06-16 14:02:50,994 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -n "pr_throttle_init" src/throttle.c\n'
+2026-06-16 14:02:52,379 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 93:void pr_throttle_init(cmd_rec *cmd) {
+2026-06-16 14:02:52,379 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 5
+2026-06-16 14:02:52,379 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:02:52,804 - root - [INFO] - logging.py:31 - log_time - Took 0.42s
+2026-06-16 14:02:52,807 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -A 100 "void pr_throttle_' (timeout=120)
+2026-06-16 14:02:52,808 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -A 100 "void pr_throttle_init(cmd_rec \\*cmd)" src/throttle.c\n'
+2026-06-16 14:02:54,366 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: void pr_throttle_init(cmd_rec *cmd) {
+  config_rec *c = NULL;
+  char *xfer_cmd = NULL;
+  unsigned char have_user_rate = FALSE, have_group_rate = FALSE,
+    have_class_rate = FALSE;
+  unsigned int precedence = 0;
+
+  /* Make sure the variables are (re)initialized */
+  xfer_rate_kbps = xfer_rate_bps = 0.0;
+  xfer_rate_freebytes = 0;
+  xfer_rate_scoreboard_updates = 0;
+  have_xfer_rate = FALSE;
+
+  c = find_config(CURRENT_CONF, CONF_PARAM, "TransferRate", FALSE);
+
+  /* Note: need to cycle through all the matching config_recs, and using
+   * the information from the current config_rec only if it matches
+   * the target *and* has a higher precedence than any of the previously
+   * found config_recs.
+   */
+  while (c) {
+    char **cmdlist = (char **) c->argv[0];
+    int matched_cmd = FALSE;
+
+    pr_signals_handle();
+
+    /* Does this TransferRate apply to the current command?  Note: this
+     * could be made more efficient by using bitmasks rather than string
+     * comparisons.
+     */
+    for (xfer_cmd = *cmdlist; xfer_cmd; xfer_cmd = *(cmdlist++)) {
+      if (strcasecmp(xfer_cmd, cmd->argv[0]) == 0) {
+        matched_cmd = TRUE;
+        break;
+      }
+    }
+
+    /* No -- continue on to the next TransferRate. */
+    if (!matched_cmd) {
+      c = find_config_next(c, c->next, CONF_PARAM, "TransferRate", FALSE);
+      continue;
+    }
+
+    if (c->argc > 4) {
+      if (strcasecmp(c->argv[4], "user") == 0) {
+        if (pr_expr_eval_user_or((char **) &c->argv[5]) == TRUE &&
+            *((unsigned int *) c->argv[3]) > precedence) {
+
+          /* Set the precedence. */
+          precedence = *((unsigned int *) c->argv[3]);
+
+          xfer_rate_kbps = *((long double *) c->argv[1]);
+          xfer_rate_freebytes = *((off_t *) c->argv[2]);
+          have_xfer_rate = TRUE;
+          have_user_rate = TRUE;
+          have_group_rate = have_class_rate = FALSE;
+        }
+
+      } else if (strcasecmp(c->argv[4], "group") == 0) {
+        if (pr_expr_eval_group_and((char **) &c->argv[5]) == TRUE &&
+            *((unsigned int *) c->argv[3]) > precedence) {
+
+          /* Set the precedence. */
+          precedence = *((unsigned int *) c->argv[3]);
+
+          xfer_rate_kbps = *((long double *) c->argv[1]);
+          xfer_rate_freebytes = *((off_t *) c->argv[2]);
+          have_xfer_rate = TRUE;
+          have_group_rate = TRUE;
+          have_user_rate = have_class_rate = FALSE;
+        }
+
+      } else if (strcasecmp(c->argv[4], "class") == 0) {
+        if (pr_expr_eval_class_or((char **) &c->argv[5]) == TRUE &&
+          *((unsigned int *) c->argv[3]) > precedence) {
+
+          /* Set the precedence. */
+          precedence = *((unsigned int *) c->argv[3]);
+
+          xfer_rate_kbps = *((long double *) c->argv[1]);
+          xfer_rate_freebytes = *((off_t *) c->argv[2]);
+          have_xfer_rate = TRUE;
+          have_class_rate = TRUE;
+          have_user_rate = have_group_rate = FALSE;
+        }
+      }
+
+    } else {
+      if (*((unsigned int *) c->argv[3]) > precedence) {
+        /* Set the precedence. */
+        precedence = *((unsigned int *) c->argv[3]);
+
+        xfer_rate_kbps = *((long double *) c->argv[1]);
+        xfer_rate_freebytes = *((off_t *) c->argv[2]);
+        have_xfer_rate = TRUE;
+        have_user_rate = have_group_rate = have_class_rate = FALSE;
+      }
+    }
+
+    c = find_config_next(c, c->next, CONF_PARAM, "TransferRate", FALSE);
+  }
+2026-06-16 14:02:54,367 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 6
+2026-06-16 14:02:54,367 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:02:54,680 - root - [INFO] - logging.py:31 - log_time - Took 0.31s
+2026-06-16 14:02:54,683 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'find . -name "*.h" | xargs gre' (timeout=120)
+2026-06-16 14:02:54,683 - root - [DEBUG] - des_container.py:308 - command - DES command: 'find . -name "*.h" | xargs grep -l "find_config"\n'
+2026-06-16 14:02:56,042 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: ./include/configdb.h
+2026-06-16 14:02:56,042 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 7
+2026-06-16 14:02:56,042 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:02:56,362 - root - [INFO] - logging.py:31 - log_time - Took 0.32s
+2026-06-16 14:02:56,365 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'find . -name "*.h" | xargs gre' (timeout=120)
+2026-06-16 14:02:56,365 - root - [DEBUG] - des_container.py:308 - command - DES command: 'find . -name "*.h" | xargs grep -l "find_config_next"\n'
+2026-06-16 14:02:58,044 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: ./include/configdb.h
+2026-06-16 14:02:58,045 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 8
+2026-06-16 14:02:58,045 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:02:58,326 - root - [INFO] - logging.py:31 - log_time - Took 0.28s
+2026-06-16 14:02:58,329 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cat ./include/configdb.h\n' (timeout=120)
+2026-06-16 14:02:58,329 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cat ./include/configdb.h\n'
+2026-06-16 14:02:59,622 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /*
+ * ProFTPD - FTP server daemon
+ * Copyright (c) 2014-2022 The ProFTPD Project team
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Suite 500, Boston, MA 02110-1335, USA.
+ *
+ * As a special exemption, Public Flood Software/MacGyver aka Habeeb J. Dihu
+ * and other respective copyright holders give permission to link this program
+ * with OpenSSL, and distribute the resulting executable, without including
+ * the source code for OpenSSL in the source distribution.
+ */
+
+/* Configuration database API. */
+
+#ifndef PR_CONFIGDB_H
+#define PR_CONFIGDB_H
+
+#include "pool.h"
+#include "sets.h"
+#include "table.h"
+
+typedef struct config_struc config_rec;
+struct server_struc;
+
+struct config_struc {
+  struct config_struc *next, *prev;
+
+  int config_type;
+  unsigned int config_id;
+
+  struct pool_rec *pool;	/* Memory pool for this object */
+  xaset_t *set;			/* The set we are stored in */
+  char *name;
+  unsigned int argc;
+  void **argv;
+
+  long flags;			/* Flags */
+
+  struct server_struc *server;	/* Server this config element is attached to */
+  config_rec *parent;		/* Our parent configuration record */
+  xaset_t *subset;		/* Sub-configuration */
+};
+
+#define CONF_ROOT		(1 << 0) /* No conf record */
+#define CONF_DIR		(1 << 1) /* Per-Dir configuration */
+#define CONF_ANON		(1 << 2) /* Anon. FTP configuration */
+#define CONF_LIMIT		(1 << 3) /* Limits commands available */
+#define CONF_VIRTUAL		(1 << 4) /* Virtual host */
+#define CONF_DYNDIR		(1 << 5) /* .ftpaccess file */
+#define CONF_GLOBAL		(1 << 6) /* "Global" context (applies to main server and ALL virtualhosts */
+#define CONF_CLASS		(1 << 7) /* Class context */
+#define CONF_NAMED		(1 << 8) /* Named virtual host */
+#define CONF_USERDATA		(1 << 14) /* Runtime user data */
+#define CONF_PARAM		(1 << 15) /* config/args pair */
+
+/* config_rec flags */
+#define CF_MERGEDOWN		(1 << 0) /* Merge option down */
+#define CF_MERGEDOWN_MULTI	(1 << 1) /* Merge down, allowing multiple instances */
+#define CF_DYNAMIC		(1 << 2) /* Dynamically added entry */
+#define CF_DEFER		(1 << 3) /* Defer hashing until authentication */
+#define CF_SILENT		(1 << 4) /* Do not print a config dump when merging */
+#define CF_MULTI		(1 << 5) /* Allow multiple instances, but do not merge down */
+
+/* The following macro determines the "highest" level available for
+ * configuration directives.  If a current dir_config is available, it's
+ * subset is used, otherwise anon config or main server
+ */
+
+#define CURRENT_CONF		(session.dir_config ? session.dir_config->subset \
+				 : (session.anon_config ? session.anon_config->subset \
+                                    : main_server ? main_server->conf : NULL))
+#define TOPLEVEL_CONF		(session.anon_config ? session.anon_config->subset : (main_server ? main_server->conf : NULL))
+
+/* Prototypes */
+
+config_rec *add_config_set(xaset_t **, const char *);
+config_rec *add_config(struct server_struc *, const char *);
+config_rec *add_config_param(const char *, unsigned int, ...);
+config_rec *add_config_param_str(const char *, unsigned int, ...);
+config_rec *add_config_param_set(xaset_t **, const char *, unsigned int, ...);
+config_rec *pr_conf_add_server_config_param_str(struct server_struc *,
+  const char *, unsigned int, ...);
+
+/* Flags used when searching for specific config_recs in the in-memory
+ * config database, particularly when 'recurse' is TRUE.
+ */
+#define PR_CONFIG_FIND_FL_SKIP_ANON		0x001
+#define PR_CONFIG_FIND_FL_SKIP_DIR		0x002
+#define PR_CONFIG_FIND_FL_SKIP_LIMIT		0x004
+#define PR_CONFIG_FIND_FL_SKIP_DYNDIR		0x008
+
+config_rec *find_config_next(config_rec *, config_rec *, int,
+  const char *, int);
+config_rec *find_config_next2(config_rec *, config_rec *, int,
+  const char *, int, unsigned long);
+config_rec *find_config(xaset_t *, int, const char *, int);
+config_rec *find_config2(xaset_t *, int, const char *, int, unsigned long);
+void find_config_set_top(config_rec *);
+
+int remove_config(xaset_t *set, const char *name, int recurse);
+
+config_rec *pr_config_alloc(pool *p, const char *name, int config_type);
+
+#define PR_CONFIG_FL_INSERT_HEAD	0x001
+#define PR_CONFIG_FL_PRESERVE_ENTRY	0x002
+config_rec *pr_config_add_config_to_set(xaset_t *set, config_rec *c, int flags);
+config_rec *pr_config_add_set(xaset_t **, const char *, int);
+config_rec *pr_config_add(struct server_struc *, const char *, int);
+int pr_config_remove(xaset_t *set, const char *name, int flags, int recurse);
+
+/* Returns the assigned ID for the provided directive name, or zero
+ * if no ID mapping was found.
+ */
+unsigned int pr_config_get_id(const char *name);
+
+/* Assigns a unique ID for the given configuration directive.  The
+ * mapping of directive to ID is stored in a lookup table, so that
+ * searching of the config database by directive name can be done using
+ * ID comparisons rather than string comparisons.
+ *
+ * Returns the ID assigned for the given directive, or zero if there was an
+ * error.
+ */
+unsigned int pr_config_set_id(const char *name);
+
+void *get_param_ptr(xaset_t *, const char *, int);
+void *get_param_ptr_next(const char *, int);
+
+void pr_config_merge_down(xaset_t *, int);
+void pr_config_dump(void (*)(const char *, ...), xaset_t *, char *);
+
+/* Internal use only. */
+void init_config(void);
+
+#endif /* PR_CONFIGDB_H */
+2026-06-16 14:02:59,622 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 9
+2026-06-16 14:02:59,622 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:02:59,982 - root - [INFO] - logging.py:31 - log_time - Took 0.36s
+2026-06-16 14:02:59,985 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -rn "pr_signals_handle" /' (timeout=120)
+2026-06-16 14:02:59,986 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -rn "pr_signals_handle" /workspace/proftpd/include/\n'
+2026-06-16 14:03:01,348 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /workspace/proftpd/include/signals.h:34:void pr_signals_handle(void);
+/workspace/proftpd/include/signals.h:42:void pr_signals_handle_without_delay(void);
+/workspace/proftpd/include/signals.h:45:RETSIGTYPE pr_signals_handle_disconnect(int);
+/workspace/proftpd/include/signals.h:46:RETSIGTYPE pr_signals_handle_event(int);
+2026-06-16 14:03:01,348 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 10
+2026-06-16 14:03:01,348 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:03:05,957 - root - [INFO] - logging.py:31 - log_time - Took 4.61s
+2026-06-16 14:03:05,962 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -rn "find_config_next" /w' (timeout=120)
+2026-06-16 14:03:05,962 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -rn "find_config_next" /workspace/proftpd/src/ | head -5\n'
+2026-06-16 14:03:07,957 - root - [DEBUG] - des_container.py:572 - _heartbeat_loop - VMVM heartbeat sent
+2026-06-16 14:03:23,507 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /workspace/proftpd/src/auth.c:1586:    } while ((c = find_config_next2(c, c->next, CONF_PARAM, "UserAlias",
+/workspace/proftpd/src/auth.c:1604:      c = find_config_next2(c, c->next, CONF_PARAM, "UserAlias", TRUE,
+/workspace/proftpd/src/auth.c:1618:    c = find_config_next2(c, c->next, CONF_PARAM, "UserAlias", TRUE,
+/workspace/proftpd/src/auth.c:1684:    } while ((c = find_config_next(c, c->next, CONF_ANON, NULL,
+/workspace/proftpd/src/bindings.c:271:      c = find_config_next(c, c->next, CONF_PARAM, "_bind_", FALSE);
+2026-06-16 14:03:23,507 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 11
+2026-06-16 14:03:23,507 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:03:26,189 - root - [INFO] - logging.py:31 - log_time - Took 2.68s
+2026-06-16 14:03:26,193 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -A 20 -B 5 "while.*c" src' (timeout=120)
+2026-06-16 14:03:26,193 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -A 20 -B 5 "while.*c" src/throttle.c\n'
+2026-06-16 14:03:27,851 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: #ifdef SIGBUS
+    sigaddset(&sig_set, SIGBUS);
+#endif /* SIGBUS */
+    sigaddset(&sig_set, SIGHUP);
+
+    while (sigprocmask(SIG_BLOCK, &sig_set, NULL) < 0) {
+      if (errno == EINTR) {
+        pr_signals_handle();
+        continue;
+      }
+
+      break;
+    }
+
+  } else {
+    while (sigprocmask(SIG_UNBLOCK, &sig_set, NULL) < 0) {
+      if (errno == EINTR) {
+        pr_signals_handle();
+        continue;
+      }
+
+      break;
+    }
+  }
+}
+
+/* Returns the difference, in milliseconds, between the given timeval and
+ * now.
+ */
+static long xfer_rate_since(struct timeval *then) {
+  struct timeval now;
+  gettimeofday(&now, NULL);
+
+  return (((now.tv_sec - then->tv_sec) * 1000L) +
+    ((now.tv_usec - then->tv_usec) / 1000L));
+}
+--
+  /* Note: need to cycle through all the matching config_recs, and using
+   * the information from the current config_rec only if it matches
+   * the target *and* has a higher precedence than any of the previously
+   * found config_recs.
+   */
+  while (c) {
+    char **cmdlist = (char **) c->argv[0];
+    int matched_cmd = FALSE;
+
+    pr_signals_handle();
+
+    /* Does this TransferRate apply to the current command?  Note: this
+     * could be made more efficient by using bitmasks rather than string
+     * comparisons.
+     */
+    for (xfer_cmd = *cmdlist; xfer_cmd; xfer_cmd = *(cmdlist++)) {
+      if (strcasecmp(xfer_cmd, cmd->argv[0]) == 0) {
+        matched_cmd = TRUE;
+        break;
+      }
+    }
+
+    /* No -- continue on to the next TransferRate. */
+    if (!matched_cmd) {
+      c = find_config_next(c, c->next, CONF_PARAM, "TransferRate", FALSE);
+      continue;
+2026-06-16 14:03:27,851 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 12
+2026-06-16 14:03:27,851 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:03:31,626 - root - [INFO] - logging.py:31 - log_time - Took 3.77s
+2026-06-16 14:03:31,632 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'submit_prediction \'{"function_' (timeout=120)
+2026-06-16 14:03:31,632 - root - [DEBUG] - des_container.py:308 - command - DES command: 'submit_prediction \'{"function_name": "pr_throttle_init", "file_path": "src/throt'
+2026-06-16 14:03:49,236 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: !!submit!!
+{"function_name": "pr_throttle_init", "file_path": "src/throttle.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function uses standard linked list traversal pattern with no infinite loop conditions."}
+SUBMISSION_COMPLETE
+2026-06-16 14:03:49,236 - root - [INFO] - forager_base.py:408 - start_trajectory - Success regex matched in environment output: SUBMISSION_COMPLETE
+2026-06-16 14:03:49,236 - root - [INFO] - forager_locate_function_code_and_dep.py:51 - extract_submission - Found !!submit!! marker in environ item
+2026-06-16 14:03:49,236 - root - [DEBUG] - forager_locate_function_code_and_dep.py:52 - extract_submission - Item output: !!submit!!
+{"function_name": "pr_throttle_init", "file_path": "src/throttle.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function uses standard linked list traversal pattern with no infinite loop conditions."}
+SUBMISSION_COMPLETE
+2026-06-16 14:03:49,237 - root - [INFO] - forager_locate_function_code_and_dep.py:80 - extract_submission - Matched JSON string: {"function_name": "pr_throttle_init", "file_path": "src/throttle.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function uses standard linked list traversal pattern with no infinite loop conditions."}
+2026-06-16 14:03:49,237 - root - [INFO] - forager_locate_function_code_and_dep.py:82 - extract_submission - Extracted submission from environ: {'function_name': 'pr_throttle_init', 'file_path': 'src/throttle.c', 'prediction': 'T', 'p_non_terminating': 0, 'confidence': 'high', 'reason': 'Function uses standard linked list traversal pattern with no infinite loop conditions.'}
+2026-06-16 14:03:49,237 - root - [INFO] - forager_locate_function_code_and_dep.py:162 - process_run - Submission validation: {'correct_function_name': True, 'correct_path': True, 'provided_prediction': True}
+2026-06-16 14:03:49,237 - root - [INFO] - forager_locate_function_code_and_dep.py:326 - run - All validation checks passed
+2026-06-16 14:03:49,237 - root - [INFO] - forager_locate_function_code_and_dep.py:347 - run - Run completed with outcome: success
+2026-06-16 14:03:49,244 - root - [INFO] - des_container.py:428 - shutdown - Shutting down DES container 6456cd3f9cb83c901a60059ef5a467052424a55d902badac386664cfa3537574
+2026-06-16 14:03:49,244 - root - [INFO] - des_container.py:576 - _heartbeat_loop - VMVM heartbeat thread exiting
+2026-06-16 14:03:57,212 - root - [INFO] - des_container.py:228 - release_vm - Releasing VMVM session {"vmvm_session":{"id":"019ed0ba-c4fd-74f3-aa49-b48269b64bbb","ipAddr":"2803:6082:58b0:2b77:2459:1e14:500:0","vaagentPort":30695,"vmPort":15116,"vaagentHostname":"twshared75902.01.dkl1.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|16121806539984002760|0|faas.21449BF125D87E97109EDF969F4B78A8|7472603716804530183","tw_task_handle":"tsp_dkl/faas/workerpool_crackerjack_prod_bgm_ces/12790","region_shortname":"dkl"},"auth_token":{"paseto":"v4.public.eyJzdWIiOiIwMTllZDBiYS1jNGZkLTc0ZjMtYWE0OS1iNDgyNjliNjRiYmIiLCJpYXQiOiIyMDI2LTA2LTE2VDEzOjU5OjI2LjEwMDk5ODY0NyswMDowMCIsImV4cCI6IjIwMjYtMDYtMTdUMTM6NTk6MjZaIiwibmJmIjoiMjAyNi0wNi0xNlQxMzo1OToyNloifWZLJtC75cDXuZDiGqYBMCWqIyapLKQNBKyKGbrBFK0Z0OGn38HJW7naikDUwH1S6zDgaaEkvM2H4vjgj9GfeQw.eyJ0ZW5hbnQiOiJhc3luY18yMzQ3NjQxIiwiaXAiOiIyODAzOjYwODI6NThiMDoyYjc3OjI0NTk6MWUxNDo1MDA6MCIsInBvcnQiOiIxNTExNiIsImZhYXNfaW52b2NhdGlvbl9pZCI6IjR8Z2xvYmFsfGFzeW5jXzIzNDc2NDF8ZGVzX2dlbmVyYWxfdGllcl9wcm9kfDE2MTIxODA2NTM5OTg0MDAyNzYwfDB8ZmFhcy4yMTQ0OUJGMTI1RDg3RTk3MTA5RURGOTY5RjRCNzhBOHw3NDcyNjAzNzE2ODA0NTMwMTgzIn0"}}
+2026-06-16 14:04:16,428 - root - [INFO] - des_container.py:238 - release_vm - VMVM session released
+2026-06-16 14:04:16,429 - root - [INFO] - run.py:224 - repo_task - Finishing repo: proftpd_5194296d_src_throttle_c_pr_throttle_init_1

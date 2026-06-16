@@ -1,0 +1,2330 @@
+2026-06-16 14:03:13,737 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=UNKNOWN_NAME
+2026-06-16 14:03:13,737 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=run
+2026-06-16 14:03:13,911 - root - [INFO] - run.py:148 - repo_task - Model: VllmModel
+2026-06-16 14:03:13,930 - root - [INFO] - run.py:158 - repo_task - Agent: ForagerAgentLocateFunctionCodeAndDep
+2026-06-16 14:03:13,930 - root - [INFO] - run.py:172 - repo_task - Using VMVMBackend, image=vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest
+2026-06-16 14:03:13,930 - root - [INFO] - des_container.py:76 - lease_vm - Leasing VM with client-id=proftpd_5194296d_src_bindings_c_pr_ipbind_add_binds_1, ttl_secs=500
+2026-06-16 14:03:14,906 - root - [INFO] - des_container.py:87 - lease_vm - VM leased in 0.98s: session_id={"vmvm_session":{"id":"019ed0be-0d20-7120-97ff-98621bd4bb26","ipAddr":"2803:6082:a0f0:89a6:610c:d17:500:0","vaagentPort":24935,"vmPort":21090,"vaagentHostname":"twshared1135.07.zch2.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|16121806539984002760|0|faas.5C4187C3B3E71F923704FC646F902699|7472645759823726259","tw_task_handle":"tsp_zch/faas/workerpool_crackerjack_prod_bgm_ces_tier_1/4033","region_shortname":"zch"},"auth_token":{"paseto":"v4.public.eyJuYmYiOiIyMDI2LTA2LTE2VDE0OjAzOjE0WiIsInN1YiI6IjAxOWVkMGJlLTBkMjAtNzEyMC05N2ZmLTk4NjIxYmQ0YmIyNiIsImV4cCI6IjIwMjYtMDYtMTdUMTQ6MDM6MTRaIiwiaWF0IjoiMjAyNi0wNi0xNlQxNDowMzoxNC43NDcwMzEzNzMrMDA6MDAifTtZetCn3lLSd9czhv8Gj7mtyfsufwLe_xhIFoo0Z4w11R1seUYlLOUSz226i6vGSwBvuvfucUT7qZpfhHkWSwQ.eyJpcCI6IjI4MDM6NjA4MjphMGYwOjg5YTY6NjEwYzpkMTc6NTAwOjAiLCJwb3J0IjoiMjEwOTAiLCJmYWFzX2ludm9jYXRpb25faWQiOiI0fGdsb2JhbHxhc3luY18yMzQ3NjQxfGRlc19nZW5lcmFsX3RpZXJfcHJvZHwxNjEyMTgwNjUzOTk4NDAwMjc2MHwwfGZhYXMuNUM0MTg3QzNCM0U3MUY5MjM3MDRGQzY0NkY5MDI2OTl8NzQ3MjY0NTc1OTgyMzcyNjI1OSIsInRlbmFudCI6ImFzeW5jXzIzNDc2NDEifQ"}}
+2026-06-16 14:03:14,906 - root - [INFO] - des_container.py:195 - load_image - Pulling image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest on VMVM
+2026-06-16 14:06:36,235 - root - [INFO] - des_container.py:203 - load_image - Image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest pulled successfully
+2026-06-16 14:06:37,980 - root - [INFO] - des_container.py:221 - run_container - Container started: ccc31b7203d6a150e1fa720c1541113c5cfa8a965dd1e198e70efd331cd6e681
+2026-06-16 14:06:37,980 - root - [INFO] - des_container.py:565 - _heartbeat_loop - VMVM heartbeat thread started
+2026-06-16 14:06:37,981 - root - [INFO] - forager_locate_function_code_and_dep.py:294 - run - Starting analysis for pr_ipbind_add_binds in src/bindings.c
+2026-06-16 14:06:37,981 - root - [INFO] - forager_locate_function_code_and_dep.py:208 - prepare_cpp_container - ========== Preparing C++ container ==========
+2026-06-16 14:06:37,981 - root - [DEBUG] - forager_locate_function_code_and_dep.py:211 - prepare_cpp_container - Setting up env variables
+2026-06-16 14:06:37,981 - root - [DEBUG] - des_container.py:308 - command - DES command: 'export WINDOW=100 && export OVERLAP=2 && export CURRENT_LINE=0 && export CURRENT'
+2026-06-16 14:06:39,692 - root - [DEBUG] - forager_locate_function_code_and_dep.py:220 - prepare_cpp_container - Importing agent tools in container
+2026-06-16 14:06:41,315 - root - [DEBUG] - des_container.py:385 - put - DES put: 6243 bytes to /opt/tools/defaults.sh
+2026-06-16 14:06:47,305 - root - [DEBUG] - des_container.py:308 - command - DES command: 'source /opt/tools/defaults.sh'
+2026-06-16 14:06:50,268 - root - [DEBUG] - des_container.py:385 - put - DES put: 5735 bytes to /opt/tools/search.sh
+2026-06-16 14:07:14,355 - root - [DEBUG] - des_container.py:308 - command - DES command: 'source /opt/tools/search.sh'
+2026-06-16 14:07:21,533 - root - [DEBUG] - des_container.py:308 - command - DES command: 'export PATH=/opt/tools:$PATH'
+2026-06-16 14:07:23,268 - root - [INFO] - forager_locate_function_code_and_dep.py:225 - prepare_cpp_container - Uploading submit_prediction command
+2026-06-16 14:07:23,268 - root - [DEBUG] - des_container.py:385 - put - DES put: 74 bytes to /usr/local/bin/submit_prediction
+2026-06-16 14:07:45,284 - root - [DEBUG] - des_container.py:308 - command - DES command: 'chmod +x /usr/local/bin/submit_prediction'
+2026-06-16 14:07:46,767 - root - [DEBUG] - des_container.py:308 - command - DES command: "which submit_prediction || echo 'Not in PATH'"
+2026-06-16 14:07:48,349 - root - [INFO] - forager_locate_function_code_and_dep.py:237 - prepare_cpp_container - Script in PATH: /usr/local/bin/submit_prediction
+2026-06-16 14:07:48,349 - root - [DEBUG] - des_container.py:308 - command - DES command: "export GIT_AUTHOR_NAME='CI Bot' && export GIT_AUTHOR_EMAIL='ci-bot@yourdomain.co"
+2026-06-16 14:07:49,704 - root - [DEBUG] - forager_locate_function_code_and_dep.py:256 - prepare_cpp_container - Creating /workspace directory
+2026-06-16 14:07:49,704 - root - [DEBUG] - des_container.py:308 - command - DES command: 'mkdir -p /workspace'
+2026-06-16 14:07:51,111 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cd /workspace'
+2026-06-16 14:08:08,785 - root - [DEBUG] - forager_locate_function_code_and_dep.py:196 - _init_prompt - Task prompt:
+Your task is to predict whether the function `pr_ipbind_add_binds` in the C++ file `src/bindings.c` will:
+- **Terminate** for all inputs, OR
+- **Diverge** for some inputs (enter a non-terminating loop)
+
+**Important:** This is a **read-only code analysis task**. You may only use shell commands to view files. Do not execute any C++ code or modify any files. Only use commands like `cat`, `grep`, `find`, `ls`, `cd`, `head`, `tail`, `git`, etc.
+
+## STEP 1: Clone the Repository
+
+First, clone the repository and checkout the specific commit:
+```bash
+git clone https://github.com/proftpd/proftpd /workspace/proftpd && cd /workspace/proftpd && git checkout 5194296d8ecb7e9b1e53b5b5545b303a5deb320a
+```
+
+## STEP 2: Examine the Function
+
+Navigate to the repository and examine the function using read-only commands. Examples:
+```bash
+cd /workspace/proftpd
+cat src/bindings.c                              # View the entire file
+grep -n "pr_ipbind_add_binds" src/bindings.c    # Find the function's line number
+grep -A 50 "pr_ipbind_add_binds" src/bindings.c # View the function plus 50 lines after (of course you can view more).
+```
+
+## STEP 3: Analyze Dependencies
+Important: The function may call other functions, use external types, or depend on macros defined elsewhere. You must examine these dependencies to fully understand the code's behavior.
+- Find and read helper functions called within the target function
+- Examine header files for type definitions and macros
+- Check struct/class definitions to understand data types
+- Trace function pointers to their implementations
+
+Finding dependencies:
+```bash
+grep -rn "function_name" /workspace/proftpd/
+find . -name "*.h" | xargs grep "TypeName"
+cat path/to/header.h
+```
+
+## STEP 4: Classify the Function
+**"T" (Terminates)** - Function terminates for all possible inputs:
+- No blocking synchronization calls. All loops have reachable exit conditions. Loop variables progress correctly toward exit. Proper bounds checking and error handling
+**"NT" (Non-Termination)** - Designed to block or loop indefinitely (can be intentional by the user or a bug). Examples:
+- Thread synchronization primitives. Locks. Condition variables. Event loops or server loops that run until external signal.
+Worker thread functions waiting for tasks or termination signals.
+- Loop variable never modified or modified in wrong direction. `while(1)` or `for(;;)` without reachable `break` or `return`.
+Unbounded I/O operations without proper termination checks. Missing loop increment/decrement statements.
+
+## STEP 5: Submit Your Prediction
+
+When ready, submit your classification:
+```bash
+submit_prediction '{"function_name": "pr_ipbind_add_binds", "file_path": "src/bindings.c", "prediction": "<T|NT>", "p_non_terminating": <0-100>, "confidence": "<high|medium|low>", "reason": "<one concise sentence>"}'
+```
+
+**Field definitions:**
+- `prediction`: "T" if the function terminates for all inputs, "NT" if it can loop/block indefinitely
+- `p_non_terminating`: integer 0–100 — your estimated probability (in %) that the function is non-terminating
+- `confidence`: "high" if the evidence is clear and unambiguous, "medium" if there is some uncertainty, "low" if the code is hard to fully trace or the behavior is unclear
+- `reason`: one concise sentence explaining the key factor driving your prediction
+
+**Guidelines:**
+- Execute one command per response in triple backticks
+- Read all relevant source and header files before making a prediction
+- Trace data flow to understand where loop bounds and conditions come from
+- Consider edge cases: zero values, type overflows, null pointers, EOF conditions
+- Only submit your prediction when you have thoroughly analyzed the code
+- Begin by cloning the repository
+2026-06-16 14:08:08,786 - root - [INFO] - forager_base.py:342 - start_trajectory - =========== Starting new trajectory ==========
+2026-06-16 14:08:08,786 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 1
+2026-06-16 14:08:08,786 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:08:10,091 - root - [INFO] - logging.py:31 - log_time - Took 1.31s
+2026-06-16 14:08:10,098 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'git clone https://github.com/p' (timeout=120)
+2026-06-16 14:08:10,098 - root - [DEBUG] - des_container.py:308 - command - DES command: 'git clone https://github.com/proftpd/proftpd /workspace/proftpd && cd /workspace'
+2026-06-16 14:08:36,009 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 14:08:36,009 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 2
+2026-06-16 14:08:36,009 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:08:36,217 - root - [INFO] - logging.py:31 - log_time - Took 0.21s
+2026-06-16 14:08:36,221 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cd /workspace/proftpd\n' (timeout=120)
+2026-06-16 14:08:36,222 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cd /workspace/proftpd\n'
+2026-06-16 14:08:37,625 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 14:08:37,625 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 3
+2026-06-16 14:08:37,625 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:08:37,781 - root - [INFO] - logging.py:31 - log_time - Took 0.16s
+2026-06-16 14:08:37,784 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cat src/bindings.c\n' (timeout=120)
+2026-06-16 14:08:37,784 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cat src/bindings.c\n'
+2026-06-16 14:08:39,433 - root - [DEBUG] - des_container.py:572 - _heartbeat_loop - VMVM heartbeat sent
+2026-06-16 14:08:55,260 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /*
+ * ProFTPD - FTP server daemon
+ * Copyright (c) 2001-2025 The ProFTPD Project team
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Suite 500, Boston, MA 02110-1335, USA.
+ *
+ * As a special exemption, The ProFTPD Project team and other respective
+ * copyright holders give permission to link this program with OpenSSL, and
+ * distribute the resulting executable, without including the source code for
+ * OpenSSL in the source distribution.
+ */
+
+/* Routines to work with ProFTPD bindings. */
+
+#include "conf.h"
+
+/* From src/dirtree.c */
+extern xaset_t *server_list;
+extern server_rec *main_server;
+
+static pr_ipbind_t *ipbind_table[PR_BINDINGS_TABLE_SIZE];
+static int ipbind_table_initialized = FALSE;
+
+static pool *binding_pool = NULL;
+static pr_ipbind_t *ipbind_default_server = NULL,
+                   *ipbind_localhost_server = NULL;
+
+static const char *trace_channel = "binding";
+
+static void trace_ipbind_table(void);
+
+static void init_ipbind_table(void) {
+  if (ipbind_table_initialized == TRUE) {
+    return;
+  }
+
+  memset(ipbind_table, 0, sizeof(ipbind_table));
+  ipbind_table_initialized = TRUE;
+}
+
+/* Server cleanup callback function */
+static void server_cleanup_cb(void *conn) {
+  *((conn_t **) conn) = NULL;
+}
+
+/* The hashing function for the hash table of bindings.  This algorithm
+ * is stolen from Apache's http_vhost.c
+ */
+static unsigned int ipbind_hash_addr(const pr_netaddr_t *addr,
+    unsigned int port) {
+  size_t offset;
+  unsigned int key, idx;
+
+  offset = pr_netaddr_get_inaddr_len(addr);
+
+  /* The key is the last four bytes of the IP address.
+   * For IPv4, this is the entire address, as always.
+   * For IPv6, this is usually part of the MAC address.
+   */
+  key = *(unsigned *) ((char *) pr_netaddr_get_inaddr(addr) + offset - 4);
+
+  /* Add in the port number, to give better spread of key values when many
+   * different port values are used.
+   */
+  key += port;
+
+  key ^= (key >> 16);
+  idx = ((key >> 8) ^ key) % PR_BINDINGS_TABLE_SIZE;
+  return idx;
+}
+
+static pool *listening_conn_pool = NULL;
+static xaset_t *listening_conn_list = NULL;
+struct listener_rec {
+  struct listener_rec *next, *prev;
+
+  pool *pool;
+  const pr_netaddr_t *addr;
+  unsigned int port;
+  conn_t *conn;
+  int claimed;
+};
+
+conn_t *pr_ipbind_get_listening_conn(server_rec *server,
+    const pr_netaddr_t *addr, unsigned int port) {
+  conn_t *l, *sl;
+  pool *p;
+  struct listener_rec *lr;
+
+  if (listening_conn_list) {
+    for (lr = (struct listener_rec *) listening_conn_list->xas_list; lr;
+        lr = lr->next) {
+      int use_elt = FALSE;
+
+      pr_signals_handle();
+
+      if (addr != NULL &&
+          lr->addr != NULL) {
+        const char *lr_ipstr = NULL;
+
+        lr_ipstr = pr_netaddr_get_ipstr(lr->addr);
+
+        /* Note: lr_ipstr should never be null.  If it is, it means that
+         * the lr->addr object never had its IP address resolved/stashed,
+         * and in attempting to do, getnameinfo(3) failed for some reason.
+         *
+         * The IP address on which it's listening, if not available via
+         * lr->addr, should thus be available via lr->conn->local_addr.
+         */
+
+        if (lr_ipstr == NULL &&
+            lr->conn != NULL) {
+          lr_ipstr = pr_netaddr_get_ipstr(lr->conn->local_addr);
+        }
+
+        if (lr_ipstr != NULL) {
+          if (strcmp(pr_netaddr_get_ipstr(addr), lr_ipstr) == 0 &&
+              port == lr->port) {
+            use_elt = TRUE;
+          }
+        }
+
+      } else if (addr == NULL &&
+                 port == lr->port) {
+        use_elt = TRUE;
+      }
+
+      if (use_elt == TRUE) {
+        lr->claimed = TRUE;
+        return lr->conn;
+      }
+    }
+  }
+
+  if (listening_conn_pool == NULL) {
+    listening_conn_pool = make_sub_pool(permanent_pool);
+    pr_pool_tag(listening_conn_pool, "Listening Connection Pool");
+
+    listening_conn_list = xaset_create(listening_conn_pool, NULL);
+  }
+
+  p = make_sub_pool(listening_conn_pool);
+  pr_pool_tag(p, "Listening conn subpool");
+
+  l = pr_inet_create_conn(p, -1, addr, port, FALSE);
+  if (l == NULL) {
+    return NULL;
+  }
+
+  /* Inform any interested listeners that this socket was opened.  In order
+   * to convey the discovered conn_t `l` to the event listener, we set it
+   * on the server `s` temporarily.
+   */
+  sl = server->listen;
+  server->listen = l;
+  pr_inet_generate_socket_event("core.ctrl-listen", server, l->local_addr,
+    l->listen_fd);
+  server->listen = sl;
+
+  lr = pcalloc(p, sizeof(struct listener_rec));
+  lr->pool = p;
+  lr->conn = l;
+  lr->addr = pr_netaddr_dup(p, addr);
+  if (lr->addr == NULL &&
+      errno != EINVAL) {
+    return NULL;
+  }
+  lr->port = port;
+  lr->claimed = TRUE;
+
+  xaset_insert(listening_conn_list, (xasetmember_t *) lr);
+  return l;
+}
+
+/* Slight (clever?) optimization: the loop in server_loop() always
+ * calls pr_ipbind_listen(), selects, then pr_ipbind_accept_conn().  Now,
+ * rather than having both pr_ipbind_listen() and pr_ipbind_accept_conn()
+ * scan the entire ipbind table looking for matches, what if pr_ipbind_listen
+ * kept track of which listeners (connt_s) it used, so that
+ * pr_ipbind_accept_conn() need merely check those listeners, rather than
+ * scanning the entire table itself?
+ */
+
+static array_header *listener_list = NULL;
+
+conn_t *pr_ipbind_accept_conn(fd_set *readfds, int *listenfd) {
+  conn_t **listeners = listener_list->elts;
+  register unsigned int i = 0;
+
+  if (readfds == NULL ||
+      listenfd == NULL) {
+    errno = EINVAL;
+    return NULL;
+  }
+
+  for (i = 0; i < listener_list->nelts; i++) {
+    conn_t *listener = listeners[i];
+
+    pr_signals_handle();
+    if (FD_ISSET(listener->listen_fd, readfds) &&
+        listener->mode == CM_LISTEN) {
+      int fd = pr_inet_accept_nowait(listener->pool, listener);
+
+      if (fd == -1) {
+        int xerrno = errno;
+
+        /* Handle errors gracefully.  If we're here, then
+         * ipbind->ib_server->listen contains either error information, or
+         * we just got caught in a blocking condition.
+         */
+        if (listener->mode == CM_ERROR) {
+
+          /* Ignore ECONNABORTED, as they tend to be health checks/probes by
+           * e.g. load balancers and other naive TCP clients.
+           */
+          if (listener->xerrno != ECONNABORTED) {
+            pr_log_pri(PR_LOG_ERR, "error: unable to accept an incoming "
+              "connection: %s", strerror(listener->xerrno));
+          }
+
+          listener->xerrno = 0;
+          listener->mode = CM_LISTEN;
+
+          errno = xerrno;
+          return NULL;
+        }
+      }
+
+      *listenfd = fd;
+      return listener;
+    }
+  }
+
+  errno = ENOENT;
+  return NULL;
+}
+
+int pr_ipbind_add_binds(server_rec *serv) {
+  int res = 0;
+  config_rec *c = NULL;
+  conn_t *listen_conn = NULL;
+  const pr_netaddr_t *addr = NULL;
+
+  if (serv == NULL) {
+    errno = EINVAL;
+    return -1;
+  }
+
+  c = find_config(serv->conf, CONF_PARAM, "_bind_", FALSE);
+  while (c != NULL) {
+    listen_conn = NULL;
+
+    pr_signals_handle();
+
+    addr = pr_netaddr_get_addr(serv->pool, c->argv[0], NULL);
+    if (addr == NULL) {
+      pr_log_pri(PR_LOG_WARNING,
+       "notice: unable to determine IP address of '%s'", (char *) c->argv[0]);
+      c = find_config_next(c, c->next, CONF_PARAM, "_bind_", FALSE);
+      continue;
+    }
+
+    /* If the SocketBindTight directive is in effect, create a separate
+     * listen socket for this address, and add it to the binding list.
+     */
+    if (SocketBindTight &&
+        serv->ServerPort) {
+      listen_conn = pr_ipbind_get_listening_conn(serv, addr, serv->ServerPort);
+      if (listen_conn == NULL) {
+        return -1;
+      }
+
+      res = pr_ipbind_create(serv, addr, serv->ServerPort);
+      if (res < 0) {
+        pr_log_pri(PR_LOG_NOTICE,
+          "%s:%d: notice: unable to create ipbind '%s#%u': %s", __FILE__,
+          __LINE__, serv->ServerAddress, serv->ServerPort, strerror(errno));
+      }
+
+      res = pr_ipbind_open(addr, serv->ServerPort, listen_conn, FALSE, FALSE,
+        TRUE);
+      if (res < 0) {
+        pr_log_pri(PR_LOG_NOTICE,
+          "%s:%d: notice: unable to open ipbind '%s': %s", __FILE__, __LINE__,
+          pr_netaddr_get_ipstr(addr), strerror(errno));
+      }
+
+    } else {
+      res = pr_ipbind_create(serv, addr, serv->ServerPort);
+      if (res < 0) {
+        pr_log_pri(PR_LOG_NOTICE,
+          "%s:%d: notice: unable to create ipbind '%s#%u': %s", __FILE__,
+          __LINE__, serv->ServerAddress, serv->ServerPort, strerror(errno));
+      }
+
+      res = pr_ipbind_open(addr, serv->ServerPort, serv->listen, FALSE, FALSE,
+        TRUE);
+      if (res < 0) {
+        pr_log_pri(PR_LOG_NOTICE,
+          "%s:%d: notice: unable to open ipbind '%s': %s", __FILE__, __LINE__,
+          pr_netaddr_get_ipstr(addr), strerror(errno));
+      }
+    }
+
+    c = find_config_next(c, c->next, CONF_PARAM, "_bind_", FALSE);
+  }
+
+  return 0;
+}
+
+int pr_ipbind_close(const pr_netaddr_t *addr, unsigned int port,
+    unsigned char close_namebinds) {
+  register unsigned int i = 0;
+
+  if (addr != NULL) {
+    pr_ipbind_t *ipbind = NULL;
+    unsigned char have_ipbind = FALSE;
+
+    i = ipbind_hash_addr(addr, port);
+
+    if (ipbind_table[i] == NULL) {
+      pr_log_pri(PR_LOG_NOTICE, "notice: no ipbind found for %s:%d",
+        pr_netaddr_get_ipstr(addr), port);
+      errno = ENOENT;
+      return -1;
+    }
+
+    for (ipbind = ipbind_table[i]; ipbind; ipbind = ipbind->ib_next) {
+      pr_signals_handle();
+
+      if (pr_netaddr_cmp(ipbind->ib_addr, addr) == 0 &&
+          (!ipbind->ib_port || ipbind->ib_port == port)) {
+        have_ipbind = TRUE;
+        break;
+      }
+    }
+
+    if (have_ipbind == FALSE) {
+      pr_log_pri(PR_LOG_NOTICE, "notice: no ipbind found for %s:%d",
+        pr_netaddr_get_ipstr(addr), port);
+      errno = ENOENT;
+      return -1;
+    }
+
+    /* If already closed, exit now. */
+    if (ipbind->ib_isactive == FALSE) {
+      errno = EPERM;
+      return -1;
+    }
+
+    /* Close the ipbinding's listen connection, if present.  The trick
+     * here is determining whether this binding's listen member is
+     * _the_ listening socket for the master daemon, or whether it's
+     * been created for SocketBindTight, and can be closed.
+     *
+     * Actually, it's not that hard.  It's only _the_ listening socket
+     * for the master daemon in inetd mode, in which case virtual servers
+     * can't be shutdown via ftpdctl, anyway.
+     */
+    if (SocketBindTight &&
+        ipbind->ib_listener != NULL) {
+      pr_inet_close(ipbind->ib_server->pool, ipbind->ib_listener);
+      ipbind->ib_listener = ipbind->ib_server->listen = NULL;
+    }
+
+    /* Mark this ipbind as inactive.  For SocketBindTight sockets, the
+     * closing of the listening connection will suffice, from the clients'
+     * point of view.  However, this covers the non-SocketBindTight case,
+     * and will prevent this binding from returning its server_rec pointer
+     * on future lookup requests via pr_ipbind_get_server().
+     */
+    ipbind->ib_isactive = FALSE;
+
+    if (close_namebinds == TRUE &&
+        ipbind->ib_namebinds != NULL) {
+      register unsigned int j = 0;
+      pr_namebind_t **namebinds = NULL;
+
+      namebinds = (pr_namebind_t **) ipbind->ib_namebinds->elts;
+      for (j = 0; j < ipbind->ib_namebinds->nelts; j++) {
+        pr_namebind_t *nb;
+
+        pr_signals_handle();
+
+        nb = namebinds[j];
+        if (pr_namebind_close(nb->nb_name, nb->nb_server->addr) < 0) {
+          pr_trace_msg(trace_channel, 7,
+            "notice: error closing namebind '%s' for address %s: %s",
+            nb->nb_name, pr_netaddr_get_ipstr(nb->nb_server->addr),
+            strerror(errno));
+        }
+      }
+    }
+
+  } else {
+    /* A NULL addr has a special meaning: close _all_ ipbinds in the list. */
+    for (i = 0; i < PR_BINDINGS_TABLE_SIZE; i++) {
+      pr_ipbind_t *ipbind = NULL;
+
+      pr_signals_handle();
+
+      for (ipbind = ipbind_table[i]; ipbind; ipbind = ipbind->ib_next) {
+        if (SocketBindTight &&
+            ipbind->ib_listener != NULL) {
+          pr_inet_close(main_server->pool, ipbind->ib_listener);
+          ipbind->ib_listener = ipbind->ib_server->listen = NULL;
+        }
+
+        /* Note: do not need to check if this ipbind was previously closed,
+         * for the NULL addr is a request to shut down all ipbinds,
+         * regardless of their current state.
+         */
+        ipbind->ib_isactive = FALSE;
+
+        if (close_namebinds &&
+            ipbind->ib_namebinds != NULL) {
+          register unsigned int j = 0;
+          pr_namebind_t **namebinds = NULL;
+
+          namebinds = (pr_namebind_t **) ipbind->ib_namebinds->elts;
+          for (j = 0; j < ipbind->ib_namebinds->nelts; j++) {
+            pr_namebind_t *nb;
+
+            pr_signals_handle();
+
+            nb = namebinds[j];
+            if (pr_namebind_close(nb->nb_name, nb->nb_server->addr) < 0) {
+              pr_trace_msg(trace_channel, 7,
+                "notice: error closing namebind '%s' for address %s: %s",
+                nb->nb_name, pr_netaddr_get_ipstr(nb->nb_server->addr),
+               strerror(errno));
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return 0;
+}
+
+/* Need a way to close all listening fds in a child process. */
+int pr_ipbind_close_listeners(void) {
+  conn_t **listeners;
+  register unsigned int i = 0;
+
+  if (listener_list == NULL ||
+      listener_list->nelts == 0) {
+    return 0;
+  }
+
+  listeners = listener_list->elts;
+  for (i = 0; i < listener_list->nelts; i++) {
+    conn_t *listener;
+
+    pr_signals_handle();
+
+    listener = listeners[i];
+    if (listener->listen_fd != -1) {
+      (void) close(listener->listen_fd);
+      listener->listen_fd = -1;
+    }
+  }
+
+  return 0;
+}
+
+int pr_ipbind_create(server_rec *server, const pr_netaddr_t *addr,
+    unsigned int port) {
+  pr_ipbind_t *existing = NULL, *ipbind = NULL;
+  register unsigned int i = 0;
+
+  if (server == NULL||
+      addr == NULL) {
+    errno = EINVAL;
+    return -1;
+  }
+
+  /* Ensure the ipbind table has been initialized. */
+  init_ipbind_table();
+
+  i = ipbind_hash_addr(addr, port);
+  pr_trace_msg(trace_channel, 29, "hashed address '%s' to index %u",
+    pr_netaddr_get_ipstr(addr), i);
+
+  /* Make sure the address is not already in use */
+  for (ipbind = ipbind_table[i]; ipbind; ipbind = ipbind->ib_next) {
+    pr_signals_handle();
+
+    if (pr_netaddr_cmp(ipbind->ib_addr, addr) == 0 &&
+        ipbind->ib_port == port) {
+      existing = ipbind;
+      break;
+    }
+  }
+
+  if (existing != NULL) {
+    config_rec *c;
+
+    /* If the given server config does not have any ServerAlias directives,
+     * then this is an IP/port collision, and we need to return an error.
+     *
+     * However, if there are ServerAliases, this is a name-based config and
+     * should be processed properly.
+     */
+
+    c = find_config(server->conf, CONF_PARAM, "ServerAlias", FALSE);
+    if (c == NULL) {
+      pr_log_pri(PR_LOG_WARNING, "notice: '%s' (%s:%u) already bound to '%s'",
+        server->ServerName, pr_netaddr_get_ipstr(addr), port,
+        existing->ib_server->ServerName);
+      errno = EADDRINUSE;
+      return -1;
+    }
+
+    pr_log_debug(DEBUG9, "notice: '%s' (%s:%u) already bound to '%s'",
+      server->ServerName, pr_netaddr_get_ipstr(addr), port,
+      existing->ib_server->ServerName);
+  }
+
+  if (binding_pool == NULL) {
+    binding_pool = make_sub_pool(permanent_pool);
+    pr_pool_tag(binding_pool, "Bindings Pool");
+  }
+
+  ipbind = pcalloc(server->pool, sizeof(pr_ipbind_t));
+  ipbind->ib_server = server;
+  ipbind->ib_addr = addr;
+  ipbind->ib_port = port;
+  ipbind->ib_namebinds = NULL;
+  ipbind->ib_isdefault = FALSE;
+  ipbind->ib_islocalhost = FALSE;
+  ipbind->ib_isactive = FALSE;
+
+  pr_trace_msg(trace_channel, 8, "created ipbind %p for %s#%u, server %p (%s)",
+    ipbind, pr_netaddr_get_ipstr(ipbind->ib_addr), ipbind->ib_port,
+    ipbind->ib_server, ipbind->ib_server->ServerName);
+
+  /* Add the ipbind to the table, maintaining insertion order. */
+  if (existing != NULL) {
+    pr_trace_msg(trace_channel, 19,
+      "found existing ipbind %p (server %p) at index %u in iptable table, "
+      "adding to %p", existing, existing->ib_server, i, existing);
+    if (existing->ib_next != NULL) {
+      ipbind->ib_next = existing->ib_next;
+    }
+    existing->ib_next = ipbind;
+
+  } else {
+    if (ipbind_table[i] != NULL) {
+      ipbind->ib_next = ipbind_table[i];
+    }
+    ipbind_table[i] = ipbind;
+  }
+
+  return 0;
+}
+
+/* Returns the LAST matching ipbind for the given port, if any.  If provided,
+ * the match_count pointer will contain the number of ipbinds found that
+ * matched that port.
+ */
+static pr_ipbind_t *ipbind_find_port(unsigned int port,
+    unsigned char skip_inactive, unsigned int *match_count) {
+  register unsigned int i;
+  pr_ipbind_t *matched_ipbind = NULL;
+
+  for (i = 0; i < PR_BINDINGS_TABLE_SIZE; i++) {
+    pr_ipbind_t *ipbind;
+
+    for (ipbind = ipbind_table[i]; ipbind; ipbind = ipbind->ib_next) {
+      pr_signals_handle();
+
+      if (skip_inactive &&
+          !ipbind->ib_isactive) {
+        continue;
+      }
+
+      if (ipbind->ib_port == port) {
+        if (match_count != NULL) {
+          (*match_count)++;
+        }
+
+        matched_ipbind = ipbind;
+      }
+    }
+  }
+
+  if (matched_ipbind == NULL) {
+    errno = ENOENT;
+    return NULL;
+  }
+
+  return matched_ipbind;
+}
+
+pr_ipbind_t *pr_ipbind_find(const pr_netaddr_t *addr, unsigned int port,
+    unsigned char skip_inactive) {
+  register unsigned int i;
+  pr_ipbind_t *ipbind = NULL;
+
+  if (addr == NULL) {
+    errno = EINVAL;
+    return NULL;
+  }
+
+  /* Ensure the ipbind table has been initialized. */
+  init_ipbind_table();
+
+  i = ipbind_hash_addr(addr, port);
+
+  for (ipbind = ipbind_table[i]; ipbind; ipbind = ipbind->ib_next) {
+    pr_signals_handle();
+
+    if (ipbind->ib_isactive == FALSE &&
+        skip_inactive == TRUE) {
+      continue;
+    }
+
+    if (pr_netaddr_cmp(ipbind->ib_addr, addr) == 0) {
+      if (ipbind->ib_port == 0 ||
+          port == 0 ||
+          ipbind->ib_port == port) {
+        return ipbind;
+      }
+    }
+  }
+
+  errno = ENOENT;
+  return NULL;
+}
+
+pr_ipbind_t *pr_ipbind_get(pr_ipbind_t *prev) {
+  static unsigned int i = 0;
+
+  if (prev != NULL) {
+    /* If there's another ipbind in this chain, simply return that. */
+    if (prev->ib_next != NULL) {
+      return prev->ib_next;
+    }
+
+    /* If the increment is at the maximum size, return NULL (no more chains
+     * to be examined).
+     */
+    if (i == PR_BINDINGS_TABLE_SIZE) {
+      errno = ENOENT;
+      return NULL;
+    }
+
+    /* Increment the index. At this point, we know that the given pointer is
+     * the last in the chain, and that there are more chains in the table
+     * to be examined.
+     */
+    i++;
+
+  } else {
+    /* Reset the index if prev is NULL. */
+    i = 0;
+  }
+
+  /* Search for the next non-empty chain in the table. */
+  for (; i < PR_BINDINGS_TABLE_SIZE; i++) {
+    pr_signals_handle();
+
+    if (ipbind_table[i] != NULL) {
+      return ipbind_table[i];
+    }
+  }
+
+  errno = ENOENT;
+  return NULL;
+}
+
+server_rec *pr_ipbind_get_server(const pr_netaddr_t *addr, unsigned int port) {
+  pr_ipbind_t *ipbind = NULL;
+  pr_netaddr_t wildcard_addr;
+  int addr_family;
+  unsigned int match_count = 0;
+
+  /* If we've got a binding configured for this exact address, return it
+   * straight away.
+   */
+  ipbind = pr_ipbind_find(addr, port, TRUE);
+  if (ipbind != NULL) {
+    pr_log_debug(DEBUG7, "matching vhost found for %s#%u, using '%s'",
+      pr_netaddr_get_ipstr(addr), port, ipbind->ib_server->ServerName);
+    return ipbind->ib_server;
+  }
+
+  /* Look for a vhost bound to the wildcard address (i.e. INADDR_ANY).
+   *
+   * This allows for "<VirtualHost 0.0.0.0>" configurations, where the
+   * IP address to which the client might connect is not known at
+   * configuration time.  (Usually happens when the same config file
+   * is deployed to multiple machines.)
+   */
+
+  addr_family = pr_netaddr_get_family(addr);
+
+  pr_netaddr_clear(&wildcard_addr);
+  pr_netaddr_set_family(&wildcard_addr, addr_family);
+  pr_netaddr_set_sockaddr_any(&wildcard_addr);
+
+  ipbind = pr_ipbind_find(&wildcard_addr, port, TRUE);
+  if (ipbind != NULL) {
+    pr_log_debug(DEBUG7, "no matching vhost found for %s#%u, using "
+      "'%s' listening on wildcard address", pr_netaddr_get_ipstr(addr), port,
+      ipbind->ib_server->ServerName);
+    return ipbind->ib_server;
+  }
+
+#ifdef PR_USE_IPV6
+  if (addr_family == AF_INET6 &&
+      pr_netaddr_use_ipv6()) {
+
+    /* The pr_ipbind_find() probably returned NULL because there aren't any
+     * <VirtualHost> sections configured explicitly for the wildcard IPv6
+     * address of "::", just the IPv4 wildcard "0.0.0.0" address.
+     *
+     * So try the pr_ipbind_find() again, this time using the IPv4
+     * wildcard.
+     */
+    pr_netaddr_clear(&wildcard_addr);
+    pr_netaddr_set_family(&wildcard_addr, AF_INET);
+    pr_netaddr_set_sockaddr_any(&wildcard_addr);
+
+    ipbind = pr_ipbind_find(&wildcard_addr, port, TRUE);
+    if (ipbind != NULL) {
+      pr_log_debug(DEBUG7, "no matching vhost found for %s#%u, using "
+        "'%s' listening on wildcard address", pr_netaddr_get_ipstr(addr),
+        port, ipbind->ib_server->ServerName);
+      return ipbind->ib_server;
+    }
+  }
+#endif /* PR_USE_IPV6 */
+
+  /* Check for any bindings that match the port.  IF there is only one ONE
+   * vhost which matches the requested port, use that (Bug#4251).
+   */
+  ipbind = ipbind_find_port(port, TRUE, &match_count);
+  if (ipbind != NULL) {
+    pr_trace_msg(trace_channel, 18, "found %u possible %s for port %u",
+      match_count, match_count != 1 ? "ipbinds" : "ipbind", port);
+    if (match_count == 1) {
+      return ipbind->ib_server;
+    }
+  }
+
+  /* Use the default server, if set. */
+  if (ipbind_default_server &&
+      ipbind_default_server->ib_isactive) {
+    pr_log_debug(DEBUG7, "no matching vhost found for %s#%u, using "
+      "DefaultServer '%s'", pr_netaddr_get_ipstr(addr), port,
+      ipbind_default_server->ib_server->ServerName);
+    return ipbind_default_server->ib_server;
+  }
+
+  /* Not found in binding list, and no DefaultServer, so see if it's the
+   * loopback address
+   */
+  if (ipbind_localhost_server &&
+      pr_netaddr_is_loopback(addr)) {
+    return ipbind_localhost_server->ib_server;
+  }
+
+  return NULL;
+}
+
+int pr_ipbind_listen(fd_set *readfds) {
+  int listen_flags = PR_INET_LISTEN_FL_FATAL_ON_ERROR, maxfd = 0;
+  register unsigned int i = 0;
+
+  /* sanity check */
+  if (readfds == NULL) {
+    errno = EINVAL;
+    return -1;
+  }
+
+  FD_ZERO(readfds);
+
+  if (binding_pool == NULL) {
+    binding_pool = make_sub_pool(permanent_pool);
+    pr_pool_tag(binding_pool, "Bindings Pool");
+  }
+
+  /* Reset the listener list. */
+  if (listener_list == NULL) {
+    listener_list = make_array(binding_pool, 1, sizeof(conn_t *));
+
+  } else {
+    /* Nasty hack to "clear" the list by making it think it has no
+     * elements.
+     */
+    listener_list->nelts = 0;
+  }
+
+  /* Slower than the hash lookup, but...we have to check each and every
+   * ipbind in the table.
+   */
+  for (i = 0; i < PR_BINDINGS_TABLE_SIZE; i++) {
+    pr_ipbind_t *ipbind = NULL;
+
+    for (ipbind = ipbind_table[i]; ipbind; ipbind = ipbind->ib_next) {
+      pr_signals_handle();
+
+      /* Skip inactive bindings, but only if SocketBindTight is in effect. */
+      if (SocketBindTight &&
+          ipbind->ib_isactive == FALSE) {
+        continue;
+      }
+
+      if (ipbind->ib_listener != NULL) {
+        if (ipbind->ib_listener->mode == CM_NONE) {
+          pr_inet_listen(ipbind->ib_listener->pool, ipbind->ib_listener,
+            tcpBackLog, listen_flags);
+        }
+
+        if (ipbind->ib_listener->mode == CM_ACCEPT) {
+          if (pr_inet_resetlisten(ipbind->ib_listener->pool,
+              ipbind->ib_listener) < 0) {
+            pr_trace_msg(trace_channel, 3,
+              "error resetting %s#%u for listening: %s",
+              pr_netaddr_get_ipstr(ipbind->ib_addr), ipbind->ib_port,
+              strerror(errno));
+          }
+        }
+
+        if (ipbind->ib_listener->mode == CM_LISTEN) {
+          FD_SET(ipbind->ib_listener->listen_fd, readfds);
+          if (ipbind->ib_listener->listen_fd > maxfd) {
+            maxfd = ipbind->ib_listener->listen_fd;
+          }
+
+          /* Add this to the listener list as well. */
+          *((conn_t **) push_array(listener_list)) = ipbind->ib_listener;
+        }
+      }
+    }
+  }
+
+  return maxfd;
+}
+
+int pr_ipbind_open(const pr_netaddr_t *addr, unsigned int port,
+    conn_t *listen_conn, unsigned char isdefault, unsigned char islocalhost,
+    unsigned char open_namebinds) {
+  pr_ipbind_t *ipbind = NULL;
+
+  if (addr == NULL) {
+    errno = EINVAL;
+    return -1;
+  }
+
+  /* Find the binding for this server/address */
+  ipbind = pr_ipbind_find(addr, port, FALSE);
+  if (ipbind == NULL) {
+    errno = ENOENT;
+    return -1;
+  }
+
+  if (listen_conn != NULL) {
+    listen_conn->next = NULL;
+  }
+
+  ipbind->ib_listener = ipbind->ib_server->listen = listen_conn;
+  ipbind->ib_listener = listen_conn;
+  ipbind->ib_isdefault = isdefault;
+  ipbind->ib_islocalhost = islocalhost;
+
+  /* Stash a pointer to this ipbind, since it is designated as the
+   * default server (via the DefaultServer directive), for use in the
+   * lookup functions.
+   *
+   * Stash pointers to this ipbind for use in the lookup functions if:
+   *
+   * - It's the default server (specified via the DefaultServer directive)
+   * - It handles connections to the loopback interface
+   */
+  if (isdefault) {
+    ipbind_default_server = ipbind;
+  }
+
+  if (islocalhost) {
+    ipbind_localhost_server = ipbind;
+  }
+
+  /* If requested, look for any namebinds for this ipbind, and open them. */
+  if (open_namebinds &&
+      ipbind->ib_namebinds) {
+    register unsigned int i = 0;
+    pr_namebind_t **namebinds = NULL;
+
+    /* NOTE: in the future, these namebinds may need to be stored/
+     * manipulated in hash tables themselves, but, for now, linked lists
+     * should suffice.
+     */
+    namebinds = (pr_namebind_t **) ipbind->ib_namebinds->elts;
+    for (i = 0; i < ipbind->ib_namebinds->nelts; i++) {
+      int res;
+      pr_namebind_t *nb;
+
+      pr_signals_handle();
+
+      nb = namebinds[i];
+      res = pr_namebind_open(nb->nb_name, nb->nb_server->addr,
+        nb->nb_server_port);
+      if (res < 0) {
+        pr_trace_msg(trace_channel, 2,
+          "notice: unable to open namebind '%s': %s", nb->nb_name,
+          strerror(errno));
+      }
+    }
+  }
+
+  /* Mark this binding as now being active. */
+  ipbind->ib_isactive = TRUE;
+
+  return 0;
+}
+
+int pr_namebind_close(const char *name, const pr_netaddr_t *addr) {
+  pr_namebind_t *namebind = NULL;
+  unsigned int port;
+
+  if (name == NULL||
+      addr == NULL) {
+    errno = EINVAL;
+    return -1;
+  }
+
+  port = ntohs(pr_netaddr_get_port(addr));
+  namebind = pr_namebind_find(name, addr, port, FALSE);
+  if (namebind == NULL) {
+    errno = ENOENT;
+    return -1;
+  }
+
+  namebind->nb_isactive = FALSE;
+  return 0;
+}
+
+int pr_namebind_create(server_rec *server, const char *name,
+    pr_ipbind_t *ipbind, const pr_netaddr_t *addr, unsigned int server_port) {
+  pr_namebind_t *namebind = NULL, **namebinds = NULL;
+  unsigned int port;
+
+  if (server == NULL ||
+      name == NULL) {
+    errno = EINVAL;
+    return -1;
+  }
+
+  /* First, find the ipbind to hold this namebind. */
+  port = ntohs(pr_netaddr_get_port(addr));
+  if (port == 0) {
+    port = server_port;
+  }
+
+  if (ipbind == NULL) {
+    pr_netaddr_t wildcard_addr;
+    int addr_family;
+
+    /* If not found, look for the wildcard address. */
+
+    addr_family = pr_netaddr_get_family(addr);
+    pr_netaddr_clear(&wildcard_addr);
+    pr_netaddr_set_family(&wildcard_addr, addr_family);
+    pr_netaddr_set_sockaddr_any(&wildcard_addr);
+
+    ipbind = pr_ipbind_find(&wildcard_addr, port, FALSE);
+#ifdef PR_USE_IPV6
+    if (ipbind == FALSE &&
+        addr_family == AF_INET6 &&
+        pr_netaddr_use_ipv6()) {
+
+      /* No IPv6 wildcard address found; try the IPv4 wildcard address. */
+      pr_netaddr_clear(&wildcard_addr);
+      pr_netaddr_set_family(&wildcard_addr, AF_INET);
+      pr_netaddr_set_sockaddr_any(&wildcard_addr);
+
+      ipbind = pr_ipbind_find(&wildcard_addr, port, FALSE);
+    }
+#endif /* PR_USE_IPV6 */
+
+    pr_trace_msg(trace_channel, 19,
+      "found wildcard ipbind %p for namebind (name '%s', addr %s, port %u)",
+      ipbind, name, pr_netaddr_get_ipstr(addr), port);
+  }
+
+  if (ipbind == NULL) {
+    errno = ENOENT;
+    return -1;
+  }
+
+  /* Make sure we can add this namebind. */
+  if (ipbind->ib_namebinds == NULL) {
+    ipbind->ib_namebinds = make_array(binding_pool, 0, sizeof(pr_namebind_t *));
+
+  } else {
+    register unsigned int i = 0;
+    namebinds = (pr_namebind_t **) ipbind->ib_namebinds->elts;
+
+    /* See if there is already a namebind for the given name. */
+    for (i = 0; i < ipbind->ib_namebinds->nelts; i++) {
+      pr_signals_handle();
+
+      namebind = namebinds[i];
+      if (namebind != NULL &&
+          namebind->nb_name != NULL) {
+
+        /* DNS names are case-insensitive, hence the case-insensitive check
+         * here.
+         *
+         * XXX Ideally, we should check whether any existing namebinds which
+         * are globs will match the newly added namebind as well.
+         */
+
+        if (strcasecmp(namebind->nb_name, name) == 0) {
+          errno = EEXIST;
+          return -1;
+        }
+      }
+    }
+  }
+
+  namebind = (pr_namebind_t *) pcalloc(server->pool, sizeof(pr_namebind_t));
+  namebind->nb_name = name;
+  namebind->nb_server = server;
+  namebind->nb_server_port = server_port;
+  namebind->nb_isactive = FALSE;
+
+  if (pr_str_is_fnmatch(name) == TRUE) {
+    namebind->nb_iswildcard = TRUE;
+  }
+
+  pr_trace_msg(trace_channel, 8,
+    "created namebind '%s' for %s#%u, server '%s' [%p]", name,
+    pr_netaddr_get_ipstr(server->addr), server->ServerPort, server->ServerName,
+    server);
+
+  /* The given server should already have the following populated:
+   *
+   *  server->ServerName
+   *  server->ServerAddress
+   *  server->ServerFQDN
+   */
+
+  *((pr_namebind_t **) push_array(ipbind->ib_namebinds)) = namebind;
+  return 0;
+}
+
+pr_namebind_t *pr_namebind_find(const char *name, const pr_netaddr_t *addr,
+    unsigned int port, unsigned char skip_inactive) {
+  pr_ipbind_t *ipbind = NULL, *iter;
+
+  if (name == NULL ||
+      addr == NULL) {
+    errno = EINVAL;
+    return NULL;
+  }
+
+  /* First, find an active ipbind for the given address. */
+  ipbind = pr_ipbind_find(addr, port, skip_inactive);
+  if (ipbind == NULL) {
+    pr_netaddr_t wildcard_addr;
+    int addr_family;
+
+    /* If not found, look for the wildcard address. */
+
+    addr_family = pr_netaddr_get_family(addr);
+    pr_netaddr_clear(&wildcard_addr);
+    pr_netaddr_set_family(&wildcard_addr, addr_family);
+    pr_netaddr_set_sockaddr_any(&wildcard_addr);
+
+    ipbind = pr_ipbind_find(&wildcard_addr, port, FALSE);
+#ifdef PR_USE_IPV6
+    if (ipbind == FALSE &&
+        addr_family == AF_INET6 &&
+        pr_netaddr_use_ipv6()) {
+
+      /* No IPv6 wildcard address found; try the IPv4 wildcard address. */
+      pr_netaddr_clear(&wildcard_addr);
+      pr_netaddr_set_family(&wildcard_addr, AF_INET);
+      pr_netaddr_set_sockaddr_any(&wildcard_addr);
+
+      ipbind = pr_ipbind_find(&wildcard_addr, port, FALSE);
+    }
+#endif /* PR_USE_IPV6 */
+  } else {
+    pr_trace_msg(trace_channel, 17,
+      "found ipbind %p (server '%s' [%p]) for %s#%u", ipbind,
+      ipbind->ib_server->ServerName, ipbind->ib_server,
+      pr_netaddr_get_ipstr(addr), port);
+  }
+
+  if (ipbind == NULL) {
+    errno = ENOENT;
+    return NULL;
+  }
+
+  /* Now we need to search this ipbind list, to see if any of them have a
+   * matching namebind.
+   */
+
+  for (iter = ipbind; iter; iter = iter->ib_next) {
+    register unsigned int i = 0;
+    pr_namebind_t *namebind = NULL, **namebinds = NULL;
+
+    pr_signals_handle();
+
+    if (iter->ib_namebinds == NULL) {
+      pr_trace_msg(trace_channel, 17,
+        "ipbind %p (server %p) for %s#%u has no namebinds", iter,
+        iter->ib_server, pr_netaddr_get_ipstr(addr), port);
+      continue;
+    }
+
+    namebinds = (pr_namebind_t **) iter->ib_namebinds->elts;
+    pr_trace_msg(trace_channel, 17,
+      "ipbind %p (server %p) for %s#%u has namebinds (%d)", iter,
+      iter->ib_server, pr_netaddr_get_ipstr(addr), port,
+      iter->ib_namebinds->nelts);
+
+    for (i = 0; i < iter->ib_namebinds->nelts; i++) {
+      pr_signals_handle();
+
+      namebind = namebinds[i];
+      if (namebind == NULL) {
+        continue;
+      }
+
+      /* Skip inactive namebinds */
+      if (skip_inactive == TRUE &&
+          namebind->nb_isactive == FALSE) {
+        pr_trace_msg(trace_channel, 17,
+          "namebind #%u: %s is inactive, skipping", i, namebind->nb_name);
+        continue;
+      }
+
+      /* At present, this looks for an exactly matching name.  In the future,
+       * we may want to have something like Apache's matching scheme, which
+       * looks for the most specific domain to the most general.  Note that
+       * that scheme, however, is specific to DNS; should any other naming
+       * scheme be desired, that sort of matching will be unnecessary.
+       */
+      if (namebind->nb_name != NULL) {
+        pr_trace_msg(trace_channel, 17,
+          "namebind #%u: %s (%s)", i, namebind->nb_name,
+          namebind->nb_isactive ? "active" : "inactive");
+
+        if (namebind->nb_iswildcard == FALSE) {
+          if (strcasecmp(namebind->nb_name, name) == 0) {
+            return namebind;
+          }
+
+        } else {
+          int match_flags = PR_FNM_NOESCAPE|PR_FNM_CASEFOLD;
+
+          if (pr_fnmatch(namebind->nb_name, name, match_flags) == 0) {
+            pr_trace_msg(trace_channel, 9,
+              "matched name '%s' against pattern '%s'", name,
+              namebind->nb_name);
+            return namebind;
+          }
+
+          pr_trace_msg(trace_channel, 9,
+            "failed to match name '%s' against pattern '%s'", name,
+            namebind->nb_name);
+        }
+      }
+    }
+  }
+
+  return NULL;
+}
+
+server_rec *pr_namebind_get_server(const char *name, const pr_netaddr_t *addr,
+    unsigned int port) {
+  pr_namebind_t *namebind = NULL;
+
+  /* Basically, just a wrapper around pr_namebind_find() */
+
+  namebind = pr_namebind_find(name, addr, port, TRUE);
+  if (namebind == NULL) {
+    return NULL;
+  }
+
+  return namebind->nb_server;
+}
+
+unsigned int pr_namebind_count(server_rec *srv) {
+  unsigned int count = 0;
+  pr_ipbind_t *ipbind = NULL;
+
+  if (srv == NULL) {
+    return 0;
+  }
+
+  ipbind = pr_ipbind_find(srv->addr, srv->ServerPort, FALSE);
+  if (ipbind != NULL &&
+      ipbind->ib_namebinds != NULL) {
+    count = ipbind->ib_namebinds->nelts;
+  }
+
+  return count;
+}
+
+int pr_namebind_open(const char *name, const pr_netaddr_t *addr,
+    unsigned int server_port) {
+  pr_namebind_t *namebind = NULL;
+  unsigned int port;
+
+  if (name == NULL ||
+      addr == NULL) {
+    errno = EINVAL;
+    return -1;
+  }
+
+  port = ntohs(pr_netaddr_get_port(addr));
+  if (port == 0) {
+    port = server_port;
+  }
+
+  namebind = pr_namebind_find(name, addr, port, FALSE);
+  if (namebind == NULL) {
+    errno = ENOENT;
+    return -1;
+  }
+
+  namebind->nb_isactive = TRUE;
+  return 0;
+}
+
+void free_bindings(void) {
+  if (binding_pool) {
+    destroy_pool(binding_pool);
+    binding_pool = NULL;
+    listener_list = NULL;
+  }
+
+  memset(ipbind_table, 0, sizeof(ipbind_table));
+  ipbind_table_initialized = FALSE;
+
+  /* Mark all listening conns as "unclaimed"; any that remaining unclaimed
+   * after init_bindings() can be closed.
+   */
+  if (listening_conn_list != NULL) {
+    struct listener_rec *lr;
+
+    for (lr = (struct listener_rec *) listening_conn_list->xas_list; lr; lr = lr->next) {
+      pr_signals_handle();
+      lr->claimed = FALSE;
+    }
+  }
+}
+
+static int init_inetd_bindings(void) {
+  int res = 0;
+  server_rec *serv = NULL;
+  unsigned char *default_server = NULL, is_default = FALSE;
+
+  /* We explicitly do NOT use the get_listening_conn() function here, since
+   * inetd-run daemons will not a) handle restarts, and thus b) will not have
+   * already-open connections to choose from.
+   */
+
+  main_server->listen = pr_inet_create_conn(main_server->pool, STDIN_FILENO,
+    NULL, INPORT_ANY, FALSE);
+  if (main_server->listen == NULL) {
+    return -1;
+  }
+
+  /* Note: Since we are being called via inetd/xinetd, any socket options
+   * which may be attempted by listeners for this event may not work.
+   */
+  pr_inet_generate_socket_event("core.ctrl-listen", main_server,
+    main_server->addr, main_server->listen->listen_fd);
+
+  /* Fill in all the important connection information. */
+  if (pr_inet_get_conn_info(main_server->listen, STDIN_FILENO) == -1) {
+    int xerrno = errno;
+
+    pr_log_pri(PR_LOG_WARNING, "fatal: unable to get connection info: %s",
+      strerror(xerrno));
+
+    if (xerrno == ENOTSOCK) {
+      pr_log_pri(PR_LOG_ERR, "(Running from command line? "
+        "Use `ServerType standalone' in config file!)");
+    }
+
+    exit(1);
+  }
+
+  default_server = get_param_ptr(main_server->conf, "DefaultServer", FALSE);
+  if (default_server != NULL &&
+      *default_server == TRUE) {
+    is_default = TRUE;
+  }
+
+  res = pr_ipbind_create(main_server, main_server->addr,
+    main_server->ServerPort);
+  if (res < 0) {
+    pr_log_pri(PR_LOG_NOTICE,
+      "%s:%d: notice: unable to create ipbind '%s#%u': %s", __FILE__, __LINE__,
+      main_server->ServerAddress, main_server->ServerPort, strerror(errno));
+  }
+
+  res = pr_ipbind_open(main_server->addr, main_server->ServerPort,
+    main_server->listen, is_default, TRUE, TRUE);
+  if (res < 0) {
+    pr_log_pri(PR_LOG_NOTICE,
+      "%s:%d: notice: unable to open ipbind '%s': %s", __FILE__, __LINE__,
+      pr_netaddr_get_ipstr(main_server->addr), strerror(errno));
+  }
+
+  res = pr_ipbind_add_binds(main_server);
+  if (res < 0) {
+    pr_log_pri(PR_LOG_NOTICE,
+      "%s:%d: notice: unable to add binds to ipbind '%s': %s", __FILE__,
+      __LINE__, main_server->ServerAddress, strerror(errno));
+  }
+
+  /* Now attach the faked connection to all virtual servers. */
+  for (serv = main_server->next; serv; serv = serv->next) {
+
+    /* Because this server is sharing the connection with the
+     * main server, we need a cleanup handler to remove
+     * the server's reference when the original connection's
+     * pool is destroyed.
+     */
+
+    serv->listen = main_server->listen;
+    register_cleanup2(serv->listen->pool, &serv->listen, server_cleanup_cb);
+
+    is_default = FALSE;
+    default_server = get_param_ptr(serv->conf, "DefaultServer", FALSE);
+    if (default_server != NULL &&
+        *default_server == TRUE) {
+      is_default = TRUE;
+    }
+
+    res = pr_ipbind_create(serv, serv->addr, serv->ServerPort);
+    if (res < 0) {
+      pr_log_pri(PR_LOG_NOTICE,
+        "%s:%d: notice: unable to create ipbind '%s#%u': %s", __FILE__,
+        __LINE__, serv->ServerAddress, serv->ServerPort, strerror(errno));
+    }
+
+    res = pr_ipbind_open(serv->addr, serv->ServerPort, serv->listen,
+      is_default, FALSE, TRUE);
+    if (res < 0) {
+      pr_log_pri(PR_LOG_NOTICE,
+        "%s:%d: notice: unable to open ipbind '%s': %s", __FILE__, __LINE__,
+        pr_netaddr_get_ipstr(serv->addr), strerror(errno));
+    }
+
+    res = pr_ipbind_add_binds(serv);
+    if (res < 0) {
+      pr_log_pri(PR_LOG_NOTICE,
+        "%s:%d: notice: unable to add binds to ipbind '%s': %s", __FILE__,
+        __LINE__, serv->ServerAddress, strerror(errno));
+    }
+  }
+
+  return 0;
+}
+
+static array_header *find_server_ipbinds(pool *p, server_rec *s) {
+  register unsigned int i;
+  array_header *ipbinds = NULL;
+
+  for (i = 0; i < PR_BINDINGS_TABLE_SIZE; i++) {
+    pr_ipbind_t *ipbind;
+
+    for (ipbind = ipbind_table[i]; ipbind != NULL; ipbind = ipbind->ib_next) {
+      pr_signals_handle();
+
+      if (ipbind->ib_server == s) {
+        if (ipbinds == NULL) {
+          ipbinds = make_array(p, 16, sizeof(pr_ipbind_t *));
+        }
+
+        *((pr_ipbind_t **) push_array(ipbinds)) = ipbind;
+      }
+    }
+  }
+
+  return ipbinds;
+}
+
+static unsigned int process_serveralias(server_rec *s) {
+  unsigned namebind_count = 0;
+  config_rec *c;
+  pr_ipbind_t *ipbind;
+  array_header *ipbinds;
+  pool *tmp_pool;
+
+  /* If there is no ipbind already for this server, we cannot associate
+   * any ServerAlias-based namebinds to it.
+   *
+   * Keep in mind that there may be multiple ipbinds pointed at this server:
+   *
+   *  <VirtualHost 1.2.3.4 5.6.7.8>
+   *    ServerAlias alias
+   *  </VirtualHost>
+   *
+   * And that multiple namebinds can point to the same ipbind for this server:
+   *
+   *  <VirtualHost 1.2.3.4>
+   *    ServerAlias first
+   *  </VirtualHost>
+   *
+   *  <VirtualHost 2.3.4.5>
+   *    ServerAlias second
+   *  </VirtualHost>
+   */
+
+  tmp_pool = make_sub_pool(s->pool);
+  pr_pool_tag(tmp_pool, "ServerAlias Processing Pool");
+
+  /* Remember that this will return cases where port is zero, too. */
+  ipbind = pr_ipbind_find(s->addr, s->ServerPort, FALSE);
+  if (ipbind != NULL &&
+      ipbind->ib_server->ServerPort == s->ServerPort) {
+    ipbinds = make_array(tmp_pool, 1, sizeof(pr_ipbind_t *));
+    *((pr_ipbind_t **) push_array(ipbinds)) = ipbind;
+
+  } else {
+    ipbinds = find_server_ipbinds(tmp_pool, s);
+    if (ipbinds == NULL) {
+      destroy_pool(tmp_pool);
+      return 0;
+    }
+  }
+
+  c = find_config(s->conf, CONF_PARAM, "ServerAlias", FALSE);
+  while (c != NULL) {
+    register unsigned int i;
+    int res;
+    pr_ipbind_t **elts;
+
+    pr_signals_handle();
+
+    pr_trace_msg(trace_channel, 7, "handling ipbinds (%d) for ServerAlias '%s'",
+      ipbinds->nelts, (char *) c->argv[0]);
+
+    elts = ipbinds->elts;
+    for (i = 0; i < ipbinds->nelts; i++) {
+      pr_signals_handle();
+
+      ipbind = elts[i];
+      pr_trace_msg(trace_channel, 7, "adding ServerAlias '%s' to server '%s'",
+        (char *) c->argv[0], s->ServerName);
+
+      res = pr_namebind_create(s, c->argv[0], ipbind, s->addr, s->ServerPort);
+      if (res == 0) {
+        namebind_count++;
+
+        res = pr_namebind_open(c->argv[0], ipbind->ib_addr, ipbind->ib_port);
+        if (res < 0) {
+          pr_trace_msg(trace_channel, 2,
+            "notice: unable to open namebind '%s': %s", (char *) c->argv[0],
+            strerror(errno));
+        }
+
+      } else {
+        if (errno != ENOENT) {
+          pr_trace_msg(trace_channel, 3,
+            "unable to create namebind for '%s' to %s#%u: %s",
+            (char *) c->argv[0], pr_netaddr_get_ipstr(ipbind->ib_addr),
+            ipbind->ib_port, strerror(errno));
+        }
+      }
+    }
+
+    c = find_config_next(c, c->next, CONF_PARAM, "ServerAlias", FALSE);
+  }
+
+  destroy_pool(tmp_pool);
+  return namebind_count;
+}
+
+static void trace_ipbind_table(void) {
+  register unsigned int i;
+
+  if (pr_trace_get_level(trace_channel) < 25) {
+    return;
+  }
+
+  pr_trace_msg(trace_channel, 25, "displaying ipbind table:");
+  for (i = 0; i < PR_BINDINGS_TABLE_SIZE; i++) {
+    pr_ipbind_t *ipbind;
+
+    pr_signals_handle();
+
+    if (ipbind_table[i] == NULL) {
+      continue;
+    }
+
+    pr_trace_msg(trace_channel, 25, "  index %u:", i);
+    for (ipbind = ipbind_table[i]; ipbind; ipbind = ipbind->ib_next) {
+      array_header *namebinds;
+
+      pr_signals_handle();
+      namebinds = ipbind->ib_namebinds;
+
+      pr_trace_msg(trace_channel, 25, "    ipbind %p:", ipbind);
+      pr_trace_msg(trace_channel, 25, "      address: %s#%u",
+        pr_netaddr_get_ipstr(ipbind->ib_addr), ipbind->ib_port);
+      pr_trace_msg(trace_channel, 25, "      server: %s (%p)",
+        ipbind->ib_server->ServerName, ipbind->ib_server);
+      pr_trace_msg(trace_channel, 25, "      active: %s",
+        ipbind->ib_isactive ? "TRUE" : "FALSE");
+
+      if (namebinds != NULL) {
+        register unsigned int k;
+        pr_namebind_t **elts;
+
+        pr_trace_msg(trace_channel, 25, "      namebinds:");
+        elts = namebinds->elts;
+        for (k = 0; k < namebinds->nelts; k++) {
+          pr_namebind_t *namebind;
+
+          pr_signals_handle();
+          namebind = elts[k];
+          pr_trace_msg(trace_channel, 25, "      #%u: %p", k+1, namebind);
+          pr_trace_msg(trace_channel, 25, "        name: %s",
+            namebind->nb_server->ServerName);
+          pr_trace_msg(trace_channel, 25, "        alias: %s",
+            namebind->nb_name);
+          pr_trace_msg(trace_channel, 25, "        server: %p",
+            namebind->nb_server);
+          pr_trace_msg(trace_channel, 25, "        active: %s",
+            namebind->nb_isactive ? "TRUE" : "FALSE");
+        }
+      }
+    }
+  }
+}
+
+static int init_standalone_bindings(void) {
+  int res = 0;
+  server_rec *serv = NULL;
+  unsigned char *default_server = NULL, is_default = FALSE;
+
+  /* Ensure the ipbind table has been initialized. */
+  init_ipbind_table();
+
+  /* If a port is set to zero, the address/port is not bound to a socket
+   * at all.
+   */
+  if (main_server->ServerPort > 0) {
+    /* If SocketBindTight is off, then pr_inet_create_conn() will
+     * create and bind to a wildcard socket.  However, should it be an
+     * IPv4 or an IPv6 wildcard socket?
+     */
+    if (!SocketBindTight) {
+#if defined(PR_USE_IPV6)
+      if (pr_netaddr_use_ipv6()) {
+        pr_inet_set_default_family(NULL, AF_INET6);
+
+      } else {
+        int default_family;
+
+        default_family = pr_netaddr_get_family(main_server->addr);
+        pr_inet_set_default_family(NULL, default_family);
+      }
+#else
+      pr_inet_set_default_family(NULL,
+        pr_netaddr_get_family(main_server->addr));
+#endif /* PR_USE_IPV6 */
+    }
+
+    main_server->listen = pr_ipbind_get_listening_conn(main_server,
+      (SocketBindTight ? main_server->addr : NULL), main_server->ServerPort);
+    if (main_server->listen == NULL) {
+      return -1;
+    }
+
+  } else {
+    main_server->listen = NULL;
+  }
+
+  default_server = get_param_ptr(main_server->conf, "DefaultServer", FALSE);
+  if (default_server != NULL &&
+      *default_server == TRUE) {
+    is_default = TRUE;
+  }
+
+  if (main_server->ServerPort == 0) {
+    /* If there is no server port, then this vhost cannot be treated as the
+     * DefaultServer.
+     */
+    is_default = FALSE;
+  }
+
+  if (main_server->ServerPort > 0 ||
+      is_default == TRUE) {
+
+    res = pr_ipbind_create(main_server, main_server->addr,
+      main_server->ServerPort);
+    if (res < 0) {
+      pr_log_pri(PR_LOG_NOTICE,
+        "%s:%d: notice: unable to create ipbind '%s#%u': %s", __FILE__,
+        __LINE__, main_server->ServerAddress, main_server->ServerPort,
+        strerror(errno));
+    }
+
+    res = pr_ipbind_open(main_server->addr, main_server->ServerPort,
+      main_server->listen, is_default, TRUE, TRUE);
+    if (res < 0) {
+      pr_log_pri(PR_LOG_NOTICE,
+        "%s:%d: notice: unable to open ipbind '%s': %s", __FILE__, __LINE__,
+        pr_netaddr_get_ipstr(main_server->addr), strerror(errno));
+    }
+
+    res = pr_ipbind_add_binds(main_server);
+    if (res < 0) {
+      pr_log_pri(PR_LOG_NOTICE,
+        "%s:%d: notice: unable to add binds to ipbind '%s': %s", __FILE__,
+        __LINE__, main_server->ServerAddress, strerror(errno));
+    }
+  }
+
+  for (serv = main_server->next; serv; serv = serv->next) {
+    unsigned int namebind_count;
+
+    pr_signals_handle();
+
+    namebind_count = process_serveralias(serv);
+    if (namebind_count > 0) {
+      /* If we successfully added ServerAlias namebinds, move on to the next
+       * server.
+       */
+      continue;
+    }
+
+    if (serv->ServerPort != main_server->ServerPort ||
+        SocketBindTight ||
+        !main_server->listen) {
+      is_default = FALSE;
+
+      default_server = get_param_ptr(serv->conf, "DefaultServer", FALSE);
+      if (default_server != NULL &&
+          *default_server == TRUE) {
+        is_default = TRUE;
+      }
+
+      if (serv->ServerPort == 0) {
+        /* If there is no server port, then this vhost cannot be treated as the
+         * DefaultServer.
+         */
+        is_default = FALSE;
+      }
+
+      if (serv->ServerPort > 0) {
+        if (SocketBindTight == FALSE) {
+#ifdef PR_USE_IPV6
+          if (pr_netaddr_use_ipv6()) {
+            pr_inet_set_default_family(NULL, AF_INET6);
+
+          } else {
+            pr_inet_set_default_family(NULL, pr_netaddr_get_family(serv->addr));
+          }
+#else
+          pr_inet_set_default_family(NULL, pr_netaddr_get_family(serv->addr));
+#endif /* PR_USE_IPV6 */
+        }
+
+        serv->listen = pr_ipbind_get_listening_conn(serv,
+          (SocketBindTight ? serv->addr : NULL), serv->ServerPort);
+        if (serv->listen == NULL) {
+          return -1;
+        }
+
+        res = pr_ipbind_create(serv, serv->addr, serv->ServerPort);
+        if (res < 0) {
+          pr_log_pri(PR_LOG_NOTICE,
+            "%s:%d: notice: unable to create ipbind '%s#%u': %s", __FILE__,
+            __LINE__, serv->ServerAddress, serv->ServerPort, strerror(errno));
+        }
+
+        res = pr_ipbind_open(serv->addr, serv->ServerPort, serv->listen,
+          is_default, FALSE, TRUE);
+        if (res < 0) {
+          pr_log_pri(PR_LOG_NOTICE,
+            "%s:%d: notice: unable to open ipbind '%s': %s", __FILE__, __LINE__,
+            pr_netaddr_get_ipstr(serv->addr), strerror(errno));
+        }
+
+        res = pr_ipbind_add_binds(serv);
+        if (res < 0) {
+          pr_log_pri(PR_LOG_NOTICE,
+            "%s:%d: notice: unable to add binds to ipbind '%s': %s", __FILE__,
+            __LINE__, serv->ServerAddress, strerror(errno));
+        }
+
+      } else if (is_default == TRUE) {
+        serv->listen = NULL;
+
+        res = pr_ipbind_create(serv, serv->addr, serv->ServerPort);
+        if (res < 0) {
+          pr_log_pri(PR_LOG_NOTICE,
+            "%s:%d: notice: unable to create ipbind '%s#%u': %s", __FILE__,
+            __LINE__, serv->ServerAddress, serv->ServerPort, strerror(errno));
+        }
+
+        res = pr_ipbind_open(serv->addr, serv->ServerPort, serv->listen,
+          is_default, FALSE, TRUE);
+        if (res < 0) {
+          pr_log_pri(PR_LOG_NOTICE,
+            "%s:%d: notice: unable to open ipbind '%s': %s", __FILE__, __LINE__,
+            pr_netaddr_get_ipstr(serv->addr), strerror(errno));
+        }
+
+        res = pr_ipbind_add_binds(serv);
+        if (res < 0) {
+          pr_log_pri(PR_LOG_NOTICE,
+            "%s:%d: notice: unable to add binds to ipbind '%s': %s", __FILE__,
+            __LINE__, serv->ServerAddress, strerror(errno));
+        }
+
+      } else {
+        serv->listen = NULL;
+      }
+
+    } else {
+      /* Because this server is sharing the connection with the main server,
+       * we need a cleanup handler to remove the server's reference when the
+       * original connection's pool is destroyed.
+       */
+
+      is_default = FALSE;
+      default_server = get_param_ptr(serv->conf, "DefaultServer", FALSE);
+      if (default_server != NULL &&
+          *default_server == TRUE) {
+        is_default = TRUE;
+      }
+
+      serv->listen = main_server->listen;
+      register_cleanup2(serv->listen->pool, &serv->listen, server_cleanup_cb);
+
+      res = pr_ipbind_create(serv, serv->addr, serv->ServerPort);
+      if (res < 0) {
+        pr_log_pri(PR_LOG_NOTICE,
+          "%s:%d: notice: unable to create ipbind '%s#%u': %s", __FILE__,
+          __LINE__, serv->ServerAddress, serv->ServerPort, strerror(errno));
+      }
+
+      res = pr_ipbind_open(serv->addr, serv->ServerPort, NULL, is_default,
+        FALSE, TRUE);
+      if (res < 0) {
+        pr_log_pri(PR_LOG_NOTICE,
+          "%s:%d: notice: unable to open ipbind '%s': %s", __FILE__, __LINE__,
+          pr_netaddr_get_ipstr(serv->addr), strerror(errno));
+      }
+
+      res = pr_ipbind_add_binds(serv);
+      if (res < 0) {
+        pr_log_pri(PR_LOG_NOTICE,
+          "%s:%d: notice: unable to add binds to ipbind '%s': %s", __FILE__,
+          __LINE__, serv->ServerAddress, strerror(errno));
+      }
+    }
+
+    /* Process any ServerAlias directives AFTER the server's ipbind has been
+     * created/opened (Issue #932).
+     */
+    process_serveralias(serv);
+  }
+
+  trace_ipbind_table();
+
+  /* Any "unclaimed" listening conns can be removed and closed. */
+  if (listening_conn_list != NULL) {
+    struct listener_rec *lr, *lrn;
+
+    for (lr = (struct listener_rec *) listening_conn_list->xas_list; lr; lr = lrn) {
+      pr_signals_handle();
+
+      lrn = lr->next;
+      if (lr->claimed == FALSE) {
+        xaset_remove(listening_conn_list, (xasetmember_t *) lr);
+        destroy_pool(lr->pool);
+      }
+    }
+  }
+
+  return 0;
+}
+
+void init_bindings(void) {
+  int res = 0;
+
+#ifdef PR_USE_IPV6
+  int sock;
+
+  /* Check to see whether we can actually create an IPv6 socket. */
+  sock = socket(AF_INET6, SOCK_STREAM, IPPROTO_TCP);
+  if (sock < 0) {
+    pr_netaddr_disable_ipv6();
+
+  } else {
+    (void) close(sock);
+  }
+#endif /* PR_USE_IPV6 */
+
+  if (ServerType == SERVER_INETD) {
+    res = init_inetd_bindings();
+
+  } else if (ServerType == SERVER_STANDALONE) {
+    res = init_standalone_bindings();
+  }
+
+  if (res < 0) {
+    pr_log_pri(PR_LOG_ERR, "%s",
+      "Unable to start proftpd; check logs for more details");
+    exit(1);
+  }
+}
+2026-06-16 14:08:55,261 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 4
+2026-06-16 14:08:55,261 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:08:55,972 - root - [INFO] - logging.py:31 - log_time - Took 0.71s
+2026-06-16 14:08:55,976 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -n "pr_ipbind_add_binds" ' (timeout=120)
+2026-06-16 14:08:55,976 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -n "pr_ipbind_add_binds" src/bindings.c\n'
+2026-06-16 14:08:57,629 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 250:int pr_ipbind_add_binds(server_rec *serv) {
+1328:  res = pr_ipbind_add_binds(main_server);
+1369:    res = pr_ipbind_add_binds(serv);
+1629:    res = pr_ipbind_add_binds(main_server);
+1703:        res = pr_ipbind_add_binds(serv);
+1728:        res = pr_ipbind_add_binds(serv);
+1770:      res = pr_ipbind_add_binds(serv);
+2026-06-16 14:08:57,629 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 5
+2026-06-16 14:08:57,629 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:08:58,325 - root - [INFO] - logging.py:31 - log_time - Took 0.70s
+2026-06-16 14:08:58,329 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -A 50 "int pr_ipbind_add_' (timeout=120)
+2026-06-16 14:08:58,329 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -A 50 "int pr_ipbind_add_binds" src/bindings.c\n'
+2026-06-16 14:08:59,817 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: int pr_ipbind_add_binds(server_rec *serv) {
+  int res = 0;
+  config_rec *c = NULL;
+  conn_t *listen_conn = NULL;
+  const pr_netaddr_t *addr = NULL;
+
+  if (serv == NULL) {
+    errno = EINVAL;
+    return -1;
+  }
+
+  c = find_config(serv->conf, CONF_PARAM, "_bind_", FALSE);
+  while (c != NULL) {
+    listen_conn = NULL;
+
+    pr_signals_handle();
+
+    addr = pr_netaddr_get_addr(serv->pool, c->argv[0], NULL);
+    if (addr == NULL) {
+      pr_log_pri(PR_LOG_WARNING,
+       "notice: unable to determine IP address of '%s'", (char *) c->argv[0]);
+      c = find_config_next(c, c->next, CONF_PARAM, "_bind_", FALSE);
+      continue;
+    }
+
+    /* If the SocketBindTight directive is in effect, create a separate
+     * listen socket for this address, and add it to the binding list.
+     */
+    if (SocketBindTight &&
+        serv->ServerPort) {
+      listen_conn = pr_ipbind_get_listening_conn(serv, addr, serv->ServerPort);
+      if (listen_conn == NULL) {
+        return -1;
+      }
+
+      res = pr_ipbind_create(serv, addr, serv->ServerPort);
+      if (res < 0) {
+        pr_log_pri(PR_LOG_NOTICE,
+          "%s:%d: notice: unable to create ipbind '%s#%u': %s", __FILE__,
+          __LINE__, serv->ServerAddress, serv->ServerPort, strerror(errno));
+      }
+
+      res = pr_ipbind_open(addr, serv->ServerPort, listen_conn, FALSE, FALSE,
+        TRUE);
+      if (res < 0) {
+        pr_log_pri(PR_LOG_NOTICE,
+          "%s:%d: notice: unable to open ipbind '%s': %s", __FILE__, __LINE__,
+          pr_netaddr_get_ipstr(addr), strerror(errno));
+      }
+
+    } else {
+2026-06-16 14:08:59,818 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 6
+2026-06-16 14:08:59,818 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:09:00,182 - root - [INFO] - logging.py:31 - log_time - Took 0.36s
+2026-06-16 14:09:00,190 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -A 100 "int pr_ipbind_add' (timeout=120)
+2026-06-16 14:09:00,190 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -A 100 "int pr_ipbind_add_binds" src/bindings.c\n'
+2026-06-16 14:09:01,763 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: int pr_ipbind_add_binds(server_rec *serv) {
+  int res = 0;
+  config_rec *c = NULL;
+  conn_t *listen_conn = NULL;
+  const pr_netaddr_t *addr = NULL;
+
+  if (serv == NULL) {
+    errno = EINVAL;
+    return -1;
+  }
+
+  c = find_config(serv->conf, CONF_PARAM, "_bind_", FALSE);
+  while (c != NULL) {
+    listen_conn = NULL;
+
+    pr_signals_handle();
+
+    addr = pr_netaddr_get_addr(serv->pool, c->argv[0], NULL);
+    if (addr == NULL) {
+      pr_log_pri(PR_LOG_WARNING,
+       "notice: unable to determine IP address of '%s'", (char *) c->argv[0]);
+      c = find_config_next(c, c->next, CONF_PARAM, "_bind_", FALSE);
+      continue;
+    }
+
+    /* If the SocketBindTight directive is in effect, create a separate
+     * listen socket for this address, and add it to the binding list.
+     */
+    if (SocketBindTight &&
+        serv->ServerPort) {
+      listen_conn = pr_ipbind_get_listening_conn(serv, addr, serv->ServerPort);
+      if (listen_conn == NULL) {
+        return -1;
+      }
+
+      res = pr_ipbind_create(serv, addr, serv->ServerPort);
+      if (res < 0) {
+        pr_log_pri(PR_LOG_NOTICE,
+          "%s:%d: notice: unable to create ipbind '%s#%u': %s", __FILE__,
+          __LINE__, serv->ServerAddress, serv->ServerPort, strerror(errno));
+      }
+
+      res = pr_ipbind_open(addr, serv->ServerPort, listen_conn, FALSE, FALSE,
+        TRUE);
+      if (res < 0) {
+        pr_log_pri(PR_LOG_NOTICE,
+          "%s:%d: notice: unable to open ipbind '%s': %s", __FILE__, __LINE__,
+          pr_netaddr_get_ipstr(addr), strerror(errno));
+      }
+
+    } else {
+      res = pr_ipbind_create(serv, addr, serv->ServerPort);
+      if (res < 0) {
+        pr_log_pri(PR_LOG_NOTICE,
+          "%s:%d: notice: unable to create ipbind '%s#%u': %s", __FILE__,
+          __LINE__, serv->ServerAddress, serv->ServerPort, strerror(errno));
+      }
+
+      res = pr_ipbind_open(addr, serv->ServerPort, serv->listen, FALSE, FALSE,
+        TRUE);
+      if (res < 0) {
+        pr_log_pri(PR_LOG_NOTICE,
+          "%s:%d: notice: unable to open ipbind '%s': %s", __FILE__, __LINE__,
+          pr_netaddr_get_ipstr(addr), strerror(errno));
+      }
+    }
+
+    c = find_config_next(c, c->next, CONF_PARAM, "_bind_", FALSE);
+  }
+
+  return 0;
+}
+
+int pr_ipbind_close(const pr_netaddr_t *addr, unsigned int port,
+    unsigned char close_namebinds) {
+  register unsigned int i = 0;
+
+  if (addr != NULL) {
+    pr_ipbind_t *ipbind = NULL;
+    unsigned char have_ipbind = FALSE;
+
+    i = ipbind_hash_addr(addr, port);
+
+    if (ipbind_table[i] == NULL) {
+      pr_log_pri(PR_LOG_NOTICE, "notice: no ipbind found for %s:%d",
+        pr_netaddr_get_ipstr(addr), port);
+      errno = ENOENT;
+      return -1;
+    }
+
+    for (ipbind = ipbind_table[i]; ipbind; ipbind = ipbind->ib_next) {
+      pr_signals_handle();
+
+      if (pr_netaddr_cmp(ipbind->ib_addr, addr) == 0 &&
+          (!ipbind->ib_port || ipbind->ib_port == port)) {
+        have_ipbind = TRUE;
+        break;
+      }
+    }
+
+    if (have_ipbind == FALSE) {
+2026-06-16 14:09:01,763 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 7
+2026-06-16 14:09:01,763 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:09:02,527 - root - [INFO] - logging.py:31 - log_time - Took 0.76s
+2026-06-16 14:09:02,536 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'find . -name "*.h" | xargs gre' (timeout=120)
+2026-06-16 14:09:02,536 - root - [DEBUG] - des_container.py:308 - command - DES command: 'find . -name "*.h" | xargs grep -l "find_config"\n'
+2026-06-16 14:09:04,210 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: ./include/configdb.h
+2026-06-16 14:09:04,210 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 8
+2026-06-16 14:09:04,210 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:09:04,645 - root - [INFO] - logging.py:31 - log_time - Took 0.44s
+2026-06-16 14:09:04,651 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cat include/configdb.h\n' (timeout=120)
+2026-06-16 14:09:04,651 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cat include/configdb.h\n'
+2026-06-16 14:09:06,274 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /*
+ * ProFTPD - FTP server daemon
+ * Copyright (c) 2014-2022 The ProFTPD Project team
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Suite 500, Boston, MA 02110-1335, USA.
+ *
+ * As a special exemption, Public Flood Software/MacGyver aka Habeeb J. Dihu
+ * and other respective copyright holders give permission to link this program
+ * with OpenSSL, and distribute the resulting executable, without including
+ * the source code for OpenSSL in the source distribution.
+ */
+
+/* Configuration database API. */
+
+#ifndef PR_CONFIGDB_H
+#define PR_CONFIGDB_H
+
+#include "pool.h"
+#include "sets.h"
+#include "table.h"
+
+typedef struct config_struc config_rec;
+struct server_struc;
+
+struct config_struc {
+  struct config_struc *next, *prev;
+
+  int config_type;
+  unsigned int config_id;
+
+  struct pool_rec *pool;	/* Memory pool for this object */
+  xaset_t *set;			/* The set we are stored in */
+  char *name;
+  unsigned int argc;
+  void **argv;
+
+  long flags;			/* Flags */
+
+  struct server_struc *server;	/* Server this config element is attached to */
+  config_rec *parent;		/* Our parent configuration record */
+  xaset_t *subset;		/* Sub-configuration */
+};
+
+#define CONF_ROOT		(1 << 0) /* No conf record */
+#define CONF_DIR		(1 << 1) /* Per-Dir configuration */
+#define CONF_ANON		(1 << 2) /* Anon. FTP configuration */
+#define CONF_LIMIT		(1 << 3) /* Limits commands available */
+#define CONF_VIRTUAL		(1 << 4) /* Virtual host */
+#define CONF_DYNDIR		(1 << 5) /* .ftpaccess file */
+#define CONF_GLOBAL		(1 << 6) /* "Global" context (applies to main server and ALL virtualhosts */
+#define CONF_CLASS		(1 << 7) /* Class context */
+#define CONF_NAMED		(1 << 8) /* Named virtual host */
+#define CONF_USERDATA		(1 << 14) /* Runtime user data */
+#define CONF_PARAM		(1 << 15) /* config/args pair */
+
+/* config_rec flags */
+#define CF_MERGEDOWN		(1 << 0) /* Merge option down */
+#define CF_MERGEDOWN_MULTI	(1 << 1) /* Merge down, allowing multiple instances */
+#define CF_DYNAMIC		(1 << 2) /* Dynamically added entry */
+#define CF_DEFER		(1 << 3) /* Defer hashing until authentication */
+#define CF_SILENT		(1 << 4) /* Do not print a config dump when merging */
+#define CF_MULTI		(1 << 5) /* Allow multiple instances, but do not merge down */
+
+/* The following macro determines the "highest" level available for
+ * configuration directives.  If a current dir_config is available, it's
+ * subset is used, otherwise anon config or main server
+ */
+
+#define CURRENT_CONF		(session.dir_config ? session.dir_config->subset \
+				 : (session.anon_config ? session.anon_config->subset \
+                                    : main_server ? main_server->conf : NULL))
+#define TOPLEVEL_CONF		(session.anon_config ? session.anon_config->subset : (main_server ? main_server->conf : NULL))
+
+/* Prototypes */
+
+config_rec *add_config_set(xaset_t **, const char *);
+config_rec *add_config(struct server_struc *, const char *);
+config_rec *add_config_param(const char *, unsigned int, ...);
+config_rec *add_config_param_str(const char *, unsigned int, ...);
+config_rec *add_config_param_set(xaset_t **, const char *, unsigned int, ...);
+config_rec *pr_conf_add_server_config_param_str(struct server_struc *,
+  const char *, unsigned int, ...);
+
+/* Flags used when searching for specific config_recs in the in-memory
+ * config database, particularly when 'recurse' is TRUE.
+ */
+#define PR_CONFIG_FIND_FL_SKIP_ANON		0x001
+#define PR_CONFIG_FIND_FL_SKIP_DIR		0x002
+#define PR_CONFIG_FIND_FL_SKIP_LIMIT		0x004
+#define PR_CONFIG_FIND_FL_SKIP_DYNDIR		0x008
+
+config_rec *find_config_next(config_rec *, config_rec *, int,
+  const char *, int);
+config_rec *find_config_next2(config_rec *, config_rec *, int,
+  const char *, int, unsigned long);
+config_rec *find_config(xaset_t *, int, const char *, int);
+config_rec *find_config2(xaset_t *, int, const char *, int, unsigned long);
+void find_config_set_top(config_rec *);
+
+int remove_config(xaset_t *set, const char *name, int recurse);
+
+config_rec *pr_config_alloc(pool *p, const char *name, int config_type);
+
+#define PR_CONFIG_FL_INSERT_HEAD	0x001
+#define PR_CONFIG_FL_PRESERVE_ENTRY	0x002
+config_rec *pr_config_add_config_to_set(xaset_t *set, config_rec *c, int flags);
+config_rec *pr_config_add_set(xaset_t **, const char *, int);
+config_rec *pr_config_add(struct server_struc *, const char *, int);
+int pr_config_remove(xaset_t *set, const char *name, int flags, int recurse);
+
+/* Returns the assigned ID for the provided directive name, or zero
+ * if no ID mapping was found.
+ */
+unsigned int pr_config_get_id(const char *name);
+
+/* Assigns a unique ID for the given configuration directive.  The
+ * mapping of directive to ID is stored in a lookup table, so that
+ * searching of the config database by directive name can be done using
+ * ID comparisons rather than string comparisons.
+ *
+ * Returns the ID assigned for the given directive, or zero if there was an
+ * error.
+ */
+unsigned int pr_config_set_id(const char *name);
+
+void *get_param_ptr(xaset_t *, const char *, int);
+void *get_param_ptr_next(const char *, int);
+
+void pr_config_merge_down(xaset_t *, int);
+void pr_config_dump(void (*)(const char *, ...), xaset_t *, char *);
+
+/* Internal use only. */
+void init_config(void);
+
+#endif /* PR_CONFIGDB_H */
+2026-06-16 14:09:06,274 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 9
+2026-06-16 14:09:06,274 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:09:07,102 - root - [INFO] - logging.py:31 - log_time - Took 0.83s
+2026-06-16 14:09:07,109 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'find . -name "*.h" | xargs gre' (timeout=120)
+2026-06-16 14:09:07,109 - root - [DEBUG] - des_container.py:308 - command - DES command: 'find . -name "*.h" | xargs grep -l "_bind_" | head -5\n'
+2026-06-16 14:09:08,789 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 14:09:08,789 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 10
+2026-06-16 14:09:08,789 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:09:09,732 - root - [INFO] - logging.py:31 - log_time - Took 0.94s
+2026-06-16 14:09:09,736 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'find . -name "*.c" -o -name "*' (timeout=120)
+2026-06-16 14:09:09,737 - root - [DEBUG] - des_container.py:308 - command - DES command: 'find . -name "*.c" -o -name "*.h" | xargs grep -l "_bind_" | head -5\n'
+2026-06-16 14:09:27,551 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: ./contrib/mod_ldap.c
+./modules/mod_core.c
+./modules/mod_lang.c
+./src/bindings.c
+./src/dirtree.c
+2026-06-16 14:09:27,551 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 11
+2026-06-16 14:09:27,551 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:09:30,045 - root - [INFO] - logging.py:31 - log_time - Took 2.49s
+2026-06-16 14:09:30,055 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -n "_bind_" modules/mod_c' (timeout=120)
+2026-06-16 14:09:30,055 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -n "_bind_" modules/mod_core.c\n'
+2026-06-16 14:09:31,450 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 529:      add_config_param_str("_bind_", 1, ipstr);
+554:      add_config_param_str("_bind_", 1, addr_ipstr);
+581:          add_config_param_str("_bind_", 1, ipstr);
+3506:      add_config_param_str("_bind_", 1, ipstr);
+3536:      add_config_param_str("_bind_", 1, addr_ipstr);
+3553:          add_config_param_str("_bind_", 1, ipstr);
+2026-06-16 14:09:31,450 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 12
+2026-06-16 14:09:31,450 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:09:34,790 - root - [INFO] - logging.py:31 - log_time - Took 3.34s
+2026-06-16 14:09:34,796 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'submit_prediction \'{"function_' (timeout=120)
+2026-06-16 14:09:34,796 - root - [DEBUG] - des_container.py:308 - command - DES command: 'submit_prediction \'{"function_name": "pr_ipbind_add_binds", "file_path": "src/bi'
+2026-06-16 14:09:36,415 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: !!submit!!
+{"function_name": "pr_ipbind_add_binds", "file_path": "src/bindings.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function has well-defined loop with clear exit condition when no more _bind_ config entries are found."}
+SUBMISSION_COMPLETE
+2026-06-16 14:09:36,415 - root - [INFO] - forager_base.py:408 - start_trajectory - Success regex matched in environment output: SUBMISSION_COMPLETE
+2026-06-16 14:09:36,415 - root - [INFO] - forager_locate_function_code_and_dep.py:51 - extract_submission - Found !!submit!! marker in environ item
+2026-06-16 14:09:36,415 - root - [DEBUG] - forager_locate_function_code_and_dep.py:52 - extract_submission - Item output: !!submit!!
+{"function_name": "pr_ipbind_add_binds", "file_path": "src/bindings.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function has well-defined loop with clear exit condition when no more _bind_ config entries are found."}
+SUBMISSION_COMPLETE
+2026-06-16 14:09:36,415 - root - [INFO] - forager_locate_function_code_and_dep.py:80 - extract_submission - Matched JSON string: {"function_name": "pr_ipbind_add_binds", "file_path": "src/bindings.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function has well-defined loop with clear exit condition when no more _bind_ config entries are found."}
+2026-06-16 14:09:36,416 - root - [INFO] - forager_locate_function_code_and_dep.py:82 - extract_submission - Extracted submission from environ: {'function_name': 'pr_ipbind_add_binds', 'file_path': 'src/bindings.c', 'prediction': 'T', 'p_non_terminating': 0, 'confidence': 'high', 'reason': 'Function has well-defined loop with clear exit condition when no more _bind_ config entries are found.'}
+2026-06-16 14:09:36,416 - root - [INFO] - forager_locate_function_code_and_dep.py:162 - process_run - Submission validation: {'correct_function_name': True, 'correct_path': True, 'provided_prediction': True}
+2026-06-16 14:09:36,416 - root - [INFO] - forager_locate_function_code_and_dep.py:326 - run - All validation checks passed
+2026-06-16 14:09:36,416 - root - [INFO] - forager_locate_function_code_and_dep.py:347 - run - Run completed with outcome: success
+2026-06-16 14:09:36,420 - root - [INFO] - des_container.py:428 - shutdown - Shutting down DES container ccc31b7203d6a150e1fa720c1541113c5cfa8a965dd1e198e70efd331cd6e681
+2026-06-16 14:09:36,420 - root - [INFO] - des_container.py:576 - _heartbeat_loop - VMVM heartbeat thread exiting
+2026-06-16 14:10:00,946 - root - [INFO] - des_container.py:228 - release_vm - Releasing VMVM session {"vmvm_session":{"id":"019ed0be-0d20-7120-97ff-98621bd4bb26","ipAddr":"2803:6082:a0f0:89a6:610c:d17:500:0","vaagentPort":24935,"vmPort":21090,"vaagentHostname":"twshared1135.07.zch2.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|16121806539984002760|0|faas.5C4187C3B3E71F923704FC646F902699|7472645759823726259","tw_task_handle":"tsp_zch/faas/workerpool_crackerjack_prod_bgm_ces_tier_1/4033","region_shortname":"zch"},"auth_token":{"paseto":"v4.public.eyJuYmYiOiIyMDI2LTA2LTE2VDE0OjAzOjE0WiIsInN1YiI6IjAxOWVkMGJlLTBkMjAtNzEyMC05N2ZmLTk4NjIxYmQ0YmIyNiIsImV4cCI6IjIwMjYtMDYtMTdUMTQ6MDM6MTRaIiwiaWF0IjoiMjAyNi0wNi0xNlQxNDowMzoxNC43NDcwMzEzNzMrMDA6MDAifTtZetCn3lLSd9czhv8Gj7mtyfsufwLe_xhIFoo0Z4w11R1seUYlLOUSz226i6vGSwBvuvfucUT7qZpfhHkWSwQ.eyJpcCI6IjI4MDM6NjA4MjphMGYwOjg5YTY6NjEwYzpkMTc6NTAwOjAiLCJwb3J0IjoiMjEwOTAiLCJmYWFzX2ludm9jYXRpb25faWQiOiI0fGdsb2JhbHxhc3luY18yMzQ3NjQxfGRlc19nZW5lcmFsX3RpZXJfcHJvZHwxNjEyMTgwNjUzOTk4NDAwMjc2MHwwfGZhYXMuNUM0MTg3QzNCM0U3MUY5MjM3MDRGQzY0NkY5MDI2OTl8NzQ3MjY0NTc1OTgyMzcyNjI1OSIsInRlbmFudCI6ImFzeW5jXzIzNDc2NDEifQ"}}
+2026-06-16 14:10:20,156 - root - [INFO] - des_container.py:238 - release_vm - VMVM session released
+2026-06-16 14:10:20,156 - root - [INFO] - run.py:224 - repo_task - Finishing repo: proftpd_5194296d_src_bindings_c_pr_ipbind_add_binds_1

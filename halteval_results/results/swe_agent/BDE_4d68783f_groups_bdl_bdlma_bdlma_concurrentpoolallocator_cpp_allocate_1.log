@@ -1,0 +1,1199 @@
+2026-06-16 13:31:17,848 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=UNKNOWN_NAME
+2026-06-16 13:31:17,849 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=run
+2026-06-16 13:31:18,136 - root - [INFO] - run.py:148 - repo_task - Model: VllmModel
+2026-06-16 13:31:18,175 - root - [INFO] - run.py:158 - repo_task - Agent: ForagerAgentLocateFunctionCodeAndDep
+2026-06-16 13:31:18,175 - root - [INFO] - run.py:172 - repo_task - Using VMVMBackend, image=vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest
+2026-06-16 13:31:18,175 - root - [INFO] - des_container.py:76 - lease_vm - Leasing VM with client-id=BDE_4d68783f_groups_bdl_bdlma_bdlma_concurrentpoolallocator_cpp_allocate_1, ttl_secs=500
+2026-06-16 13:31:19,233 - root - [INFO] - des_container.py:87 - lease_vm - VM leased in 1.06s: session_id={"vmvm_session":{"id":"019ed09d-a51f-7a21-81b2-d6bfea618cff","ipAddr":"2803:6084:30c8:bf3b:462f:5216:500:0","vaagentPort":26836,"vmPort":18259,"vaagentHostname":"twshared22693.02.snb1.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|16121806539984002760|0|faas.A14334FA6331B6EF7D3CD02E6D370592|7472640133762402152","tw_task_handle":"tsp_snb/faas/workerpool_crackerjack_prod_bgm_ces/1217","region_shortname":"snb"},"auth_token":{"paseto":"v4.public.eyJpYXQiOiIyMDI2LTA2LTE2VDEzOjMxOjE5LjA1ODA3MzA3MyswMDowMCIsImV4cCI6IjIwMjYtMDYtMTdUMTM6MzE6MTlaIiwic3ViIjoiMDE5ZWQwOWQtYTUxZi03YTIxLTgxYjItZDZiZmVhNjE4Y2ZmIiwibmJmIjoiMjAyNi0wNi0xNlQxMzozMToxOVoifeaTnoKcDW27cSC8cW_RTYei2MdIXmyzffB4RSqkBU9IcR4qDPoue8SBa17GWH1Z70gM9-qGx_xHooESbfl26QM.eyJmYWFzX2ludm9jYXRpb25faWQiOiI0fGdsb2JhbHxhc3luY18yMzQ3NjQxfGRlc19nZW5lcmFsX3RpZXJfcHJvZHwxNjEyMTgwNjUzOTk4NDAwMjc2MHwwfGZhYXMuQTE0MzM0RkE2MzMxQjZFRjdEM0NEMDJFNkQzNzA1OTJ8NzQ3MjY0MDEzMzc2MjQwMjE1MiIsInBvcnQiOiIxODI1OSIsInRlbmFudCI6ImFzeW5jXzIzNDc2NDEiLCJpcCI6IjI4MDM6NjA4NDozMGM4OmJmM2I6NDYyZjo1MjE2OjUwMDowIn0"}}
+2026-06-16 13:31:19,233 - root - [INFO] - des_container.py:195 - load_image - Pulling image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest on VMVM
+2026-06-16 13:32:55,727 - root - [INFO] - des_container.py:203 - load_image - Image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest pulled successfully
+2026-06-16 13:32:57,517 - root - [INFO] - des_container.py:221 - run_container - Container started: a9d3c407d3f5860eac1a50ff0cf6dc0c6c71e297643ee53e4429389d8b92ed41
+2026-06-16 13:32:57,518 - root - [INFO] - des_container.py:565 - _heartbeat_loop - VMVM heartbeat thread started
+2026-06-16 13:32:57,519 - root - [INFO] - forager_locate_function_code_and_dep.py:294 - run - Starting analysis for allocate in groups/bdl/bdlma/bdlma_concurrentpoolallocator.cpp
+2026-06-16 13:32:57,519 - root - [INFO] - forager_locate_function_code_and_dep.py:208 - prepare_cpp_container - ========== Preparing C++ container ==========
+2026-06-16 13:32:57,519 - root - [DEBUG] - forager_locate_function_code_and_dep.py:211 - prepare_cpp_container - Setting up env variables
+2026-06-16 13:32:57,519 - root - [DEBUG] - des_container.py:308 - command - DES command: 'export WINDOW=100 && export OVERLAP=2 && export CURRENT_LINE=0 && export CURRENT'
+2026-06-16 13:32:59,632 - root - [DEBUG] - forager_locate_function_code_and_dep.py:220 - prepare_cpp_container - Importing agent tools in container
+2026-06-16 13:33:01,628 - root - [DEBUG] - des_container.py:385 - put - DES put: 6243 bytes to /opt/tools/defaults.sh
+2026-06-16 13:33:27,852 - root - [DEBUG] - des_container.py:308 - command - DES command: 'source /opt/tools/defaults.sh'
+2026-06-16 13:33:30,711 - root - [DEBUG] - des_container.py:385 - put - DES put: 5735 bytes to /opt/tools/search.sh
+2026-06-16 13:33:38,327 - root - [DEBUG] - des_container.py:308 - command - DES command: 'source /opt/tools/search.sh'
+2026-06-16 13:33:41,614 - root - [DEBUG] - des_container.py:308 - command - DES command: 'export PATH=/opt/tools:$PATH'
+2026-06-16 13:33:43,754 - root - [INFO] - forager_locate_function_code_and_dep.py:225 - prepare_cpp_container - Uploading submit_prediction command
+2026-06-16 13:33:43,754 - root - [DEBUG] - des_container.py:385 - put - DES put: 74 bytes to /usr/local/bin/submit_prediction
+2026-06-16 13:34:17,665 - root - [DEBUG] - des_container.py:308 - command - DES command: 'chmod +x /usr/local/bin/submit_prediction'
+2026-06-16 13:34:19,066 - root - [DEBUG] - des_container.py:308 - command - DES command: "which submit_prediction || echo 'Not in PATH'"
+2026-06-16 13:34:20,622 - root - [INFO] - forager_locate_function_code_and_dep.py:237 - prepare_cpp_container - Script in PATH: /usr/local/bin/submit_prediction
+2026-06-16 13:34:20,623 - root - [DEBUG] - des_container.py:308 - command - DES command: "export GIT_AUTHOR_NAME='CI Bot' && export GIT_AUTHOR_EMAIL='ci-bot@yourdomain.co"
+2026-06-16 13:34:22,398 - root - [DEBUG] - forager_locate_function_code_and_dep.py:256 - prepare_cpp_container - Creating /workspace directory
+2026-06-16 13:34:22,398 - root - [DEBUG] - des_container.py:308 - command - DES command: 'mkdir -p /workspace'
+2026-06-16 13:34:40,091 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cd /workspace'
+2026-06-16 13:34:41,616 - root - [DEBUG] - forager_locate_function_code_and_dep.py:196 - _init_prompt - Task prompt:
+Your task is to predict whether the function `allocate` in the C++ file `groups/bdl/bdlma/bdlma_concurrentpoolallocator.cpp` will:
+- **Terminate** for all inputs, OR
+- **Diverge** for some inputs (enter a non-terminating loop)
+
+**Important:** This is a **read-only code analysis task**. You may only use shell commands to view files. Do not execute any C++ code or modify any files. Only use commands like `cat`, `grep`, `find`, `ls`, `cd`, `head`, `tail`, `git`, etc.
+
+## STEP 1: Clone the Repository
+
+First, clone the repository and checkout the specific commit:
+```bash
+git clone https://github.com/bloomberg/bde /workspace/BDE && cd /workspace/BDE && git checkout 4d68783f7c9369510c61b51388ee5c353b01c67e
+```
+
+## STEP 2: Examine the Function
+
+Navigate to the repository and examine the function using read-only commands. Examples:
+```bash
+cd /workspace/BDE
+cat groups/bdl/bdlma/bdlma_concurrentpoolallocator.cpp                              # View the entire file
+grep -n "allocate" groups/bdl/bdlma/bdlma_concurrentpoolallocator.cpp    # Find the function's line number
+grep -A 50 "allocate" groups/bdl/bdlma/bdlma_concurrentpoolallocator.cpp # View the function plus 50 lines after (of course you can view more).
+```
+
+## STEP 3: Analyze Dependencies
+Important: The function may call other functions, use external types, or depend on macros defined elsewhere. You must examine these dependencies to fully understand the code's behavior.
+- Find and read helper functions called within the target function
+- Examine header files for type definitions and macros
+- Check struct/class definitions to understand data types
+- Trace function pointers to their implementations
+
+Finding dependencies:
+```bash
+grep -rn "function_name" /workspace/BDE/
+find . -name "*.h" | xargs grep "TypeName"
+cat path/to/header.h
+```
+
+## STEP 4: Classify the Function
+**"T" (Terminates)** - Function terminates for all possible inputs:
+- No blocking synchronization calls. All loops have reachable exit conditions. Loop variables progress correctly toward exit. Proper bounds checking and error handling
+**"NT" (Non-Termination)** - Designed to block or loop indefinitely (can be intentional by the user or a bug). Examples:
+- Thread synchronization primitives. Locks. Condition variables. Event loops or server loops that run until external signal.
+Worker thread functions waiting for tasks or termination signals.
+- Loop variable never modified or modified in wrong direction. `while(1)` or `for(;;)` without reachable `break` or `return`.
+Unbounded I/O operations without proper termination checks. Missing loop increment/decrement statements.
+
+## STEP 5: Submit Your Prediction
+
+When ready, submit your classification:
+```bash
+submit_prediction '{"function_name": "allocate", "file_path": "groups/bdl/bdlma/bdlma_concurrentpoolallocator.cpp", "prediction": "<T|NT>", "p_non_terminating": <0-100>, "confidence": "<high|medium|low>", "reason": "<one concise sentence>"}'
+```
+
+**Field definitions:**
+- `prediction`: "T" if the function terminates for all inputs, "NT" if it can loop/block indefinitely
+- `p_non_terminating`: integer 0–100 — your estimated probability (in %) that the function is non-terminating
+- `confidence`: "high" if the evidence is clear and unambiguous, "medium" if there is some uncertainty, "low" if the code is hard to fully trace or the behavior is unclear
+- `reason`: one concise sentence explaining the key factor driving your prediction
+
+**Guidelines:**
+- Execute one command per response in triple backticks
+- Read all relevant source and header files before making a prediction
+- Trace data flow to understand where loop bounds and conditions come from
+- Consider edge cases: zero values, type overflows, null pointers, EOF conditions
+- Only submit your prediction when you have thoroughly analyzed the code
+- Begin by cloning the repository
+2026-06-16 13:34:41,616 - root - [INFO] - forager_base.py:342 - start_trajectory - =========== Starting new trajectory ==========
+2026-06-16 13:34:41,616 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 1
+2026-06-16 13:34:41,616 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:34:42,796 - root - [INFO] - logging.py:31 - log_time - Took 1.18s
+2026-06-16 13:34:42,800 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'git clone https://github.com/b' (timeout=120)
+2026-06-16 13:34:42,800 - root - [DEBUG] - des_container.py:308 - command - DES command: 'git clone https://github.com/bloomberg/bde /workspace/BDE && cd /workspace/BDE &'
+2026-06-16 13:35:15,422 - root - [DEBUG] - des_container.py:572 - _heartbeat_loop - VMVM heartbeat sent
+2026-06-16 13:35:20,926 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 13:35:20,926 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 2
+2026-06-16 13:35:20,926 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:35:21,133 - root - [INFO] - logging.py:31 - log_time - Took 0.21s
+2026-06-16 13:35:21,137 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cd /workspace/BDE\n' (timeout=120)
+2026-06-16 13:35:21,137 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cd /workspace/BDE\n'
+2026-06-16 13:35:23,071 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 13:35:23,071 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 3
+2026-06-16 13:35:23,071 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:35:23,324 - root - [INFO] - logging.py:31 - log_time - Took 0.25s
+2026-06-16 13:35:23,328 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'find . -name "bdlma_concurrent' (timeout=120)
+2026-06-16 13:35:23,329 - root - [DEBUG] - des_container.py:308 - command - DES command: 'find . -name "bdlma_concurrentpoolallocator.cpp" -type f\n'
+2026-06-16 13:35:24,836 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: ./groups/bdl/bdlma/bdlma_concurrentpoolallocator.cpp
+2026-06-16 13:35:24,836 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 4
+2026-06-16 13:35:24,836 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:35:25,077 - root - [INFO] - logging.py:31 - log_time - Took 0.24s
+2026-06-16 13:35:25,081 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cat ./groups/bdl/bdlma/bdlma_c' (timeout=120)
+2026-06-16 13:35:25,081 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cat ./groups/bdl/bdlma/bdlma_concurrentpoolallocator.cpp\n'
+2026-06-16 13:35:26,446 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: // bdlma_concurrentpoolallocator.cpp                                  -*-C++-*-
+#include <bdlma_concurrentpoolallocator.h>
+
+#include <bsls_ident.h>
+BSLS_IDENT_RCSID(bdlma_concurrentpoolallocator_cpp,"$Id$ $CSID$")
+
+#include <bdlma_guardingallocator.h>  // for testing only
+
+#include <bslma_default.h>
+
+#include <bslmt_threadutil.h>
+
+#include <bsls_alignmentutil.h>
+#include <bsls_assert.h>
+#include <bsls_performancehint.h>
+
+// CONSTANTS
+enum {
+    k_MAX_CHUNK_SIZE = 32  // maximum number of blocks per chunk
+};
+
+// STATIC METHODS
+static inline
+BloombergLP::bsls::Types::size_type calculateMaxAlignedSize(
+                                 BloombergLP::bsls::Types::size_type totalSize)
+{
+    using namespace BloombergLP;
+
+    const bsls::Types::size_type objectAlignmentMin =
+                                   bsls::AlignmentUtil::BSLS_MAX_ALIGNMENT - 1;
+    const bsls::Types::size_type ret =
+                      (totalSize + objectAlignmentMin) & ~(objectAlignmentMin);
+    BSLS_ASSERT(bsls::AlignmentUtil::BSLS_MAX_ALIGNMENT ==
+                         bsls::AlignmentUtil::calculateAlignmentFromSize(ret));
+    return ret;
+}
+
+namespace BloombergLP {
+namespace bdlma {
+
+                      // -----------------------------
+                      // class ConcurrentPoolAllocator
+                      // -----------------------------
+
+// CREATORS
+ConcurrentPoolAllocator::ConcurrentPoolAllocator(
+                                              bslma::Allocator *basicAllocator)
+: d_initialized(k_UNINITIALIZED)
+, d_blockSize(0)
+, d_growthStrategy(bsls::BlockGrowth::BSLS_GEOMETRIC)
+, d_maxBlocksPerChunk(k_MAX_CHUNK_SIZE)
+, d_allocator_p(bslma::Default::allocator(basicAllocator))
+{
+}
+
+ConcurrentPoolAllocator::ConcurrentPoolAllocator(
+                                   bsls::BlockGrowth::Strategy  growthStrategy,
+                                   bslma::Allocator            *basicAllocator)
+: d_initialized(k_UNINITIALIZED)
+, d_blockSize(0)
+, d_growthStrategy(growthStrategy)
+, d_maxBlocksPerChunk(k_MAX_CHUNK_SIZE)
+, d_allocator_p(bslma::Default::allocator(basicAllocator))
+{
+}
+
+ConcurrentPoolAllocator::ConcurrentPoolAllocator(
+                                              size_type         blockSize,
+                                              bslma::Allocator *basicAllocator)
+: d_initialized(k_UNINITIALIZED)
+, d_blockSize(blockSize)
+, d_growthStrategy(bsls::BlockGrowth::BSLS_GEOMETRIC)
+, d_maxBlocksPerChunk(k_MAX_CHUNK_SIZE)
+, d_allocator_p(bslma::Default::allocator(basicAllocator))
+{
+    if (blockSize) {
+        new (d_pool.buffer()) ConcurrentPool(
+                           calculateMaxAlignedSize(blockSize + sizeof(Header)),
+                           d_growthStrategy,
+                           d_allocator_p);
+        d_initialized = k_INITIALIZED;
+    }
+}
+
+ConcurrentPoolAllocator::ConcurrentPoolAllocator(
+                                   size_type                    blockSize,
+                                   bsls::BlockGrowth::Strategy  growthStrategy,
+                                   bslma::Allocator            *basicAllocator)
+: d_initialized(k_UNINITIALIZED)
+, d_blockSize(blockSize)
+, d_growthStrategy(growthStrategy)
+, d_maxBlocksPerChunk(k_MAX_CHUNK_SIZE)
+, d_allocator_p(bslma::Default::allocator(basicAllocator))
+{
+    if (blockSize) {
+        new (d_pool.buffer()) ConcurrentPool(
+                           calculateMaxAlignedSize(blockSize + sizeof(Header)),
+                           d_growthStrategy,
+                           d_allocator_p);
+        d_initialized = k_INITIALIZED;
+    }
+}
+
+ConcurrentPoolAllocator::ConcurrentPoolAllocator(
+                                bsls::BlockGrowth::Strategy  growthStrategy,
+                                int                          maxBlocksPerChunk,
+                                bslma::Allocator            *basicAllocator)
+: d_initialized(k_UNINITIALIZED)
+, d_blockSize(0)
+, d_growthStrategy(growthStrategy)
+, d_maxBlocksPerChunk(maxBlocksPerChunk)
+, d_allocator_p(bslma::Default::allocator(basicAllocator))
+{
+}
+
+ConcurrentPoolAllocator::ConcurrentPoolAllocator(
+                                size_type                    blockSize,
+                                bsls::BlockGrowth::Strategy  growthStrategy,
+                                int                          maxBlocksPerChunk,
+                                bslma::Allocator            *basicAllocator)
+: d_initialized(k_UNINITIALIZED)
+, d_blockSize(blockSize)
+, d_growthStrategy(growthStrategy)
+, d_maxBlocksPerChunk(maxBlocksPerChunk)
+, d_allocator_p(bslma::Default::allocator(basicAllocator))
+{
+    if (blockSize) {
+        new (d_pool.buffer()) ConcurrentPool(
+                           calculateMaxAlignedSize(blockSize + sizeof(Header)),
+                           d_growthStrategy,
+                           d_maxBlocksPerChunk,
+                           d_allocator_p);
+        d_initialized = k_INITIALIZED;
+    }
+}
+
+ConcurrentPoolAllocator::~ConcurrentPoolAllocator()
+{
+    if (k_INITIALIZED == d_initialized) {
+        d_pool.object().~ConcurrentPool();
+    }
+}
+
+// MANIPULATORS
+void *ConcurrentPoolAllocator::allocate(size_type size)
+{
+    if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(0 == size)) {
+        BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
+        return 0;                                                     // RETURN
+    }
+
+    // TBD This should be replaced with a load with acquire semantics.
+
+    if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(k_INITIALIZED !=
+                                                              d_initialized)) {
+        BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
+        while (1) {
+            int res = d_initialized.testAndSwap(k_UNINITIALIZED,
+                                                k_INITIALIZING);
+            if (k_INITIALIZING == res) {
+                bslmt::ThreadUtil::yield();
+                continue; // initialization in progress
+            }
+            else if (k_UNINITIALIZED != res) {
+                break;    // initialized
+            }
+            d_blockSize = size;
+            new (d_pool.buffer()) ConcurrentPool(
+                                calculateMaxAlignedSize(size + sizeof(Header)),
+                                d_growthStrategy,
+                                d_maxBlocksPerChunk,
+                                d_allocator_p);
+            d_initialized = k_INITIALIZED;
+            break;
+        }
+    }
+
+    char *ptr;
+    const size_type totalSize = size + sizeof(Header);
+    if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(
+                                    totalSize > d_pool.object().blockSize())) {
+        BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
+        ptr = static_cast<char *>(d_allocator_p->allocate(totalSize));
+        static_cast<Header *>(static_cast<void *>(ptr))->d_magicNumber = 0;
+    }
+    else {
+        ptr = static_cast<char *>(d_pool.object().allocate());
+        static_cast<Header *>(static_cast<void *>(ptr))->d_magicNumber =
+                                                                k_MAGIC_NUMBER;
+    }
+    return ptr + sizeof(Header);
+}
+
+void ConcurrentPoolAllocator::deallocate(void *address)
+{
+    if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(!address)) {
+        BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
+        return;                                                       // RETURN
+    }
+
+    Header *header = static_cast<Header *>(
+                        static_cast<void *>(
+                            static_cast<char *>(address) - sizeof(Header)));
+    if (BSLS_PERFORMANCEHINT_PREDICT_LIKELY(
+                                    k_MAGIC_NUMBER == header->d_magicNumber)) {
+        d_pool.object().deallocate(header);
+    }
+    else {
+        BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
+        d_allocator_p->deallocate(header);
+    }
+}
+
+}  // close package namespace
+}  // close enterprise namespace
+
+// ----------------------------------------------------------------------------
+// Copyright 2015 Bloomberg Finance L.P.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+// ----------------------------- END-OF-FILE ----------------------------------
+2026-06-16 13:35:26,446 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 5
+2026-06-16 13:35:26,446 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:35:26,787 - root - [INFO] - logging.py:31 - log_time - Took 0.34s
+2026-06-16 13:35:26,791 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -n "allocate" ./groups/bd' (timeout=120)
+2026-06-16 13:35:26,791 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -n "allocate" ./groups/bdl/bdlma/bdlma_concurrentpoolallocator.cpp\n'
+2026-06-16 13:35:28,086 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 145:void *ConcurrentPoolAllocator::allocate(size_type size)
+183:        ptr = static_cast<char *>(d_allocator_p->allocate(totalSize));
+187:        ptr = static_cast<char *>(d_pool.object().allocate());
+194:void ConcurrentPoolAllocator::deallocate(void *address)
+206:        d_pool.object().deallocate(header);
+210:        d_allocator_p->deallocate(header);
+2026-06-16 13:35:28,086 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 6
+2026-06-16 13:35:28,086 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:35:28,396 - root - [INFO] - logging.py:31 - log_time - Took 0.31s
+2026-06-16 13:35:28,399 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'find . -name "bdlma_concurrent' (timeout=120)
+2026-06-16 13:35:28,399 - root - [DEBUG] - des_container.py:308 - command - DES command: 'find . -name "bdlma_concurrentpoolallocator.h" -type f\n'
+2026-06-16 13:35:29,683 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: ./groups/bdl/bdlma/bdlma_concurrentpoolallocator.h
+2026-06-16 13:35:29,683 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 7
+2026-06-16 13:35:29,683 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:35:29,988 - root - [INFO] - logging.py:31 - log_time - Took 0.30s
+2026-06-16 13:35:29,991 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cat ./groups/bdl/bdlma/bdlma_c' (timeout=120)
+2026-06-16 13:35:29,991 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cat ./groups/bdl/bdlma/bdlma_concurrentpoolallocator.h\n'
+2026-06-16 13:35:47,398 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: // bdlma_concurrentpoolallocator.h                                    -*-C++-*-
+#ifndef INCLUDED_BDLMA_CONCURRENTPOOLALLOCATOR
+#define INCLUDED_BDLMA_CONCURRENTPOOLALLOCATOR
+
+#include <bsls_ident.h>
+BSLS_IDENT("$Id: $")
+
+//@PURPOSE: Provide thread-safe memory-pooling allocator of fixed-size blocks.
+//
+//@CLASSES:
+//   bdlma::ConcurrentPoolAllocator: thread-safe allocator of pooled blocks
+//
+//@DESCRIPTION: This component defines a class,
+// `bdlma::ConcurrentPoolAllocator`, that implements the `bslma::Allocator`
+// protocol and provides a thread-safe allocator of pooled memory blocks of
+// uniform size (the "pooled size").  The pooled size is either (1) configured
+// at construction, or (2) equal to the size of the first block allocated
+// through the allocator.  All of the allocation requests of sizes up to the
+// pooled size are satisfied with blocks from the underlying pool.  All
+// requests of sizes larger than the pooled size will be satisfied through the
+// external allocator (the allocator supplied at construction, or the default
+// allocator if no allocator was provided).
+//
+///Protocol Hierarchy
+///------------------
+// The interface hierarchy (defined by direct public inheritance) of
+// `bdlma::ConcurrentPoolAllocator` is as follows:
+// ```
+//  ,-------------------.
+// ( bdlma::ConcurrentPoolAllocator )
+//  `-------------------'
+//            |       ctor/dtor
+//            |       objectSize
+//            V
+//    ,----------------.
+//   ( bslma::Allocator )
+//    `----------------'
+//                    allocate
+//                    deallocate
+// ```
+// `bdlma::ConcurrentPoolAllocator` provides a concrete, thread-safe
+// implementation of the `bslma::Allocator` protocol.
+//
+///Usage
+///-----
+// The `bdlma::ConcurrentPoolAllocator` is intended to be used in either of the
+// following two cases.
+//
+// The first case is where frequent allocation and deallocation of memory
+// occurs through the `bslma::Allocator` protocol and all of the allocated
+// blocks have the same size.  In this case, the size of blocks to pool is
+// determined the first time `allocate` is called and need not be specified at
+// construction.
+//
+// The second case is where frequent allocation and deallocation of memory
+// occurs through the `bslma::Allocator` protocol, most of the allocations have
+// similar sizes, and a likely maximum for the largest allocation is known at
+// the time of construction.
+//
+///Example 1: Uniform Sized Allocations
+/// - - - - - - - - - - - - - - - - - -
+// The following example illustrates the use of
+// `bdlma::ConcurrentPoolAllocator` when all allocations are of uniform size.
+// A `bdlma::ConcurrentPoolAllocator` is used in the implementation of a "work
+// queue" where each "item" enqueued by a producer thread is of identical size.
+// Concurrently, a consumer dequeues each work item when it becomes available,
+// verifies the content (a sequence number in ASCII), and deallocates the work
+// item.  The concurrent allocations and deallocations are valid because
+// `bdlma::ConcurrentPoolAllocator` is thread-safe.
+//
+// First, an abstract of the example will be given with focus and commentary on
+// the relevant details of `bdlma::ConcurrentPoolAllocator`.  Details
+// pertaining to queue management, thread creation, thread synchronization,
+// etc., can be seen in the full listing at the end of this example.
+//
+// The parent thread creates the `bdlma::ConcurrentPoolAllocator` and work
+// queue by the statements:
+// ```
+// bdlma::ConcurrentPoolAllocator poolAlloc;
+// my1_WorkQueue queue(&poolAlloc);
+// ```
+// Note that since the default constructor is used to create `poolAlloc`, the
+// pooled size has not yet been fixed.
+//
+// The work queue is defined by the following data structures.
+// ```
+// struct my1_WorkItem {
+//     // DATA
+//     char *d_item;  // represents work to perform
+// };
+//
+// struct my1_WorkQueue {
+//     // DATA
+//     bsl::list<my1_WorkItem>  d_queue;    // queue of work requests
+//     bslmt::Mutex             d_mx;       // protects the shared queue
+//     bslmt::Condition         d_cv;       // signals existence of new work
+//     bslma::Allocator        *d_alloc_p;  // pooled allocator
+//
+//     // CREATORS
+//     explicit my1_WorkQueue(bslma::Allocator *basicAllocator = 0)
+//     : d_alloc_p(bslma::Default::allocator(basicAllocator))
+//     {
+//     }
+// };
+// ```
+// The producer and consumer threads are given the address of the work queue as
+// their sole argument.  Here, the producer allocates a work item, initializes
+// it with a sequence number in ASCII, enqueues it, and signals its presence to
+// the consumer thread.  This action is done 50 times, and then a 51st, empty
+// work item is added to inform the consumer of the end of the queue.  The
+// first allocation of a work item (100 bytes) fixes the pooled size.  Each
+// subsequent allocation is that same size (100 bytes).  The producer's actions
+// are shown below:
+// ```
+// extern "C"
+// void *my1_producer(void *arg)
+// {
+//     my1_WorkQueue *queue = (my1_WorkQueue *)arg;
+//
+//     for (int i = 0; i < 50; ++i) {
+//         char b[100];
+//         bsl::snprintf(b, sizeof b, "%d", i);
+//         int len = static_cast<int>(bsl::strlen(b));
+//
+//         my1_WorkItem request;
+//
+//         // Fixed allocation size sufficient for content.
+//
+//         request.d_item = (char *)queue->d_alloc_p->allocate(100);
+//
+//         bsl::memcpy(request.d_item, b, len+1);
+//
+//         // Enqueue item and signal any waiting threads.
+//         // ...
+//     }
+//
+//     // Add empty item.
+//     // ...
+//
+//     return queue;
+// }
+// ```
+// When the consumer thread finds that the queue is not empty it dequeues the
+// item, verifies its content (a sequence number in ASCII), returns the work
+// item to the pool, and checks for the next item.  If the queue is empty, the
+// consumer blocks until signaled by the producer.  An empty work item
+// indicates that the producer will send no more items, so the consumer exits.
+// The consumer's actions are shown below:
+// ```
+// extern "C"
+// void *my1_consumer(void *arg)
+// {
+//     my1_WorkQueue *queue = (my1_WorkQueue *)arg;
+//
+//     for (int i = 0; ; ++i) {
+//
+//         // Block until work item on queue.
+//         // ...
+//
+//         // Dequeue item.
+//         // ...
+//
+//         // Break when end-of-work item received.
+//         // ...
+//
+//         char b[100];
+//         bsl::snprintf(b, sizeof b, "%d", i);
+//         assert(bsl::strcmp(b, item.d_item) == 0);   // check content
+//
+//         queue->d_alloc_p->deallocate(item.d_item);  // deallocate
+//     }
+//
+//     return 0;
+// }
+// ```
+// A complete listing of the example's structures and functions follows:
+// ```
+// struct my1_WorkItem {
+//     // DATA
+//     char *d_item;  // represents work to perform
+// };
+//
+// struct my1_WorkQueue {
+//     // DATA
+//     bsl::list<my1_WorkItem>  d_queue;    // queue of work requests
+//     bslmt::Mutex             d_mx;       // protects the shared queue
+//     bslmt::Condition         d_cv;       // signals existence of new work
+//     bslma::Allocator        *d_alloc_p;  // pooled allocator
+//
+//   private:
+//     // Not implemented:
+//     my1_WorkQueue(const my1_WorkQueue&);
+//
+//   public:
+//     // CREATORS
+//     explicit my1_WorkQueue(bslma::Allocator *basicAllocator = 0)
+//     : d_alloc_p(bslma::Default::allocator(basicAllocator))
+//     {
+//     }
+// };
+//
+// extern "C" void *my1_producer(void *arg)
+// {
+//     my1_WorkQueue *queue = (my1_WorkQueue *)arg;
+//
+//     for (int i = 0; i < 50; ++i) {
+//
+//         char b[100];
+//         bsl::snprintf(b, sizeof b, "%d", i);
+//         int len = static_cast<int>(bsl::strlen(b));
+//
+//         my1_WorkItem request;
+//         request.d_item = (char *)queue->d_alloc_p->allocate(100);
+//         bsl::memcpy(request.d_item, b, len+1);
+//
+//         if (veryVerbose) {
+//             // Assume thread-safe implementations of 'cout' and 'endl'
+//             // exist (named 'MTCOUT' and 'MTENDL', respectively).
+//
+//             MTCOUT << "Enqueuing " << request.d_item << MTENDL;
+//         }
+//
+//         queue->d_mx.lock();
+//         queue->d_queue.push_back(request);
+//         queue->d_mx.unlock();
+//         queue->d_cv.signal();
+//     }
+//
+//     my1_WorkItem request;
+//     request.d_item = 0;
+//
+//     queue->d_mx.lock();
+//     queue->d_queue.push_back(request);
+//     queue->d_mx.unlock();
+//     queue->d_cv.signal();
+//
+//     return queue;
+// }
+//
+// extern "C" void *my1_consumer(void *arg)
+// {
+//     my1_WorkQueue *queue = (my1_WorkQueue *)arg;
+//
+//     for (int i = 0; ; ++i) {
+//
+//         queue->d_mx.lock();
+//         while (0 == queue->d_queue.size()) {
+//             queue->d_cv.wait(&queue->d_mx);
+//         }
+//
+//         my1_WorkItem item = queue->d_queue.front();
+//         queue->d_queue.pop_front();
+//         queue->d_mx.unlock();
+//
+//         if (0 == item.d_item) {
+//             break;
+//         }
+//
+//         // Process the work requests.
+//         if (veryVerbose) {
+//             // Assume thread-safe implementations of 'cout' and 'endl'
+//             // exist (named 'MTCOUT' and 'MTENDL', respectively).
+//
+//             MTCOUT << "Processing " << item.d_item << MTENDL;
+//         }
+//
+//         char b[100];
+//         bsl::snprintf(b, sizeof b, "%d", i);
+//         assert(bsl::strcmp(b, item.d_item) == 0);
+//
+//         queue->d_alloc_p->deallocate(item.d_item);
+//     }
+//
+//     return 0;
+// }
+// ```
+// In the application `main`:
+// ```
+// {
+//     bdlma::ConcurrentPoolAllocator poolAlloc;
+//     my1_WorkQueue queue(&poolAlloc);
+//
+//     bslmt::ThreadAttributes attributes;
+//
+//     bslmt::ThreadUtil::Handle producerHandle;
+//     int status = bslmt::ThreadUtil::create(&producerHandle,
+//                                            attributes,
+//                                            &my1_producer,
+//                                            &queue);
+//     assert(0 == status);
+//
+//     bslmt::ThreadUtil::Handle consumerHandle;
+//     status = bslmt::ThreadUtil::create(&consumerHandle,
+//                                        attributes,
+//                                        &my1_consumer,
+//                                        &queue);
+//     assert(0 == status);
+//     status = bslmt::ThreadUtil::join(consumerHandle);
+//     assert(0 == status);
+//     status = bslmt::ThreadUtil::join(producerHandle);
+//     assert(0 == status);
+// }
+// ```
+//
+///Example 2: Variable Allocation Size
+///- - - - - - - - - - - - - - - - - -
+// The following example illustrates the use of
+// `bdlma::ConcurrentPoolAllocator` when allocations are of varying size.  A
+// `bdlma::ConcurrentPoolAllocator` is used in the implementation of a "work
+// queue" where each "item" enqueued by a producer thread varies in size, but
+// all items are smaller than a known maximum.  Concurrently, a consumer thread
+// dequeues each work item when it is available, verifies its content (a
+// sequence number in ASCII), and deallocates the work item.  The concurrent
+// allocations and deallocations are valid because
+// `bdlma::ConcurrentPoolAllocator` is thread-safe.
+//
+// First, an abstract of the example will be given with focus and commentary on
+// the relevant details of `bdlma::ConcurrentPoolAllocator`.  Details
+// pertaining to queue management, thread creation, thread synchronization,
+// etc., can be seen in the full listing at the end of this example.
+//
+// The parent thread creates the `bdlma::ConcurrentPoolAllocator` and work
+// queue by the statements:
+// ```
+// bdlma::ConcurrentPoolAllocator poolAlloc(100);
+// my1_WorkQueue queue(&poolAlloc);
+// ```
+// Note that the pooled size (100) is specified in the construction of
+// `poolAlloc`.  Any requests in excess of that size will be satisfied by
+// implicit calls to the default allocator, not from the underlying pool.
+//
+// The work queue is defined by the following data structures.
+// ```
+// struct my2_WorkItem {
+//     // DATA
+//     char *d_item;  // represents work to perform
+// };
+//
+// struct my2_WorkQueue {
+//     // DATA
+//     bsl::list<my2_WorkItem>  d_queue;    // queue of work requests
+//     bslmt::Mutex             d_mx;       // protects the shared queue
+//     bslmt::Condition         d_cv;       // signals existence of new work
+//     bslma::Allocator        *d_alloc_p;  // pooled allocator
+//
+//     // CREATORS
+//     explicit my2_WorkQueue(bslma::Allocator *basicAllocator = 0)
+//     : d_queue(basic_Allocator)
+//     , d_alloc_p(bslma::Default::allocator(basic_Allocator))
+//     {
+//     }
+// };
+// ```
+// In this example (unlike Example 1), the given allocator is used not only for
+// the work items, but is also passed to the constructor of `d_queue` so that
+// it also serves memory for the operations of `bsl::list<my2_WorkItem>`.
+//
+// The producer and consumer threads are given the address of the work queue as
+// their sole argument.  Here, the producer allocates a work item, initializes
+// it with a sequence number in ASCII, enqueues it, and signals its presence to
+// the consumer thread.  The action is done 50 times, and then a 51st, empty
+// work item is added to inform the consumer of the end of the queue.  In this
+// example, each work item is sized to match the length of its contents, the
+// sequence number in ASCII.  The producer's actions are shown below:
+// ```
+// extern "C" void *my2_producer(void *arg)
+// {
+//     my2_WorkQueue *queue = (my2_WorkQueue *)arg;
+//
+//     for (int i = 0; i < 50; ++i) {
+//
+//         char b[100];
+//         bsl::snprintf(b, sizeof b, "%d", i);
+//         int len = static_cast<int>(bsl::strlen(b));
+//
+//         my2_WorkItem request;
+//
+//         // Allocate item to exactly match space needed for content.
+//
+//         request.d_item = (char *)queue->d_alloc_p->allocate(len+1);
+//
+//         bsl::memcpy(request.d_item, b, len+1);
+//
+//         // Enqueue item and signal any waiting threads.
+//         // ...
+//     }
+//
+//     // Add empty item.
+//     // ...
+//
+//     return queue;
+// }
+// ```
+// The actions of this consumer thread are essentially the same as those of the
+// consumer thread in Example 1.
+//
+// When the consumer thread finds that the queue is not empty, it dequeues the
+// item, verifies its content (a sequence number in ASCII), returns the work
+// item to the pool, and checks for the next item.  If the queue is empty, the
+// consumer blocks until signaled by the producer.  An empty work item
+// indicates that the producer will send no more items, so the consumer exits.
+// The consumer's actions are shown below.
+// ```
+// extern "C" void *my2_consumer(void *arg)
+// {
+//     my2_WorkQueue *queue = (my2_WorkQueue *)arg;
+//
+//     while (int i = 0; ; ++i) {
+//
+//         // Block until work item on queue.
+//         // ...
+//
+//         // Deque item.
+//         // ...
+//
+//         // Break when end-of-work item received.
+//         // ...
+//
+//         char b[100];
+//         bsl::snprintf(b, sizeof b, "%d", i);
+//         assert(bsl::strcmp(b, item.d_item) == 0);   // verify content
+//
+//         queue->d_alloc_p->deallocate(item.d_item);  // deallocate
+//     }
+//
+//     return 0;
+// }
+// ```
+// A complete listing of the example's structures and functions follows:
+// ```
+// struct my2_WorkItem {
+//     // DATA
+//     char *d_item;  // represents work to perform
+// };
+//
+// struct my2_WorkQueue {
+//     // DATA
+//     bsl::list<my2_WorkItem>  d_queue;    // queue of work requests
+//     bslmt::Mutex             d_mx;       // protects the shared queue
+//     bslmt::Condition         d_cv;       // signals existence of new work
+//     bslma::Allocator        *d_alloc_p;  // pooled allocator
+//
+//   private:
+//     // Not implemented:
+//     my2_WorkQueue(const my2_WorkQueue&);
+//
+//   public:
+//     // CREATORS
+//     explicit my2_WorkQueue(bslma::Allocator *basicAllocator = 0)
+//     : d_queue(basicAllocator)
+//     , d_alloc_p(basicAllocator)
+//     {
+//     }
+// };
+//
+// extern "C" void *my2_producer(void *arg)
+// {
+//     my2_WorkQueue *queue = (my2_WorkQueue *)arg;
+//
+//     for (int i = 0; i < 50; ++i) {
+//
+//         char b[100];
+//         bsl::snprintf(b, sizeof b, "%d", i);
+//         int len = static_cast<int>(bsl::strlen(b));
+//
+//         my2_WorkItem request;
+//         request.d_item = (char *)queue->d_alloc_p->allocate(len+1);
+//         bsl::memcpy(request.d_item, b, len+1);
+//
+//         if (veryVerbose) {
+//             // Assume thread-safe implementations of 'cout' and 'endl'
+//             // exist (named 'MTCOUT' and 'MTENDL', respectively).
+//
+//             MTCOUT << "Enqueuing " << request.d_item << MTENDL;
+//         }
+//
+//         queue->d_mx.lock();
+//         queue->d_queue.push_back(request);
+//         queue->d_mx.unlock();
+//         queue->d_cv.signal();
+//     }
+//
+//     my2_WorkItem request;
+//     request.d_item = 0;
+//
+//     queue->d_mx.lock();
+//     queue->d_queue.push_back(request);
+//     queue->d_mx.unlock();
+//     queue->d_cv.signal();
+//
+//     return queue;
+// }
+//
+// extern "C" void *my2_consumer(void *arg)
+// {
+//     my2_WorkQueue *queue = (my2_WorkQueue *)arg;
+//
+//     for (int i = 0; ; ++i) {
+//
+//         queue->d_mx.lock();
+//         while (0 == queue->d_queue.size()) {
+//             queue->d_cv.wait(&queue->d_mx);
+//         }
+//
+//         my2_WorkItem item = queue->d_queue.front();
+//         queue->d_queue.pop_front();
+//         queue->d_mx.unlock();
+//
+//         if (0 == item.d_item) {
+//             break;
+//         }
+//
+//         // Process the work requests.
+//         if (veryVerbose) {
+//             // Assume thread-safe implementations of 'cout' and 'endl'
+//             // exist (named 'MTCOUT' and 'MTENDL', respectively).
+//
+//             MTCOUT << "Processing " << item.d_item << MTENDL;
+//         }
+//
+//         char b[100];
+//         bsl::snprintf(b, sizeof b, "%d", i);
+//         assert(bsl::strcmp(b, item.d_item) == 0);
+//
+//         queue->d_alloc_p->deallocate(item.d_item);
+//     }
+//
+//     return 0;
+// }
+// ```
+// In the application's `main`:
+// ```
+// {
+//     bdlma::ConcurrentPoolAllocator poolAlloc(100);
+//     my2_WorkQueue queue(&poolAlloc);
+//
+//     bslmt::ThreadAttributes attributes;
+//
+//     bslmt::ThreadUtil::Handle producerHandle;
+//     int status = bslmt::ThreadUtil::create(&producerHandle,
+//                                           attributes,
+//                                           &my2_producer,
+//                                           &queue);
+//     assert(0 == status);
+//
+//     bslmt::ThreadUtil::Handle consumerHandle;
+//     status = bslmt::ThreadUtil::create(&consumerHandle,
+//                                       attributes,
+//                                       &my2_consumer,
+//                                       &queue);
+//     assert(0 == status);
+//     status = bslmt::ThreadUtil::join(consumerHandle);
+//     assert(0 == status);
+//     status = bslmt::ThreadUtil::join(producerHandle);
+//     assert(0 == status);
+// }
+// ```
+
+#include <bdlscm_version.h>
+
+#include <bdlma_concurrentpool.h>
+
+#include <bslma_allocator.h>
+
+#include <bsls_alignmentutil.h>
+#include <bsls_atomic.h>
+#include <bsls_blockgrowth.h>
+#include <bsls_keyword.h>
+#include <bsls_objectbuffer.h>
+#include <bsls_types.h>
+
+namespace BloombergLP {
+namespace bdlma {
+
+                      // =============================
+                      // class ConcurrentPoolAllocator
+                      // =============================
+
+/// This class implements the `bslma::Allocator` protocol to provide an
+/// allocator that manages pooled memory blocks of some uniform size,
+/// specified either at construction, or at the first invocation of the
+/// `allocate` method.  This allocator maintains an internal linked list of
+/// free memory blocks, and dispenses one block for each `allocate` method
+/// invocation.  When a memory block is deallocated, it is returned to the
+/// free list for potential reuse.
+///
+/// This class guarantees thread-safety while allocating or releasing
+/// memory.
+class ConcurrentPoolAllocator : public bslma::Allocator {
+
+  public:
+    // PUBLIC TYPES
+    typedef bsls::Types::size_type size_type;  // type for block size
+
+  private:
+    // PRIVATE TYPES
+    enum {
+        k_MAGIC_NUMBER  = 0x111902,  // magic number that is inserted in header
+                                     // of items that are allocated from the
+                                     // underlying pool
+
+        k_UNINITIALIZED =  0,        // pool not yet initialized
+
+        k_INITIALIZED   =  1,        // pool is initialized
+
+        k_INITIALIZING  = -1         // pool initialization in progress
+    };
+
+    /// Leading header on each allocated memory block.  If the memory block
+    /// is allocated from the pool, `d_magicNumber` is set to
+    /// `k_MAGIC_NUMBER`.  Otherwise, memory is allocated from the external
+    /// allocator supplied at construction, and `d_magicNumber` is set to 0.
+    union Header {
+
+        int                                 d_magicNumber; // allocation source
+                                                           // and sanity check
+
+        bsls::AlignmentUtil::MaxAlignedType d_dummy;       // forces alignment
+    };
+
+    // DATA
+    bsls::AtomicInt   d_initialized;  // initialization state indicator
+
+    bsls::ObjectBuffer<ConcurrentPool>
+                      d_pool;         // buffer used to hold the 'Pool'
+                                      // (initialization occurs when the pooled
+                                      // memory block size first becomes known)
+
+    size_type         d_blockSize;    // block size
+
+    bsls::BlockGrowth::Strategy
+                      d_growthStrategy;
+                                      // growth strategy of the chunk size
+
+    int               d_maxBlocksPerChunk;
+                                      // max chunk size (in blocks-per-chunk)
+
+    bslma::Allocator *d_allocator_p;  // basic allocator, held but not owned
+
+  private:
+    // NOT IMPLEMENTED
+    ConcurrentPoolAllocator(const ConcurrentPoolAllocator&);
+    ConcurrentPoolAllocator& operator=(const ConcurrentPoolAllocator&);
+
+  public:
+    // CREATORS
+
+    /// Create a pool allocator that returns blocks of contiguous memory of
+    /// uniform size for each `allocate` method invocation, where the size
+    /// is determined by the first invocation of `allocate`.  Optionally
+    /// specify a `growthStrategy` used to control the growth of internal
+    /// memory chunks (from which memory blocks are dispensed).  If
+    /// `growthStrategy` is not specified, geometric growth is used.  If
+    /// `growthStrategy` is specified, optionally specify a
+    /// `maxBlocksPerChunk`, indicating the maximum number of blocks to be
+    /// allocated at once when the underlying pool must be replenished.  If
+    /// `maxBlocksPerChunk` is not specified, an implementation-defined
+    /// value is used.  If geometric growth is used, the chunk size grows
+    /// starting at the value returned by `blockSize`, doubling in size
+    /// until the size is exactly `blockSize() * maxBlocksPerChunk`.  If
+    /// constant growth is used, the chunk size is always
+    /// `maxBlocksPerChunk`.  Optionally specify a `basicAllocator` used to
+    /// supply memory.  If `basicAllocator` is 0, the currently installed
+    /// default allocator is used.  The behavior is undefined unless
+    /// `1 <= maxBlocksPerChunk`.
+    explicit
+    ConcurrentPoolAllocator(bslma::Allocator *basicAllocator = 0);
+    explicit
+    ConcurrentPoolAllocator(bsls::BlockGrowth::Strategy  growthStrategy,
+                            bslma::Allocator            *basicAllocator = 0);
+    ConcurrentPoolAllocator(bsls::BlockGrowth::Strategy  growthStrategy,
+                            int                          maxBlocksPerChunk,
+                            bslma::Allocator            *basicAllocator = 0);
+
+    /// Create a pool allocator that returns blocks of contiguous memory of
+    /// the specified `blockSize` (in bytes) for each `allocate` method
+    /// invocation.  Optionally specify a `growthStrategy` used to control
+    /// the growth of internal memory chunks (from which memory blocks are
+    /// dispensed).  If `growthStrategy` is not specified, geometric growth
+    /// is used.  If `blockSize` and `growthStrategy` are specified,
+    /// optionally specify a `maxBlocksPerChunk`, indicating the maximum
+    /// number of blocks to be allocated at once when the underlying pool
+    /// must be replenished.  If `maxBlocksPerChunk` is not specified, an
+    /// implementation-defined value is used.  If geometric growth is used,
+    /// the chunk size grows starting at `blockSize`, doubling in size until
+    /// the size is exactly `blockSize * maxBlocksPerChunk`.  If constant
+    /// growth is used, the chunk size is always `maxBlocksPerChunk`.
+    /// Optionally specify a `basicAllocator` used to supply memory.  If
+    /// `basicAllocator` is 0, the currently installed default allocator is
+    /// used.  The behavior is undefined unless `1 <= maxBlocksPerChunk`.
+    explicit
+    ConcurrentPoolAllocator(size_type         blockSize,
+                            bslma::Allocator *basicAllocator = 0);
+    ConcurrentPoolAllocator(size_type                    blockSize,
+                            bsls::BlockGrowth::Strategy  growthStrategy,
+                            bslma::Allocator            *basicAllocator = 0);
+    ConcurrentPoolAllocator(size_type                    blockSize,
+                            bsls::BlockGrowth::Strategy  growthStrategy,
+                            int                          maxBlocksPerChunk,
+                            bslma::Allocator            *basicAllocator = 0);
+
+    /// Destroy this pool allocator.
+    ~ConcurrentPoolAllocator() BSLS_KEYWORD_OVERRIDE;
+
+    // MANIPULATORS
+
+    /// Return a newly allocated block of memory of (at least) the specified
+    /// positive `size` (in bytes), and having alignment conforming to the
+    /// platform requirement for any object having `size` bytes.  If `size`
+    /// is 0, a null pointer is returned with no effect.  If the block size
+    /// is not supplied at construction, then the `size` specified in the
+    /// first call to this method fixes the block size.  If `size` is
+    /// greater than the value returned by `blockSize`, the allocation
+    /// request will be satisfied directly by the external allocator
+    /// supplied at construction (or the default allocator, if no allocator
+    /// was supplied).
+    void *allocate(size_type size) BSLS_KEYWORD_OVERRIDE;
+
+    /// Return the memory at the specified `address` back to this allocator.
+    /// If `address` is 0, this method has no effect.  The behavior is
+    /// undefined unless `address` was allocated using this allocator and
+    /// has not already been deallocated.
+    void deallocate(void *address) BSLS_KEYWORD_OVERRIDE;
+
+    /// Relinquish all memory currently allocated through this pool
+    /// allocator.
+    void release();
+
+    /// Reserve memory from this pool allocator to satisfy memory requests
+    /// for at least the specified `numObjects` before the pool replenishes.
+    /// The behavior is undefined unless `0 <= numObjects`.  Note that this
+    /// operation has no effect unless block size was supplied at
+    /// construction, or `allocate` was invoked.
+    void reserveCapacity(int numObjects);
+
+    // ACCESSORS
+
+    /// Return the size (in bytes) of the memory blocks allocated from this
+    /// allocator.  Note that all blocks dispensed by this allocator have
+    /// the same size.
+    size_type blockSize() const;
+};
+
+// ============================================================================
+//                             INLINE DEFINITIONS
+// ============================================================================
+
+                      // -----------------------------
+                      // class ConcurrentPoolAllocator
+                      // -----------------------------
+
+// MANIPULATORS
+inline
+void ConcurrentPoolAllocator::release()
+{
+    if (d_initialized == k_INITIALIZED) {
+        d_pool.object().release();
+    }
+}
+
+inline
+void ConcurrentPoolAllocator::reserveCapacity(int numObjects)
+{
+    if (d_initialized == k_INITIALIZED) {
+        d_pool.object().reserveCapacity(numObjects);
+    }
+}
+
+// ACCESSORS
+inline
+bsls::Types::size_type ConcurrentPoolAllocator::blockSize() const
+{
+    return d_blockSize;
+}
+
+}  // close package namespace
+}  // close enterprise namespace
+
+#endif
+
+// ----------------------------------------------------------------------------
+// Copyright 2015 Bloomberg Finance L.P.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+// ----------------------------- END-OF-FILE ----------------------------------
+2026-06-16 13:35:47,398 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 8
+2026-06-16 13:35:47,398 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:35:57,370 - root - [INFO] - logging.py:31 - log_time - Took 9.97s
+2026-06-16 13:35:57,374 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -n "testAndSwap\\|AtomicIn' (timeout=120)
+2026-06-16 13:35:57,374 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -n "testAndSwap\\|AtomicInt" ./groups/bdl/bdlma/bdlma_concurrentpoolallocato'
+2026-06-16 13:35:58,624 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 622:    bsls::AtomicInt   d_initialized;  // initialization state indicator
+2026-06-16 13:35:58,625 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 9
+2026-06-16 13:35:58,625 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:36:04,652 - root - [INFO] - logging.py:31 - log_time - Took 6.03s
+2026-06-16 13:36:04,656 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'submit_prediction \'{"function_' (timeout=120)
+2026-06-16 13:36:04,656 - root - [DEBUG] - des_container.py:308 - command - DES command: 'submit_prediction \'{"function_name": "allocate", "file_path": "groups/bdl/bdlma/'
+2026-06-16 13:36:05,926 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: !!submit!!
+{"function_name": "allocate", "file_path": "groups/bdl/bdlma/bdlma_concurrentpoolallocator.cpp", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "The function contains a well-designed thread synchronization loop that will always terminate, and has no other infinite loops or non-terminating conditions."}
+SUBMISSION_COMPLETE
+2026-06-16 13:36:05,926 - root - [INFO] - forager_base.py:408 - start_trajectory - Success regex matched in environment output: SUBMISSION_COMPLETE
+2026-06-16 13:36:05,926 - root - [INFO] - forager_locate_function_code_and_dep.py:51 - extract_submission - Found !!submit!! marker in environ item
+2026-06-16 13:36:05,926 - root - [DEBUG] - forager_locate_function_code_and_dep.py:52 - extract_submission - Item output: !!submit!!
+{"function_name": "allocate", "file_path": "groups/bdl/bdlma/bdlma_concurrentpoolallocator.cpp", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "The function contains a well-designed thread synchronization loop that will always terminate, and has no other infinite loops or non-terminating conditions."}
+SUBMISSION_COMPLETE
+2026-06-16 13:36:05,926 - root - [INFO] - forager_locate_function_code_and_dep.py:80 - extract_submission - Matched JSON string: {"function_name": "allocate", "file_path": "groups/bdl/bdlma/bdlma_concurrentpoolallocator.cpp", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "The function contains a well-designed thread synchronization loop that will always terminate, and has no other infinite loops or non-terminating conditions."}
+2026-06-16 13:36:05,926 - root - [INFO] - forager_locate_function_code_and_dep.py:82 - extract_submission - Extracted submission from environ: {'function_name': 'allocate', 'file_path': 'groups/bdl/bdlma/bdlma_concurrentpoolallocator.cpp', 'prediction': 'T', 'p_non_terminating': 0, 'confidence': 'high', 'reason': 'The function contains a well-designed thread synchronization loop that will always terminate, and has no other infinite loops or non-terminating conditions.'}
+2026-06-16 13:36:05,927 - root - [INFO] - forager_locate_function_code_and_dep.py:162 - process_run - Submission validation: {'correct_function_name': True, 'correct_path': True, 'provided_prediction': True}
+2026-06-16 13:36:05,927 - root - [INFO] - forager_locate_function_code_and_dep.py:326 - run - All validation checks passed
+2026-06-16 13:36:05,927 - root - [INFO] - forager_locate_function_code_and_dep.py:347 - run - Run completed with outcome: success
+2026-06-16 13:36:05,932 - root - [INFO] - des_container.py:428 - shutdown - Shutting down DES container a9d3c407d3f5860eac1a50ff0cf6dc0c6c71e297643ee53e4429389d8b92ed41
+2026-06-16 13:36:05,932 - root - [INFO] - des_container.py:576 - _heartbeat_loop - VMVM heartbeat thread exiting
+2026-06-16 13:36:14,045 - root - [INFO] - des_container.py:228 - release_vm - Releasing VMVM session {"vmvm_session":{"id":"019ed09d-a51f-7a21-81b2-d6bfea618cff","ipAddr":"2803:6084:30c8:bf3b:462f:5216:500:0","vaagentPort":26836,"vmPort":18259,"vaagentHostname":"twshared22693.02.snb1.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|16121806539984002760|0|faas.A14334FA6331B6EF7D3CD02E6D370592|7472640133762402152","tw_task_handle":"tsp_snb/faas/workerpool_crackerjack_prod_bgm_ces/1217","region_shortname":"snb"},"auth_token":{"paseto":"v4.public.eyJpYXQiOiIyMDI2LTA2LTE2VDEzOjMxOjE5LjA1ODA3MzA3MyswMDowMCIsImV4cCI6IjIwMjYtMDYtMTdUMTM6MzE6MTlaIiwic3ViIjoiMDE5ZWQwOWQtYTUxZi03YTIxLTgxYjItZDZiZmVhNjE4Y2ZmIiwibmJmIjoiMjAyNi0wNi0xNlQxMzozMToxOVoifeaTnoKcDW27cSC8cW_RTYei2MdIXmyzffB4RSqkBU9IcR4qDPoue8SBa17GWH1Z70gM9-qGx_xHooESbfl26QM.eyJmYWFzX2ludm9jYXRpb25faWQiOiI0fGdsb2JhbHxhc3luY18yMzQ3NjQxfGRlc19nZW5lcmFsX3RpZXJfcHJvZHwxNjEyMTgwNjUzOTk4NDAwMjc2MHwwfGZhYXMuQTE0MzM0RkE2MzMxQjZFRjdEM0NEMDJFNkQzNzA1OTJ8NzQ3MjY0MDEzMzc2MjQwMjE1MiIsInBvcnQiOiIxODI1OSIsInRlbmFudCI6ImFzeW5jXzIzNDc2NDEiLCJpcCI6IjI4MDM6NjA4NDozMGM4OmJmM2I6NDYyZjo1MjE2OjUwMDowIn0"}}
+2026-06-16 13:36:17,073 - root - [INFO] - des_container.py:238 - release_vm - VMVM session released
+2026-06-16 13:36:17,074 - root - [INFO] - run.py:224 - repo_task - Finishing repo: BDE_4d68783f_groups_bdl_bdlma_bdlma_concurrentpoolallocator_cpp_allocate_1

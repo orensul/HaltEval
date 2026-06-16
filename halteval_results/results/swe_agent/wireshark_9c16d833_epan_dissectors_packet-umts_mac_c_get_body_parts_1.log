@@ -1,0 +1,893 @@
+2026-06-16 14:13:09,175 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=UNKNOWN_NAME
+2026-06-16 14:13:09,175 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=run
+2026-06-16 14:13:09,400 - root - [INFO] - run.py:148 - repo_task - Model: VllmModel
+2026-06-16 14:13:09,431 - root - [INFO] - run.py:158 - repo_task - Agent: ForagerAgentLocateFunctionCodeAndDep
+2026-06-16 14:13:09,432 - root - [INFO] - run.py:172 - repo_task - Using VMVMBackend, image=vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest
+2026-06-16 14:13:09,432 - root - [INFO] - des_container.py:76 - lease_vm - Leasing VM with client-id=wireshark_9c16d833_epan_dissectors_packet-umts_mac_c_get_body_parts_1, ttl_secs=500
+2026-06-16 14:13:10,778 - root - [INFO] - des_container.py:87 - lease_vm - VM leased in 1.35s: session_id={"vmvm_session":{"id":"019ed0c7-4af4-74e1-8407-c11e8ca28402","ipAddr":"2803:6084:4840:741e:b259:2917:500:0","vaagentPort":25481,"vmPort":20828,"vaagentHostname":"twshared36257.01.nha5.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|16121806539984002760|0|faas.5D4DAAD1C89A66EF15DFD4002CFE818E|7472652150848208654","tw_task_handle":"tsp_nha/faas/workerpool_crackerjack_prod_bgm_ces_tier_1/74","region_shortname":"nha"},"auth_token":{"paseto":"v4.public.eyJpYXQiOiIyMDI2LTA2LTE2VDE0OjEzOjEwLjUwMTA5MjQ3NiswMDowMCIsIm5iZiI6IjIwMjYtMDYtMTZUMTQ6MTM6MTBaIiwiZXhwIjoiMjAyNi0wNi0xN1QxNDoxMzoxMFoiLCJzdWIiOiIwMTllZDBjNy00YWY0LTc0ZTEtODQwNy1jMTFlOGNhMjg0MDIifXBWwvTz53SRoVHLybkh0u2bZChFgqQ7alPoyZ16OgjkevzELdujzp9JhYaEU_uSsS2anzNMJJohW9_NA5cTsQM.eyJ0ZW5hbnQiOiJhc3luY18yMzQ3NjQxIiwicG9ydCI6IjIwODI4IiwiZmFhc19pbnZvY2F0aW9uX2lkIjoiNHxnbG9iYWx8YXN5bmNfMjM0NzY0MXxkZXNfZ2VuZXJhbF90aWVyX3Byb2R8MTYxMjE4MDY1Mzk5ODQwMDI3NjB8MHxmYWFzLjVENERBQUQxQzg5QTY2RUYxNURGRDQwMDJDRkU4MThFfDc0NzI2NTIxNTA4NDgyMDg2NTQiLCJpcCI6IjI4MDM6NjA4NDo0ODQwOjc0MWU6YjI1OToyOTE3OjUwMDowIn0"}}
+2026-06-16 14:13:10,779 - root - [INFO] - des_container.py:195 - load_image - Pulling image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest on VMVM
+2026-06-16 14:15:41,958 - root - [INFO] - des_container.py:203 - load_image - Image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest pulled successfully
+2026-06-16 14:15:43,718 - root - [INFO] - des_container.py:221 - run_container - Container started: 7eeabf36ea03be2e92dbdacdbb5b33c0cf8b686d60d7b5d97e1e9e097490d80d
+2026-06-16 14:15:43,718 - root - [INFO] - des_container.py:565 - _heartbeat_loop - VMVM heartbeat thread started
+2026-06-16 14:15:43,785 - root - [INFO] - forager_locate_function_code_and_dep.py:294 - run - Starting analysis for get_body_parts in epan/dissectors/packet-umts_mac.c
+2026-06-16 14:15:43,785 - root - [INFO] - forager_locate_function_code_and_dep.py:208 - prepare_cpp_container - ========== Preparing C++ container ==========
+2026-06-16 14:15:43,785 - root - [DEBUG] - forager_locate_function_code_and_dep.py:211 - prepare_cpp_container - Setting up env variables
+2026-06-16 14:15:43,785 - root - [DEBUG] - des_container.py:308 - command - DES command: 'export WINDOW=100 && export OVERLAP=2 && export CURRENT_LINE=0 && export CURRENT'
+2026-06-16 14:15:45,254 - root - [DEBUG] - forager_locate_function_code_and_dep.py:220 - prepare_cpp_container - Importing agent tools in container
+2026-06-16 14:15:46,819 - root - [DEBUG] - des_container.py:385 - put - DES put: 6243 bytes to /opt/tools/defaults.sh
+2026-06-16 14:15:52,836 - root - [DEBUG] - des_container.py:308 - command - DES command: 'source /opt/tools/defaults.sh'
+2026-06-16 14:15:56,031 - root - [DEBUG] - des_container.py:385 - put - DES put: 5735 bytes to /opt/tools/search.sh
+2026-06-16 14:16:02,162 - root - [DEBUG] - des_container.py:308 - command - DES command: 'source /opt/tools/search.sh'
+2026-06-16 14:16:05,259 - root - [DEBUG] - des_container.py:308 - command - DES command: 'export PATH=/opt/tools:$PATH'
+2026-06-16 14:16:06,932 - root - [INFO] - forager_locate_function_code_and_dep.py:225 - prepare_cpp_container - Uploading submit_prediction command
+2026-06-16 14:16:06,932 - root - [DEBUG] - des_container.py:385 - put - DES put: 74 bytes to /usr/local/bin/submit_prediction
+2026-06-16 14:16:28,506 - root - [DEBUG] - des_container.py:308 - command - DES command: 'chmod +x /usr/local/bin/submit_prediction'
+2026-06-16 14:16:46,201 - root - [DEBUG] - des_container.py:308 - command - DES command: "which submit_prediction || echo 'Not in PATH'"
+2026-06-16 14:17:03,688 - root - [INFO] - forager_locate_function_code_and_dep.py:237 - prepare_cpp_container - Script in PATH: /usr/local/bin/submit_prediction
+2026-06-16 14:17:03,688 - root - [DEBUG] - des_container.py:308 - command - DES command: "export GIT_AUTHOR_NAME='CI Bot' && export GIT_AUTHOR_EMAIL='ci-bot@yourdomain.co"
+2026-06-16 14:17:05,448 - root - [DEBUG] - forager_locate_function_code_and_dep.py:256 - prepare_cpp_container - Creating /workspace directory
+2026-06-16 14:17:05,448 - root - [DEBUG] - des_container.py:308 - command - DES command: 'mkdir -p /workspace'
+2026-06-16 14:17:07,596 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cd /workspace'
+2026-06-16 14:17:09,244 - root - [DEBUG] - forager_locate_function_code_and_dep.py:196 - _init_prompt - Task prompt:
+Your task is to predict whether the function `get_body_parts` in the C++ file `epan/dissectors/packet-umts_mac.c` will:
+- **Terminate** for all inputs, OR
+- **Diverge** for some inputs (enter a non-terminating loop)
+
+**Important:** This is a **read-only code analysis task**. You may only use shell commands to view files. Do not execute any C++ code or modify any files. Only use commands like `cat`, `grep`, `find`, `ls`, `cd`, `head`, `tail`, `git`, etc.
+
+## STEP 1: Clone the Repository
+
+First, clone the repository and checkout the specific commit:
+```bash
+git clone https://github.com/wireshark/wireshark /workspace/wireshark && cd /workspace/wireshark && git checkout 9c16d833f0e23e7464ac995acb61a8b4e3c51d59
+```
+
+## STEP 2: Examine the Function
+
+Navigate to the repository and examine the function using read-only commands. Examples:
+```bash
+cd /workspace/wireshark
+cat epan/dissectors/packet-umts_mac.c                              # View the entire file
+grep -n "get_body_parts" epan/dissectors/packet-umts_mac.c    # Find the function's line number
+grep -A 50 "get_body_parts" epan/dissectors/packet-umts_mac.c # View the function plus 50 lines after (of course you can view more).
+```
+
+## STEP 3: Analyze Dependencies
+Important: The function may call other functions, use external types, or depend on macros defined elsewhere. You must examine these dependencies to fully understand the code's behavior.
+- Find and read helper functions called within the target function
+- Examine header files for type definitions and macros
+- Check struct/class definitions to understand data types
+- Trace function pointers to their implementations
+
+Finding dependencies:
+```bash
+grep -rn "function_name" /workspace/wireshark/
+find . -name "*.h" | xargs grep "TypeName"
+cat path/to/header.h
+```
+
+## STEP 4: Classify the Function
+**"T" (Terminates)** - Function terminates for all possible inputs:
+- No blocking synchronization calls. All loops have reachable exit conditions. Loop variables progress correctly toward exit. Proper bounds checking and error handling
+**"NT" (Non-Termination)** - Designed to block or loop indefinitely (can be intentional by the user or a bug). Examples:
+- Thread synchronization primitives. Locks. Condition variables. Event loops or server loops that run until external signal.
+Worker thread functions waiting for tasks or termination signals.
+- Loop variable never modified or modified in wrong direction. `while(1)` or `for(;;)` without reachable `break` or `return`.
+Unbounded I/O operations without proper termination checks. Missing loop increment/decrement statements.
+
+## STEP 5: Submit Your Prediction
+
+When ready, submit your classification:
+```bash
+submit_prediction '{"function_name": "get_body_parts", "file_path": "epan/dissectors/packet-umts_mac.c", "prediction": "<T|NT>", "p_non_terminating": <0-100>, "confidence": "<high|medium|low>", "reason": "<one concise sentence>"}'
+```
+
+**Field definitions:**
+- `prediction`: "T" if the function terminates for all inputs, "NT" if it can loop/block indefinitely
+- `p_non_terminating`: integer 0–100 — your estimated probability (in %) that the function is non-terminating
+- `confidence`: "high" if the evidence is clear and unambiguous, "medium" if there is some uncertainty, "low" if the code is hard to fully trace or the behavior is unclear
+- `reason`: one concise sentence explaining the key factor driving your prediction
+
+**Guidelines:**
+- Execute one command per response in triple backticks
+- Read all relevant source and header files before making a prediction
+- Trace data flow to understand where loop bounds and conditions come from
+- Consider edge cases: zero values, type overflows, null pointers, EOF conditions
+- Only submit your prediction when you have thoroughly analyzed the code
+- Begin by cloning the repository
+2026-06-16 14:17:09,244 - root - [INFO] - forager_base.py:342 - start_trajectory - =========== Starting new trajectory ==========
+2026-06-16 14:17:09,245 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 1
+2026-06-16 14:17:09,245 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:17:11,219 - root - [INFO] - logging.py:31 - log_time - Took 1.97s
+2026-06-16 14:17:11,224 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'git clone https://github.com/w' (timeout=120)
+2026-06-16 14:17:11,224 - root - [DEBUG] - des_container.py:308 - command - DES command: 'git clone https://github.com/wireshark/wireshark /workspace/wireshark && cd /wor'
+2026-06-16 14:17:45,220 - root - [DEBUG] - des_container.py:572 - _heartbeat_loop - VMVM heartbeat sent
+2026-06-16 14:19:27,405 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 14:19:27,406 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 2
+2026-06-16 14:19:27,406 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:19:28,157 - root - [INFO] - logging.py:31 - log_time - Took 0.75s
+2026-06-16 14:19:28,161 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cd /workspace/wireshark\nfind .' (timeout=120)
+2026-06-16 14:19:28,161 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cd /workspace/wireshark\nfind . -name "packet-umts_mac.c" -type f\n'
+2026-06-16 14:19:46,233 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: ./epan/dissectors/packet-umts_mac.c
+2026-06-16 14:19:46,233 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 3
+2026-06-16 14:19:46,233 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:19:46,717 - root - [INFO] - logging.py:31 - log_time - Took 0.48s
+2026-06-16 14:19:46,721 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -n "get_body_parts" epan/' (timeout=120)
+2026-06-16 14:19:46,721 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -n "get_body_parts" epan/dissectors/packet-umts_mac.c\n'
+2026-06-16 14:19:48,296 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 855:static body_parts ** get_body_parts(mac_is_channel * ch)
+881:        body_parts ** body_parts_array = get_body_parts(&ch);
+2026-06-16 14:19:48,296 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 4
+2026-06-16 14:19:48,296 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:19:48,766 - root - [INFO] - logging.py:31 - log_time - Took 0.47s
+2026-06-16 14:19:48,770 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -A 50 "static body_parts ' (timeout=120)
+2026-06-16 14:19:48,770 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -A 50 "static body_parts \\*\\* get_body_parts" epan/dissectors/packet-umts_m'
+2026-06-16 14:19:50,382 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: static body_parts ** get_body_parts(mac_is_channel * ch)
+{
+    body_parts ** bpa = (body_parts **)g_hash_table_lookup(mac_is_fragments, ch);
+    /* If there was no body_part* array for this channel, create one. */
+    if (bpa == NULL) {
+        mac_is_channel * channel;
+        bpa = wmem_alloc_array(wmem_file_scope(), body_parts*, MAX_TSN); /* Create new body_parts-pointer array */
+        for (size_t i = 0; i < MAX_TSN; i++) {
+            bpa[i] = wmem_new0(wmem_file_scope(), body_parts); /* Fill it with body_parts. */
+        }
+        channel = wmem_new(wmem_file_scope(), mac_is_channel); /* Alloc new channel for use in hash table. */
+        *channel = *ch;
+        g_hash_table_insert(mac_is_fragments, channel, bpa);
+    }
+    return bpa;
+}
+
+static tvbuff_t * mac_is_add_fragment(tvbuff_t * tvb _U_, packet_info *pinfo, proto_tree * tree _U_, uint8_t lchid, unsigned ueid, int offset, uint8_t ss, uint16_t tsn, int sdu_no, uint8_t no_sdus, uint16_t maclength)
+{
+    mac_is_channel ch; /* Channel for looking up in hash tables. */
+    ch.lchid = lchid;
+    ch.ueid = ueid;
+
+    /* If in first scan-through. */
+    if (!PINFO_FD_VISITED(pinfo)) {
+        /* Get body parts array for this channel. */
+        body_parts ** body_parts_array = get_body_parts(&ch);
+        /* Middle segment */
+        if (no_sdus == 1 && ss == 3) {
+            unsigned head_length, tail_length;
+            init_frag(tvb, body_parts_array[tsn], maclength, offset, pinfo->num, tsn, MAC_IS_MIDDLE);
+            tail_length = find_tail(body_parts_array, tsn);
+            if (tail_length > 0) {
+                head_length = find_head(body_parts_array, &tsn);
+                if (head_length > 0) {
+                    /* tsn is now TSN of head */
+                    return reassemble(tvb, body_parts_array, tsn, tail_length+head_length+maclength, &ch, pinfo->num);
+                }
+            }
+            /* XXX: haven't confirmed if case when middle segment comes last
+             * actually works or not. */
+        }
+        /* If first SDU is last segment of previous. A tail. */
+        else if (sdu_no == 0 && (ss & 1) == 1) {
+            unsigned length = maclength;
+            init_frag(tvb, body_parts_array[tsn], maclength, offset, pinfo->num, tsn, MAC_IS_TAIL);
+            length += find_head(body_parts_array, &tsn);
+            if (length > maclength) {
+                /* tsn is now TSN of head */
+                return reassemble(tvb, body_parts_array, tsn, length, &ch, pinfo->num);
+            }
+2026-06-16 14:19:50,382 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 5
+2026-06-16 14:19:50,382 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:19:50,958 - root - [INFO] - logging.py:31 - log_time - Took 0.58s
+2026-06-16 14:19:50,961 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -B 5 -A 30 "static body_p' (timeout=120)
+2026-06-16 14:19:50,961 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -B 5 -A 30 "static body_parts \\*\\* get_body_parts" epan/dissectors/packet-u'
+2026-06-16 14:19:52,515 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+/*
+ * @param ch Channel for which body parts are to be fetched.
+ * @return Array of body_part* for channel 'ch'.
+ */
+static body_parts ** get_body_parts(mac_is_channel * ch)
+{
+    body_parts ** bpa = (body_parts **)g_hash_table_lookup(mac_is_fragments, ch);
+    /* If there was no body_part* array for this channel, create one. */
+    if (bpa == NULL) {
+        mac_is_channel * channel;
+        bpa = wmem_alloc_array(wmem_file_scope(), body_parts*, MAX_TSN); /* Create new body_parts-pointer array */
+        for (size_t i = 0; i < MAX_TSN; i++) {
+            bpa[i] = wmem_new0(wmem_file_scope(), body_parts); /* Fill it with body_parts. */
+        }
+        channel = wmem_new(wmem_file_scope(), mac_is_channel); /* Alloc new channel for use in hash table. */
+        *channel = *ch;
+        g_hash_table_insert(mac_is_fragments, channel, bpa);
+    }
+    return bpa;
+}
+
+static tvbuff_t * mac_is_add_fragment(tvbuff_t * tvb _U_, packet_info *pinfo, proto_tree * tree _U_, uint8_t lchid, unsigned ueid, int offset, uint8_t ss, uint16_t tsn, int sdu_no, uint8_t no_sdus, uint16_t maclength)
+{
+    mac_is_channel ch; /* Channel for looking up in hash tables. */
+    ch.lchid = lchid;
+    ch.ueid = ueid;
+
+    /* If in first scan-through. */
+    if (!PINFO_FD_VISITED(pinfo)) {
+        /* Get body parts array for this channel. */
+        body_parts ** body_parts_array = get_body_parts(&ch);
+        /* Middle segment */
+        if (no_sdus == 1 && ss == 3) {
+            unsigned head_length, tail_length;
+            init_frag(tvb, body_parts_array[tsn], maclength, offset, pinfo->num, tsn, MAC_IS_MIDDLE);
+2026-06-16 14:19:52,515 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 6
+2026-06-16 14:19:52,516 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:19:53,150 - root - [INFO] - logging.py:31 - log_time - Took 0.63s
+2026-06-16 14:19:53,154 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -r "MAX_TSN" /workspace/w' (timeout=120)
+2026-06-16 14:19:53,154 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -r "MAX_TSN" /workspace/wireshark/ --include="*.h" --include="*.c"\n'
+2026-06-16 14:19:55,093 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /workspace/wireshark/epan/dissectors/packet-umts_mac.c:static size_t MAX_TSN = 64;
+/workspace/wireshark/epan/dissectors/packet-umts_mac.c:    for (i = (head_tsn+1)%MAX_TSN; body_parts_array[i]->middle != NULL; i = (i+1)%MAX_TSN)
+/workspace/wireshark/epan/dissectors/packet-umts_mac.c:    *tsn = (*tsn==0)? (uint16_t)(MAX_TSN-1) : (*tsn)-1;
+/workspace/wireshark/epan/dissectors/packet-umts_mac.c:    for (; body_parts_array[*tsn]->middle != NULL; *tsn = (*tsn==0)?(uint16_t)(MAX_TSN-1):(*tsn)-1)
+/workspace/wireshark/epan/dissectors/packet-umts_mac.c:    for (tsn = (tsn+1)%MAX_TSN; body_parts_array[tsn]->middle != NULL; tsn = (tsn+1)%MAX_TSN)
+/workspace/wireshark/epan/dissectors/packet-umts_mac.c:        bpa = wmem_alloc_array(wmem_file_scope(), body_parts*, MAX_TSN); /* Create new body_parts-pointer array */
+/workspace/wireshark/epan/dissectors/packet-umts_mac.c:        for (size_t i = 0; i < MAX_TSN; i++) {
+/workspace/wireshark/epan/dissectors/packet-umts_mac.c:        MAX_TSN = 64;
+/workspace/wireshark/epan/dissectors/packet-umts_mac.c:        MAX_TSN = 16384;
+2026-06-16 14:19:55,093 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 7
+2026-06-16 14:19:55,093 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:19:55,655 - root - [INFO] - logging.py:31 - log_time - Took 0.56s
+2026-06-16 14:19:55,660 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'find /workspace/wireshark -nam' (timeout=120)
+2026-06-16 14:19:55,660 - root - [DEBUG] - des_container.py:308 - command - DES command: 'find /workspace/wireshark -name "*.h" | xargs grep -l "mac_is_channel\\|body_part'
+2026-06-16 14:19:59,485 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 14:19:59,485 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 8
+2026-06-16 14:19:59,485 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:19:59,982 - root - [INFO] - logging.py:31 - log_time - Took 0.50s
+2026-06-16 14:19:59,985 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'ls /workspace/wireshark/epan/d' (timeout=120)
+2026-06-16 14:19:59,985 - root - [DEBUG] - des_container.py:308 - command - DES command: 'ls /workspace/wireshark/epan/dissectors/ | grep "\\.h"\n'
+2026-06-16 14:20:03,638 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: cond_ace_token_enum.h
+dissectors.h
+file-file.h
+file-pcapng.h
+file-rbm.h
+packet-6lowpan.h
+packet-HI2Operations.h
+packet-a21.h
+packet-acdr.h
+packet-acp133.h
+packet-acse.h
+packet-actrace.h
+packet-adb_service.h
+packet-afp.h
+packet-akp.h
+packet-alcap.h
+packet-amp.h
+packet-amr.h
+packet-ansi_a.h
+packet-ansi_map.h
+packet-ansi_tcap.h
+packet-arcnet.h
+packet-arp.h
+packet-asap+enrp-common.h
+packet-asterix-generated.h
+packet-asterix.h
+packet-atalk.h
+packet-atm.h
+packet-atn-ulcs.h
+packet-autosar-ipdu-multiplexer.h
+packet-ax25.h
+packet-bacapp.h
+packet-bacnet.h
+packet-bblog.h
+packet-ber.h
+packet-bfcp.h
+packet-bfd.h
+packet-bgp.h
+packet-bicc_mst.h
+packet-bluetooth.h
+packet-bpsec.h
+packet-bpv6.h
+packet-bpv7.h
+packet-bssap.h
+packet-bssgp.h
+packet-bt-utp.h
+packet-btatt.h
+packet-btavctp.h
+packet-btavdtp.h
+packet-btavrcp.h
+packet-btbredr_rf.h
+packet-bthci_acl.h
+packet-bthci_cmd.h
+packet-bthci_evt.h
+packet-bthci_iso.h
+packet-bthci_sco.h
+packet-btl2cap.h
+packet-btle.h
+packet-btmesh.h
+packet-btrfcomm.h
+packet-btsdp.h
+packet-c1222.h
+packet-camel.h
+packet-cbor.h
+packet-cdt.h
+packet-cell_broadcast.h
+packet-cfdp.h
+packet-charging_ase.h
+packet-chdlc.h
+packet-cip.h
+packet-cipmotion.h
+packet-cipsafety.h
+packet-cisco-pid.h
+packet-cmip.h
+packet-cmp.h
+packet-cms.h
+packet-coap.h
+packet-cose.h
+packet-credssp.h
+packet-crmf.h
+packet-csn1.h
+packet-dap.h
+packet-darwin-droptap-msg.h
+packet-dccp.h
+packet-dcerpc-atsvc.h
+packet-dcerpc-browser.h
+packet-dcerpc-budb.h
+packet-dcerpc-butc.h
+packet-dcerpc-clusapi.h
+packet-dcerpc-dce122.h
+packet-dcerpc-dfs.h
+packet-dcerpc-dnsserver.h
+packet-dcerpc-drsuapi.h
+packet-dcerpc-dssetup.h
+packet-dcerpc-efs.h
+packet-dcerpc-eventlog.h
+packet-dcerpc-frsapi.h
+packet-dcerpc-frsrpc.h
+packet-dcerpc-frstrans.h
+packet-dcerpc-fsrvp.h
+packet-dcerpc-initshutdown.h
+packet-dcerpc-iwbemlevel1login.h
+packet-dcerpc-iwbemloginclientid.h
+packet-dcerpc-iwbemloginclientidex.h
+packet-dcerpc-iwbemservices.h
+packet-dcerpc-lsa.h
+packet-dcerpc-mapi.h
+packet-dcerpc-mdssvc.h
+packet-dcerpc-misc.h
+packet-dcerpc-netlogon.h
+packet-dcerpc-nspi.h
+packet-dcerpc-nt.h
+packet-dcerpc-pnp.h
+packet-dcerpc-rcg.h
+packet-dcerpc-rfr.h
+packet-dcerpc-rras.h
+packet-dcerpc-samr.h
+packet-dcerpc-spoolss.h
+packet-dcerpc-srvsvc.h
+packet-dcerpc-svcctl.h
+packet-dcerpc-tapi.h
+packet-dcerpc-winreg.h
+packet-dcerpc-winspool.h
+packet-dcerpc-witness.h
+packet-dcerpc-wkssvc.h
+packet-dcerpc-wzcsvc.h
+packet-dcerpc.h
+packet-dcm.h
+packet-dcom-dispatch.h
+packet-dcom.h
+packet-diameter.h
+packet-diameter_3gpp.h
+packet-diffserv-mpls-common.h
+packet-disp.h
+packet-dlt.h
+packet-dns.h
+packet-docsis-tlv.h
+packet-doip.h
+packet-dop.h
+packet-dpaux.h
+packet-dsp.h
+packet-dtls.h
+packet-dvbci.h
+packet-e164.h
+packet-e1ap.h
+packet-e212.h
+packet-e2ap.h
+packet-eap.h
+packet-eapol.h
+packet-edhoc.h
+packet-edonkey.h
+packet-eigrp.h
+packet-enip.h
+packet-epl.h
+packet-epmd.h
+packet-erf.h
+packet-ess.h
+packet-eth.h
+packet-f1ap.h
+packet-f5ethtrailer.h
+packet-fc.h
+packet-fcbls.h
+packet-fcct.h
+packet-fcels.h
+packet-fcfcs.h
+packet-fcfzs.h
+packet-fclctl.h
+packet-fcsb3.h
+packet-fcswils.h
+packet-ff.h
+packet-fix.h
+packet-flexray.h
+packet-fmp.h
+packet-frame.h
+packet-ftam.h
+packet-ftdi-ft.h
+packet-gdt.h
+packet-geonw.h
+packet-giop.h
+packet-gluster.h
+packet-gmr1_common.h
+packet-gmr1_rr.h
+packet-gprscdr.h
+packet-gre.h
+packet-gsm_a_common.h
+packet-gsm_a_rr.h
+packet-gsm_map.h
+packet-gsm_osmux.h
+packet-gsm_rlcmac.h
+packet-gsm_sms.h
+packet-gsmtap.h
+packet-gssapi.h
+packet-gtp.h
+packet-gtpv2.h
+packet-h223.h
+packet-h225.h
+packet-h235.h
+packet-h245.h
+packet-h248.h
+packet-h263.h
+packet-h264.h
+packet-h265.h
+packet-h323.h
+packet-h450-ros.h
+packet-hpext.h
+packet-hsfz.h
+packet-http.h
+packet-http2.h
+packet-iana-oui.h
+packet-iax2.h
+packet-icmp.h
+packet-idmp.h
+packet-idp.h
+packet-ieee1609dot2.h
+packet-ieee80211-radio.h
+packet-ieee80211-radiotap-defs.h
+packet-ieee80211-radiotap-iter.h
+packet-ieee80211.h
+packet-ieee802154.h
+packet-ieee8023.h
+packet-ieee802a.h
+packet-igmp.h
+packet-imf.h
+packet-inap.h
+packet-infiniband.h
+packet-ip.h
+packet-ipmi.h
+packet-ipsec.h
+packet-ipv6.h
+packet-ipx.h
+packet-irdma.h
+packet-isakmp.h
+packet-isis-clv.h
+packet-isis.h
+packet-isl.h
+packet-iso10681.h
+packet-iso15765.h
+packet-isobus-parameters.h
+packet-isobus.h
+packet-isup.h
+packet-its.h
+packet-iuup.h
+packet-iwarp-ddp-rdmap.h
+packet-json.h
+packet-juniper.h
+packet-jxta.h
+packet-kerberos.h
+packet-knxip.h
+packet-knxip_decrypt.h
+packet-l2tp.h
+packet-lapd.h
+packet-lapdm.h
+packet-lbm.h
+packet-lbtrm.h
+packet-lbtru.h
+packet-lbttcp.h
+packet-lcsap.h
+packet-ldap.h
+packet-ldp.h
+packet-lin.h
+packet-link16.h
+packet-lisp.h
+packet-llc.h
+packet-lls.h
+packet-lnet.h
+packet-logotypecertextn.h
+packet-lpp.h
+packet-lppa.h
+packet-lte-rrc.h
+packet-mac-3gpp-common.h
+packet-mac-lte.h
+packet-mac-nr.h
+packet-mausb.h
+packet-mbim.h
+packet-mbtcp.h
+packet-mctp.h
+packet-media-type.h
+packet-mgcp.h
+packet-mka.h
+packet-mle.h
+packet-mms.h
+packet-mount.h
+packet-mp2t.h
+packet-mp4ves.h
+packet-mpeg-descriptor.h
+packet-mpeg-sect.h
+packet-mpls.h
+packet-mq.h
+packet-msrp.h
+packet-mstp.h
+packet-mtp3.h
+packet-nbap.h
+packet-ncp-int.h
+packet-ncp-nmas.h
+packet-ncp-sss.h
+packet-ncsi-data.h
+packet-ndmp.h
+packet-ndps.h
+packet-netbios.h
+packet-netlink.h
+packet-netmon.h
+packet-nfs.h
+packet-ngap.h
+packet-nisplus.h
+packet-nist-csor.h
+packet-nlm.h
+packet-nr-rrc.h
+packet-nrppa.h
+packet-nsh.h
+packet-ntlmssp.h
+packet-ntp.h
+packet-nts-ke.h
+packet-nvme.h
+packet-ocsp.h
+packet-oer.h
+packet-opensafety.h
+packet-oran.h
+packet-oscore.h
+packet-osi-options.h
+packet-osi.h
+packet-p1.h
+packet-p22.h
+packet-p7.h
+packet-p772.h
+packet-pcap_pktdata.h
+packet-pcnfsd.h
+packet-pdcp-lte.h
+packet-pdcp-nr.h
+packet-pdu-transport.h
+packet-per.h
+packet-pkcs10.h
+packet-pkcs12.h
+packet-pkinit.h
+packet-pkix1explicit.h
+packet-pkix1implicit.h
+packet-pkixac.h
+packet-pkixalgs.h
+packet-pkixproxy.h
+packet-pkixqualified.h
+packet-pkixtsp.h
+packet-portmap.h
+packet-ppi-geolocation-common.h
+packet-ppp.h
+packet-pres.h
+packet-ptp.h
+packet-ptpip.h
+packet-pw-atm.h
+packet-pw-common.h
+packet-q708.h
+packet-q931.h
+packet-q932.h
+packet-qsig.h
+packet-quic.h
+packet-radius.h
+packet-raknet.h
+packet-ranap.h
+packet-rdm.h
+packet-rdp.h
+packet-rdpudp.h
+packet-rdt.h
+packet-rf4ce-secur.h
+packet-rlc-3gpp-common.h
+packet-rlc-lte.h
+packet-rlc-nr.h
+packet-rmi.h
+packet-rmt-common.h
+packet-rohc.h
+packet-ros.h
+packet-rpc.h
+packet-rpcrdma.h
+packet-rrc.h
+packet-rsvp.h
+packet-rtcp.h
+packet-rtp-events.h
+packet-rtp.h
+packet-rtp_pt.h
+packet-rtps.h
+packet-rtse.h
+packet-rtsp.h
+packet-rx.h
+packet-s1ap.h
+packet-s5066sis.h
+packet-s7comm.h
+packet-s7comm_szl_ids.h
+packet-sapni.h
+packet-sapsnc.h
+packet-sbas_l1.h
+packet-sccp.h
+packet-scsi-mmc.h
+packet-scsi-osd.h
+packet-scsi-sbc.h
+packet-scsi-smc.h
+packet-scsi-ssc.h
+packet-scsi.h
+packet-sctp.h
+packet-sdp.h
+packet-ses.h
+packet-sflow.h
+packet-sgp22.h
+packet-sgp32.h
+packet-sip.h
+packet-skinny.h
+packet-skinny.h.in
+packet-sll.h
+packet-slowprotocols.h
+packet-smb-browse.h
+packet-smb-common.h
+packet-smb-mailslot.h
+packet-smb-pipe.h
+packet-smb-sidsnooping.h
+packet-smb.h
+packet-smb2.h
+packet-smpp.h
+packet-smrse.h
+packet-snmp.h
+packet-snort-config.h
+packet-socketcan.h
+packet-someip.h
+packet-spice.h
+packet-sprt.h
+packet-sscop.h
+packet-stat-notify.h
+packet-stat.h
+packet-sv.h
+packet-sysdig-event.h
+packet-syslog.h
+packet-t124.h
+packet-t38.h
+packet-tacacs.h
+packet-tcap.h
+packet-tcg-cp-oids.h
+packet-tcp.h
+packet-tcpcl.h
+packet-tecmp.h
+packet-tetra.h
+packet-tftp.h
+packet-thrift.h
+packet-tls-utils.h
+packet-tls.h
+packet-tn3270.h
+packet-tn5250.h
+packet-tpkt.h
+packet-tr.h
+packet-tte.h
+packet-ua.h
+packet-uaudp.h
+packet-uavcan-dsdl.h
+packet-ubertooth.h
+packet-ubx-galileo_e1b_inav.h
+packet-ubx.h
+packet-udp.h
+packet-uds.h
+packet-umts_fp.h
+packet-umts_mac.h
+packet-umts_rlc.h
+packet-usb-hid.h
+packet-usb-ptp.h
+packet-usb.h
+packet-usbip.h
+packet-vxlan.h
+packet-wap.h
+packet-wccp.h
+packet-wifi-dpp.h
+packet-windows-common.h
+packet-wlancertextn.h
+packet-wps.h
+packet-wsp.h
+packet-wtls.h
+packet-wtp.h
+packet-x11-keysymdef.h
+packet-x11.h
+packet-x2ap.h
+packet-x509af.h
+packet-x509ce.h
+packet-x509if.h
+packet-x509sat.h
+packet-xdlc.h
+packet-xml.h
+packet-xmpp-conference.h
+packet-xmpp-core.h
+packet-xmpp-gtalk.h
+packet-xmpp-jingle.h
+packet-xmpp-other.h
+packet-xmpp-utils.h
+packet-xmpp.h
+packet-xnap.h
+packet-ypbind.h
+packet-yppasswd.h
+packet-ypserv.h
+packet-ypxfr.h
+packet-zbee-aps.h
+packet-zbee-direct.h
+packet-zbee-nwk.h
+packet-zbee-security.h
+packet-zbee-tlv.h
+packet-zbee-zcl.h
+packet-zbee-zdp.h
+packet-zbee.h
+packet-zbncp.h
+packet-ziop.h
+x11-declarations.h
+x11-enum.h
+x11-extension-errors.h
+x11-extension-implementation.h
+x11-glx-render-enum.h
+x11-keysym.h
+x11-register-info.h
+2026-06-16 14:20:03,638 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 9
+2026-06-16 14:20:03,638 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:20:04,206 - root - [INFO] - logging.py:31 - log_time - Took 0.57s
+2026-06-16 14:20:04,212 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cat /workspace/wireshark/epan/' (timeout=120)
+2026-06-16 14:20:04,212 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cat /workspace/wireshark/epan/dissectors/packet-umts_mac.h\n'
+2026-06-16 14:20:04,666 - root - [DEBUG] - des_container.py:572 - _heartbeat_loop - VMVM heartbeat sent
+2026-06-16 14:20:07,725 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /* packet-umts_mac.h
+ *
+ * Wireshark - Network traffic analyzer
+ * By Gerald Combs <gerald@wireshark.org>
+ * Copyright 1998 Gerald Combs
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ */
+
+#ifndef PACKET_UMTS_MAC_H
+#define PACKET_UMTS_MAC_H
+
+/* Target Channel Type Field (TCTF) values */
+#define TCTF_CCCH_RACH_FDD      0x0
+#define TCTF_DCCH_DTCH_RACH_FDD 0x1
+
+#define TCTF_BCCH_FACH_FDD      0x0
+#define TCTF_DCCH_DTCH_FACH_FDD 0x3
+#define TCTF_MTCH_FACH_FDD      0x6
+#define TCTF_CCCH_FACH_FDD      0x40
+#define TCTF_MCCH_FACH_FDD      0x50
+#define TCTF_MSCH_FACH_FDD      0x5f
+#define TCTF_CTCH_FACH_FDD      0x80
+
+/* UeID Type values */
+#define MAC_UEID_TYPE_URNTI     0x0
+#define MAC_UEID_TYPE_CRNTI     0x1
+
+enum mac_content_type {
+    MAC_CONTENT_UNKNOWN,
+    MAC_CONTENT_DCCH,
+    MAC_CONTENT_PS_DTCH,
+    MAC_CONTENT_CS_DTCH,
+    MAC_CONTENT_CCCH
+};
+
+/* Used for mapping id to string names*/
+#define MAC_PCCH    0
+#define MAC_CCCH    1
+#define MAC_CTCH    2
+#define MAC_DCCH    3
+#define MAC_DTCH    4
+#define MAC_BCCH    5
+#define MAC_MCCH    6
+#define MAC_MSCH    7
+#define MAC_MTCH    8
+#define MAC_N_A     9
+
+#define MAX_MAC_FRAMES 64
+typedef struct umts_mac_info
+{
+    bool ctmux[MAX_MAC_FRAMES];
+    uint8_t content[MAX_MAC_FRAMES];
+    uint8_t lchid[MAX_MAC_FRAMES];       /*Makes displaying logical channel a lot easier*/
+    uint8_t macdflow_id[MAX_MAC_FRAMES]; /*Makes displaying logical channel a lot easier*/
+
+    bool fake_chid[MAX_MAC_FRAMES]; /*Indicate if the child ID is faked or not*/
+    unsigned pdu_len;                      /*Length of MAC PDU, same for all PDUs in one FP frame*/
+    uint8_t trchid[MAX_MAC_FRAMES];      /*Makes displaying logical channel a lot easier*/
+} umts_mac_info;
+
+typedef struct
+{
+    unsigned number_of_mac_is_sdus;
+    uint8_t lchid[MAX_MAC_FRAMES];
+    int sdulength[MAX_MAC_FRAMES];
+} umts_mac_is_info;
+
+enum enum_mac_tsn_size {
+    MAC_TSN_6BITS,
+    MAC_TSN_14BITS
+};
+int get_mac_tsn_size(void);
+
+#endif
+2026-06-16 14:20:07,725 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 10
+2026-06-16 14:20:07,725 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:20:08,469 - root - [INFO] - logging.py:31 - log_time - Took 0.74s
+2026-06-16 14:20:08,472 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -n "static body_parts \\*\\' (timeout=120)
+2026-06-16 14:20:08,472 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -n "static body_parts \\*\\* get_body_parts" /workspace/wireshark/epan/dissec'
+2026-06-16 14:20:12,112 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 855:static body_parts ** get_body_parts(mac_is_channel * ch)
+2026-06-16 14:20:12,112 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 11
+2026-06-16 14:20:12,112 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:20:12,690 - root - [INFO] - logging.py:31 - log_time - Took 0.58s
+2026-06-16 14:20:12,694 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: "sed -n '850,880p' /workspace/w" (timeout=120)
+2026-06-16 14:20:12,694 - root - [DEBUG] - des_container.py:308 - command - DES command: "sed -n '850,880p' /workspace/wireshark/epan/dissectors/packet-umts_mac.c\n"
+2026-06-16 14:20:30,408 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+/*
+ * @param ch Channel for which body parts are to be fetched.
+ * @return Array of body_part* for channel 'ch'.
+ */
+static body_parts ** get_body_parts(mac_is_channel * ch)
+{
+    body_parts ** bpa = (body_parts **)g_hash_table_lookup(mac_is_fragments, ch);
+    /* If there was no body_part* array for this channel, create one. */
+    if (bpa == NULL) {
+        mac_is_channel * channel;
+        bpa = wmem_alloc_array(wmem_file_scope(), body_parts*, MAX_TSN); /* Create new body_parts-pointer array */
+        for (size_t i = 0; i < MAX_TSN; i++) {
+            bpa[i] = wmem_new0(wmem_file_scope(), body_parts); /* Fill it with body_parts. */
+        }
+        channel = wmem_new(wmem_file_scope(), mac_is_channel); /* Alloc new channel for use in hash table. */
+        *channel = *ch;
+        g_hash_table_insert(mac_is_fragments, channel, bpa);
+    }
+    return bpa;
+}
+
+static tvbuff_t * mac_is_add_fragment(tvbuff_t * tvb _U_, packet_info *pinfo, proto_tree * tree _U_, uint8_t lchid, unsigned ueid, int offset, uint8_t ss, uint16_t tsn, int sdu_no, uint8_t no_sdus, uint16_t maclength)
+{
+    mac_is_channel ch; /* Channel for looking up in hash tables. */
+    ch.lchid = lchid;
+    ch.ueid = ueid;
+
+    /* If in first scan-through. */
+    if (!PINFO_FD_VISITED(pinfo)) {
+        /* Get body parts array for this channel. */
+2026-06-16 14:20:30,408 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 12
+2026-06-16 14:20:30,408 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:20:33,673 - root - [INFO] - logging.py:31 - log_time - Took 3.27s
+2026-06-16 14:20:33,677 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'submit_prediction \'{"function_' (timeout=120)
+2026-06-16 14:20:33,677 - root - [DEBUG] - des_container.py:308 - command - DES command: 'submit_prediction \'{"function_name": "get_body_parts", "file_path": "epan/dissec'
+2026-06-16 14:20:35,172 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: !!submit!!
+{"function_name": "get_body_parts", "file_path": "epan/dissectors/packet-umts_mac.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function contains a fixed-size loop that executes exactly MAX_TSN times (64 iterations) with no conditional exits or recursive calls."}
+SUBMISSION_COMPLETE
+2026-06-16 14:20:35,172 - root - [INFO] - forager_base.py:408 - start_trajectory - Success regex matched in environment output: SUBMISSION_COMPLETE
+2026-06-16 14:20:35,172 - root - [INFO] - forager_locate_function_code_and_dep.py:51 - extract_submission - Found !!submit!! marker in environ item
+2026-06-16 14:20:35,173 - root - [DEBUG] - forager_locate_function_code_and_dep.py:52 - extract_submission - Item output: !!submit!!
+{"function_name": "get_body_parts", "file_path": "epan/dissectors/packet-umts_mac.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function contains a fixed-size loop that executes exactly MAX_TSN times (64 iterations) with no conditional exits or recursive calls."}
+SUBMISSION_COMPLETE
+2026-06-16 14:20:35,173 - root - [INFO] - forager_locate_function_code_and_dep.py:80 - extract_submission - Matched JSON string: {"function_name": "get_body_parts", "file_path": "epan/dissectors/packet-umts_mac.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function contains a fixed-size loop that executes exactly MAX_TSN times (64 iterations) with no conditional exits or recursive calls."}
+2026-06-16 14:20:35,173 - root - [INFO] - forager_locate_function_code_and_dep.py:82 - extract_submission - Extracted submission from environ: {'function_name': 'get_body_parts', 'file_path': 'epan/dissectors/packet-umts_mac.c', 'prediction': 'T', 'p_non_terminating': 0, 'confidence': 'high', 'reason': 'Function contains a fixed-size loop that executes exactly MAX_TSN times (64 iterations) with no conditional exits or recursive calls.'}
+2026-06-16 14:20:35,173 - root - [INFO] - forager_locate_function_code_and_dep.py:162 - process_run - Submission validation: {'correct_function_name': True, 'correct_path': True, 'provided_prediction': True}
+2026-06-16 14:20:35,173 - root - [INFO] - forager_locate_function_code_and_dep.py:326 - run - All validation checks passed
+2026-06-16 14:20:35,173 - root - [INFO] - forager_locate_function_code_and_dep.py:347 - run - Run completed with outcome: success
+2026-06-16 14:20:35,176 - root - [INFO] - des_container.py:428 - shutdown - Shutting down DES container 7eeabf36ea03be2e92dbdacdbb5b33c0cf8b686d60d7b5d97e1e9e097490d80d
+2026-06-16 14:20:35,176 - root - [INFO] - des_container.py:576 - _heartbeat_loop - VMVM heartbeat thread exiting
+2026-06-16 14:21:00,452 - root - [INFO] - des_container.py:228 - release_vm - Releasing VMVM session {"vmvm_session":{"id":"019ed0c7-4af4-74e1-8407-c11e8ca28402","ipAddr":"2803:6084:4840:741e:b259:2917:500:0","vaagentPort":25481,"vmPort":20828,"vaagentHostname":"twshared36257.01.nha5.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|16121806539984002760|0|faas.5D4DAAD1C89A66EF15DFD4002CFE818E|7472652150848208654","tw_task_handle":"tsp_nha/faas/workerpool_crackerjack_prod_bgm_ces_tier_1/74","region_shortname":"nha"},"auth_token":{"paseto":"v4.public.eyJpYXQiOiIyMDI2LTA2LTE2VDE0OjEzOjEwLjUwMTA5MjQ3NiswMDowMCIsIm5iZiI6IjIwMjYtMDYtMTZUMTQ6MTM6MTBaIiwiZXhwIjoiMjAyNi0wNi0xN1QxNDoxMzoxMFoiLCJzdWIiOiIwMTllZDBjNy00YWY0LTc0ZTEtODQwNy1jMTFlOGNhMjg0MDIifXBWwvTz53SRoVHLybkh0u2bZChFgqQ7alPoyZ16OgjkevzELdujzp9JhYaEU_uSsS2anzNMJJohW9_NA5cTsQM.eyJ0ZW5hbnQiOiJhc3luY18yMzQ3NjQxIiwicG9ydCI6IjIwODI4IiwiZmFhc19pbnZvY2F0aW9uX2lkIjoiNHxnbG9iYWx8YXN5bmNfMjM0NzY0MXxkZXNfZ2VuZXJhbF90aWVyX3Byb2R8MTYxMjE4MDY1Mzk5ODQwMDI3NjB8MHxmYWFzLjVENERBQUQxQzg5QTY2RUYxNURGRDQwMDJDRkU4MThFfDc0NzI2NTIxNTA4NDgyMDg2NTQiLCJpcCI6IjI4MDM6NjA4NDo0ODQwOjc0MWU6YjI1OToyOTE3OjUwMDowIn0"}}
+2026-06-16 14:21:03,691 - root - [INFO] - des_container.py:238 - release_vm - VMVM session released
+2026-06-16 14:21:03,692 - root - [INFO] - run.py:224 - repo_task - Finishing repo: wireshark_9c16d833_epan_dissectors_packet-umts_mac_c_get_body_parts_1

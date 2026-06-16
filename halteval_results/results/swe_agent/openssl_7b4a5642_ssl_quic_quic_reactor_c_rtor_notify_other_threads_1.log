@@ -1,0 +1,1234 @@
+2026-06-16 14:06:46,071 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=UNKNOWN_NAME
+2026-06-16 14:06:46,071 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=run
+2026-06-16 14:06:46,256 - root - [INFO] - run.py:148 - repo_task - Model: VllmModel
+2026-06-16 14:06:46,288 - root - [INFO] - run.py:158 - repo_task - Agent: ForagerAgentLocateFunctionCodeAndDep
+2026-06-16 14:06:46,288 - root - [INFO] - run.py:172 - repo_task - Using VMVMBackend, image=vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest
+2026-06-16 14:06:46,288 - root - [INFO] - des_container.py:76 - lease_vm - Leasing VM with client-id=openssl_7b4a5642_ssl_quic_quic_reactor_c_rtor_notify_other_threads_1, ttl_secs=500
+2026-06-16 14:06:47,592 - root - [INFO] - des_container.py:87 - lease_vm - VM leased in 1.30s: session_id={"vmvm_session":{"id":"019ed0c1-7fb0-7e81-a704-0e9da464f016","ipAddr":"2803:6080:20b8:4bfb:d167:ec16:500:0","vaagentPort":18001,"vmPort":16195,"vaagentHostname":"twshared49104.32.atn1.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|16121806539984002760|0|faas.3C4951A9F8EA0C1585FDA2490A981385|7472645076701619189","tw_task_handle":"tsp_atn/faas/workerpool_crackerjack_prod_bgm_ces_tier_1/577","region_shortname":"atn"},"auth_token":{"paseto":"v4.public.eyJuYmYiOiIyMDI2LTA2LTE2VDE0OjA2OjQ3WiIsInN1YiI6IjAxOWVkMGMxLTdmYjAtN2U4MS1hNzA0LTBlOWRhNDY0ZjAxNiIsImV4cCI6IjIwMjYtMDYtMTdUMTQ6MDY6NDdaIiwiaWF0IjoiMjAyNi0wNi0xNlQxNDowNjo0Ny4zNDk2Nzc5OTUrMDA6MDAifSKZnM78QeHWRnBLDcGb8EguW1RiEqagHOti4etHbDOuWgMjJTVA1PrXaMLz7jYsO-gtdbCqqKoRTSvLRWEzSgs.eyJpcCI6IjI4MDM6NjA4MDoyMGI4OjRiZmI6ZDE2NzplYzE2OjUwMDowIiwicG9ydCI6IjE2MTk1IiwidGVuYW50IjoiYXN5bmNfMjM0NzY0MSIsImZhYXNfaW52b2NhdGlvbl9pZCI6IjR8Z2xvYmFsfGFzeW5jXzIzNDc2NDF8ZGVzX2dlbmVyYWxfdGllcl9wcm9kfDE2MTIxODA2NTM5OTg0MDAyNzYwfDB8ZmFhcy4zQzQ5NTFBOUY4RUEwQzE1ODVGREEyNDkwQTk4MTM4NXw3NDcyNjQ1MDc2NzAxNjE5MTg5In0"}}
+2026-06-16 14:06:47,592 - root - [INFO] - des_container.py:195 - load_image - Pulling image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest on VMVM
+2026-06-16 14:08:30,282 - root - [INFO] - des_container.py:203 - load_image - Image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest pulled successfully
+2026-06-16 14:08:31,681 - root - [INFO] - des_container.py:221 - run_container - Container started: 344cba1c86a0d2369c06c1cf5146df4ec9b47447ae20cfd9cd9d17695fe2201d
+2026-06-16 14:08:31,681 - root - [INFO] - des_container.py:565 - _heartbeat_loop - VMVM heartbeat thread started
+2026-06-16 14:08:31,682 - root - [INFO] - forager_locate_function_code_and_dep.py:294 - run - Starting analysis for rtor_notify_other_threads in ssl/quic/quic_reactor.c
+2026-06-16 14:08:31,682 - root - [INFO] - forager_locate_function_code_and_dep.py:208 - prepare_cpp_container - ========== Preparing C++ container ==========
+2026-06-16 14:08:31,682 - root - [DEBUG] - forager_locate_function_code_and_dep.py:211 - prepare_cpp_container - Setting up env variables
+2026-06-16 14:08:31,683 - root - [DEBUG] - des_container.py:308 - command - DES command: 'export WINDOW=100 && export OVERLAP=2 && export CURRENT_LINE=0 && export CURRENT'
+2026-06-16 14:08:33,082 - root - [DEBUG] - forager_locate_function_code_and_dep.py:220 - prepare_cpp_container - Importing agent tools in container
+2026-06-16 14:08:34,569 - root - [DEBUG] - des_container.py:385 - put - DES put: 6243 bytes to /opt/tools/defaults.sh
+2026-06-16 14:09:12,117 - root - [DEBUG] - des_container.py:308 - command - DES command: 'source /opt/tools/defaults.sh'
+2026-06-16 14:09:15,142 - root - [DEBUG] - des_container.py:385 - put - DES put: 5735 bytes to /opt/tools/search.sh
+2026-06-16 14:09:36,574 - root - [DEBUG] - des_container.py:308 - command - DES command: 'source /opt/tools/search.sh'
+2026-06-16 14:10:11,349 - root - [DEBUG] - des_container.py:308 - command - DES command: 'export PATH=/opt/tools:$PATH'
+2026-06-16 14:10:12,584 - root - [INFO] - forager_locate_function_code_and_dep.py:225 - prepare_cpp_container - Uploading submit_prediction command
+2026-06-16 14:10:12,584 - root - [DEBUG] - des_container.py:385 - put - DES put: 74 bytes to /usr/local/bin/submit_prediction
+2026-06-16 14:10:33,137 - root - [DEBUG] - des_container.py:572 - _heartbeat_loop - VMVM heartbeat sent
+2026-06-16 14:10:34,281 - root - [DEBUG] - des_container.py:308 - command - DES command: 'chmod +x /usr/local/bin/submit_prediction'
+2026-06-16 14:10:35,829 - root - [DEBUG] - des_container.py:308 - command - DES command: "which submit_prediction || echo 'Not in PATH'"
+2026-06-16 14:10:37,261 - root - [INFO] - forager_locate_function_code_and_dep.py:237 - prepare_cpp_container - Script in PATH: /usr/local/bin/submit_prediction
+2026-06-16 14:10:37,261 - root - [DEBUG] - des_container.py:308 - command - DES command: "export GIT_AUTHOR_NAME='CI Bot' && export GIT_AUTHOR_EMAIL='ci-bot@yourdomain.co"
+2026-06-16 14:10:38,483 - root - [DEBUG] - forager_locate_function_code_and_dep.py:256 - prepare_cpp_container - Creating /workspace directory
+2026-06-16 14:10:38,483 - root - [DEBUG] - des_container.py:308 - command - DES command: 'mkdir -p /workspace'
+2026-06-16 14:10:39,949 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cd /workspace'
+2026-06-16 14:10:57,255 - root - [DEBUG] - forager_locate_function_code_and_dep.py:196 - _init_prompt - Task prompt:
+Your task is to predict whether the function `rtor_notify_other_threads` in the C++ file `ssl/quic/quic_reactor.c` will:
+- **Terminate** for all inputs, OR
+- **Diverge** for some inputs (enter a non-terminating loop)
+
+**Important:** This is a **read-only code analysis task**. You may only use shell commands to view files. Do not execute any C++ code or modify any files. Only use commands like `cat`, `grep`, `find`, `ls`, `cd`, `head`, `tail`, `git`, etc.
+
+## STEP 1: Clone the Repository
+
+First, clone the repository and checkout the specific commit:
+```bash
+git clone https://github.com/openssl/openssl /workspace/openssl && cd /workspace/openssl && git checkout 7b4a56420d1718809d73aa3adf53d3e6c3a2ee91
+```
+
+## STEP 2: Examine the Function
+
+Navigate to the repository and examine the function using read-only commands. Examples:
+```bash
+cd /workspace/openssl
+cat ssl/quic/quic_reactor.c                              # View the entire file
+grep -n "rtor_notify_other_threads" ssl/quic/quic_reactor.c    # Find the function's line number
+grep -A 50 "rtor_notify_other_threads" ssl/quic/quic_reactor.c # View the function plus 50 lines after (of course you can view more).
+```
+
+## STEP 3: Analyze Dependencies
+Important: The function may call other functions, use external types, or depend on macros defined elsewhere. You must examine these dependencies to fully understand the code's behavior.
+- Find and read helper functions called within the target function
+- Examine header files for type definitions and macros
+- Check struct/class definitions to understand data types
+- Trace function pointers to their implementations
+
+Finding dependencies:
+```bash
+grep -rn "function_name" /workspace/openssl/
+find . -name "*.h" | xargs grep "TypeName"
+cat path/to/header.h
+```
+
+## STEP 4: Classify the Function
+**"T" (Terminates)** - Function terminates for all possible inputs:
+- No blocking synchronization calls. All loops have reachable exit conditions. Loop variables progress correctly toward exit. Proper bounds checking and error handling
+**"NT" (Non-Termination)** - Designed to block or loop indefinitely (can be intentional by the user or a bug). Examples:
+- Thread synchronization primitives. Locks. Condition variables. Event loops or server loops that run until external signal.
+Worker thread functions waiting for tasks or termination signals.
+- Loop variable never modified or modified in wrong direction. `while(1)` or `for(;;)` without reachable `break` or `return`.
+Unbounded I/O operations without proper termination checks. Missing loop increment/decrement statements.
+
+## STEP 5: Submit Your Prediction
+
+When ready, submit your classification:
+```bash
+submit_prediction '{"function_name": "rtor_notify_other_threads", "file_path": "ssl/quic/quic_reactor.c", "prediction": "<T|NT>", "p_non_terminating": <0-100>, "confidence": "<high|medium|low>", "reason": "<one concise sentence>"}'
+```
+
+**Field definitions:**
+- `prediction`: "T" if the function terminates for all inputs, "NT" if it can loop/block indefinitely
+- `p_non_terminating`: integer 0–100 — your estimated probability (in %) that the function is non-terminating
+- `confidence`: "high" if the evidence is clear and unambiguous, "medium" if there is some uncertainty, "low" if the code is hard to fully trace or the behavior is unclear
+- `reason`: one concise sentence explaining the key factor driving your prediction
+
+**Guidelines:**
+- Execute one command per response in triple backticks
+- Read all relevant source and header files before making a prediction
+- Trace data flow to understand where loop bounds and conditions come from
+- Consider edge cases: zero values, type overflows, null pointers, EOF conditions
+- Only submit your prediction when you have thoroughly analyzed the code
+- Begin by cloning the repository
+2026-06-16 14:10:57,255 - root - [INFO] - forager_base.py:342 - start_trajectory - =========== Starting new trajectory ==========
+2026-06-16 14:10:57,256 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 1
+2026-06-16 14:10:57,256 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:10:58,983 - root - [INFO] - logging.py:31 - log_time - Took 1.73s
+2026-06-16 14:10:58,988 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'git clone https://github.com/o' (timeout=120)
+2026-06-16 14:10:58,988 - root - [DEBUG] - des_container.py:308 - command - DES command: 'git clone https://github.com/openssl/openssl /workspace/openssl && cd /workspace'
+2026-06-16 14:11:40,474 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 14:11:40,474 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 2
+2026-06-16 14:11:40,475 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:11:40,968 - root - [INFO] - logging.py:31 - log_time - Took 0.49s
+2026-06-16 14:11:40,980 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cd /workspace/openssl\ncat ssl/' (timeout=120)
+2026-06-16 14:11:40,980 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cd /workspace/openssl\ncat ssl/quic/quic_reactor.c\n'
+2026-06-16 14:11:42,329 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /*
+ * Copyright 2022-2025 The OpenSSL Project Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License 2.0 (the "License").  You may not use
+ * this file except in compliance with the License.  You can obtain a copy
+ * in the file LICENSE in the source distribution or at
+ * https://www.openssl.org/source/license.html
+ */
+#include "internal/quic_reactor.h"
+#include "internal/common.h"
+#include "internal/thread_arch.h"
+#include <assert.h>
+
+/*
+ * Core I/O Reactor Framework
+ * ==========================
+ */
+static void rtor_notify_other_threads(QUIC_REACTOR *rtor);
+
+int ossl_quic_reactor_init(QUIC_REACTOR *rtor,
+                           void (*tick_cb)(QUIC_TICK_RESULT *res, void *arg,
+                                           uint32_t flags),
+                           void *tick_cb_arg,
+                           CRYPTO_MUTEX *mutex,
+                           OSSL_TIME initial_tick_deadline,
+                           uint64_t flags)
+{
+    rtor->poll_r.type       = BIO_POLL_DESCRIPTOR_TYPE_NONE;
+    rtor->poll_w.type       = BIO_POLL_DESCRIPTOR_TYPE_NONE;
+    rtor->net_read_desired  = 0;
+    rtor->net_write_desired = 0;
+    rtor->can_poll_r        = 0;
+    rtor->can_poll_w        = 0;
+    rtor->tick_deadline     = initial_tick_deadline;
+
+    rtor->tick_cb           = tick_cb;
+    rtor->tick_cb_arg       = tick_cb_arg;
+    rtor->mutex             = mutex;
+
+    rtor->cur_blocking_waiters = 0;
+
+    if ((flags & QUIC_REACTOR_FLAG_USE_NOTIFIER) != 0) {
+        if (!ossl_rio_notifier_init(&rtor->notifier))
+            return 0;
+
+        if ((rtor->notifier_cv = ossl_crypto_condvar_new()) == NULL) {
+            ossl_rio_notifier_cleanup(&rtor->notifier);
+            return 0;
+        }
+
+        rtor->have_notifier = 1;
+    } else {
+        rtor->have_notifier = 0;
+    }
+
+    return 1;
+}
+
+void ossl_quic_reactor_cleanup(QUIC_REACTOR *rtor)
+{
+    if (rtor == NULL)
+        return;
+
+    if (rtor->have_notifier) {
+        ossl_rio_notifier_cleanup(&rtor->notifier);
+        rtor->have_notifier = 0;
+
+        ossl_crypto_condvar_free(&rtor->notifier_cv);
+    }
+}
+
+void ossl_quic_reactor_set_poll_r(QUIC_REACTOR *rtor, const BIO_POLL_DESCRIPTOR *r)
+{
+    if (r == NULL)
+        rtor->poll_r.type = BIO_POLL_DESCRIPTOR_TYPE_NONE;
+    else
+        rtor->poll_r = *r;
+
+    rtor->can_poll_r
+        = ossl_quic_reactor_can_support_poll_descriptor(rtor, &rtor->poll_r);
+}
+
+void ossl_quic_reactor_set_poll_w(QUIC_REACTOR *rtor, const BIO_POLL_DESCRIPTOR *w)
+{
+    if (w == NULL)
+        rtor->poll_w.type = BIO_POLL_DESCRIPTOR_TYPE_NONE;
+    else
+        rtor->poll_w = *w;
+
+    rtor->can_poll_w
+        = ossl_quic_reactor_can_support_poll_descriptor(rtor, &rtor->poll_w);
+}
+
+const BIO_POLL_DESCRIPTOR *ossl_quic_reactor_get_poll_r(const QUIC_REACTOR *rtor)
+{
+    return &rtor->poll_r;
+}
+
+const BIO_POLL_DESCRIPTOR *ossl_quic_reactor_get_poll_w(const QUIC_REACTOR *rtor)
+{
+    return &rtor->poll_w;
+}
+
+int ossl_quic_reactor_can_support_poll_descriptor(const QUIC_REACTOR *rtor,
+                                                  const BIO_POLL_DESCRIPTOR *d)
+{
+    return d->type == BIO_POLL_DESCRIPTOR_TYPE_SOCK_FD;
+}
+
+int ossl_quic_reactor_can_poll_r(const QUIC_REACTOR *rtor)
+{
+    return rtor->can_poll_r;
+}
+
+int ossl_quic_reactor_can_poll_w(const QUIC_REACTOR *rtor)
+{
+    return rtor->can_poll_w;
+}
+
+int ossl_quic_reactor_net_read_desired(QUIC_REACTOR *rtor)
+{
+    return rtor->net_read_desired;
+}
+
+int ossl_quic_reactor_net_write_desired(QUIC_REACTOR *rtor)
+{
+    return rtor->net_write_desired;
+}
+
+OSSL_TIME ossl_quic_reactor_get_tick_deadline(QUIC_REACTOR *rtor)
+{
+    return rtor->tick_deadline;
+}
+
+int ossl_quic_reactor_tick(QUIC_REACTOR *rtor, uint32_t flags)
+{
+    QUIC_TICK_RESULT res = {0};
+
+    /*
+     * Note that the tick callback cannot fail; this is intentional. Arguably it
+     * does not make that much sense for ticking to 'fail' (in the sense of an
+     * explicit error indicated to the user) because ticking is by its nature
+     * best effort. If something fatal happens with a connection we can report
+     * it on the next actual application I/O call.
+     */
+    rtor->tick_cb(&res, rtor->tick_cb_arg, flags);
+
+    rtor->net_read_desired  = res.net_read_desired;
+    rtor->net_write_desired = res.net_write_desired;
+    rtor->tick_deadline     = res.tick_deadline;
+    if (res.notify_other_threads)
+        rtor_notify_other_threads(rtor);
+
+    return 1;
+}
+
+RIO_NOTIFIER *ossl_quic_reactor_get0_notifier(QUIC_REACTOR *rtor)
+{
+    return rtor->have_notifier ? &rtor->notifier : NULL;
+}
+
+/*
+ * Blocking I/O Adaptation Layer
+ * =============================
+ */
+
+/*
+ * Utility which can be used to poll on up to two FDs. This is designed to
+ * support use of split FDs (e.g. with SSL_set_rfd and SSL_set_wfd where
+ * different FDs are used for read and write).
+ *
+ * Generally use of poll(2) is preferred where available. Windows, however,
+ * hasn't traditionally offered poll(2), only select(2). WSAPoll() was
+ * introduced in Vista but has seemingly been buggy until relatively recent
+ * versions of Windows 10. Moreover we support XP so this is not a suitable
+ * target anyway. However, the traditional issues with select(2) turn out not to
+ * be an issue on Windows; whereas traditional *NIX select(2) uses a bitmap of
+ * FDs (and thus is limited in the magnitude of the FDs expressible), Windows
+ * select(2) is very different. In Windows, socket handles are not allocated
+ * contiguously from zero and thus this bitmap approach was infeasible. Thus in
+ * adapting the Berkeley sockets API to Windows a different approach was taken
+ * whereby the fd_set contains a fixed length array of socket handles and an
+ * integer indicating how many entries are valid; thus Windows select()
+ * ironically is actually much more like *NIX poll(2) than *NIX select(2). In
+ * any case, this means that the relevant limit for Windows select() is the
+ * number of FDs being polled, not the magnitude of those FDs. Since we only
+ * poll for two FDs here, this limit does not concern us.
+ *
+ * Usage: rfd and wfd may be the same or different. Either or both may also be
+ * -1. If rfd_want_read is 1, rfd is polled for readability, and if
+ * wfd_want_write is 1, wfd is polled for writability. Note that since any
+ * passed FD is always polled for error conditions, setting rfd_want_read=0 and
+ * wfd_want_write=0 is not the same as passing -1 for both FDs.
+ *
+ * deadline is a timestamp to return at. If it is ossl_time_infinite(), the call
+ * never times out.
+ *
+ * Returns 0 on error and 1 on success. Timeout expiry is considered a success
+ * condition. We don't elaborate our return values here because the way we are
+ * actually using this doesn't currently care.
+ *
+ * If mutex is non-NULL, it is assumed to be held for write and is unlocked for
+ * the duration of the call.
+ *
+ * Precondition:   mutex is NULL or is held for write (unchecked)
+ * Postcondition:  mutex is NULL or is held for write (unless
+ *                   CRYPTO_THREAD_write_lock fails)
+ */
+static int poll_two_fds(int rfd, int rfd_want_read,
+                        int wfd, int wfd_want_write,
+                        int notify_rfd,
+                        OSSL_TIME deadline,
+                        CRYPTO_MUTEX *mutex)
+{
+#if defined(OPENSSL_SYS_WINDOWS) || !defined(POLLIN)
+    fd_set rfd_set, wfd_set, efd_set;
+    OSSL_TIME now, timeout;
+    struct timeval tv, *ptv;
+    int maxfd, pres;
+
+# ifndef OPENSSL_SYS_WINDOWS
+    /*
+     * On Windows there is no relevant limit to the magnitude of a fd value (see
+     * above). On *NIX the fd_set uses a bitmap and we must check the limit.
+     */
+    if (rfd >= FD_SETSIZE || wfd >= FD_SETSIZE)
+        return 0;
+# endif
+
+    FD_ZERO(&rfd_set);
+    FD_ZERO(&wfd_set);
+    FD_ZERO(&efd_set);
+
+    if (rfd != INVALID_SOCKET && rfd_want_read)
+        openssl_fdset(rfd, &rfd_set);
+    if (wfd != INVALID_SOCKET && wfd_want_write)
+        openssl_fdset(wfd, &wfd_set);
+
+    /* Always check for error conditions. */
+    if (rfd != INVALID_SOCKET)
+        openssl_fdset(rfd, &efd_set);
+    if (wfd != INVALID_SOCKET)
+        openssl_fdset(wfd, &efd_set);
+
+    /* Check for notifier FD readability. */
+    if (notify_rfd != INVALID_SOCKET) {
+        openssl_fdset(notify_rfd, &rfd_set);
+        openssl_fdset(notify_rfd, &efd_set);
+    }
+
+    maxfd = rfd;
+    if (wfd > maxfd)
+        maxfd = wfd;
+    if (notify_rfd > maxfd)
+        maxfd = notify_rfd;
+
+    if (!ossl_assert(rfd != INVALID_SOCKET || wfd != INVALID_SOCKET
+                     || !ossl_time_is_infinite(deadline)))
+        /* Do not block forever; should not happen. */
+        return 0;
+
+    /*
+     * The mutex dance (unlock/re-locak after poll/seclect) is
+     * potentially problematic. This may create a situation when
+     * two threads arrive to select/poll with the same file
+     * descriptors. We just need to be aware of this.
+     */
+# if defined(OPENSSL_THREADS)
+    if (mutex != NULL)
+        ossl_crypto_mutex_unlock(mutex);
+# endif
+
+    do {
+        /*
+         * select expects a timeout, not a deadline, so do the conversion.
+         * Update for each call to ensure the correct value is used if we repeat
+         * due to EINTR.
+         */
+        if (ossl_time_is_infinite(deadline)) {
+            ptv = NULL;
+        } else {
+            now = ossl_time_now();
+            /*
+             * ossl_time_subtract saturates to zero so we don't need to check if
+             * now > deadline.
+             */
+            timeout = ossl_time_subtract(deadline, now);
+            tv      = ossl_time_to_timeval(timeout);
+            ptv     = &tv;
+        }
+
+        pres = select(maxfd + 1, &rfd_set, &wfd_set, &efd_set, ptv);
+    } while (pres == -1 && get_last_socket_error_is_eintr());
+
+# if defined(OPENSSL_THREADS)
+    if (mutex != NULL)
+        ossl_crypto_mutex_lock(mutex);
+# endif
+
+    return pres < 0 ? 0 : 1;
+#else
+    int pres, timeout_ms;
+    OSSL_TIME now, timeout;
+    struct pollfd pfds[3] = {0};
+    size_t npfd = 0;
+
+    if (rfd == wfd) {
+        pfds[npfd].fd = rfd;
+        pfds[npfd].events = (rfd_want_read  ? POLLIN  : 0)
+                          | (wfd_want_write ? POLLOUT : 0);
+        if (rfd >= 0 && pfds[npfd].events != 0)
+            ++npfd;
+    } else {
+        pfds[npfd].fd     = rfd;
+        pfds[npfd].events = (rfd_want_read ? POLLIN : 0);
+        if (rfd >= 0 && pfds[npfd].events != 0)
+            ++npfd;
+
+        pfds[npfd].fd     = wfd;
+        pfds[npfd].events = (wfd_want_write ? POLLOUT : 0);
+        if (wfd >= 0 && pfds[npfd].events != 0)
+            ++npfd;
+    }
+
+    if (notify_rfd >= 0) {
+        pfds[npfd].fd       = notify_rfd;
+        pfds[npfd].events   = POLLIN;
+        ++npfd;
+    }
+
+    if (!ossl_assert(npfd != 0 || !ossl_time_is_infinite(deadline)))
+        /* Do not block forever; should not happen. */
+        return 0;
+
+# if defined(OPENSSL_THREADS)
+    if (mutex != NULL)
+        ossl_crypto_mutex_unlock(mutex);
+# endif
+
+    do {
+        if (ossl_time_is_infinite(deadline)) {
+            timeout_ms = -1;
+        } else {
+            now         = ossl_time_now();
+            timeout     = ossl_time_subtract(deadline, now);
+            timeout_ms  = ossl_time2ms(timeout);
+        }
+
+        pres = poll(pfds, npfd, timeout_ms);
+    } while (pres == -1 && get_last_socket_error_is_eintr());
+
+# if defined(OPENSSL_THREADS)
+    if (mutex != NULL)
+        ossl_crypto_mutex_lock(mutex);
+# endif
+
+    return pres < 0 ? 0 : 1;
+#endif
+}
+
+static int poll_descriptor_to_fd(const BIO_POLL_DESCRIPTOR *d, int *fd)
+{
+    if (d == NULL || d->type == BIO_POLL_DESCRIPTOR_TYPE_NONE) {
+        *fd = INVALID_SOCKET;
+        return 1;
+    }
+
+    if (d->type != BIO_POLL_DESCRIPTOR_TYPE_SOCK_FD
+            || d->value.fd == INVALID_SOCKET)
+        return 0;
+
+    *fd = d->value.fd;
+    return 1;
+}
+
+/*
+ * Poll up to two abstract poll descriptors, as well as an optional notify FD.
+ * Currently we only support poll descriptors which represent FDs.
+ *
+ * If mutex is non-NULL, it is assumed be a lock currently held for write and is
+ * unlocked for the duration of any wait.
+ *
+ * Precondition:   mutex is NULL or is held for write (unchecked)
+ * Postcondition:  mutex is NULL or is held for write (unless
+ *                   CRYPTO_THREAD_write_lock fails)
+ */
+static int poll_two_descriptors(const BIO_POLL_DESCRIPTOR *r, int r_want_read,
+                                const BIO_POLL_DESCRIPTOR *w, int w_want_write,
+                                int notify_rfd,
+                                OSSL_TIME deadline,
+                                CRYPTO_MUTEX *mutex)
+{
+    int rfd, wfd;
+
+    if (!poll_descriptor_to_fd(r, &rfd)
+        || !poll_descriptor_to_fd(w, &wfd))
+        return 0;
+
+    return poll_two_fds(rfd, r_want_read, wfd, w_want_write,
+                        notify_rfd, deadline, mutex);
+}
+
+/*
+ * Notify other threads currently blocking in
+ * ossl_quic_reactor_block_until_pred() calls that a predicate they are using
+ * might now be met due to state changes.
+ *
+ * This function must be called after state changes which might cause a
+ * predicate in another thread to now be met (i.e., ticking). It is a no-op if
+ * inter-thread notification is not being used.
+ *
+ * The reactor mutex must be held while calling this function.
+ */
+static void rtor_notify_other_threads(QUIC_REACTOR *rtor)
+{
+    if (!rtor->have_notifier)
+        return;
+
+    /*
+     * This function is called when we have done anything on this thread which
+     * might allow a predicate for a block_until_pred call on another thread to
+     * now be met.
+     *
+     * When this happens, we need to wake those threads using the notifier.
+     * However, we do not want to wake *this* thread (if/when it subsequently
+     * enters block_until_pred) due to the notifier FD becoming readable.
+     * Therefore, signal the notifier, and use a CV to detect when all other
+     * threads have woken.
+     */
+
+   if (rtor->cur_blocking_waiters == 0)
+       /* Nothing to do in this case. */
+       return;
+
+   /* Signal the notifier to wake up all threads. */
+   if (!rtor->signalled_notifier) {
+       ossl_rio_notifier_signal(&rtor->notifier);
+       rtor->signalled_notifier = 1;
+   }
+
+   /*
+    * Wait on the CV until all threads have finished the first phase of the
+    * wakeup process and the last thread out has taken responsibility for
+    * unsignalling the notifier.
+    */
+    while (rtor->signalled_notifier)
+        ossl_crypto_condvar_wait(rtor->notifier_cv, rtor->mutex);
+}
+
+/*
+ * Block until a predicate function evaluates to true.
+ *
+ * If mutex is non-NULL, it is assumed be a lock currently held for write and is
+ * unlocked for the duration of any wait.
+ *
+ * Precondition:   Must hold channel write lock (unchecked)
+ * Precondition:   mutex is NULL or is held for write (unchecked)
+ * Postcondition:  mutex is NULL or is held for write (unless
+ *                   CRYPTO_THREAD_write_lock fails)
+ */
+int ossl_quic_reactor_block_until_pred(QUIC_REACTOR *rtor,
+                                       int (*pred)(void *arg), void *pred_arg,
+                                       uint32_t flags)
+{
+    int res, net_read_desired, net_write_desired, notifier_fd;
+    OSSL_TIME tick_deadline;
+
+    notifier_fd
+        = (rtor->have_notifier ? ossl_rio_notifier_as_fd(&rtor->notifier)
+                               : INVALID_SOCKET);
+
+    for (;;) {
+        if ((flags & SKIP_FIRST_TICK) != 0)
+            flags &= ~SKIP_FIRST_TICK;
+        else
+            /* best effort */
+            ossl_quic_reactor_tick(rtor, 0);
+
+        if ((res = pred(pred_arg)) != 0)
+            return res;
+
+        net_read_desired  = ossl_quic_reactor_net_read_desired(rtor);
+        net_write_desired = ossl_quic_reactor_net_write_desired(rtor);
+        tick_deadline     = ossl_quic_reactor_get_tick_deadline(rtor);
+        if (!net_read_desired && !net_write_desired
+            && ossl_time_is_infinite(tick_deadline))
+            /* Can't wait if there is nothing to wait for. */
+            return 0;
+
+        ossl_quic_reactor_enter_blocking_section(rtor);
+
+        res = poll_two_descriptors(ossl_quic_reactor_get_poll_r(rtor),
+                                   net_read_desired,
+                                   ossl_quic_reactor_get_poll_w(rtor),
+                                   net_write_desired,
+                                   notifier_fd,
+                                   tick_deadline,
+                                   rtor->mutex);
+
+        /*
+         * We have now exited the OS poller call. We may have
+         * (rtor->signalled_notifier), and other threads may still be blocking.
+         * This means that cur_blocking_waiters may still be non-zero. As such,
+         * we cannot unsignal the notifier until all threads have had an
+         * opportunity to wake up.
+         *
+         * At the same time, we cannot unsignal in the case where
+         * cur_blocking_waiters is now zero because this condition may not occur
+         * reliably. Consider the following scenario:
+         *
+         *   T1 enters block_until_pred, cur_blocking_waiters -> 1
+         *   T2 enters block_until_pred, cur_blocking_waiters -> 2
+         *   T3 enters block_until_pred, cur_blocking_waiters -> 3
+         *
+         *   T4 enters block_until_pred, does not block, ticks,
+         *     sees that cur_blocking_waiters > 0 and signals the notifier
+         *
+         *   T3 wakes, cur_blocking_waiters -> 2
+         *   T3 predicate is not satisfied, cur_blocking_waiters -> 3, block again
+         *
+         *   Notifier is still signalled, so T3 immediately wakes again
+         *   and is stuck repeating the above steps.
+         *
+         *   T1, T2 are also woken by the notifier but never see
+         *   cur_blocking_waiters drop to 0, so never unsignal the notifier.
+         *
+         * As such, a two phase approach is chosen when designalling the
+         * notifier:
+         *
+         *   First, all of the poll_two_descriptor calls on all threads are
+         *   allowed to exit due to the notifier being signalled.
+         *
+         *   Second, the thread which happened to be the one which decremented
+         *   cur_blocking_waiters to 0 unsignals the notifier and is then
+         *   responsible for broadcasting to a CV to indicate to the other
+         *   threads that the synchronised wakeup has been completed. Other
+         *   threads wait for this CV to be signalled.
+         *
+         */
+        ossl_quic_reactor_leave_blocking_section(rtor);
+
+        if (!res)
+            /*
+             * We don't actually care why the call succeeded (timeout, FD
+             * readiness), we just call reactor_tick and start trying to do I/O
+             * things again. If poll_two_fds returns 0, this is some other
+             * non-timeout failure and we should stop here.
+             *
+             * TODO(QUIC FUTURE): In the future we could avoid unnecessary
+             * syscalls by not retrying network I/O that isn't ready based
+             * on the result of the poll call. However this might be difficult
+             * because it requires we do the call to poll(2) or equivalent
+             * syscall ourselves, whereas in the general case the application
+             * does the polling and just calls SSL_handle_events().
+             * Implementing this optimisation in the future will probably
+             * therefore require API changes.
+             */
+            return 0;
+    }
+
+    return res;
+}
+
+void ossl_quic_reactor_enter_blocking_section(QUIC_REACTOR *rtor)
+{
+    ++rtor->cur_blocking_waiters;
+}
+
+void ossl_quic_reactor_leave_blocking_section(QUIC_REACTOR *rtor)
+{
+    assert(rtor->cur_blocking_waiters > 0);
+    --rtor->cur_blocking_waiters;
+
+    if (rtor->have_notifier && rtor->signalled_notifier) {
+        if (rtor->cur_blocking_waiters == 0) {
+            ossl_rio_notifier_unsignal(&rtor->notifier);
+            rtor->signalled_notifier = 0;
+
+            /*
+             * Release the other threads which have woken up (and possibly
+             * rtor_notify_other_threads as well).
+             */
+            ossl_crypto_condvar_broadcast(rtor->notifier_cv);
+        } else {
+            /* We are not the last waiter out - so wait for that one. */
+            while (rtor->signalled_notifier)
+                ossl_crypto_condvar_wait(rtor->notifier_cv, rtor->mutex);
+        }
+    }
+}
+2026-06-16 14:11:42,330 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 3
+2026-06-16 14:11:42,330 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:11:42,996 - root - [INFO] - logging.py:31 - log_time - Took 0.67s
+2026-06-16 14:11:43,002 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -n "rtor_notify_other_thr' (timeout=120)
+2026-06-16 14:11:43,003 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -n "rtor_notify_other_threads" ssl/quic/quic_reactor.c\n'
+2026-06-16 14:12:00,362 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 18:static void rtor_notify_other_threads(QUIC_REACTOR *rtor);
+152:        rtor_notify_other_threads(rtor);
+414:static void rtor_notify_other_threads(QUIC_REACTOR *rtor)
+581:             * rtor_notify_other_threads as well).
+2026-06-16 14:12:00,363 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 4
+2026-06-16 14:12:00,363 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:12:01,002 - root - [INFO] - logging.py:31 - log_time - Took 0.64s
+2026-06-16 14:12:01,005 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -A 30 "static void rtor_n' (timeout=120)
+2026-06-16 14:12:01,005 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -A 30 "static void rtor_notify_other_threads" ssl/quic/quic_reactor.c\n'
+2026-06-16 14:12:02,292 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: static void rtor_notify_other_threads(QUIC_REACTOR *rtor);
+
+int ossl_quic_reactor_init(QUIC_REACTOR *rtor,
+                           void (*tick_cb)(QUIC_TICK_RESULT *res, void *arg,
+                                           uint32_t flags),
+                           void *tick_cb_arg,
+                           CRYPTO_MUTEX *mutex,
+                           OSSL_TIME initial_tick_deadline,
+                           uint64_t flags)
+{
+    rtor->poll_r.type       = BIO_POLL_DESCRIPTOR_TYPE_NONE;
+    rtor->poll_w.type       = BIO_POLL_DESCRIPTOR_TYPE_NONE;
+    rtor->net_read_desired  = 0;
+    rtor->net_write_desired = 0;
+    rtor->can_poll_r        = 0;
+    rtor->can_poll_w        = 0;
+    rtor->tick_deadline     = initial_tick_deadline;
+
+    rtor->tick_cb           = tick_cb;
+    rtor->tick_cb_arg       = tick_cb_arg;
+    rtor->mutex             = mutex;
+
+    rtor->cur_blocking_waiters = 0;
+
+    if ((flags & QUIC_REACTOR_FLAG_USE_NOTIFIER) != 0) {
+        if (!ossl_rio_notifier_init(&rtor->notifier))
+            return 0;
+
+        if ((rtor->notifier_cv = ossl_crypto_condvar_new()) == NULL) {
+            ossl_rio_notifier_cleanup(&rtor->notifier);
+            return 0;
+--
+static void rtor_notify_other_threads(QUIC_REACTOR *rtor)
+{
+    if (!rtor->have_notifier)
+        return;
+
+    /*
+     * This function is called when we have done anything on this thread which
+     * might allow a predicate for a block_until_pred call on another thread to
+     * now be met.
+     *
+     * When this happens, we need to wake those threads using the notifier.
+     * However, we do not want to wake *this* thread (if/when it subsequently
+     * enters block_until_pred) due to the notifier FD becoming readable.
+     * Therefore, signal the notifier, and use a CV to detect when all other
+     * threads have woken.
+     */
+
+   if (rtor->cur_blocking_waiters == 0)
+       /* Nothing to do in this case. */
+       return;
+
+   /* Signal the notifier to wake up all threads. */
+   if (!rtor->signalled_notifier) {
+       ossl_rio_notifier_signal(&rtor->notifier);
+       rtor->signalled_notifier = 1;
+   }
+
+   /*
+    * Wait on the CV until all threads have finished the first phase of the
+    * wakeup process and the last thread out has taken responsibility for
+    * unsignalling the notifier.
+2026-06-16 14:12:02,293 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 5
+2026-06-16 14:12:02,293 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:12:02,595 - root - [INFO] - logging.py:31 - log_time - Took 0.30s
+2026-06-16 14:12:02,598 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'goto 414\n' (timeout=120)
+2026-06-16 14:12:02,598 - root - [DEBUG] - des_container.py:308 - command - DES command: 'goto 414\n'
+2026-06-16 14:12:04,085 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 14:12:04,085 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 6
+2026-06-16 14:12:04,085 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:12:04,407 - root - [INFO] - logging.py:31 - log_time - Took 0.32s
+2026-06-16 14:12:04,410 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'goto 414\n' (timeout=120)
+2026-06-16 14:12:04,410 - root - [DEBUG] - des_container.py:308 - command - DES command: 'goto 414\n'
+2026-06-16 14:12:21,987 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 14:12:21,987 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 7
+2026-06-16 14:12:21,987 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:12:22,407 - root - [INFO] - logging.py:31 - log_time - Took 0.42s
+2026-06-16 14:12:22,419 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: "sed -n '414,450p' ssl/quic/qui" (timeout=120)
+2026-06-16 14:12:22,419 - root - [DEBUG] - des_container.py:308 - command - DES command: "sed -n '414,450p' ssl/quic/quic_reactor.c\n"
+2026-06-16 14:12:34,618 - root - [DEBUG] - des_container.py:572 - _heartbeat_loop - VMVM heartbeat sent
+2026-06-16 14:12:40,042 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: static void rtor_notify_other_threads(QUIC_REACTOR *rtor)
+{
+    if (!rtor->have_notifier)
+        return;
+
+    /*
+     * This function is called when we have done anything on this thread which
+     * might allow a predicate for a block_until_pred call on another thread to
+     * now be met.
+     *
+     * When this happens, we need to wake those threads using the notifier.
+     * However, we do not want to wake *this* thread (if/when it subsequently
+     * enters block_until_pred) due to the notifier FD becoming readable.
+     * Therefore, signal the notifier, and use a CV to detect when all other
+     * threads have woken.
+     */
+
+   if (rtor->cur_blocking_waiters == 0)
+       /* Nothing to do in this case. */
+       return;
+
+   /* Signal the notifier to wake up all threads. */
+   if (!rtor->signalled_notifier) {
+       ossl_rio_notifier_signal(&rtor->notifier);
+       rtor->signalled_notifier = 1;
+   }
+
+   /*
+    * Wait on the CV until all threads have finished the first phase of the
+    * wakeup process and the last thread out has taken responsibility for
+    * unsignalling the notifier.
+    */
+    while (rtor->signalled_notifier)
+        ossl_crypto_condvar_wait(rtor->notifier_cv, rtor->mutex);
+}
+
+/*
+2026-06-16 14:12:40,042 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 8
+2026-06-16 14:12:40,042 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:12:40,512 - root - [INFO] - logging.py:31 - log_time - Took 0.47s
+2026-06-16 14:12:40,522 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'find . -name "*quic_reactor*" ' (timeout=120)
+2026-06-16 14:12:40,522 - root - [DEBUG] - des_container.py:308 - command - DES command: 'find . -name "*quic_reactor*" -type f\n'
+2026-06-16 14:12:42,143 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: ./include/internal/quic_reactor.h
+./include/internal/quic_reactor_wait_ctx.h
+./ssl/quic/quic_reactor.c
+./ssl/quic/quic_reactor_wait_ctx.c
+2026-06-16 14:12:42,143 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 9
+2026-06-16 14:12:42,143 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:12:42,490 - root - [INFO] - logging.py:31 - log_time - Took 0.35s
+2026-06-16 14:12:42,497 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cat include/internal/quic_reac' (timeout=120)
+2026-06-16 14:12:42,498 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cat include/internal/quic_reactor.h\n'
+2026-06-16 14:12:44,181 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /*
+ * Copyright 2022-2025 The OpenSSL Project Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License 2.0 (the "License").  You may not use
+ * this file except in compliance with the License.  You can obtain a copy
+ * in the file LICENSE in the source distribution or at
+ * https://www.openssl.org/source/license.html
+ */
+#ifndef OSSL_QUIC_REACTOR_H
+# define OSSL_QUIC_REACTOR_H
+
+# include "internal/time.h"
+# include "internal/sockets.h"
+# include "internal/quic_predef.h"
+# include "internal/thread_arch.h"
+# include "internal/rio_notifier.h"
+# include <openssl/bio.h>
+
+# ifndef OPENSSL_NO_QUIC
+
+/*
+ * Core I/O Reactor Framework
+ * ==========================
+ *
+ * Manages use of async network I/O which the QUIC stack is built on. The core
+ * mechanic looks like this:
+ *
+ *   - There is a pollable FD for both the read and write side respectively.
+ *     Readability and writeability of these FDs respectively determines when
+ *     network I/O is available.
+ *
+ *   - The reactor can export these FDs to the user, as well as flags indicating
+ *     whether the user should listen for readability, writeability, or neither.
+ *
+ *   - The reactor can export a timeout indication to the user, indicating when
+ *     the reactor should be called (via libssl APIs) regardless of whether
+ *     the network socket has become ready.
+ *
+ * The reactor is based around a tick callback which is essentially the mutator
+ * function. The mutator attempts to do whatever it can, attempting to perform
+ * network I/O to the extent currently feasible. When done, the mutator returns
+ * information to the reactor indicating when it should be woken up again:
+ *
+ *   - Should it be woken up when network RX is possible?
+ *   - Should it be woken up when network TX is possible?
+ *   - Should it be woken up no later than some deadline X?
+ *
+ * The intention is that ALL I/O-related SSL_* functions with side effects (e.g.
+ * SSL_read/SSL_write) consist of three phases:
+ *
+ *   - Optionally mutate the QUIC machine's state.
+ *   - Optionally tick the QUIC reactor.
+ *   - Optionally mutate the QUIC machine's state.
+ *
+ * For example, SSL_write is a mutation (appending to a stream buffer) followed
+ * by an optional tick (generally expected as we may want to send the data
+ * immediately, though not strictly needed if transmission is being deferred due
+ * to Nagle's algorithm, etc.).
+ *
+ * SSL_read is also a mutation and in principle does not need to tick the
+ * reactor, but it generally will anyway to ensure that the reactor is regularly
+ * ticked by an application which is only reading and not writing.
+ *
+ * If the SSL object is being used in blocking mode, SSL_read may need to block
+ * if no data is available yet, and SSL_write may need to block if buffers
+ * are full.
+ *
+ * The internals of the QUIC I/O engine always use asynchronous I/O. If the
+ * application desires blocking semantics, we handle this by adding a blocking
+ * adaptation layer on top of our internal asynchronous I/O API as exposed by
+ * the reactor interface.
+ */
+struct quic_tick_result_st {
+    OSSL_TIME   tick_deadline;
+    char        net_read_desired;
+    char        net_write_desired;
+    char        notify_other_threads;
+};
+
+static ossl_inline ossl_unused void
+ossl_quic_tick_result_merge_into(QUIC_TICK_RESULT *r,
+                                 const QUIC_TICK_RESULT *src)
+{
+    r->net_read_desired     = r->net_read_desired  || src->net_read_desired;
+    r->net_write_desired    = r->net_write_desired || src->net_write_desired;
+    r->notify_other_threads = r->notify_other_threads || src->notify_other_threads;
+    r->tick_deadline        = ossl_time_min(r->tick_deadline, src->tick_deadline);
+}
+
+struct quic_reactor_st {
+    /*
+     * BIO poll descriptors which can be polled. poll_r is a poll descriptor
+     * which becomes readable when the QUIC state machine can potentially do
+     * work, and poll_w is a poll descriptor which becomes writable when the
+     * QUIC state machine can potentially do work. Generally, either of these
+     * conditions means that SSL_tick() should be called, or another SSL
+     * function which implicitly calls SSL_tick() (e.g. SSL_read/SSL_write()).
+     */
+    BIO_POLL_DESCRIPTOR poll_r, poll_w;
+    OSSL_TIME tick_deadline; /* ossl_time_infinite() if none currently applicable */
+
+    void (*tick_cb)(QUIC_TICK_RESULT *res, void *arg, uint32_t flags);
+    void *tick_cb_arg;
+
+    /* The mutex used for ticking. Not owned by the reactor. */
+    CRYPTO_MUTEX *mutex;
+
+    /* Used to notify other threads. Valid only if have_notifier is set. */
+    RIO_NOTIFIER notifier;
+
+    /*
+     * Condvar to assist synchronising use of the notifier. Valid only if
+     * have_notifier is set.
+     */
+    CRYPTO_CONDVAR *notifier_cv;
+
+    /*
+     * Count of the current number of blocking waiters. Like everything else,
+     * this is protected by the caller's mutex (i.e., the engine mutex).
+     */
+    size_t cur_blocking_waiters;
+
+    /*
+     * These are true if we would like to know when we can read or write from
+     * the network respectively.
+     */
+    unsigned int net_read_desired   : 1;
+    unsigned int net_write_desired  : 1;
+
+    /*
+     * Are the read and write poll descriptors we are currently configured with
+     * things we can actually poll?
+     */
+    unsigned int can_poll_r : 1;
+    unsigned int can_poll_w : 1;
+
+    /* 1 if notifier is present and initialised. */
+    unsigned int have_notifier : 1;
+
+    /* 1 if a block_until_pred call has put the notifier in the signalled state. */
+    unsigned int signalled_notifier : 1;
+};
+
+/* Create an OS notifier? */
+#define QUIC_REACTOR_FLAG_USE_NOTIFIER      (1U << 0)
+
+int ossl_quic_reactor_init(QUIC_REACTOR *rtor,
+                           void (*tick_cb)(QUIC_TICK_RESULT *res, void *arg,
+                                           uint32_t flags),
+                           void *tick_cb_arg,
+                           CRYPTO_MUTEX *mutex,
+                           OSSL_TIME initial_tick_deadline,
+                           uint64_t flags);
+
+void ossl_quic_reactor_cleanup(QUIC_REACTOR *rtor);
+
+void ossl_quic_reactor_set_poll_r(QUIC_REACTOR *rtor,
+                                  const BIO_POLL_DESCRIPTOR *r);
+
+void ossl_quic_reactor_set_poll_w(QUIC_REACTOR *rtor,
+                                  const BIO_POLL_DESCRIPTOR *w);
+
+const BIO_POLL_DESCRIPTOR *ossl_quic_reactor_get_poll_r(const QUIC_REACTOR *rtor);
+const BIO_POLL_DESCRIPTOR *ossl_quic_reactor_get_poll_w(const QUIC_REACTOR *rtor);
+
+int ossl_quic_reactor_can_poll_r(const QUIC_REACTOR *rtor);
+int ossl_quic_reactor_can_poll_w(const QUIC_REACTOR *rtor);
+
+int ossl_quic_reactor_can_support_poll_descriptor(const QUIC_REACTOR *rtor,
+                                                  const BIO_POLL_DESCRIPTOR *d);
+
+int ossl_quic_reactor_net_read_desired(QUIC_REACTOR *rtor);
+int ossl_quic_reactor_net_write_desired(QUIC_REACTOR *rtor);
+
+OSSL_TIME ossl_quic_reactor_get_tick_deadline(QUIC_REACTOR *rtor);
+
+/*
+ * Do whatever work can be done, and as much work as can be done. This involves
+ * e.g. seeing if we can read anything from the network (if we want to), seeing
+ * if we can write anything to the network (if we want to), etc.
+ *
+ * If the CHANNEL_ONLY flag is set, this indicates that we should only
+ * touch state which is synchronised by the channel mutex.
+ */
+#define QUIC_REACTOR_TICK_FLAG_CHANNEL_ONLY  (1U << 0)
+
+int ossl_quic_reactor_tick(QUIC_REACTOR *rtor, uint32_t flags);
+
+RIO_NOTIFIER *ossl_quic_reactor_get0_notifier(QUIC_REACTOR *rtor);
+
+/*
+ * Blocking I/O Adaptation Layer
+ * =============================
+ *
+ * The blocking I/O adaptation layer implements blocking I/O on top of our
+ * asynchronous core.
+ */
+
+/*
+ * ossl_quic_reactor_block_until_pred
+ * ----------------------------------
+ *
+ * The core mechanism of the Blocking I/O Adaption Layer is block_until_pred(),
+ * which does not return until pred() returns a value other than 0. The blocker
+ * uses OS I/O synchronisation primitives (e.g. poll(2)) and ticks the reactor
+ * until the predicate is satisfied. The blocker is not required to call pred()
+ * more than once between tick calls.
+ *
+ * When pred returns a non-zero value, that value is returned by this function.
+ * This can be used to allow pred() to indicate error conditions and short
+ * circuit the blocking process.
+ *
+ * A return value of -1 is reserved for network polling errors. Therefore this
+ * return value should not be used by pred() if ambiguity is not desired. Note
+ * that the predicate function can always arrange its own output mechanism, for
+ * example by passing a structure of its own as the argument.
+ *
+ * If the SKIP_FIRST_TICK flag is set, the first call to reactor_tick() before
+ * the first call to pred() is skipped. This is useful if it is known that
+ * ticking the reactor again will not be useful (e.g. because it has already
+ * been done).
+ *
+ * This function assumes a write lock is held for the entire QUIC_CHANNEL. If
+ * mutex is non-NULL, it must be a lock currently held for write; it will be
+ * unlocked during any sleep, and then relocked for write afterwards.
+ *
+ * This function must not be called by a thread currently using
+ * ossl_quic_reactor_(enter/leave)_blocking_section() as this function also uses
+ * those functions (see below); it is assumed if a caller is using those
+ * functions it is implementing blocking semantics itself. There is no need to
+ * use those functions if using this function.
+ *
+ * Precondition:   If a reactor mutex is being used, it must be held (unchecked)
+ * Postcondition:  If a reactor mutex is being used, it is held
+ * Invariant:      The current thread does not have an outstanding
+ *                   ossl_quic_reactor_enter_blocking_section() call (unchecked)
+ */
+#define SKIP_FIRST_TICK     (1U << 0)
+
+int ossl_quic_reactor_block_until_pred(QUIC_REACTOR *rtor,
+                                       int (*pred)(void *arg), void *pred_arg,
+                                       uint32_t flags);
+
+/*
+ * ossl_quic_reactor_(enter/leave)_blocking_section
+ * ------------------------------------------------
+ *
+ * This is used by blocking code outside of the reactor itself to inform the
+ * reactor of when a thread begins or ends a blocking call. This is used by the
+ * reactor so it knows if a tick means other threads might need to be woken up
+ * via the notifier. The reactor mutex must be held while calling these
+ * functions.
+ *
+ * The number of 'active' calls to these functions (i.e., the number of enter
+ * calls which have yet to be matched with a subsequent leave call) must *at all
+ * times* equal the number of threads blocking on the reactor. In other words, a
+ * single thread is not permitted to use these functions "recursively". Failing
+ * to adhere to this rule will result in deadlock.
+ *
+ * This means that if a caller has the concept of multiple concurrent blocking
+ * calls on the same thread on the same reactor (which may occur in some
+ * SSL_poll-related circumstances) it must do its own housekeeping to ensure it
+ * only calls enter() once. See quic_reactor_wait_ctx.h for a utility which can
+ * be used to accomplish this.
+ *
+ * ossl_quic_reactor_enter_blocking_section:
+ *   Precondition:   The current thread does not have an outstanding
+ *                     ossl_quic_reactor_enter_blocking_section() call (unchecked)
+ *   Postcondition:  The current thread has an outstanding
+ *                     ossl_quic_reactor_enter_blocking_section() call
+ *
+ * ossl_quic_reactor_leave_blocking_section:
+ *   Precondition:   The current thread has an outstanding
+ *                     ossl_quic_reactor_enter_blocking_section() call (unchecked)
+ *   Postcondition:  The current thread does not have an outstanding
+ *                     ossl_quic_reactor_enter_blocking_section() call
+ *
+ */
+void ossl_quic_reactor_enter_blocking_section(QUIC_REACTOR *rtor);
+void ossl_quic_reactor_leave_blocking_section(QUIC_REACTOR *rtor);
+
+# endif
+
+#endif
+2026-06-16 14:12:44,181 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 10
+2026-06-16 14:12:44,181 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:12:44,738 - root - [INFO] - logging.py:31 - log_time - Took 0.56s
+2026-06-16 14:12:44,742 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'find . -name "*rio_notifier*" ' (timeout=120)
+2026-06-16 14:12:44,742 - root - [DEBUG] - des_container.py:308 - command - DES command: 'find . -name "*rio_notifier*" -type f\n'
+2026-06-16 14:12:46,238 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: ./include/internal/rio_notifier.h
+./ssl/rio/rio_notifier.c
+2026-06-16 14:12:46,238 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 11
+2026-06-16 14:12:46,238 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:12:46,690 - root - [INFO] - logging.py:31 - log_time - Took 0.45s
+2026-06-16 14:12:46,707 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cat include/internal/rio_notif' (timeout=120)
+2026-06-16 14:12:46,707 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cat include/internal/rio_notifier.h\n'
+2026-06-16 14:13:03,982 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /*
+ * Copyright 2024-2025 The OpenSSL Project Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License 2.0 (the "License").  You may not use
+ * this file except in compliance with the License.  You can obtain a copy
+ * in the file LICENSE in the source distribution or at
+ * https://www.openssl.org/source/license.html
+ */
+#ifndef OSSL_RIO_NOTIFIER_H
+# define OSSL_RIO_NOTIFIER_H
+
+# include "internal/common.h"
+# include "internal/sockets.h"
+
+/*
+ * Pollable Notifier
+ * =================
+ *
+ * RIO_NOTIFIER provides an OS-pollable resource which can be plugged into an
+ * OS's socket polling APIs to allow socket polling calls to be woken
+ * artificially by other threads.
+ */
+# define RIO_NOTIFIER_METHOD_SOCKET      1
+# define RIO_NOTIFIER_METHOD_SOCKETPAIR  2
+
+# if !defined(RIO_NOTIFIER_METHOD)
+#  if defined(OPENSSL_SYS_WINDOWS)
+#   define RIO_NOTIFIER_METHOD          RIO_NOTIFIER_METHOD_SOCKET
+#  elif defined(OPENSSL_SYS_UNIX)
+#   define RIO_NOTIFIER_METHOD          RIO_NOTIFIER_METHOD_SOCKETPAIR
+#  else
+#   define RIO_NOTIFIER_METHOD          RIO_NOTIFIER_METHOD_SOCKET
+#  endif
+# endif
+
+typedef struct rio_notifier_st {
+    int rfd, wfd;
+} RIO_NOTIFIER;
+
+/*
+ * Initialises a RIO_NOTIFIER. Returns 1 on success or 0 on failure.
+ */
+int ossl_rio_notifier_init(RIO_NOTIFIER *nfy);
+
+/*
+ * Cleans up a RIO_NOTIFIER, tearing down any allocated resources.
+ */
+void ossl_rio_notifier_cleanup(RIO_NOTIFIER *nfy);
+
+/*
+ * Signals a RIO_NOTIFIER, waking up any waiting threads.
+ */
+int ossl_rio_notifier_signal(RIO_NOTIFIER *nfy);
+
+/*
+ * Unsignals a RIO_NOTIFIER.
+ */
+int ossl_rio_notifier_unsignal(RIO_NOTIFIER *nfy);
+
+/*
+ * Returns an OS socket handle (FD or Win32 SOCKET) which can be polled for
+ * readability to determine when the notifier has been signalled.
+ */
+static ossl_inline ossl_unused int ossl_rio_notifier_as_fd(RIO_NOTIFIER *nfy)
+{
+    return nfy->rfd;
+}
+
+#endif
+2026-06-16 14:13:03,983 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 12
+2026-06-16 14:13:03,983 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 14:13:09,382 - root - [INFO] - logging.py:31 - log_time - Took 5.40s
+2026-06-16 14:13:09,387 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'submit_prediction \'{"function_' (timeout=120)
+2026-06-16 14:13:09,387 - root - [DEBUG] - des_container.py:308 - command - DES command: 'submit_prediction \'{"function_name": "rtor_notify_other_threads", "file_path": "'
+2026-06-16 14:13:10,739 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: !!submit!!
+{"function_name": "rtor_notify_other_threads", "file_path": "ssl/quic/quic_reactor.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function uses proper synchronization with condition variables and mutexes, ensuring it will always terminate when other threads complete their blocking sections."}
+SUBMISSION_COMPLETE
+2026-06-16 14:13:10,739 - root - [INFO] - forager_base.py:408 - start_trajectory - Success regex matched in environment output: SUBMISSION_COMPLETE
+2026-06-16 14:13:10,739 - root - [INFO] - forager_locate_function_code_and_dep.py:51 - extract_submission - Found !!submit!! marker in environ item
+2026-06-16 14:13:10,739 - root - [DEBUG] - forager_locate_function_code_and_dep.py:52 - extract_submission - Item output: !!submit!!
+{"function_name": "rtor_notify_other_threads", "file_path": "ssl/quic/quic_reactor.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function uses proper synchronization with condition variables and mutexes, ensuring it will always terminate when other threads complete their blocking sections."}
+SUBMISSION_COMPLETE
+2026-06-16 14:13:10,740 - root - [INFO] - forager_locate_function_code_and_dep.py:80 - extract_submission - Matched JSON string: {"function_name": "rtor_notify_other_threads", "file_path": "ssl/quic/quic_reactor.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function uses proper synchronization with condition variables and mutexes, ensuring it will always terminate when other threads complete their blocking sections."}
+2026-06-16 14:13:10,740 - root - [INFO] - forager_locate_function_code_and_dep.py:82 - extract_submission - Extracted submission from environ: {'function_name': 'rtor_notify_other_threads', 'file_path': 'ssl/quic/quic_reactor.c', 'prediction': 'T', 'p_non_terminating': 0, 'confidence': 'high', 'reason': 'Function uses proper synchronization with condition variables and mutexes, ensuring it will always terminate when other threads complete their blocking sections.'}
+2026-06-16 14:13:10,740 - root - [INFO] - forager_locate_function_code_and_dep.py:162 - process_run - Submission validation: {'correct_function_name': True, 'correct_path': True, 'provided_prediction': True}
+2026-06-16 14:13:10,740 - root - [INFO] - forager_locate_function_code_and_dep.py:326 - run - All validation checks passed
+2026-06-16 14:13:10,740 - root - [INFO] - forager_locate_function_code_and_dep.py:347 - run - Run completed with outcome: success
+2026-06-16 14:13:10,747 - root - [INFO] - des_container.py:428 - shutdown - Shutting down DES container 344cba1c86a0d2369c06c1cf5146df4ec9b47447ae20cfd9cd9d17695fe2201d
+2026-06-16 14:13:10,748 - root - [INFO] - des_container.py:576 - _heartbeat_loop - VMVM heartbeat thread exiting
+2026-06-16 14:13:38,926 - root - [INFO] - des_container.py:228 - release_vm - Releasing VMVM session {"vmvm_session":{"id":"019ed0c1-7fb0-7e81-a704-0e9da464f016","ipAddr":"2803:6080:20b8:4bfb:d167:ec16:500:0","vaagentPort":18001,"vmPort":16195,"vaagentHostname":"twshared49104.32.atn1.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|16121806539984002760|0|faas.3C4951A9F8EA0C1585FDA2490A981385|7472645076701619189","tw_task_handle":"tsp_atn/faas/workerpool_crackerjack_prod_bgm_ces_tier_1/577","region_shortname":"atn"},"auth_token":{"paseto":"v4.public.eyJuYmYiOiIyMDI2LTA2LTE2VDE0OjA2OjQ3WiIsInN1YiI6IjAxOWVkMGMxLTdmYjAtN2U4MS1hNzA0LTBlOWRhNDY0ZjAxNiIsImV4cCI6IjIwMjYtMDYtMTdUMTQ6MDY6NDdaIiwiaWF0IjoiMjAyNi0wNi0xNlQxNDowNjo0Ny4zNDk2Nzc5OTUrMDA6MDAifSKZnM78QeHWRnBLDcGb8EguW1RiEqagHOti4etHbDOuWgMjJTVA1PrXaMLz7jYsO-gtdbCqqKoRTSvLRWEzSgs.eyJpcCI6IjI4MDM6NjA4MDoyMGI4OjRiZmI6ZDE2NzplYzE2OjUwMDowIiwicG9ydCI6IjE2MTk1IiwidGVuYW50IjoiYXN5bmNfMjM0NzY0MSIsImZhYXNfaW52b2NhdGlvbl9pZCI6IjR8Z2xvYmFsfGFzeW5jXzIzNDc2NDF8ZGVzX2dlbmVyYWxfdGllcl9wcm9kfDE2MTIxODA2NTM5OTg0MDAyNzYwfDB8ZmFhcy4zQzQ5NTFBOUY4RUEwQzE1ODVGREEyNDkwQTk4MTM4NXw3NDcyNjQ1MDc2NzAxNjE5MTg5In0"}}
+2026-06-16 14:13:44,132 - root - [INFO] - des_container.py:238 - release_vm - VMVM session released
+2026-06-16 14:13:44,133 - root - [INFO] - run.py:224 - repo_task - Finishing repo: openssl_7b4a5642_ssl_quic_quic_reactor_c_rtor_notify_other_threads_1

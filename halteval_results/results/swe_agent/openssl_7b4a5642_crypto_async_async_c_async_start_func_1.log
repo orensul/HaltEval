@@ -1,0 +1,788 @@
+2026-06-16 13:48:26,236 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=UNKNOWN_NAME
+2026-06-16 13:48:26,236 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=run
+2026-06-16 13:48:26,408 - root - [INFO] - run.py:148 - repo_task - Model: VllmModel
+2026-06-16 13:48:26,443 - root - [INFO] - run.py:158 - repo_task - Agent: ForagerAgentLocateFunctionCodeAndDep
+2026-06-16 13:48:26,443 - root - [INFO] - run.py:172 - repo_task - Using VMVMBackend, image=vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest
+2026-06-16 13:48:26,443 - root - [INFO] - des_container.py:76 - lease_vm - Leasing VM with client-id=openssl_7b4a5642_crypto_async_async_c_async_start_func_1, ttl_secs=500
+2026-06-16 13:48:27,687 - root - [INFO] - des_container.py:87 - lease_vm - VM leased in 1.24s: session_id={"vmvm_session":{"id":"019ed0b0-be6a-7c02-8ad1-3fbc34add4ca","ipAddr":"2803:6084:9034:7cda:a7f4:1518:500:0","vaagentPort":20867,"vmPort":16507,"vaagentHostname":"twshared66707.01.nha6.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|16121806539984002760|0|faas.35418254BE830084CA142C2685F7D4BF|7472645287638644454","tw_task_handle":"tsp_nha/faas/workerpool_crackerjack_prod_bgm_ces_tier_1/694","region_shortname":"nha"},"auth_token":{"paseto":"v4.public.eyJleHAiOiIyMDI2LTA2LTE3VDEzOjQ4OjI3WiIsIm5iZiI6IjIwMjYtMDYtMTZUMTM6NDg6MjdaIiwiaWF0IjoiMjAyNi0wNi0xNlQxMzo0ODoyNy41MDk0NjI0MzcrMDA6MDAiLCJzdWIiOiIwMTllZDBiMC1iZTZhLTdjMDItOGFkMS0zZmJjMzRhZGQ0Y2EifYYhLzY9BI2-PGanj4Cgiexmw-svUpGMPM2G1FnCq8p_Wcejy2F7SjdwSt4Q2uccNIoVgIKOCzdZdceuF46rEQI.eyJpcCI6IjI4MDM6NjA4NDo5MDM0OjdjZGE6YTdmNDoxNTE4OjUwMDowIiwiZmFhc19pbnZvY2F0aW9uX2lkIjoiNHxnbG9iYWx8YXN5bmNfMjM0NzY0MXxkZXNfZ2VuZXJhbF90aWVyX3Byb2R8MTYxMjE4MDY1Mzk5ODQwMDI3NjB8MHxmYWFzLjM1NDE4MjU0QkU4MzAwODRDQTE0MkMyNjg1RjdENEJGfDc0NzI2NDUyODc2Mzg2NDQ0NTQiLCJwb3J0IjoiMTY1MDciLCJ0ZW5hbnQiOiJhc3luY18yMzQ3NjQxIn0"}}
+2026-06-16 13:48:27,687 - root - [INFO] - des_container.py:195 - load_image - Pulling image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest on VMVM
+2026-06-16 13:50:20,287 - root - [INFO] - des_container.py:203 - load_image - Image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest pulled successfully
+2026-06-16 13:50:21,764 - root - [INFO] - des_container.py:221 - run_container - Container started: 8bf758349ef1bae22611cbf41d02b745c03b203691f63bb11b05897c9e36332f
+2026-06-16 13:50:21,764 - root - [INFO] - des_container.py:565 - _heartbeat_loop - VMVM heartbeat thread started
+2026-06-16 13:50:21,790 - root - [INFO] - forager_locate_function_code_and_dep.py:294 - run - Starting analysis for async_start_func in crypto/async/async.c
+2026-06-16 13:50:21,790 - root - [INFO] - forager_locate_function_code_and_dep.py:208 - prepare_cpp_container - ========== Preparing C++ container ==========
+2026-06-16 13:50:21,790 - root - [DEBUG] - forager_locate_function_code_and_dep.py:211 - prepare_cpp_container - Setting up env variables
+2026-06-16 13:50:21,790 - root - [DEBUG] - des_container.py:308 - command - DES command: 'export WINDOW=100 && export OVERLAP=2 && export CURRENT_LINE=0 && export CURRENT'
+2026-06-16 13:50:23,476 - root - [DEBUG] - forager_locate_function_code_and_dep.py:220 - prepare_cpp_container - Importing agent tools in container
+2026-06-16 13:50:41,273 - root - [DEBUG] - des_container.py:385 - put - DES put: 6243 bytes to /opt/tools/defaults.sh
+2026-06-16 13:51:19,575 - root - [DEBUG] - des_container.py:308 - command - DES command: 'source /opt/tools/defaults.sh'
+2026-06-16 13:51:22,393 - root - [DEBUG] - des_container.py:385 - put - DES put: 5735 bytes to /opt/tools/search.sh
+2026-06-16 13:51:44,660 - root - [DEBUG] - des_container.py:308 - command - DES command: 'source /opt/tools/search.sh'
+2026-06-16 13:52:03,666 - root - [DEBUG] - des_container.py:308 - command - DES command: 'export PATH=/opt/tools:$PATH'
+2026-06-16 13:52:05,323 - root - [INFO] - forager_locate_function_code_and_dep.py:225 - prepare_cpp_container - Uploading submit_prediction command
+2026-06-16 13:52:05,323 - root - [DEBUG] - des_container.py:385 - put - DES put: 74 bytes to /usr/local/bin/submit_prediction
+2026-06-16 13:52:11,485 - root - [DEBUG] - des_container.py:308 - command - DES command: 'chmod +x /usr/local/bin/submit_prediction'
+2026-06-16 13:52:13,022 - root - [DEBUG] - des_container.py:308 - command - DES command: "which submit_prediction || echo 'Not in PATH'"
+2026-06-16 13:52:14,396 - root - [INFO] - forager_locate_function_code_and_dep.py:237 - prepare_cpp_container - Script in PATH: /usr/local/bin/submit_prediction
+2026-06-16 13:52:14,396 - root - [DEBUG] - des_container.py:308 - command - DES command: "export GIT_AUTHOR_NAME='CI Bot' && export GIT_AUTHOR_EMAIL='ci-bot@yourdomain.co"
+2026-06-16 13:52:16,040 - root - [DEBUG] - forager_locate_function_code_and_dep.py:256 - prepare_cpp_container - Creating /workspace directory
+2026-06-16 13:52:16,040 - root - [DEBUG] - des_container.py:308 - command - DES command: 'mkdir -p /workspace'
+2026-06-16 13:52:17,379 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cd /workspace'
+2026-06-16 13:52:19,053 - root - [DEBUG] - forager_locate_function_code_and_dep.py:196 - _init_prompt - Task prompt:
+Your task is to predict whether the function `async_start_func` in the C++ file `crypto/async/async.c` will:
+- **Terminate** for all inputs, OR
+- **Diverge** for some inputs (enter a non-terminating loop)
+
+**Important:** This is a **read-only code analysis task**. You may only use shell commands to view files. Do not execute any C++ code or modify any files. Only use commands like `cat`, `grep`, `find`, `ls`, `cd`, `head`, `tail`, `git`, etc.
+
+## STEP 1: Clone the Repository
+
+First, clone the repository and checkout the specific commit:
+```bash
+git clone https://github.com/openssl/openssl /workspace/openssl && cd /workspace/openssl && git checkout 7b4a56420d1718809d73aa3adf53d3e6c3a2ee91
+```
+
+## STEP 2: Examine the Function
+
+Navigate to the repository and examine the function using read-only commands. Examples:
+```bash
+cd /workspace/openssl
+cat crypto/async/async.c                              # View the entire file
+grep -n "async_start_func" crypto/async/async.c    # Find the function's line number
+grep -A 50 "async_start_func" crypto/async/async.c # View the function plus 50 lines after (of course you can view more).
+```
+
+## STEP 3: Analyze Dependencies
+Important: The function may call other functions, use external types, or depend on macros defined elsewhere. You must examine these dependencies to fully understand the code's behavior.
+- Find and read helper functions called within the target function
+- Examine header files for type definitions and macros
+- Check struct/class definitions to understand data types
+- Trace function pointers to their implementations
+
+Finding dependencies:
+```bash
+grep -rn "function_name" /workspace/openssl/
+find . -name "*.h" | xargs grep "TypeName"
+cat path/to/header.h
+```
+
+## STEP 4: Classify the Function
+**"T" (Terminates)** - Function terminates for all possible inputs:
+- No blocking synchronization calls. All loops have reachable exit conditions. Loop variables progress correctly toward exit. Proper bounds checking and error handling
+**"NT" (Non-Termination)** - Designed to block or loop indefinitely (can be intentional by the user or a bug). Examples:
+- Thread synchronization primitives. Locks. Condition variables. Event loops or server loops that run until external signal.
+Worker thread functions waiting for tasks or termination signals.
+- Loop variable never modified or modified in wrong direction. `while(1)` or `for(;;)` without reachable `break` or `return`.
+Unbounded I/O operations without proper termination checks. Missing loop increment/decrement statements.
+
+## STEP 5: Submit Your Prediction
+
+When ready, submit your classification:
+```bash
+submit_prediction '{"function_name": "async_start_func", "file_path": "crypto/async/async.c", "prediction": "<T|NT>", "p_non_terminating": <0-100>, "confidence": "<high|medium|low>", "reason": "<one concise sentence>"}'
+```
+
+**Field definitions:**
+- `prediction`: "T" if the function terminates for all inputs, "NT" if it can loop/block indefinitely
+- `p_non_terminating`: integer 0–100 — your estimated probability (in %) that the function is non-terminating
+- `confidence`: "high" if the evidence is clear and unambiguous, "medium" if there is some uncertainty, "low" if the code is hard to fully trace or the behavior is unclear
+- `reason`: one concise sentence explaining the key factor driving your prediction
+
+**Guidelines:**
+- Execute one command per response in triple backticks
+- Read all relevant source and header files before making a prediction
+- Trace data flow to understand where loop bounds and conditions come from
+- Consider edge cases: zero values, type overflows, null pointers, EOF conditions
+- Only submit your prediction when you have thoroughly analyzed the code
+- Begin by cloning the repository
+2026-06-16 13:52:19,053 - root - [INFO] - forager_base.py:342 - start_trajectory - =========== Starting new trajectory ==========
+2026-06-16 13:52:19,053 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 1
+2026-06-16 13:52:19,053 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:52:20,254 - root - [INFO] - logging.py:31 - log_time - Took 1.20s
+2026-06-16 13:52:20,259 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'git clone https://github.com/o' (timeout=120)
+2026-06-16 13:52:20,259 - root - [DEBUG] - des_container.py:308 - command - DES command: 'git clone https://github.com/openssl/openssl /workspace/openssl && cd /workspace'
+2026-06-16 13:52:23,136 - root - [DEBUG] - des_container.py:572 - _heartbeat_loop - VMVM heartbeat sent
+2026-06-16 13:53:00,097 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 13:53:00,098 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 2
+2026-06-16 13:53:00,098 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:53:00,309 - root - [INFO] - logging.py:31 - log_time - Took 0.21s
+2026-06-16 13:53:00,312 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cd /workspace/openssl\n' (timeout=120)
+2026-06-16 13:53:00,313 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cd /workspace/openssl\n'
+2026-06-16 13:53:01,984 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-16 13:53:01,984 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 3
+2026-06-16 13:53:01,984 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:53:02,157 - root - [INFO] - logging.py:31 - log_time - Took 0.17s
+2026-06-16 13:53:02,168 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cat crypto/async/async.c\n' (timeout=120)
+2026-06-16 13:53:02,168 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cat crypto/async/async.c\n'
+2026-06-16 13:53:03,597 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /*
+ * Copyright 2015-2025 The OpenSSL Project Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License 2.0 (the "License").  You may not use
+ * this file except in compliance with the License.  You can obtain a copy
+ * in the file LICENSE in the source distribution or at
+ * https://www.openssl.org/source/license.html
+ */
+
+/*
+ * Without this we start getting longjmp crashes because it thinks we're jumping
+ * up the stack when in fact we are jumping to an entirely different stack. The
+ * cost of this is not having certain buffer overrun/underrun checks etc for
+ * this source file :-(
+ */
+#undef _FORTIFY_SOURCE
+
+/* This must be the first #include file */
+#include "async_local.h"
+#include "internal/threads_common.h"
+
+#include <openssl/err.h>
+#include "crypto/cryptlib.h"
+#include <string.h>
+
+#define ASYNC_JOB_RUNNING   0
+#define ASYNC_JOB_PAUSING   1
+#define ASYNC_JOB_PAUSED    2
+#define ASYNC_JOB_STOPPING  3
+
+static void async_delete_thread_state(void *arg);
+
+static async_ctx *async_ctx_new(void)
+{
+    async_ctx *nctx;
+
+    if (!ossl_init_thread_start(NULL, NULL, async_delete_thread_state))
+        return NULL;
+
+    nctx = OPENSSL_malloc(sizeof(*nctx));
+    if (nctx == NULL)
+        goto err;
+
+    async_fibre_init_dispatcher(&nctx->dispatcher);
+    nctx->currjob = NULL;
+    nctx->blocked = 0;
+    if (!CRYPTO_THREAD_set_local_ex(CRYPTO_THREAD_LOCAL_ASYNC_CTX_KEY,
+                                    CRYPTO_THREAD_NO_CONTEXT, nctx))
+        goto err;
+
+    return nctx;
+err:
+    OPENSSL_free(nctx);
+
+    return NULL;
+}
+
+async_ctx *async_get_ctx(void)
+{
+    return (async_ctx *)CRYPTO_THREAD_get_local_ex(CRYPTO_THREAD_LOCAL_ASYNC_CTX_KEY,
+                                                   CRYPTO_THREAD_NO_CONTEXT);
+}
+
+static int async_ctx_free(void)
+{
+    async_ctx *ctx;
+
+    ctx = async_get_ctx();
+
+    if (!CRYPTO_THREAD_set_local_ex(CRYPTO_THREAD_LOCAL_ASYNC_CTX_KEY,
+                                    CRYPTO_THREAD_NO_CONTEXT, NULL))
+        return 0;
+
+    OPENSSL_free(ctx);
+
+    return 1;
+}
+
+static ASYNC_JOB *async_job_new(void)
+{
+    ASYNC_JOB *job = NULL;
+
+    job = OPENSSL_zalloc(sizeof(*job));
+    if (job == NULL)
+        return NULL;
+
+    job->status = ASYNC_JOB_RUNNING;
+
+    return job;
+}
+
+static void async_job_free(ASYNC_JOB *job)
+{
+    if (job != NULL) {
+        OPENSSL_free(job->funcargs);
+        async_fibre_free(&job->fibrectx);
+        OPENSSL_free(job);
+    }
+}
+
+static ASYNC_JOB *async_get_pool_job(void) {
+    ASYNC_JOB *job;
+    async_pool *pool;
+
+    pool = (async_pool *)CRYPTO_THREAD_get_local_ex(CRYPTO_THREAD_LOCAL_ASYNC_POOL_KEY,
+                                                    CRYPTO_THREAD_NO_CONTEXT);
+    if (pool == NULL) {
+        /*
+         * Pool has not been initialised, so init with the defaults, i.e.
+         * no max size and no pre-created jobs
+         */
+        if (ASYNC_init_thread(0, 0) == 0)
+            return NULL;
+        pool = (async_pool *)CRYPTO_THREAD_get_local_ex(CRYPTO_THREAD_LOCAL_ASYNC_POOL_KEY,
+                                                        CRYPTO_THREAD_NO_CONTEXT);
+    }
+
+    job = sk_ASYNC_JOB_pop(pool->jobs);
+    if (job == NULL) {
+        /* Pool is empty */
+        if ((pool->max_size != 0) && (pool->curr_size >= pool->max_size))
+            return NULL;
+
+        job = async_job_new();
+        if (job != NULL) {
+            if (! async_fibre_makecontext(&job->fibrectx)) {
+                async_job_free(job);
+                return NULL;
+            }
+            pool->curr_size++;
+        }
+    }
+    return job;
+}
+
+static void async_release_job(ASYNC_JOB *job) {
+    async_pool *pool;
+
+    pool = (async_pool *)CRYPTO_THREAD_get_local_ex(CRYPTO_THREAD_LOCAL_ASYNC_POOL_KEY,
+                                                    CRYPTO_THREAD_NO_CONTEXT);
+    if (pool == NULL) {
+        ERR_raise(ERR_LIB_ASYNC, ERR_R_INTERNAL_ERROR);
+        return;
+    }
+    OPENSSL_free(job->funcargs);
+    job->funcargs = NULL;
+    sk_ASYNC_JOB_push(pool->jobs, job);
+}
+
+void async_start_func(void)
+{
+    ASYNC_JOB *job;
+    async_ctx *ctx = async_get_ctx();
+
+    if (ctx == NULL) {
+        ERR_raise(ERR_LIB_ASYNC, ERR_R_INTERNAL_ERROR);
+        return;
+    }
+    while (1) {
+        /* Run the job */
+        job = ctx->currjob;
+        job->ret = job->func(job->funcargs);
+
+        /* Stop the job */
+        job->status = ASYNC_JOB_STOPPING;
+        if (!async_fibre_swapcontext(&job->fibrectx,
+                                     &ctx->dispatcher, 1)) {
+            /*
+             * Should not happen. Getting here will close the thread...can't do
+             * much about it
+             */
+            ERR_raise(ERR_LIB_ASYNC, ASYNC_R_FAILED_TO_SWAP_CONTEXT);
+        }
+    }
+}
+
+int ASYNC_start_job(ASYNC_JOB **job, ASYNC_WAIT_CTX *wctx, int *ret,
+                    int (*func)(void *), void *args, size_t size)
+{
+    async_ctx *ctx;
+    OSSL_LIB_CTX *libctx;
+
+    if (!OPENSSL_init_crypto(OPENSSL_INIT_ASYNC, NULL))
+        return ASYNC_ERR;
+
+    ctx = async_get_ctx();
+    if (ctx == NULL)
+        ctx = async_ctx_new();
+    if (ctx == NULL)
+        return ASYNC_ERR;
+
+    if (*job != NULL)
+        ctx->currjob = *job;
+
+    for (;;) {
+        if (ctx->currjob != NULL) {
+            if (ctx->currjob->status == ASYNC_JOB_STOPPING) {
+                *ret = ctx->currjob->ret;
+                ctx->currjob->waitctx = NULL;
+                async_release_job(ctx->currjob);
+                ctx->currjob = NULL;
+                *job = NULL;
+                return ASYNC_FINISH;
+            }
+
+            if (ctx->currjob->status == ASYNC_JOB_PAUSING) {
+                *job = ctx->currjob;
+                ctx->currjob->status = ASYNC_JOB_PAUSED;
+                ctx->currjob = NULL;
+                return ASYNC_PAUSE;
+            }
+
+            if (ctx->currjob->status == ASYNC_JOB_PAUSED) {
+                if (*job == NULL)
+                    return ASYNC_ERR;
+                ctx->currjob = *job;
+
+                /*
+                 * Restore the default libctx to what it was the last time the
+                 * fibre ran
+                 */
+                libctx = OSSL_LIB_CTX_set0_default(ctx->currjob->libctx);
+                if (libctx == NULL) {
+                    /* Failed to set the default context */
+                    ERR_raise(ERR_LIB_ASYNC, ERR_R_INTERNAL_ERROR);
+                    goto err;
+                }
+                /* Resume previous job */
+                if (!async_fibre_swapcontext(&ctx->dispatcher,
+                        &ctx->currjob->fibrectx, 1)) {
+                    ctx->currjob->libctx = OSSL_LIB_CTX_set0_default(libctx);
+                    ERR_raise(ERR_LIB_ASYNC, ASYNC_R_FAILED_TO_SWAP_CONTEXT);
+                    goto err;
+                }
+                /*
+                 * In case the fibre changed the default libctx we set it back
+                 * again to what it was originally, and remember what it had
+                 * been changed to.
+                 */
+                ctx->currjob->libctx = OSSL_LIB_CTX_set0_default(libctx);
+                continue;
+            }
+
+            /* Should not happen */
+            ERR_raise(ERR_LIB_ASYNC, ERR_R_INTERNAL_ERROR);
+            async_release_job(ctx->currjob);
+            ctx->currjob = NULL;
+            *job = NULL;
+            return ASYNC_ERR;
+        }
+
+        /* Start a new job */
+        if ((ctx->currjob = async_get_pool_job()) == NULL)
+            return ASYNC_NO_JOBS;
+
+        if (args != NULL) {
+            ctx->currjob->funcargs = OPENSSL_malloc(size);
+            if (ctx->currjob->funcargs == NULL) {
+                async_release_job(ctx->currjob);
+                ctx->currjob = NULL;
+                return ASYNC_ERR;
+            }
+            memcpy(ctx->currjob->funcargs, args, size);
+        } else {
+            ctx->currjob->funcargs = NULL;
+        }
+
+        ctx->currjob->func = func;
+        ctx->currjob->waitctx = wctx;
+        libctx = ossl_lib_ctx_get_concrete(NULL);
+        if (!async_fibre_swapcontext(&ctx->dispatcher,
+                &ctx->currjob->fibrectx, 1)) {
+            ERR_raise(ERR_LIB_ASYNC, ASYNC_R_FAILED_TO_SWAP_CONTEXT);
+            goto err;
+        }
+        /*
+         * In case the fibre changed the default libctx we set it back again
+         * to what it was, and remember what it had been changed to.
+         */
+        ctx->currjob->libctx = OSSL_LIB_CTX_set0_default(libctx);
+    }
+
+err:
+    async_release_job(ctx->currjob);
+    ctx->currjob = NULL;
+    *job = NULL;
+    return ASYNC_ERR;
+}
+
+int ASYNC_pause_job(void)
+{
+    ASYNC_JOB *job;
+    async_ctx *ctx = async_get_ctx();
+
+    if (ctx == NULL
+            || ctx->currjob == NULL
+            || ctx->blocked) {
+        /*
+         * Could be we've deliberately not been started within a job so this is
+         * counted as success.
+         */
+        return 1;
+    }
+
+    job = ctx->currjob;
+    job->status = ASYNC_JOB_PAUSING;
+
+    if (!async_fibre_swapcontext(&job->fibrectx,
+                                 &ctx->dispatcher, 1)) {
+        ERR_raise(ERR_LIB_ASYNC, ASYNC_R_FAILED_TO_SWAP_CONTEXT);
+        return 0;
+    }
+    /* Reset counts of added and deleted fds */
+    async_wait_ctx_reset_counts(job->waitctx);
+
+    return 1;
+}
+
+static void async_empty_pool(async_pool *pool)
+{
+    ASYNC_JOB *job;
+
+    if (pool == NULL || pool->jobs == NULL)
+        return;
+
+    do {
+        job = sk_ASYNC_JOB_pop(pool->jobs);
+        async_job_free(job);
+    } while (job);
+}
+
+int async_init(void)
+{
+    return async_local_init();
+}
+
+void async_deinit(void)
+{
+    async_local_deinit();
+}
+
+int ASYNC_init_thread(size_t max_size, size_t init_size)
+{
+    async_pool *pool;
+    size_t curr_size = 0;
+
+    if (init_size > max_size || max_size > INT_MAX) {
+        ERR_raise(ERR_LIB_ASYNC, ASYNC_R_INVALID_POOL_SIZE);
+        return 0;
+    }
+
+    if (!OPENSSL_init_crypto(OPENSSL_INIT_ASYNC, NULL))
+        return 0;
+
+    if (!ossl_init_thread_start(NULL, NULL, async_delete_thread_state))
+        return 0;
+
+    pool = OPENSSL_zalloc(sizeof(*pool));
+    if (pool == NULL)
+        return 0;
+
+    pool->jobs = sk_ASYNC_JOB_new_reserve(NULL, (int)init_size);
+    if (pool->jobs == NULL) {
+        ERR_raise(ERR_LIB_ASYNC, ERR_R_CRYPTO_LIB);
+        OPENSSL_free(pool);
+        return 0;
+    }
+
+    pool->max_size = max_size;
+
+    /* Pre-create jobs as required */
+    while (init_size--) {
+        ASYNC_JOB *job;
+        job = async_job_new();
+        if (job == NULL || !async_fibre_makecontext(&job->fibrectx)) {
+            /*
+             * Not actually fatal because we already created the pool, just
+             * skip creation of any more jobs
+             */
+            async_job_free(job);
+            break;
+        }
+        job->funcargs = NULL;
+        sk_ASYNC_JOB_push(pool->jobs, job); /* Cannot fail due to reserve */
+        curr_size++;
+    }
+    pool->curr_size = curr_size;
+    if (!CRYPTO_THREAD_set_local_ex(CRYPTO_THREAD_LOCAL_ASYNC_POOL_KEY,
+                                    CRYPTO_THREAD_NO_CONTEXT, pool)) {
+        ERR_raise(ERR_LIB_ASYNC, ASYNC_R_FAILED_TO_SET_POOL);
+        goto err;
+    }
+
+    return 1;
+err:
+    async_empty_pool(pool);
+    sk_ASYNC_JOB_free(pool->jobs);
+    OPENSSL_free(pool);
+    return 0;
+}
+
+static void async_delete_thread_state(void *arg)
+{
+    async_pool *pool = (async_pool *)CRYPTO_THREAD_get_local_ex(CRYPTO_THREAD_LOCAL_ASYNC_POOL_KEY,
+                                                                CRYPTO_THREAD_NO_CONTEXT);
+
+    if (pool != NULL) {
+        async_empty_pool(pool);
+        sk_ASYNC_JOB_free(pool->jobs);
+        OPENSSL_free(pool);
+        CRYPTO_THREAD_set_local_ex(CRYPTO_THREAD_LOCAL_ASYNC_POOL_KEY,
+                                   CRYPTO_THREAD_NO_CONTEXT, NULL);
+    }
+    async_local_cleanup();
+    async_ctx_free();
+}
+
+void ASYNC_cleanup_thread(void)
+{
+    if (!OPENSSL_init_crypto(OPENSSL_INIT_ASYNC, NULL))
+        return;
+
+    async_delete_thread_state(NULL);
+}
+
+ASYNC_JOB *ASYNC_get_current_job(void)
+{
+    async_ctx *ctx;
+
+    if (!OPENSSL_init_crypto(OPENSSL_INIT_ASYNC, NULL))
+        return NULL;
+
+    ctx = async_get_ctx();
+    if (ctx == NULL)
+        return NULL;
+
+    return ctx->currjob;
+}
+
+ASYNC_WAIT_CTX *ASYNC_get_wait_ctx(ASYNC_JOB *job)
+{
+    return job->waitctx;
+}
+
+void ASYNC_block_pause(void)
+{
+    async_ctx *ctx;
+
+    if (!OPENSSL_init_crypto(OPENSSL_INIT_ASYNC, NULL))
+        return;
+
+    ctx = async_get_ctx();
+    if (ctx == NULL || ctx->currjob == NULL) {
+        /*
+         * We're not in a job anyway so ignore this
+         */
+        return;
+    }
+    ctx->blocked++;
+}
+
+void ASYNC_unblock_pause(void)
+{
+    async_ctx *ctx;
+
+    if (!OPENSSL_init_crypto(OPENSSL_INIT_ASYNC, NULL))
+        return;
+
+    ctx = async_get_ctx();
+    if (ctx == NULL || ctx->currjob == NULL) {
+        /*
+         * We're not in a job anyway so ignore this
+         */
+        return;
+    }
+    if (ctx->blocked > 0)
+        ctx->blocked--;
+}
+2026-06-16 13:53:03,597 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 4
+2026-06-16 13:53:03,597 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:53:03,992 - root - [INFO] - logging.py:31 - log_time - Took 0.39s
+2026-06-16 13:53:04,002 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -n "async_start_func" cry' (timeout=120)
+2026-06-16 13:53:04,002 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -n "async_start_func" crypto/async/async.c\n'
+2026-06-16 13:53:05,648 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 150:void async_start_func(void)
+2026-06-16 13:53:05,648 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 5
+2026-06-16 13:53:05,648 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:53:06,085 - root - [INFO] - logging.py:31 - log_time - Took 0.44s
+2026-06-16 13:53:06,090 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -A 20 "void async_start_f' (timeout=120)
+2026-06-16 13:53:06,090 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -A 20 "void async_start_func(void)" crypto/async/async.c\n'
+2026-06-16 13:53:07,543 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: void async_start_func(void)
+{
+    ASYNC_JOB *job;
+    async_ctx *ctx = async_get_ctx();
+
+    if (ctx == NULL) {
+        ERR_raise(ERR_LIB_ASYNC, ERR_R_INTERNAL_ERROR);
+        return;
+    }
+    while (1) {
+        /* Run the job */
+        job = ctx->currjob;
+        job->ret = job->func(job->funcargs);
+
+        /* Stop the job */
+        job->status = ASYNC_JOB_STOPPING;
+        if (!async_fibre_swapcontext(&job->fibrectx,
+                                     &ctx->dispatcher, 1)) {
+            /*
+             * Should not happen. Getting here will close the thread...can't do
+             * much about it
+2026-06-16 13:53:07,543 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 6
+2026-06-16 13:53:07,544 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:53:07,836 - root - [INFO] - logging.py:31 - log_time - Took 0.29s
+2026-06-16 13:53:07,843 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -rn "async_fibre_swapcont' (timeout=120)
+2026-06-16 13:53:07,844 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -rn "async_fibre_swapcontext" /workspace/openssl/\n'
+2026-06-16 13:53:25,703 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /workspace/openssl/crypto/async/arch/async_null.h:25:# define async_fibre_swapcontext(o,n,r)         0
+/workspace/openssl/crypto/async/arch/async_posix.h:31: * shadow stack for each context.  async_fibre_swapcontext cannot
+/workspace/openssl/crypto/async/arch/async_posix.h:67:static ossl_inline int async_fibre_swapcontext(async_fibre *o, async_fibre *n, int r)
+/workspace/openssl/crypto/async/arch/async_win.h:27:# define async_fibre_swapcontext(o,n,r) \
+/workspace/openssl/crypto/async/async.c:166:        if (!async_fibre_swapcontext(&job->fibrectx,
+/workspace/openssl/crypto/async/async.c:229:                if (!async_fibre_swapcontext(&ctx->dispatcher,
+/workspace/openssl/crypto/async/async.c:271:        if (!async_fibre_swapcontext(&ctx->dispatcher,
+/workspace/openssl/crypto/async/async.c:308:    if (!async_fibre_swapcontext(&job->fibrectx,
+2026-06-16 13:53:25,703 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 7
+2026-06-16 13:53:25,703 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:53:26,116 - root - [INFO] - logging.py:31 - log_time - Took 0.41s
+2026-06-16 13:53:26,119 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'find /workspace/openssl -name ' (timeout=120)
+2026-06-16 13:53:26,120 - root - [DEBUG] - des_container.py:308 - command - DES command: 'find /workspace/openssl -name "*.h" | xargs grep -l "async_fibre_swapcontext"\n'
+2026-06-16 13:53:44,752 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /workspace/openssl/crypto/async/arch/async_null.h
+/workspace/openssl/crypto/async/arch/async_posix.h
+/workspace/openssl/crypto/async/arch/async_win.h
+2026-06-16 13:53:44,752 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 8
+2026-06-16 13:53:44,752 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:53:44,982 - root - [INFO] - logging.py:31 - log_time - Took 0.23s
+2026-06-16 13:53:45,025 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cat crypto/async/arch/async_po' (timeout=120)
+2026-06-16 13:53:45,025 - root - [DEBUG] - des_container.py:308 - command - DES command: 'cat crypto/async/arch/async_posix.h\n'
+2026-06-16 13:53:47,451 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /*
+ * Copyright 2015-2024 The OpenSSL Project Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License 2.0 (the "License").  You may not use
+ * this file except in compliance with the License.  You can obtain a copy
+ * in the file LICENSE in the source distribution or at
+ * https://www.openssl.org/source/license.html
+ */
+
+#ifndef OSSL_CRYPTO_ASYNC_POSIX_H
+#define OSSL_CRYPTO_ASYNC_POSIX_H
+#include <openssl/e_os2.h>
+
+#if defined(OPENSSL_SYS_UNIX) \
+    && defined(OPENSSL_THREADS) && !defined(OPENSSL_NO_ASYNC) \
+    && !defined(__ANDROID__) && !defined(__OpenBSD__)
+
+# include <unistd.h>
+
+# if _POSIX_VERSION >= 200112L \
+    && (_POSIX_VERSION < 200809L || defined(__GLIBC__) || defined(__FreeBSD__))
+
+# include <pthread.h>
+
+#  define ASYNC_POSIX
+#  define ASYNC_ARCH
+
+#  if defined(__CET__) || defined(__ia64__)
+/*
+ * When Intel CET is enabled, makecontext will create a different
+ * shadow stack for each context.  async_fibre_swapcontext cannot
+ * use _longjmp.  It must call swapcontext to swap shadow stack as
+ * well as normal stack.
+ * On IA64 the register stack engine is not saved across setjmp/longjmp. Here
+ * swapcontext() performs correctly.
+ */
+#   define USE_SWAPCONTEXT
+#  endif
+#  if defined(__aarch64__) && defined(__clang__) \
+    && defined(__ARM_FEATURE_BTI_DEFAULT) && __ARM_FEATURE_BTI_DEFAULT == 1
+/*
+ * setjmp/longjmp don't currently work with BTI on all libc implementations
+ * when compiled by clang. This is because clang doesn't put a BTI after the
+ * call to setjmp where it returns the second time. This then fails on libc
+ * implementations - notably glibc - which use an indirect jump to there.
+ * So use the swapcontext implementation, which does work.
+ * See https://github.com/llvm/llvm-project/issues/48888.
+ */
+#   define USE_SWAPCONTEXT
+#  endif
+#  include <ucontext.h>
+#  ifndef USE_SWAPCONTEXT
+#   include <setjmp.h>
+#  endif
+
+typedef struct async_fibre_st {
+    ucontext_t fibre;
+#  ifndef USE_SWAPCONTEXT
+    jmp_buf env;
+    int env_init;
+#  endif
+} async_fibre;
+
+int async_local_init(void);
+void async_local_deinit(void);
+
+static ossl_inline int async_fibre_swapcontext(async_fibre *o, async_fibre *n, int r)
+{
+#  ifdef USE_SWAPCONTEXT
+    swapcontext(&o->fibre, &n->fibre);
+#  else
+    o->env_init = 1;
+
+    if (!r || !_setjmp(o->env)) {
+        if (n->env_init)
+            _longjmp(n->env, 1);
+        else
+            setcontext(&n->fibre);
+    }
+#  endif
+
+    return 1;
+}
+
+#  define async_fibre_init_dispatcher(d)
+
+int async_fibre_makecontext(async_fibre *fibre);
+void async_fibre_free(async_fibre *fibre);
+
+# endif
+#endif
+#endif /* OSSL_CRYPTO_ASYNC_POSIX_H */
+2026-06-16 13:53:47,451 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 9
+2026-06-16 13:53:47,451 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:53:47,931 - root - [INFO] - logging.py:31 - log_time - Took 0.48s
+2026-06-16 13:53:47,935 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -A 10 -B 5 "async_fibre_s' (timeout=120)
+2026-06-16 13:53:47,935 - root - [DEBUG] - des_container.py:308 - command - DES command: 'grep -A 10 -B 5 "async_fibre_swapcontext.*o.*n.*r" /workspace/openssl/crypto/asy'
+2026-06-16 13:53:51,220 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: } async_fibre;
+
+int async_local_init(void);
+void async_local_deinit(void);
+
+static ossl_inline int async_fibre_swapcontext(async_fibre *o, async_fibre *n, int r)
+{
+#  ifdef USE_SWAPCONTEXT
+    swapcontext(&o->fibre, &n->fibre);
+#  else
+    o->env_init = 1;
+
+    if (!r || !_setjmp(o->env)) {
+        if (n->env_init)
+            _longjmp(n->env, 1);
+        else
+2026-06-16 13:53:51,220 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 10
+2026-06-16 13:53:51,221 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-16 13:53:54,869 - root - [INFO] - logging.py:31 - log_time - Took 3.65s
+2026-06-16 13:53:54,874 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'submit_prediction \'{"function_' (timeout=120)
+2026-06-16 13:53:54,874 - root - [DEBUG] - des_container.py:308 - command - DES command: 'submit_prediction \'{"function_name": "async_start_func", "file_path": "crypto/as'
+2026-06-16 13:53:58,280 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: !!submit!!
+{"function_name": "async_start_func", "file_path": "crypto/async/async.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function uses cooperative multitasking with context switching and does not contain infinite loops that would prevent termination."}
+SUBMISSION_COMPLETE
+2026-06-16 13:53:58,281 - root - [INFO] - forager_base.py:408 - start_trajectory - Success regex matched in environment output: SUBMISSION_COMPLETE
+2026-06-16 13:53:58,281 - root - [INFO] - forager_locate_function_code_and_dep.py:51 - extract_submission - Found !!submit!! marker in environ item
+2026-06-16 13:53:58,281 - root - [DEBUG] - forager_locate_function_code_and_dep.py:52 - extract_submission - Item output: !!submit!!
+{"function_name": "async_start_func", "file_path": "crypto/async/async.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function uses cooperative multitasking with context switching and does not contain infinite loops that would prevent termination."}
+SUBMISSION_COMPLETE
+2026-06-16 13:53:58,281 - root - [INFO] - forager_locate_function_code_and_dep.py:80 - extract_submission - Matched JSON string: {"function_name": "async_start_func", "file_path": "crypto/async/async.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function uses cooperative multitasking with context switching and does not contain infinite loops that would prevent termination."}
+2026-06-16 13:53:58,281 - root - [INFO] - forager_locate_function_code_and_dep.py:82 - extract_submission - Extracted submission from environ: {'function_name': 'async_start_func', 'file_path': 'crypto/async/async.c', 'prediction': 'T', 'p_non_terminating': 0, 'confidence': 'high', 'reason': 'Function uses cooperative multitasking with context switching and does not contain infinite loops that would prevent termination.'}
+2026-06-16 13:53:58,281 - root - [INFO] - forager_locate_function_code_and_dep.py:162 - process_run - Submission validation: {'correct_function_name': True, 'correct_path': True, 'provided_prediction': True}
+2026-06-16 13:53:58,281 - root - [INFO] - forager_locate_function_code_and_dep.py:326 - run - All validation checks passed
+2026-06-16 13:53:58,281 - root - [INFO] - forager_locate_function_code_and_dep.py:347 - run - Run completed with outcome: success
+2026-06-16 13:53:58,286 - root - [INFO] - des_container.py:428 - shutdown - Shutting down DES container 8bf758349ef1bae22611cbf41d02b745c03b203691f63bb11b05897c9e36332f
+2026-06-16 13:53:58,286 - root - [INFO] - des_container.py:576 - _heartbeat_loop - VMVM heartbeat thread exiting
+2026-06-16 13:54:40,493 - root - [INFO] - des_container.py:228 - release_vm - Releasing VMVM session {"vmvm_session":{"id":"019ed0b0-be6a-7c02-8ad1-3fbc34add4ca","ipAddr":"2803:6084:9034:7cda:a7f4:1518:500:0","vaagentPort":20867,"vmPort":16507,"vaagentHostname":"twshared66707.01.nha6.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|16121806539984002760|0|faas.35418254BE830084CA142C2685F7D4BF|7472645287638644454","tw_task_handle":"tsp_nha/faas/workerpool_crackerjack_prod_bgm_ces_tier_1/694","region_shortname":"nha"},"auth_token":{"paseto":"v4.public.eyJleHAiOiIyMDI2LTA2LTE3VDEzOjQ4OjI3WiIsIm5iZiI6IjIwMjYtMDYtMTZUMTM6NDg6MjdaIiwiaWF0IjoiMjAyNi0wNi0xNlQxMzo0ODoyNy41MDk0NjI0MzcrMDA6MDAiLCJzdWIiOiIwMTllZDBiMC1iZTZhLTdjMDItOGFkMS0zZmJjMzRhZGQ0Y2EifYYhLzY9BI2-PGanj4Cgiexmw-svUpGMPM2G1FnCq8p_Wcejy2F7SjdwSt4Q2uccNIoVgIKOCzdZdceuF46rEQI.eyJpcCI6IjI4MDM6NjA4NDo5MDM0OjdjZGE6YTdmNDoxNTE4OjUwMDowIiwiZmFhc19pbnZvY2F0aW9uX2lkIjoiNHxnbG9iYWx8YXN5bmNfMjM0NzY0MXxkZXNfZ2VuZXJhbF90aWVyX3Byb2R8MTYxMjE4MDY1Mzk5ODQwMDI3NjB8MHxmYWFzLjM1NDE4MjU0QkU4MzAwODRDQTE0MkMyNjg1RjdENEJGfDc0NzI2NDUyODc2Mzg2NDQ0NTQiLCJwb3J0IjoiMTY1MDciLCJ0ZW5hbnQiOiJhc3luY18yMzQ3NjQxIn0"}}
+2026-06-16 13:54:59,894 - root - [INFO] - des_container.py:238 - release_vm - VMVM session released
+2026-06-16 13:54:59,894 - root - [INFO] - run.py:224 - repo_task - Finishing repo: openssl_7b4a5642_crypto_async_async_c_async_start_func_1
