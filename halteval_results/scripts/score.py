@@ -2,8 +2,8 @@
 """
 Evaluation metrics for halting-problem predictions.
 
-Primary metric : MCC  (Matthews Correlation Coefficient)
-Secondary      : Macro-F1, AUC-ROC (when p_non_terminating is available)
+Primary metric : AUC-ROC (from p_non_terminating; threshold- and prevalence-independent)
+Secondary      : MCC (Matthews Correlation Coefficient), Macro-F1
 
 Usage (run from the repo root):
     python scripts/score.py <predictions.jsonl> <ground_truth.csv>
@@ -170,16 +170,15 @@ def print_report(gt: dict, preds: list) -> None:
     total_tp = sum(tp.values())
 
     # ── Headline metrics ────────────────────────────────────────────────────
-    print(f"MCC      : {mcc(tp, fp, fn):.4f}   (primary metric; −1 = perfectly wrong, 0 = random, +1 = perfect)")
-
     auc = auc_roc(gt, preds)
     if auc is not None:
         n_scored = sum(1 for p in preds if p["p"] is not None
                        and (p["file_line"], p["function"]) in gt)
-        print(f"AUC-ROC  : {auc:.4f}   (from p_non_terminating scores, n={n_scored})")
+        print(f"AUC-ROC  : {auc:.4f}   (primary metric; from p_non_terminating scores, n={n_scored}; 0.5 = random, 1 = perfect)")
     else:
         print("AUC-ROC  : n/a   (no p_non_terminating field in predictions)")
 
+    print(f"MCC      : {mcc(tp, fp, fn):.4f}   (−1 = perfectly wrong, 0 = random, +1 = perfect)")
     print(f"Macro-F1 : {macro_f1:.4f}   (unweighted mean of NT and T F1)")
     if matched:
         print(f"Accuracy : {total_tp/matched:.4f}   ({total_tp}/{matched})")
