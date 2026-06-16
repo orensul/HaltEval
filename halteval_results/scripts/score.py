@@ -159,44 +159,48 @@ def auc_roc(gt: dict, preds: list) -> float | None:
 def print_report(gt: dict, preds: list) -> None:
     tp, fp, fn, matched, unmatched = confusion(gt, preds)
 
-    print(f"Predictions : {preds[0].get('_path', '')}") if preds else None
     print(f"Matched: {matched}  |  Unmatched (no ground truth): {unmatched}")
     print()
 
-    # ── MCC (primary) ───────────────────────────────────────────────────────
-    m = mcc(tp, fp, fn)
-    print(f"MCC  : {m:.4f}   (primary metric; −1 = perfectly wrong, 0 = random, +1 = perfect)")
-    print()
+    # Per-class precision / recall / F1, plus macro averages.
+    metrics  = {c: prf(tp[c], fp[c], fn[c]) for c in CLASSES}   # c -> (P, R, F1)
+    macro_p  = sum(v[0] for v in metrics.values()) / len(CLASSES)
+    macro_r  = sum(v[1] for v in metrics.values()) / len(CLASSES)
+    macro_f1 = sum(v[2] for v in metrics.values()) / len(CLASSES)
+    total_tp = sum(tp.values())
 
-    # ── AUC-ROC (if soft scores available) ─────────────────────────────────
+    # ── Headline metrics ────────────────────────────────────────────────────
+    print(f"MCC      : {mcc(tp, fp, fn):.4f}   (primary metric; −1 = perfectly wrong, 0 = random, +1 = perfect)")
+
     auc = auc_roc(gt, preds)
     if auc is not None:
         n_scored = sum(1 for p in preds if p["p"] is not None
                        and (p["file_line"], p["function"]) in gt)
-        print(f"AUC-ROC : {auc:.4f}   (from p_non_terminating scores, n={n_scored})")
+        print(f"AUC-ROC  : {auc:.4f}   (from p_non_terminating scores, n={n_scored})")
     else:
-        print("AUC-ROC : n/a   (no p_non_terminating field in predictions)")
+        print("AUC-ROC  : n/a   (no p_non_terminating field in predictions)")
+
+    print(f"Macro-F1 : {macro_f1:.4f}   (unweighted mean of NT and T F1)")
+    if matched:
+        print(f"Accuracy : {total_tp/matched:.4f}   ({total_tp}/{matched})")
     print()
 
-    # ── Per-class F1 (secondary) ────────────────────────────────────────────
-    col = 10
-    print(f"{'Class':<6} {'TP':>4} {'FP':>4} {'FN':>4} "
-          f"{'Precision':>{col}} {'Recall':>{col}} {'F1':>{col}}")
-    print("-" * (6 + 4 + 4 + 4 + col + col + col + 6))
+    # ── Per-class precision / recall / F1 ───────────────────────────────────
+    col    = 11
+    header = (f"{'Class':<16} {'TP':>4} {'FP':>4} {'FN':>4} "
+              f"{'Precision':>{col}} {'Recall':>{col}} {'F1':>{col}}")
+    rule   = "-" * len(header)
+    names  = {"NT": "NT (non-term)", "T": "T (terminating)"}
 
-    f1s = []
+    print(header)
+    print(rule)
     for c in CLASSES:
-        p_val, r_val, f1_val = prf(tp[c], fp[c], fn[c])
-        f1s.append(f1_val)
-        print(f"{c:<6} {tp[c]:>4} {fp[c]:>4} {fn[c]:>4} "
+        p_val, r_val, f1_val = metrics[c]
+        print(f"{names[c]:<16} {tp[c]:>4} {fp[c]:>4} {fn[c]:>4} "
               f"{p_val:>{col}.3f} {r_val:>{col}.3f} {f1_val:>{col}.3f}")
-
-    print("-" * (6 + 4 + 4 + 4 + col + col + col + 6))
-    total_tp = sum(tp.values())
-    print(f"{'macro':<6} {'':>4} {'':>4} {'':>4} "
-          f"{'':>{col}} {'':>{col}} {sum(f1s)/len(f1s):>{col}.3f}")
-    print()
-    print(f"Accuracy : {total_tp}/{matched} = {total_tp/matched:.4f}" if matched else "")
+    print(rule)
+    print(f"{'macro avg':<16} {'':>4} {'':>4} {'':>4} "
+          f"{macro_p:>{col}.3f} {macro_r:>{col}.3f} {macro_f1:>{col}.3f}")
 
 
 # ---------------------------------------------------------------------------

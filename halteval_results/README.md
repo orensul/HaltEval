@@ -66,12 +66,27 @@ python scripts/score.py results/agentic_claude_code_opus_4_7.jsonl data/ground_t
 
 ## Results (n = 189)
 
-| Setup | Script | MCC | AUC-ROC | Accuracy |
-|---|---|---|---|---|
-| Claude Code, Opus 4.7 (agentic) | `claude_code_eval.py` | **0.675** | **0.912** | 0.868 |
-| Claude Opus 4.7 (zero-shot)     | `zero_shot_eval.py`   | 0.662 | 0.902 | 0.862 |
-| Codex GPT-5.5 (agentic)         | `codex_eval.py`       | 0.453 | 0.844 | 0.677 |
-| GPT-5.5 (zero-shot)             | `zero_shot_eval.py`   | 0.488 | 0.837 | 0.714 |
+| Setup | Script | MCC | AUC-ROC | Macro-F1 | Accuracy |
+|---|---|---|---|---|---|
+| Claude Code, Opus 4.7 (agentic) | `claude_code_eval.py` | **0.675** | **0.912** | **0.829** | **0.868** |
+| Claude Opus 4.7 (zero-shot)     | `zero_shot_eval.py`   | 0.662 | 0.902 | 0.819 | 0.862 |
+| Codex GPT-5.5 (agentic)         | `codex_eval.py`       | 0.453 | 0.844 | 0.672 | 0.677 |
+| GPT-5.5 (zero-shot)             | `zero_shot_eval.py`   | 0.488 | 0.837 | 0.705 | 0.714 |
 
-MCC is the primary metric; AUC-ROC is computed from the model's `p_non_terminating`
-score. Claude Opus 4.7 leads GPT-5.5 in both regimes; agentic vs zero-shot is close.
+### Per-class precision / recall / F1
+
+| Setup | NT&nbsp;P | NT&nbsp;R | NT&nbsp;F1 | T&nbsp;P | T&nbsp;R | T&nbsp;F1 |
+|---|---|---|---|---|---|---|
+| Claude Code, Opus 4.7 (agentic) | 0.881 | 0.649 | 0.747 | 0.864 | 0.962 | 0.910 |
+| Claude Opus 4.7 (zero-shot)     | 0.897 | 0.614 | 0.729 | 0.853 | 0.970 | 0.908 |
+| Codex GPT-5.5 (agentic)         | 0.481 | 0.912 | 0.630 | 0.938 | 0.576 | 0.714 |
+| GPT-5.5 (zero-shot)             | 0.515 | 0.895 | 0.654 | 0.933 | 0.636 | 0.757 |
+
+MCC is the primary metric; AUC-ROC is from the model's `p_non_terminating` score;
+Macro-F1 is the unweighted mean of the NT and T F1. **NT** = non-terminating,
+**T** = terminating.
+
+Claude Opus 4.7 leads GPT-5.5 in both regimes, and agentic vs zero-shot is close.
+The per-class numbers show the models' opposite biases: Claude favors precision on
+NT (few false alarms, lower NT recall), while GPT favors NT recall (catches more
+non-terminating cases but with many false positives).
