@@ -1,0 +1,36 @@
+Analyse the termination behaviour of the following C/C++ function.
+
+Project  : $project
+File     : $file
+Function : $function
+
+You are given:
+  1. The exact function body.
+  2. The complete source file it belongs to (all same-file helpers are visible).
+  3. The project-local headers included by that file.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FUNCTION BODY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+$function_body
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SOURCE FILE  ($source_file_path)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+$source_file
+${headers_section}Determine whether `$function` terminates for ALL inputs, or may loop / block
+indefinitely for SOME inputs.
+
+Non-termination indicators:
+- Thread synchronisation primitives (mutex, condition variable, semaphore) that
+  may wait forever for an external signal.
+- Server / worker loops running until an external stop flag.
+- while(true) / for(;;) / while(1) with no reachable break or return.
+- Loop variable never modified, or modified in the wrong direction.
+- Blocking I/O or queue-wait without a guaranteed wakeup.
+- Recursion with no guaranteed base-case reduction.
+
+Respond with EXACTLY this JSON and nothing else (no markdown fences):
+{"label": "terminating" or "non-terminating", "p_non_terminating": integer 0-100, "confidence": "high" or "medium" or "low", "reason": "one concise sentence"}
+
+Where p_non_terminating is your probability estimate (0 = certainly terminates, 100 = certainly does not terminate).
