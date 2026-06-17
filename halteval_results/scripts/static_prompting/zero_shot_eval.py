@@ -55,11 +55,17 @@ MAX_HEADERS_TOTAL = 180_000   # total budget for all headers combined
 # Llama / OpenAI-compatible client
 # ---------------------------------------------------------------------------
 
-def make_client() -> OpenAI:
-    api_key = os.environ.get("LLAMA_API_KEY", "")
+DEFAULT_BASE_URL = "https://api.llama.com/v1"
+
+
+def make_client(base_url: str | None = None) -> OpenAI:
+    # base_url precedence: explicit arg > LLM_BASE_URL env > llama.com default.
+    # api key: OPENAI_API_KEY (used by most OpenAI-compatible providers) > LLAMA_API_KEY.
+    base_url = base_url or os.environ.get("LLM_BASE_URL", DEFAULT_BASE_URL)
+    api_key = os.environ.get("OPENAI_API_KEY") or os.environ.get("LLAMA_API_KEY", "")
     return OpenAI(
-        api_key=api_key,
-        base_url="https://api.llama.com/v1",
+        api_key=api_key or "EMPTY",  # local servers (vLLM/Ollama) accept any non-empty key
+        base_url=base_url,
         timeout=None,
         max_retries=0,
     )
@@ -201,6 +207,9 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--model",     default=DEFAULT_MODEL,
                         help=f"Model name (default: {DEFAULT_MODEL})")
+    parser.add_argument("--base-url",  default=None,
+                        help="OpenAI-compatible endpoint (or set LLM_BASE_URL env); "
+                             f"default {DEFAULT_BASE_URL}")
     parser.add_argument("--limit",     type=int, default=None,
                         help="Process only the first N rows")
     parser.add_argument("--resume",    action="store_true",
@@ -254,7 +263,7 @@ def main() -> None:
         done = load_done(output_file)
         print(f"Resuming — {len(done)} already done")
 
-    client = make_client()
+    client = make_client(args.base_url)
 
     with output_file.open("a") as out_f:
         for idx, row in enumerate(rows):
