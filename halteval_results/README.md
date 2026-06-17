@@ -97,7 +97,8 @@ Sorted by **AUC-ROC (primary metric)**. Class balance: 57 NT / 130 T (30.5 % pos
 
 | Setup | Script | AUC-ROC | MCC | Macro-F1 | Accuracy |
 |---|---|---|---|---|---|
-| Claude Code, Opus 4.7 (agentic) | `claude_code_eval.py` | **0.911** | **0.674** | **0.828** | **0.866** |
+| Claude Code, Opus 4.7 (agentic) | `claude_code_eval.py` | **0.911** | 0.674 | 0.828 | 0.866 |
+| Claude Code, Opus 4.7 (SWE-agent)² | `halteval_pro.py`     | 0.909 | **0.687** | **0.838** | **0.872** |
 | Claude Opus 4.7 (zero-shot)     | `zero_shot_eval.py`   | 0.901 | 0.661 | 0.818 | 0.861 |
 | Codex GPT-5.5 (agentic)         | `codex_eval.py`       | 0.843 | 0.455 | 0.674 | 0.679 |
 | GPT-5.5 (zero-shot)             | `zero_shot_eval.py`   | 0.835 | 0.492 | 0.708 | 0.717 |
@@ -108,10 +109,16 @@ returned a verdict for — the agent produced **no prediction for 32** (30 run f
 errors + 2 with no result file); those are excluded from the metrics above (treating them as
 wrong instead gives accuracy 109/187 = 0.583). Results in `results/swe_agent/`.
 
+² **Claude Code, Opus 4.7**, SWE-agent regime. Returned a verdict on **all 187 / 187** functions
+(0 missing). Scored from the raw per-function `*_success.json` dialogs in
+`results/swe_agent/claude_code_opus_4.7/outputs/` via `halteval_pro.py` against
+`data/swe_agent/benchmark.jsonl`; confusion matrix NT/T = (TN 39, FP 18, FN 6, TP 124).
+
 ### Per-class precision / recall / F1
 
 | Setup | NT&nbsp;P | NT&nbsp;R | NT&nbsp;F1 | T&nbsp;P | T&nbsp;R | T&nbsp;F1 |
 |---|---|---|---|---|---|---|
+| Claude Code, Opus 4.7 (SWE-agent)² | 0.867 | 0.684 | 0.765 | 0.873 | 0.954 | 0.912 |
 | Claude Code, Opus 4.7 (agentic) | 0.881 | 0.649 | 0.747 | 0.862 | 0.962 | 0.909 |
 | Claude Opus 4.7 (zero-shot)     | 0.897 | 0.614 | 0.729 | 0.851 | 0.969 | 0.906 |
 | Codex GPT-5.5 (agentic)         | 0.486 | 0.912 | 0.634 | 0.938 | 0.577 | 0.714 |
@@ -126,6 +133,11 @@ mean of the NT and T F1. **NT** = non-terminating, **T** = terminating.
 
 ### Conclusions
 
+- **Claude Code Opus 4.7 in the SWE-agent setup leads on the thresholded metrics.**
+  Its AUC (0.909) is essentially tied with the agentic run (0.911), and it edges ahead on
+  MCC (0.687), Macro-F1 (0.838) and accuracy (0.872) while being the only run to return a
+  verdict on all 187 / 187 functions. Notably it lifts NT recall to 0.684 (vs 0.649 agentic)
+  without sacrificing NT precision (0.867) — a better operating point on the minority class.
 - **Claude Opus 4.7 ≫ GPT-5.5 on discrimination.** The AUC gap is ~0.06–0.07 in both
   regimes (0.911 / 0.901 vs 0.843 / 0.835). The score from Claude separates terminating
   from non-terminating functions substantially better.
@@ -156,7 +168,10 @@ The four frontier-model result files carry a `p_non_terminating` score for every
 `scripts/shared/score.py`. AUC-ROC was additionally cross-checked with an independent rank-based
 (trapezoidal ROC) computation, and MCC and the per-class precision/recall against a direct
 confusion-matrix calculation — all agree to 4 decimals. The Qwen3-Coder-30B SWE-agent row is
-scored the same way but on the 155 / 187 cases with a returned verdict (32 had none).
+scored the same way but on the 155 / 187 cases with a returned verdict (32 had none). The
+Claude Code Opus 4.7 SWE-agent row was reproduced end-to-end with `halteval_pro.py
+--jsonl data/swe_agent/benchmark.jsonl` (187 matched, 0 missing) and the
+accuracy / MCC / AUC-ROC / per-class numbers reproduce exactly.
 
 > Note: `scripts/shared/score.py` uses `X | None` type syntax and requires Python ≥ 3.10
 > (run with e.g. `python3.12`).
