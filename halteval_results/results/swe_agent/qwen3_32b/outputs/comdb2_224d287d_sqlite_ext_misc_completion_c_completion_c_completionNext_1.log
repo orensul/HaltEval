@@ -1,0 +1,981 @@
+2026-06-18 08:50:42,314 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=UNKNOWN_NAME
+2026-06-18 08:50:42,314 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=run
+2026-06-18 08:50:42,716 - root - [INFO] - run.py:151 - repo_task - Model: VllmModel
+2026-06-18 08:50:42,933 - root - [INFO] - run.py:161 - repo_task - Agent: ForagerAgentLocateFunctionCodeAndDep
+2026-06-18 08:50:42,933 - root - [INFO] - run.py:175 - repo_task - Using VMVMBackend, image=vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest
+2026-06-18 08:50:42,934 - root - [INFO] - des_container.py:76 - lease_vm - Leasing VM with client-id=comdb2_224d287d_sqlite_ext_misc_completion_c_completion_c_completionNext_1, ttl_secs=10800
+2026-06-18 08:51:00,355 - root - [INFO] - des_container.py:87 - lease_vm - VM leased in 17.42s: session_id={"vmvm_session":{"id":"019ed9ec-baa5-72b3-b2bd-e0f5b5e82d31","ipAddr":"2803:6080:317c:8f13:a111:2b17:500:0","vaagentPort":23423,"vmPort":12577,"vaagentHostname":"twshared64841.14.atn3.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|5130112338986680822|0|faas.B44751A7288D2B1C7A21D44E54713794|7473286003286475483","tw_task_handle":"tsp_atn/faas/workerpool_crackerjack_prod_bgm_ces_tier_1/1483","region_shortname":"atn"},"auth_token":{"paseto":"v4.public.eyJzdWIiOiIwMTllZDllYy1iYWE1LTcyYjMtYjJiZC1lMGY1YjVlODJkMzEiLCJpYXQiOiIyMDI2LTA2LTE4VDA4OjUwOjQzLjg5MDQyMjg2NyswMDowMCIsIm5iZiI6IjIwMjYtMDYtMThUMDg6NTA6NDNaIiwiZXhwIjoiMjAyNi0wNi0xOVQwODo1MDo0M1oifRYyCAvyIfbVaP1dKd928FuWLYINg6NExiGf-AGrMzHUPn1Oe9q4u6PnuDtq6ZtmyMJOw1pbazHZIZ56qba3LA8.eyJ0ZW5hbnQiOiJhc3luY18yMzQ3NjQxIiwiaXAiOiIyODAzOjYwODA6MzE3Yzo4ZjEzOmExMTE6MmIxNzo1MDA6MCIsImtpZCI6Ims0LnBpZC5jWm1EcXBQMVFtdUV3NHV2UFBpVV9sTFNfMXNjV2UyVU1xLXdGUjBHQU1XciIsInBvcnQiOiIxMjU3NyIsImZhYXNfaW52b2NhdGlvbl9pZCI6IjR8Z2xvYmFsfGFzeW5jXzIzNDc2NDF8ZGVzX2dlbmVyYWxfdGllcl9wcm9kfDUxMzAxMTIzMzg5ODY2ODA4MjJ8MHxmYWFzLkI0NDc1MUE3Mjg4RDJCMUM3QTIxRDQ0RTU0NzEzNzk0fDc0NzMyODYwMDMyODY0NzU0ODMifQ"}}
+2026-06-18 08:51:00,355 - root - [INFO] - des_container.py:206 - load_image - Pulling image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest on VMVM
+2026-06-18 08:52:39,772 - root - [INFO] - des_container.py:214 - load_image - Image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest pulled successfully
+2026-06-18 08:52:41,167 - root - [INFO] - des_container.py:232 - run_container - Container started: f30b98ce7ca2acfa38edae14a0f882846ca5d9ef0bf6ae1bbf4a6bf407d6da2f
+2026-06-18 08:52:41,168 - root - [INFO] - des_container.py:582 - _heartbeat_loop - VMVM heartbeat thread started
+2026-06-18 08:52:41,169 - root - [INFO] - forager_locate_function_code_and_dep.py:313 - run - Starting analysis for completionNext in sqlite/ext/misc/completion.c/completion.c
+2026-06-18 08:52:41,169 - root - [INFO] - forager_locate_function_code_and_dep.py:227 - prepare_cpp_container - ========== Preparing C++ container ==========
+2026-06-18 08:52:41,169 - root - [DEBUG] - forager_locate_function_code_and_dep.py:230 - prepare_cpp_container - Setting up env variables
+2026-06-18 08:52:41,169 - root - [DEBUG] - des_container.py:319 - command - DES command: 'export WINDOW=100 && export OVERLAP=2 && export CURRENT_LINE=0 && export CURRENT'
+2026-06-18 08:52:42,715 - root - [DEBUG] - forager_locate_function_code_and_dep.py:239 - prepare_cpp_container - Importing agent tools in container
+2026-06-18 08:53:00,021 - root - [DEBUG] - des_container.py:396 - put - DES put: 6243 bytes to /opt/tools/defaults.sh
+2026-06-18 08:53:21,717 - root - [DEBUG] - des_container.py:319 - command - DES command: 'source /opt/tools/defaults.sh'
+2026-06-18 08:53:24,326 - root - [DEBUG] - des_container.py:396 - put - DES put: 5735 bytes to /opt/tools/search.sh
+2026-06-18 08:53:29,618 - root - [DEBUG] - des_container.py:319 - command - DES command: 'source /opt/tools/search.sh'
+2026-06-18 08:54:04,199 - root - [DEBUG] - des_container.py:319 - command - DES command: 'export PATH=/opt/tools:$PATH'
+2026-06-18 08:54:05,431 - root - [INFO] - forager_locate_function_code_and_dep.py:244 - prepare_cpp_container - Uploading submit_prediction command
+2026-06-18 08:54:05,431 - root - [DEBUG] - des_container.py:396 - put - DES put: 74 bytes to /usr/local/bin/submit_prediction
+2026-06-18 08:54:32,668 - root - [DEBUG] - des_container.py:319 - command - DES command: 'chmod +x /usr/local/bin/submit_prediction'
+2026-06-18 08:54:36,266 - root - [DEBUG] - des_container.py:319 - command - DES command: "which submit_prediction || echo 'Not in PATH'"
+2026-06-18 08:54:38,934 - root - [INFO] - forager_locate_function_code_and_dep.py:256 - prepare_cpp_container - Script in PATH: /usr/local/bin/submit_prediction
+2026-06-18 08:54:38,934 - root - [DEBUG] - des_container.py:319 - command - DES command: "export GIT_AUTHOR_NAME='CI Bot' && export GIT_AUTHOR_EMAIL='ci-bot@yourdomain.co"
+2026-06-18 08:54:40,228 - root - [DEBUG] - forager_locate_function_code_and_dep.py:275 - prepare_cpp_container - Creating /workspace directory
+2026-06-18 08:54:40,228 - root - [DEBUG] - des_container.py:319 - command - DES command: 'mkdir -p /workspace'
+2026-06-18 08:54:41,552 - root - [DEBUG] - des_container.py:319 - command - DES command: 'cd /workspace'
+2026-06-18 08:54:42,460 - root - [DEBUG] - des_container.py:589 - _heartbeat_loop - VMVM heartbeat sent
+2026-06-18 08:54:42,837 - root - [DEBUG] - forager_locate_function_code_and_dep.py:215 - _init_prompt - Task prompt:
+Your task is to predict whether the function `completionNext` in the C++ file `sqlite/ext/misc/completion.c/completion.c` will:
+- **Terminate** for all inputs, OR
+- **Diverge** for some inputs (enter a non-terminating loop)
+
+**Important:** This is a **read-only code analysis task**. You may only use shell commands to view files. Do not execute any C++ code or modify any files. Only use commands like `cat`, `grep`, `find`, `ls`, `cd`, `head`, `tail`, `git`, etc. **You MUST NOT attempt to "implement a fix" or modify any file — only analyze.**
+
+## STEP 1: Clone the Repository (with verification)
+
+Run this clone command:
+```bash
+git clone https://github.com/bloomberg/comdb2 /workspace/comdb2 && cd /workspace/comdb2 && git checkout 224d287d6d7a047d7a539d8a7ab1e3d428ac2845
+```
+
+**Verify the clone actually worked** before continuing. The container can have transient network failures that make `git clone` produce *no output* while leaving `/workspace/comdb2` empty. After the clone, your VERY NEXT command MUST be:
+```bash
+ls /workspace/comdb2/.git >/dev/null 2>&1 && echo CLONE_OK || echo CLONE_FAILED
+```
+
+- If you see `CLONE_OK`, proceed to STEP 2.
+- If you see `CLONE_FAILED` (or no output), the clone silently failed. Retry by running:
+  ```bash
+  rm -rf /workspace/comdb2 && git clone https://github.com/bloomberg/comdb2 /workspace/comdb2 && cd /workspace/comdb2 && git checkout 224d287d6d7a047d7a539d8a7ab1e3d428ac2845
+  ```
+  Then re-run the verify command. Retry up to **3 times** before giving up. Do NOT proceed to analyze the file until you have `CLONE_OK`.
+
+## STEP 2: Examine the Function
+
+Navigate to the repository and examine the function using read-only commands. Examples:
+```bash
+cd /workspace/comdb2
+cat sqlite/ext/misc/completion.c/completion.c                              # View the entire file
+grep -n "completionNext" sqlite/ext/misc/completion.c/completion.c    # Find the function's line number
+grep -A 50 "completionNext" sqlite/ext/misc/completion.c/completion.c # View the function plus 50 lines after (of course you can view more).
+```
+
+## STEP 3: Analyze Dependencies
+Important: The function may call other functions, use external types, or depend on macros defined elsewhere. You must examine these dependencies to fully understand the code's behavior.
+- Find and read helper functions called within the target function
+- Examine header files for type definitions and macros
+- Check struct/class definitions to understand data types
+- Trace function pointers to their implementations
+
+Finding dependencies:
+```bash
+grep -rn "function_name" /workspace/comdb2/
+find . -name "*.h" | xargs grep "TypeName"
+cat path/to/header.h
+```
+
+## STEP 4: Classify the Function
+**"T" (Terminates)** - Function terminates for all possible inputs:
+- No blocking synchronization calls. All loops have reachable exit conditions. Loop variables progress correctly toward exit. Proper bounds checking and error handling
+**"NT" (Non-Termination)** - Designed to block or loop indefinitely (can be intentional by the user or a bug). Examples:
+- Thread synchronization primitives. Locks. Condition variables. Event loops or server loops that run until external signal.
+Worker thread functions waiting for tasks or termination signals.
+- Loop variable never modified or modified in wrong direction. `while(1)` or `for(;;)` without reachable `break` or `return`.
+Unbounded I/O operations without proper termination checks. Missing loop increment/decrement statements.
+
+## STEP 5: Submit Your Prediction
+
+**You MUST submit your prediction by running this shell command exactly once** — do NOT just print the JSON in a markdown block, actually run it:
+```bash
+submit_prediction '{"function_name": "completionNext", "file_path": "sqlite/ext/misc/completion.c/completion.c", "prediction": "<T|NT>", "p_non_terminating": <0-100>, "confidence": "<high|medium|low>", "reason": "<one concise sentence>"}'
+```
+
+**Field definitions:**
+- `prediction`: "T" if the function terminates for all inputs, "NT" if it can loop/block indefinitely
+- `p_non_terminating`: integer 0–100 — your estimated probability (in %) that the function is non-terminating
+- `confidence`: "high" if the evidence is clear and unambiguous, "medium" if there is some uncertainty, "low" if the code is hard to fully trace or the behavior is unclear
+- `reason`: one concise sentence explaining the key factor driving your prediction
+
+**Guidelines:**
+- Execute one command per response in triple backticks
+- Read all relevant source and header files before making a prediction
+- Trace data flow to understand where loop bounds and conditions come from
+- Consider edge cases: zero values, type overflows, null pointers, EOF conditions
+- Only submit your prediction when you have thoroughly analyzed the code
+- **Always verify the clone succeeded before proceeding (STEP 1).** If after 3 retries the clone still fails, submit a prediction with `"prediction": "T"`, `"p_non_terminating": 50`, `"confidence": "low"`, and `"reason": "clone failed — could not analyze source"` — this is far better than burning turns producing no prediction at all.
+2026-06-18 08:54:42,837 - root - [INFO] - forager_base.py:342 - start_trajectory - =========== Starting new trajectory ==========
+2026-06-18 08:54:42,837 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 1
+2026-06-18 08:54:42,837 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 08:54:44,256 - root - [INFO] - logging.py:31 - log_time - Took 1.42s
+2026-06-18 08:54:44,262 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'git clone https://github.com/b' (timeout=120)
+2026-06-18 08:54:44,262 - root - [DEBUG] - des_container.py:319 - command - DES command: 'git clone https://github.com/bloomberg/comdb2 /workspace/comdb2 && cd /workspace'
+2026-06-18 08:55:10,925 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-18 08:55:10,925 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 2
+2026-06-18 08:55:10,925 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 08:55:11,326 - root - [INFO] - logging.py:31 - log_time - Took 0.40s
+2026-06-18 08:55:11,326 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'ls /workspace/comdb2/.git >/de' (timeout=120)
+2026-06-18 08:55:11,326 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 3
+2026-06-18 08:55:11,326 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 08:55:12,391 - root - [INFO] - logging.py:31 - log_time - Took 1.06s
+2026-06-18 08:55:12,391 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'rm -rf /workspace/comdb2 && gi' (timeout=120)
+2026-06-18 08:55:12,391 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 4
+2026-06-18 08:55:12,391 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 08:55:12,970 - root - [INFO] - logging.py:31 - log_time - Took 0.58s
+2026-06-18 08:55:12,974 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'ls -la /workspace/ || echo "Ca' (timeout=120)
+2026-06-18 08:55:12,975 - root - [DEBUG] - des_container.py:319 - command - DES command: 'ls -la /workspace/ || echo "Cannot access workspace"\n'
+2026-06-18 08:55:16,305 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: total 4
+drwxr-xr-x  3 root root   40 Jun 18 08:54 .
+dr-xr-xr-x 18 root root   67 Jun 18 08:54 ..
+drwxr-xr-x 36 root root 4096 Jun 18 08:54 comdb2
+2026-06-18 08:55:16,305 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 5
+2026-06-18 08:55:16,305 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 08:55:16,962 - root - [INFO] - logging.py:31 - log_time - Took 0.66s
+2026-06-18 08:55:16,965 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cd /workspace/comdb2\nfind . -n' (timeout=120)
+2026-06-18 08:55:16,965 - root - [DEBUG] - des_container.py:319 - command - DES command: 'cd /workspace/comdb2\nfind . -name "completion.c" -type f\n'
+2026-06-18 08:55:34,351 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: ./sqlite/ext/misc/completion.c
+2026-06-18 08:55:34,351 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 6
+2026-06-18 08:55:34,351 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 08:55:34,700 - root - [INFO] - logging.py:31 - log_time - Took 0.35s
+2026-06-18 08:55:34,709 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cat sqlite/ext/misc/completion' (timeout=120)
+2026-06-18 08:55:34,709 - root - [DEBUG] - des_container.py:319 - command - DES command: 'cat sqlite/ext/misc/completion.c\n'
+2026-06-18 08:55:36,344 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: /*
+** 2017-07-10
+**
+** The author disclaims copyright to this source code.  In place of
+** a legal notice, here is a blessing:
+**
+**    May you do good and not evil.
+**    May you find forgiveness for yourself and forgive others.
+**    May you share freely, never taking more than you give.
+**
+*************************************************************************
+**
+** This file implements an eponymous virtual table that returns suggested
+** completions for a partial SQL input.
+**
+** Suggested usage:
+**
+**     SELECT DISTINCT candidate COLLATE nocase
+**       FROM completion($prefix,$wholeline)
+**      ORDER BY 1;
+**
+** The two query parameters are optional.  $prefix is the text of the
+** current word being typed and that is to be completed.  $wholeline is
+** the complete input line, used for context.
+**
+** The raw completion() table might return the same candidate multiple
+** times, for example if the same column name is used to two or more
+** tables.  And the candidates are returned in an arbitrary order.  Hence,
+** the DISTINCT and ORDER BY are recommended.
+**
+** This virtual table operates at the speed of human typing, and so there
+** is no attempt to make it fast.  Even a slow implementation will be much
+** faster than any human can type.
+**
+*/
+#include "sqlite3ext.h"
+#if !defined(SQLITE_BUILDING_FOR_COMDB2)
+SQLITE_EXTENSION_INIT1
+#endif /* !defined(SQLITE_BUILDING_FOR_COMDB2) */
+#include <assert.h>
+#include <string.h>
+#include <ctype.h>
+
+#if defined(SQLITE_BUILDING_FOR_COMDB2) && !defined(SQLITE_CORE)
+#define SQLITE_CORE 1
+#endif /* defined(SQLITE_BUILDING_FOR_COMDB2) && !defined(SQLITE_CORE) */
+
+#ifndef SQLITE_OMIT_VIRTUALTABLE
+
+/* completion_vtab is a subclass of sqlite3_vtab which will
+** serve as the underlying representation of a completion virtual table
+*/
+typedef struct completion_vtab completion_vtab;
+struct completion_vtab {
+  sqlite3_vtab base;  /* Base class - must be first */
+  sqlite3 *db;        /* Database connection for this completion vtab */
+};
+
+/* completion_cursor is a subclass of sqlite3_vtab_cursor which will
+** serve as the underlying representation of a cursor that scans
+** over rows of the result
+*/
+typedef struct completion_cursor completion_cursor;
+struct completion_cursor {
+  sqlite3_vtab_cursor base;  /* Base class - must be first */
+  sqlite3 *db;               /* Database connection for this cursor */
+  int nPrefix, nLine;        /* Number of bytes in zPrefix and zLine */
+  char *zPrefix;             /* The prefix for the word we want to complete */
+  char *zLine;               /* The whole that we want to complete */
+  const char *zCurrentRow;   /* Current output row */
+  int szRow;                 /* Length of the zCurrentRow string */
+  sqlite3_stmt *pStmt;       /* Current statement */
+  sqlite3_int64 iRowid;      /* The rowid */
+  int ePhase;                /* Current phase */
+  int j;                     /* inter-phase counter */
+};
+
+/* Values for ePhase:
+*/
+#define COMPLETION_FIRST_PHASE   1
+#define COMPLETION_KEYWORDS      1
+#define COMPLETION_PRAGMAS       2
+#define COMPLETION_FUNCTIONS     3
+#define COMPLETION_COLLATIONS    4
+#define COMPLETION_INDEXES       5
+#define COMPLETION_TRIGGERS      6
+#define COMPLETION_DATABASES     7
+#define COMPLETION_TABLES        8    /* Also VIEWs and TRIGGERs */
+#define COMPLETION_COLUMNS       9
+#define COMPLETION_MODULES       10
+#define COMPLETION_EOF           11
+
+/*
+** The completionConnect() method is invoked to create a new
+** completion_vtab that describes the completion virtual table.
+**
+** Think of this routine as the constructor for completion_vtab objects.
+**
+** All this routine needs to do is:
+**
+**    (1) Allocate the completion_vtab object and initialize all fields.
+**
+**    (2) Tell SQLite (via the sqlite3_declare_vtab() interface) what the
+**        result set of queries against completion will look like.
+*/
+static int completionConnect(
+  sqlite3 *db,
+  void *pAux,
+  int argc, const char *const*argv,
+  sqlite3_vtab **ppVtab,
+  char **pzErr
+){
+  completion_vtab *pNew;
+  int rc;
+
+  (void)(pAux);    /* Unused parameter */
+  (void)(argc);    /* Unused parameter */
+  (void)(argv);    /* Unused parameter */
+  (void)(pzErr);   /* Unused parameter */
+
+/* Column numbers */
+#define COMPLETION_COLUMN_CANDIDATE 0  /* Suggested completion of the input */
+#define COMPLETION_COLUMN_PREFIX    1  /* Prefix of the word to be completed */
+#define COMPLETION_COLUMN_WHOLELINE 2  /* Entire line seen so far */
+#define COMPLETION_COLUMN_PHASE     3  /* ePhase - used for debugging only */
+
+  rc = sqlite3_declare_vtab(db,
+      "CREATE TABLE x("
+      "  candidate TEXT,"
+      "  prefix TEXT HIDDEN,"
+      "  wholeline TEXT HIDDEN,"
+      "  phase INT HIDDEN"        /* Used for debugging only */
+      ")");
+  if( rc==SQLITE_OK ){
+    pNew = sqlite3_malloc( sizeof(*pNew) );
+    *ppVtab = (sqlite3_vtab*)pNew;
+    if( pNew==0 ) return SQLITE_NOMEM;
+    memset(pNew, 0, sizeof(*pNew));
+    pNew->db = db;
+  }
+  return rc;
+}
+
+/*
+** This method is the destructor for completion_cursor objects.
+*/
+static int completionDisconnect(sqlite3_vtab *pVtab){
+  sqlite3_free(pVtab);
+  return SQLITE_OK;
+}
+
+/*
+** Constructor for a new completion_cursor object.
+*/
+static int completionOpen(sqlite3_vtab *p, sqlite3_vtab_cursor **ppCursor){
+#if defined(SQLITE_BUILDING_FOR_COMDB2)
+  /* We do not need to check for OP user for this module as the system
+   * tables that this module accesses (comdb2_tables, comdb2_columns) are
+   * already filtered for current user.
+   */
+#endif /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+  completion_cursor *pCur;
+  pCur = sqlite3_malloc( sizeof(*pCur) );
+  if( pCur==0 ) return SQLITE_NOMEM;
+  memset(pCur, 0, sizeof(*pCur));
+  pCur->db = ((completion_vtab*)p)->db;
+  *ppCursor = &pCur->base;
+  return SQLITE_OK;
+}
+
+/*
+** Reset the completion_cursor.
+*/
+static void completionCursorReset(completion_cursor *pCur){
+  sqlite3_free(pCur->zPrefix);   pCur->zPrefix = 0;  pCur->nPrefix = 0;
+  sqlite3_free(pCur->zLine);     pCur->zLine = 0;    pCur->nLine = 0;
+  sqlite3_finalize(pCur->pStmt); pCur->pStmt = 0;
+  pCur->j = 0;
+}
+
+/*
+** Destructor for a completion_cursor.
+*/
+static int completionClose(sqlite3_vtab_cursor *cur){
+  completionCursorReset((completion_cursor*)cur);
+  sqlite3_free(cur);
+  return SQLITE_OK;
+}
+
+/*
+** Advance a completion_cursor to its next row of output.
+**
+** The ->ePhase, ->j, and ->pStmt fields of the completion_cursor object
+** record the current state of the scan.  This routine sets ->zCurrentRow
+** to the current row of output and then returns.  If no more rows remain,
+** then ->ePhase is set to COMPLETION_EOF which will signal the virtual
+** table that has reached the end of its scan.
+**
+** The current implementation just lists potential identifiers and
+** keywords and filters them by zPrefix.  Future enhancements should
+** take zLine into account to try to restrict the set of identifiers and
+** keywords based on what would be legal at the current point of input.
+*/
+static int completionNext(sqlite3_vtab_cursor *cur){
+  completion_cursor *pCur = (completion_cursor*)cur;
+  int eNextPhase = 0;  /* Next phase to try if current phase reaches end */
+  int iCol = -1;       /* If >=0, step pCur->pStmt and use the i-th column */
+  pCur->iRowid++;
+  while( pCur->ePhase!=COMPLETION_EOF ){
+    switch( pCur->ePhase ){
+      case COMPLETION_KEYWORDS: {
+        if( pCur->j >= sqlite3_keyword_count() ){
+          pCur->zCurrentRow = 0;
+          pCur->ePhase = COMPLETION_DATABASES;
+        }else{
+          sqlite3_keyword_name(pCur->j++, &pCur->zCurrentRow, &pCur->szRow);
+        }
+#if defined(SQLITE_BUILDING_FOR_COMDB2)
+        if( pCur->pStmt==0 ){
+          sqlite3_prepare_v2(pCur->db, 
+                  "SELECT name FROM comdb2_keywords ORDER BY 1", 
+                  -1, &pCur->pStmt, 0);
+        }
+        iCol = 0;
+        eNextPhase = COMPLETION_DATABASES;
+#else /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+        iCol = -1;
+#endif /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+        break;
+      }
+      case COMPLETION_DATABASES: {
+        if( pCur->pStmt==0 ){
+          sqlite3_prepare_v2(pCur->db, "PRAGMA database_list", -1,
+                             &pCur->pStmt, 0);
+        }
+        iCol = 1;
+        eNextPhase = COMPLETION_TABLES;
+        break;
+      }
+      case COMPLETION_TABLES: {
+        if( pCur->pStmt==0 ){
+#if defined(SQLITE_BUILDING_FOR_COMDB2)
+          sqlite3_prepare_v2(pCur->db, 
+                  "SELECT tablename FROM comdb2_tables "
+                  "WHERE tablename NOT LIKE 'sqlite_stat%' UNION "
+                  "SELECT name FROM comdb2_systables ORDER BY 1", 
+                  -1, &pCur->pStmt, 0);
+#else /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+          sqlite3_stmt *pS2;
+          char *zSql = 0;
+          const char *zSep = "";
+          sqlite3_prepare_v2(pCur->db, "PRAGMA database_list", -1, &pS2, 0);
+          while( sqlite3_step(pS2)==SQLITE_ROW ){
+            const char *zDb = (const char*)sqlite3_column_text(pS2, 1);
+            zSql = sqlite3_mprintf(
+               "%z%s"
+               "SELECT name FROM \"%w\".sqlite_master",
+               zSql, zSep, zDb
+            );
+            if( zSql==0 ) return SQLITE_NOMEM;
+            zSep = " UNION ";
+          }
+          sqlite3_finalize(pS2);
+          sqlite3_prepare_v2(pCur->db, zSql, -1, &pCur->pStmt, 0);
+          sqlite3_free(zSql);
+#endif /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+        }
+        iCol = 0;
+        eNextPhase = COMPLETION_COLUMNS;
+        break;
+      }
+      case COMPLETION_COLUMNS: {
+        if( pCur->pStmt==0 ){
+#if defined(SQLITE_BUILDING_FOR_COMDB2)
+          sqlite3_prepare_v2(pCur->db, 
+                  "SELECT columnname FROM comdb2_columns " 
+                  "WHERE tablename NOT LIKE 'sqlite_stat%' ORDER BY 1", 
+                  -1, &pCur->pStmt, 0);
+#else /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+          sqlite3_stmt *pS2;
+          char *zSql = 0;
+          const char *zSep = "";
+          sqlite3_prepare_v2(pCur->db, "PRAGMA database_list", -1, &pS2, 0);
+          while( sqlite3_step(pS2)==SQLITE_ROW ){
+            const char *zDb = (const char*)sqlite3_column_text(pS2, 1);
+            zSql = sqlite3_mprintf(
+               "%z%s"
+               "SELECT pti.name FROM \"%w\".sqlite_master AS sm"
+                       " JOIN pragma_table_info(sm.name,%Q) AS pti"
+               " WHERE sm.type='table'",
+               zSql, zSep, zDb, zDb
+            );
+            if( zSql==0 ) return SQLITE_NOMEM;
+            zSep = " UNION ";
+          }
+          sqlite3_finalize(pS2);
+          sqlite3_prepare_v2(pCur->db, zSql, -1, &pCur->pStmt, 0);
+          sqlite3_free(zSql);
+#endif /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+        }
+        iCol = 0;
+#if defined(SQLITE_BUILDING_FOR_COMDB2)
+        pCur->j = 0;
+
+        eNextPhase = COMPLETION_FUNCTIONS;
+#else /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+        eNextPhase = COMPLETION_EOF;
+#endif /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+        break;
+      }
+#if defined(SQLITE_BUILDING_FOR_COMDB2)
+      case COMPLETION_FUNCTIONS: {
+        if( pCur->pStmt==0 ){
+          sqlite3_prepare_v2(pCur->db, 
+                  "SELECT name FROM comdb2_functions", 
+                  -1, &pCur->pStmt, 0);
+        }
+        iCol = 0;
+        pCur->j = 0;
+        eNextPhase = COMPLETION_EOF;
+        break;
+      }
+#endif /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+#if defined(SQLITE_BUILDING_FOR_COMDB2_EXAMPLE)
+      /* this is example on how to add a custom list to completion */
+      case COMPLETION_CUSTOM_LIST: {
+        /* NOTE: Please keep this list of functions sorted. */
+        static char *cfuncs[] = {
+          "comdb2_ctxinfo()",
+          "comdb2_dbname()",
+          "comdb2_host()",
+          "comdb2_port()",
+          "comdb2_prevquerycost()",
+          "comdb2_starttime()",
+          "comdb2_sysinfo()",
+          "comdb2_uptime()",
+          "comdb2_version()",
+          "partition_info()",
+          "sys.cmd.send()",
+          "table_version()",
+        };
+        if( pCur->j >= sizeof(cfuncs)/sizeof(char*)) {
+          pCur->zCurrentRow = 0;
+          pCur->ePhase = COMPLETION_EOF;
+        }else{
+          pCur->zCurrentRow = cfuncs[pCur->j++];
+          pCur->szRow = strlen(pCur->zCurrentRow);
+        }
+        iCol = -1;
+        break;
+      }
+#endif /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+    }
+    if( iCol<0 ){
+      /* This case is when the phase presets zCurrentRow */
+      if( pCur->zCurrentRow==0 ) continue;
+    }else{
+      if( sqlite3_step(pCur->pStmt)==SQLITE_ROW ){
+        /* Extract the next row of content */
+        pCur->zCurrentRow = (const char*)sqlite3_column_text(pCur->pStmt, iCol);
+        pCur->szRow = sqlite3_column_bytes(pCur->pStmt, iCol);
+      }else{
+        /* When all rows are finished, advance to the next phase */
+        sqlite3_finalize(pCur->pStmt);
+        pCur->pStmt = 0;
+        pCur->ePhase = eNextPhase;
+        continue;
+      }
+    }
+    if( pCur->nPrefix==0 ) break;
+    if( pCur->nPrefix<=pCur->szRow
+     && sqlite3_strnicmp(pCur->zPrefix, pCur->zCurrentRow, pCur->nPrefix)==0
+    ){
+      break;
+    }
+  }
+
+  return SQLITE_OK;
+}
+
+/*
+** Return values of columns for the row at which the completion_cursor
+** is currently pointing.
+*/
+static int completionColumn(
+  sqlite3_vtab_cursor *cur,   /* The cursor */
+  sqlite3_context *ctx,       /* First argument to sqlite3_result_...() */
+  int i                       /* Which column to return */
+){
+  completion_cursor *pCur = (completion_cursor*)cur;
+  switch( i ){
+    case COMPLETION_COLUMN_CANDIDATE: {
+      sqlite3_result_text(ctx, pCur->zCurrentRow, pCur->szRow,SQLITE_TRANSIENT);
+      break;
+    }
+    case COMPLETION_COLUMN_PREFIX: {
+      sqlite3_result_text(ctx, pCur->zPrefix, -1, SQLITE_TRANSIENT);
+      break;
+    }
+    case COMPLETION_COLUMN_WHOLELINE: {
+      sqlite3_result_text(ctx, pCur->zLine, -1, SQLITE_TRANSIENT);
+      break;
+    }
+    case COMPLETION_COLUMN_PHASE: {
+      sqlite3_result_int(ctx, pCur->ePhase);
+      break;
+    }
+  }
+  return SQLITE_OK;
+}
+
+/*
+** Return the rowid for the current row.  In this implementation, the
+** rowid is the same as the output value.
+*/
+static int completionRowid(sqlite3_vtab_cursor *cur, sqlite_int64 *pRowid){
+  completion_cursor *pCur = (completion_cursor*)cur;
+  *pRowid = pCur->iRowid;
+  return SQLITE_OK;
+}
+
+/*
+** Return TRUE if the cursor has been moved off of the last
+** row of output.
+*/
+static int completionEof(sqlite3_vtab_cursor *cur){
+  completion_cursor *pCur = (completion_cursor*)cur;
+  return pCur->ePhase >= COMPLETION_EOF;
+}
+
+/*
+** This method is called to "rewind" the completion_cursor object back
+** to the first row of output.  This method is always called at least
+** once prior to any call to completionColumn() or completionRowid() or 
+** completionEof().
+*/
+static int completionFilter(
+  sqlite3_vtab_cursor *pVtabCursor, 
+  int idxNum, const char *idxStr,
+  int argc, sqlite3_value **argv
+){
+  completion_cursor *pCur = (completion_cursor *)pVtabCursor;
+  int iArg = 0;
+  (void)(idxStr);   /* Unused parameter */
+  (void)(argc);     /* Unused parameter */
+  completionCursorReset(pCur);
+  if( idxNum & 1 ){
+    pCur->nPrefix = sqlite3_value_bytes(argv[iArg]);
+    if( pCur->nPrefix>0 ){
+      pCur->zPrefix = sqlite3_mprintf("%s", sqlite3_value_text(argv[iArg]));
+      if( pCur->zPrefix==0 ) return SQLITE_NOMEM;
+    }
+    iArg = 1;
+  }
+  if( idxNum & 2 ){
+    pCur->nLine = sqlite3_value_bytes(argv[iArg]);
+    if( pCur->nLine>0 ){
+      pCur->zLine = sqlite3_mprintf("%s", sqlite3_value_text(argv[iArg]));
+      if( pCur->zLine==0 ) return SQLITE_NOMEM;
+    }
+  }
+  if( pCur->zLine!=0 && pCur->zPrefix==0 ){
+    int i = pCur->nLine;
+    while( i>0 && (isalnum(pCur->zLine[i-1]) || pCur->zLine[i-1]=='_') ){
+      i--;
+    }
+    pCur->nPrefix = pCur->nLine - i;
+    if( pCur->nPrefix>0 ){
+      pCur->zPrefix = sqlite3_mprintf("%.*s", pCur->nPrefix, pCur->zLine + i);
+      if( pCur->zPrefix==0 ) return SQLITE_NOMEM;
+    }
+  }
+  pCur->iRowid = 0;
+  pCur->ePhase = COMPLETION_FIRST_PHASE;
+  return completionNext(pVtabCursor);
+}
+
+/*
+** SQLite will invoke this method one or more times while planning a query
+** that uses the completion virtual table.  This routine needs to create
+** a query plan for each invocation and compute an estimated cost for that
+** plan.
+**
+** There are two hidden parameters that act as arguments to the table-valued
+** function:  "prefix" and "wholeline".  Bit 0 of idxNum is set if "prefix"
+** is available and bit 1 is set if "wholeline" is available.
+*/
+static int completionBestIndex(
+  sqlite3_vtab *tab,
+  sqlite3_index_info *pIdxInfo
+){
+  int i;                 /* Loop over constraints */
+  int idxNum = 0;        /* The query plan bitmask */
+  int prefixIdx = -1;    /* Index of the start= constraint, or -1 if none */
+  int wholelineIdx = -1; /* Index of the stop= constraint, or -1 if none */
+  int nArg = 0;          /* Number of arguments that completeFilter() expects */
+  const struct sqlite3_index_constraint *pConstraint;
+
+  (void)(tab);    /* Unused parameter */
+  pConstraint = pIdxInfo->aConstraint;
+  for(i=0; i<pIdxInfo->nConstraint; i++, pConstraint++){
+    if( pConstraint->usable==0 ) continue;
+    if( pConstraint->op!=SQLITE_INDEX_CONSTRAINT_EQ ) continue;
+    switch( pConstraint->iColumn ){
+      case COMPLETION_COLUMN_PREFIX:
+        prefixIdx = i;
+        idxNum |= 1;
+        break;
+      case COMPLETION_COLUMN_WHOLELINE:
+        wholelineIdx = i;
+        idxNum |= 2;
+        break;
+    }
+  }
+  if( prefixIdx>=0 ){
+    pIdxInfo->aConstraintUsage[prefixIdx].argvIndex = ++nArg;
+    pIdxInfo->aConstraintUsage[prefixIdx].omit = 1;
+  }
+  if( wholelineIdx>=0 ){
+    pIdxInfo->aConstraintUsage[wholelineIdx].argvIndex = ++nArg;
+    pIdxInfo->aConstraintUsage[wholelineIdx].omit = 1;
+  }
+  pIdxInfo->idxNum = idxNum;
+  pIdxInfo->estimatedCost = (double)5000 - 1000*nArg;
+  pIdxInfo->estimatedRows = 500 - 100*nArg;
+  return SQLITE_OK;
+}
+
+/*
+** This following structure defines all the methods for the 
+** completion virtual table.
+*/
+static sqlite3_module completionModule = {
+  0,                         /* iVersion */
+  0,                         /* xCreate */
+  completionConnect,         /* xConnect */
+  completionBestIndex,       /* xBestIndex */
+  completionDisconnect,      /* xDisconnect */
+  0,                         /* xDestroy */
+  completionOpen,            /* xOpen - open a cursor */
+  completionClose,           /* xClose - close a cursor */
+  completionFilter,          /* xFilter - configure scan constraints */
+  completionNext,            /* xNext - advance a cursor */
+  completionEof,             /* xEof - check for end of scan */
+  completionColumn,          /* xColumn - read data */
+  completionRowid,           /* xRowid - read data */
+  0,                         /* xUpdate */
+  0,                         /* xBegin */
+  0,                         /* xSync */
+  0,                         /* xCommit */
+  0,                         /* xRollback */
+  0,                         /* xFindMethod */
+  0,                         /* xRename */
+  0,                         /* xSavepoint */
+  0,                         /* xRelease */
+  0,                         /* xRollbackTo */
+  0                          /* xShadowName */
+};
+
+#endif /* SQLITE_OMIT_VIRTUALTABLE */
+
+int sqlite3CompletionVtabInit(sqlite3 *db){
+  int rc = SQLITE_OK;
+#ifndef SQLITE_OMIT_VIRTUALTABLE
+#if defined(SQLITE_BUILDING_FOR_COMDB2)
+  rc = sqlite3_create_module(db, "comdb2_completion", &completionModule, 0);
+#else /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+  rc = sqlite3_create_module(db, "completion", &completionModule, 0);
+#endif /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+#endif
+  return rc;
+}
+
+#ifdef _WIN32
+__declspec(dllexport)
+#endif
+int sqlite3_completion_init(
+  sqlite3 *db, 
+  char **pzErrMsg, 
+  const sqlite3_api_routines *pApi
+){
+  int rc = SQLITE_OK;
+  SQLITE_EXTENSION_INIT2(pApi);
+  (void)(pzErrMsg);  /* Unused parameter */
+#ifndef SQLITE_OMIT_VIRTUALTABLE
+  rc = sqlite3CompletionVtabInit(db);
+#endif
+  return rc;
+}
+2026-06-18 08:55:36,344 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 7
+2026-06-18 08:55:36,344 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 08:55:37,049 - root - [INFO] - logging.py:31 - log_time - Took 0.70s
+2026-06-18 08:55:37,053 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -n "completionNext\\|compl' (timeout=120)
+2026-06-18 08:55:37,053 - root - [DEBUG] - des_container.py:319 - command - DES command: 'grep -n "completionNext\\|completionNext(" sqlite/ext/misc/completion.c\n'
+2026-06-18 08:55:38,336 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 204:static int completionNext(sqlite3_vtab_cursor *cur){
+475:  return completionNext(pVtabCursor);
+543:  completionNext,            /* xNext - advance a cursor */
+2026-06-18 08:55:38,336 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 8
+2026-06-18 08:55:38,336 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 08:55:38,832 - root - [INFO] - logging.py:31 - log_time - Took 0.50s
+2026-06-18 08:55:38,836 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'goto 200\n' (timeout=120)
+2026-06-18 08:55:38,836 - root - [DEBUG] - des_container.py:319 - command - DES command: 'goto 200\n'
+2026-06-18 08:55:40,325 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-18 08:55:40,325 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 9
+2026-06-18 08:55:40,325 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 08:55:40,718 - root - [INFO] - logging.py:31 - log_time - Took 0.39s
+2026-06-18 08:55:40,722 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'goto 204\n' (timeout=120)
+2026-06-18 08:55:40,722 - root - [DEBUG] - des_container.py:319 - command - DES command: 'goto 204\n'
+2026-06-18 08:55:41,975 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-18 08:55:41,976 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 10
+2026-06-18 08:55:41,976 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 08:55:42,422 - root - [INFO] - logging.py:31 - log_time - Took 0.45s
+2026-06-18 08:55:42,425 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: "sed -n '204,350p' sqlite/ext/m" (timeout=120)
+2026-06-18 08:55:42,425 - root - [DEBUG] - des_container.py:319 - command - DES command: "sed -n '204,350p' sqlite/ext/misc/completion.c\n"
+2026-06-18 08:55:43,726 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: static int completionNext(sqlite3_vtab_cursor *cur){
+  completion_cursor *pCur = (completion_cursor*)cur;
+  int eNextPhase = 0;  /* Next phase to try if current phase reaches end */
+  int iCol = -1;       /* If >=0, step pCur->pStmt and use the i-th column */
+  pCur->iRowid++;
+  while( pCur->ePhase!=COMPLETION_EOF ){
+    switch( pCur->ePhase ){
+      case COMPLETION_KEYWORDS: {
+        if( pCur->j >= sqlite3_keyword_count() ){
+          pCur->zCurrentRow = 0;
+          pCur->ePhase = COMPLETION_DATABASES;
+        }else{
+          sqlite3_keyword_name(pCur->j++, &pCur->zCurrentRow, &pCur->szRow);
+        }
+#if defined(SQLITE_BUILDING_FOR_COMDB2)
+        if( pCur->pStmt==0 ){
+          sqlite3_prepare_v2(pCur->db, 
+                  "SELECT name FROM comdb2_keywords ORDER BY 1", 
+                  -1, &pCur->pStmt, 0);
+        }
+        iCol = 0;
+        eNextPhase = COMPLETION_DATABASES;
+#else /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+        iCol = -1;
+#endif /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+        break;
+      }
+      case COMPLETION_DATABASES: {
+        if( pCur->pStmt==0 ){
+          sqlite3_prepare_v2(pCur->db, "PRAGMA database_list", -1,
+                             &pCur->pStmt, 0);
+        }
+        iCol = 1;
+        eNextPhase = COMPLETION_TABLES;
+        break;
+      }
+      case COMPLETION_TABLES: {
+        if( pCur->pStmt==0 ){
+#if defined(SQLITE_BUILDING_FOR_COMDB2)
+          sqlite3_prepare_v2(pCur->db, 
+                  "SELECT tablename FROM comdb2_tables "
+                  "WHERE tablename NOT LIKE 'sqlite_stat%' UNION "
+                  "SELECT name FROM comdb2_systables ORDER BY 1", 
+                  -1, &pCur->pStmt, 0);
+#else /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+          sqlite3_stmt *pS2;
+          char *zSql = 0;
+          const char *zSep = "";
+          sqlite3_prepare_v2(pCur->db, "PRAGMA database_list", -1, &pS2, 0);
+          while( sqlite3_step(pS2)==SQLITE_ROW ){
+            const char *zDb = (const char*)sqlite3_column_text(pS2, 1);
+            zSql = sqlite3_mprintf(
+               "%z%s"
+               "SELECT name FROM \"%w\".sqlite_master",
+               zSql, zSep, zDb
+            );
+            if( zSql==0 ) return SQLITE_NOMEM;
+            zSep = " UNION ";
+          }
+          sqlite3_finalize(pS2);
+          sqlite3_prepare_v2(pCur->db, zSql, -1, &pCur->pStmt, 0);
+          sqlite3_free(zSql);
+#endif /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+        }
+        iCol = 0;
+        eNextPhase = COMPLETION_COLUMNS;
+        break;
+      }
+      case COMPLETION_COLUMNS: {
+        if( pCur->pStmt==0 ){
+#if defined(SQLITE_BUILDING_FOR_COMDB2)
+          sqlite3_prepare_v2(pCur->db, 
+                  "SELECT columnname FROM comdb2_columns " 
+                  "WHERE tablename NOT LIKE 'sqlite_stat%' ORDER BY 1", 
+                  -1, &pCur->pStmt, 0);
+#else /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+          sqlite3_stmt *pS2;
+          char *zSql = 0;
+          const char *zSep = "";
+          sqlite3_prepare_v2(pCur->db, "PRAGMA database_list", -1, &pS2, 0);
+          while( sqlite3_step(pS2)==SQLITE_ROW ){
+            const char *zDb = (const char*)sqlite3_column_text(pS2, 1);
+            zSql = sqlite3_mprintf(
+               "%z%s"
+               "SELECT pti.name FROM \"%w\".sqlite_master AS sm"
+                       " JOIN pragma_table_info(sm.name,%Q) AS pti"
+               " WHERE sm.type='table'",
+               zSql, zSep, zDb, zDb
+            );
+            if( zSql==0 ) return SQLITE_NOMEM;
+            zSep = " UNION ";
+          }
+          sqlite3_finalize(pS2);
+          sqlite3_prepare_v2(pCur->db, zSql, -1, &pCur->pStmt, 0);
+          sqlite3_free(zSql);
+#endif /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+        }
+        iCol = 0;
+#if defined(SQLITE_BUILDING_FOR_COMDB2)
+        pCur->j = 0;
+
+        eNextPhase = COMPLETION_FUNCTIONS;
+#else /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+        eNextPhase = COMPLETION_EOF;
+#endif /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+        break;
+      }
+#if defined(SQLITE_BUILDING_FOR_COMDB2)
+      case COMPLETION_FUNCTIONS: {
+        if( pCur->pStmt==0 ){
+          sqlite3_prepare_v2(pCur->db, 
+                  "SELECT name FROM comdb2_functions", 
+                  -1, &pCur->pStmt, 0);
+        }
+        iCol = 0;
+        pCur->j = 0;
+        eNextPhase = COMPLETION_EOF;
+        break;
+      }
+#endif /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+#if defined(SQLITE_BUILDING_FOR_COMDB2_EXAMPLE)
+      /* this is example on how to add a custom list to completion */
+      case COMPLETION_CUSTOM_LIST: {
+        /* NOTE: Please keep this list of functions sorted. */
+        static char *cfuncs[] = {
+          "comdb2_ctxinfo()",
+          "comdb2_dbname()",
+          "comdb2_host()",
+          "comdb2_port()",
+          "comdb2_prevquerycost()",
+          "comdb2_starttime()",
+          "comdb2_sysinfo()",
+          "comdb2_uptime()",
+          "comdb2_version()",
+          "partition_info()",
+          "sys.cmd.send()",
+          "table_version()",
+        };
+        if( pCur->j >= sizeof(cfuncs)/sizeof(char*)) {
+          pCur->zCurrentRow = 0;
+          pCur->ePhase = COMPLETION_EOF;
+        }else{
+          pCur->zCurrentRow = cfuncs[pCur->j++];
+          pCur->szRow = strlen(pCur->zCurrentRow);
+        }
+        iCol = -1;
+        break;
+2026-06-18 08:55:43,726 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 11
+2026-06-18 08:55:43,726 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 08:55:44,141 - root - [INFO] - logging.py:31 - log_time - Took 0.41s
+2026-06-18 08:55:44,147 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: "sed -n '350,400p' sqlite/ext/m" (timeout=120)
+2026-06-18 08:55:44,147 - root - [DEBUG] - des_container.py:319 - command - DES command: "sed -n '350,400p' sqlite/ext/misc/completion.c\n"
+2026-06-18 08:56:04,365 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response:         break;
+      }
+#endif /* defined(SQLITE_BUILDING_FOR_COMDB2) */
+    }
+    if( iCol<0 ){
+      /* This case is when the phase presets zCurrentRow */
+      if( pCur->zCurrentRow==0 ) continue;
+    }else{
+      if( sqlite3_step(pCur->pStmt)==SQLITE_ROW ){
+        /* Extract the next row of content */
+        pCur->zCurrentRow = (const char*)sqlite3_column_text(pCur->pStmt, iCol);
+        pCur->szRow = sqlite3_column_bytes(pCur->pStmt, iCol);
+      }else{
+        /* When all rows are finished, advance to the next phase */
+        sqlite3_finalize(pCur->pStmt);
+        pCur->pStmt = 0;
+        pCur->ePhase = eNextPhase;
+        continue;
+      }
+    }
+    if( pCur->nPrefix==0 ) break;
+    if( pCur->nPrefix<=pCur->szRow
+     && sqlite3_strnicmp(pCur->zPrefix, pCur->zCurrentRow, pCur->nPrefix)==0
+    ){
+      break;
+    }
+  }
+
+  return SQLITE_OK;
+}
+
+/*
+** Return values of columns for the row at which the completion_cursor
+** is currently pointing.
+*/
+static int completionColumn(
+  sqlite3_vtab_cursor *cur,   /* The cursor */
+  sqlite3_context *ctx,       /* First argument to sqlite3_result_...() */
+  int i                       /* Which column to return */
+){
+  completion_cursor *pCur = (completion_cursor*)cur;
+  switch( i ){
+    case COMPLETION_COLUMN_CANDIDATE: {
+      sqlite3_result_text(ctx, pCur->zCurrentRow, pCur->szRow,SQLITE_TRANSIENT);
+      break;
+    }
+    case COMPLETION_COLUMN_PREFIX: {
+      sqlite3_result_text(ctx, pCur->zPrefix, -1, SQLITE_TRANSIENT);
+      break;
+    }
+    case COMPLETION_COLUMN_WHOLELINE: {
+2026-06-18 08:56:04,365 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 12
+2026-06-18 08:56:04,365 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 08:56:14,189 - root - [INFO] - logging.py:31 - log_time - Took 9.82s
+2026-06-18 08:56:14,194 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'submit_prediction \'{"function_' (timeout=120)
+2026-06-18 08:56:14,194 - root - [DEBUG] - des_container.py:319 - command - DES command: 'submit_prediction \'{"function_name": "completionNext", "file_path": "sqlite/ext/'
+2026-06-18 08:56:15,527 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: !!submit!!
+{"function_name": "completionNext", "file_path": "sqlite/ext/misc/completion.c/completion.c", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "Function has a well-defined progression through fixed phases and terminates when reaching COMPLETION_EOF."}
+SUBMISSION_COMPLETE
+2026-06-18 08:56:15,527 - root - [INFO] - forager_base.py:408 - start_trajectory - Success regex matched in environment output: SUBMISSION_COMPLETE
+2026-06-18 08:56:15,528 - root - [INFO] - forager_locate_function_code_and_dep.py:88 - extract_submission - Found !!submit!! marker in environ item
+2026-06-18 08:56:15,528 - root - [INFO] - forager_locate_function_code_and_dep.py:91 - extract_submission - Extracted submission from environ: {'function_name': 'completionNext', 'file_path': 'sqlite/ext/misc/completion.c/completion.c', 'prediction': 'T', 'p_non_terminating': 0, 'confidence': 'high', 'reason': 'Function has a well-defined progression through fixed phases and terminates when reaching COMPLETION_EOF.'}
+2026-06-18 08:56:15,528 - root - [INFO] - forager_locate_function_code_and_dep.py:181 - process_run - Submission validation: {'correct_function_name': True, 'correct_path': True, 'provided_prediction': True}
+2026-06-18 08:56:15,528 - root - [INFO] - forager_locate_function_code_and_dep.py:345 - run - All validation checks passed
+2026-06-18 08:56:15,528 - root - [INFO] - forager_locate_function_code_and_dep.py:366 - run - Run completed with outcome: success
+2026-06-18 08:56:15,534 - root - [INFO] - des_container.py:439 - shutdown - Shutting down DES container f30b98ce7ca2acfa38edae14a0f882846ca5d9ef0bf6ae1bbf4a6bf407d6da2f
+2026-06-18 08:56:15,534 - root - [INFO] - des_container.py:593 - _heartbeat_loop - VMVM heartbeat thread exiting
+2026-06-18 08:56:43,517 - root - [INFO] - des_container.py:239 - release_vm - Releasing VMVM session {"vmvm_session":{"id":"019ed9ec-baa5-72b3-b2bd-e0f5b5e82d31","ipAddr":"2803:6080:317c:8f13:a111:2b17:500:0","vaagentPort":23423,"vmPort":12577,"vaagentHostname":"twshared64841.14.atn3.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|5130112338986680822|0|faas.B44751A7288D2B1C7A21D44E54713794|7473286003286475483","tw_task_handle":"tsp_atn/faas/workerpool_crackerjack_prod_bgm_ces_tier_1/1483","region_shortname":"atn"},"auth_token":{"paseto":"v4.public.eyJzdWIiOiIwMTllZDllYy1iYWE1LTcyYjMtYjJiZC1lMGY1YjVlODJkMzEiLCJpYXQiOiIyMDI2LTA2LTE4VDA4OjUwOjQzLjg5MDQyMjg2NyswMDowMCIsIm5iZiI6IjIwMjYtMDYtMThUMDg6NTA6NDNaIiwiZXhwIjoiMjAyNi0wNi0xOVQwODo1MDo0M1oifRYyCAvyIfbVaP1dKd928FuWLYINg6NExiGf-AGrMzHUPn1Oe9q4u6PnuDtq6ZtmyMJOw1pbazHZIZ56qba3LA8.eyJ0ZW5hbnQiOiJhc3luY18yMzQ3NjQxIiwiaXAiOiIyODAzOjYwODA6MzE3Yzo4ZjEzOmExMTE6MmIxNzo1MDA6MCIsImtpZCI6Ims0LnBpZC5jWm1EcXBQMVFtdUV3NHV2UFBpVV9sTFNfMXNjV2UyVU1xLXdGUjBHQU1XciIsInBvcnQiOiIxMjU3NyIsImZhYXNfaW52b2NhdGlvbl9pZCI6IjR8Z2xvYmFsfGFzeW5jXzIzNDc2NDF8ZGVzX2dlbmVyYWxfdGllcl9wcm9kfDUxMzAxMTIzMzg5ODY2ODA4MjJ8MHxmYWFzLkI0NDc1MUE3Mjg4RDJCMUM3QTIxRDQ0RTU0NzEzNzk0fDc0NzMyODYwMDMyODY0NzU0ODMifQ"}}
+2026-06-18 08:57:02,735 - root - [INFO] - des_container.py:249 - release_vm - VMVM session released
+2026-06-18 08:57:02,735 - root - [INFO] - run.py:227 - repo_task - Finishing repo: comdb2_224d287d_sqlite_ext_misc_completion_c_completion_c_completionNext_1

@@ -1,0 +1,843 @@
+2026-06-18 09:06:27,639 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=UNKNOWN_NAME
+2026-06-18 09:06:27,639 - hydra.core.utils - [DEBUG] - utils.py:279 - set - Setting JobRuntime:name=run
+2026-06-18 09:06:27,873 - root - [INFO] - run.py:151 - repo_task - Model: VllmModel
+2026-06-18 09:06:27,917 - root - [INFO] - run.py:161 - repo_task - Agent: ForagerAgentLocateFunctionCodeAndDep
+2026-06-18 09:06:27,918 - root - [INFO] - run.py:175 - repo_task - Using VMVMBackend, image=vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest
+2026-06-18 09:06:27,918 - root - [INFO] - des_container.py:76 - lease_vm - Leasing VM with client-id=CryptoPP_60f81a77_allocate_cpp_CryptoPP_UnalignedAllocate_1, ttl_secs=10800
+2026-06-18 09:06:28,854 - root - [INFO] - des_container.py:87 - lease_vm - VM leased in 0.94s: session_id={"vmvm_session":{"id":"019ed9fb-49f5-7f32-bc73-4b088ed46f7e","ipAddr":"2803:6084:9828:977:b68a:3919:500:0","vaagentPort":25438,"vmPort":19245,"vaagentHostname":"twshared11233.01.snb3.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|5130112338986680822|0|faas.F84F0D902E24F506CAD274B1E761C481|7473290001847972445","tw_task_handle":"tsp_snb/faas/workerpool_crackerjack_prod_bgm_ces/1193","region_shortname":"snb"},"auth_token":{"paseto":"v4.public.eyJpYXQiOiIyMDI2LTA2LTE4VDA5OjA2OjI4LjcwNzk0MzgwMSswMDowMCIsIm5iZiI6IjIwMjYtMDYtMThUMDk6MDY6MjhaIiwiZXhwIjoiMjAyNi0wNi0xOVQwOTowNjoyOFoiLCJzdWIiOiIwMTllZDlmYi00OWY1LTdmMzItYmM3My00YjA4OGVkNDZmN2UifaNRrmxdk-0JgsspdYXrktlmu_7Aa2LzDwZYWLLYC-jp5nh_OMkf3t8cExpmN2-xaPB_8h3X8D_hwmT16TIZxwU.eyJpcCI6IjI4MDM6NjA4NDo5ODI4Ojk3NzpiNjhhOjM5MTk6NTAwOjAiLCJwb3J0IjoiMTkyNDUiLCJraWQiOiJrNC5waWQuY2lHVTFlODBJNE9zRXRmUFVLNkcxUnhBVHR2VkltVnNWUXRUUGZiQXY5eGwiLCJ0ZW5hbnQiOiJhc3luY18yMzQ3NjQxIiwiZmFhc19pbnZvY2F0aW9uX2lkIjoiNHxnbG9iYWx8YXN5bmNfMjM0NzY0MXxkZXNfZ2VuZXJhbF90aWVyX3Byb2R8NTEzMDExMjMzODk4NjY4MDgyMnwwfGZhYXMuRjg0RjBEOTAyRTI0RjUwNkNBRDI3NEIxRTc2MUM0ODF8NzQ3MzI5MDAwMTg0Nzk3MjQ0NSJ9"}}
+2026-06-18 09:06:28,854 - root - [INFO] - des_container.py:206 - load_image - Pulling image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest on VMVM
+2026-06-18 09:07:56,894 - root - [INFO] - des_container.py:214 - load_image - Image vmvm-registry.fbinfra.net/orensultan/cpp-analysis:latest pulled successfully
+2026-06-18 09:07:58,258 - root - [INFO] - des_container.py:232 - run_container - Container started: 145864484a6e920d4449b65596144574124bdc127c7af0ffc3549d42d34f5c32
+2026-06-18 09:07:58,258 - root - [INFO] - des_container.py:582 - _heartbeat_loop - VMVM heartbeat thread started
+2026-06-18 09:07:58,275 - root - [INFO] - forager_locate_function_code_and_dep.py:313 - run - Starting analysis for CryptoPP::UnalignedAllocate in allocate.cpp
+2026-06-18 09:07:58,275 - root - [INFO] - forager_locate_function_code_and_dep.py:227 - prepare_cpp_container - ========== Preparing C++ container ==========
+2026-06-18 09:07:58,275 - root - [DEBUG] - forager_locate_function_code_and_dep.py:230 - prepare_cpp_container - Setting up env variables
+2026-06-18 09:07:58,275 - root - [DEBUG] - des_container.py:319 - command - DES command: 'export WINDOW=100 && export OVERLAP=2 && export CURRENT_LINE=0 && export CURRENT'
+2026-06-18 09:07:59,821 - root - [DEBUG] - forager_locate_function_code_and_dep.py:239 - prepare_cpp_container - Importing agent tools in container
+2026-06-18 09:08:01,222 - root - [DEBUG] - des_container.py:396 - put - DES put: 6243 bytes to /opt/tools/defaults.sh
+2026-06-18 09:08:06,382 - root - [DEBUG] - des_container.py:319 - command - DES command: 'source /opt/tools/defaults.sh'
+2026-06-18 09:08:09,148 - root - [DEBUG] - des_container.py:396 - put - DES put: 5735 bytes to /opt/tools/search.sh
+2026-06-18 09:08:30,760 - root - [DEBUG] - des_container.py:319 - command - DES command: 'source /opt/tools/search.sh'
+2026-06-18 09:08:52,736 - root - [DEBUG] - des_container.py:319 - command - DES command: 'export PATH=/opt/tools:$PATH'
+2026-06-18 09:08:55,138 - root - [INFO] - forager_locate_function_code_and_dep.py:244 - prepare_cpp_container - Uploading submit_prediction command
+2026-06-18 09:08:55,138 - root - [DEBUG] - des_container.py:396 - put - DES put: 74 bytes to /usr/local/bin/submit_prediction
+2026-06-18 09:09:06,241 - root - [DEBUG] - des_container.py:319 - command - DES command: 'chmod +x /usr/local/bin/submit_prediction'
+2026-06-18 09:09:23,686 - root - [DEBUG] - des_container.py:319 - command - DES command: "which submit_prediction || echo 'Not in PATH'"
+2026-06-18 09:09:25,072 - root - [INFO] - forager_locate_function_code_and_dep.py:256 - prepare_cpp_container - Script in PATH: /usr/local/bin/submit_prediction
+2026-06-18 09:09:25,072 - root - [DEBUG] - des_container.py:319 - command - DES command: "export GIT_AUTHOR_NAME='CI Bot' && export GIT_AUTHOR_EMAIL='ci-bot@yourdomain.co"
+2026-06-18 09:09:26,309 - root - [DEBUG] - forager_locate_function_code_and_dep.py:275 - prepare_cpp_container - Creating /workspace directory
+2026-06-18 09:09:26,309 - root - [DEBUG] - des_container.py:319 - command - DES command: 'mkdir -p /workspace'
+2026-06-18 09:09:27,560 - root - [DEBUG] - des_container.py:319 - command - DES command: 'cd /workspace'
+2026-06-18 09:09:45,976 - root - [DEBUG] - forager_locate_function_code_and_dep.py:215 - _init_prompt - Task prompt:
+Your task is to predict whether the function `CryptoPP::UnalignedAllocate` in the C++ file `allocate.cpp` will:
+- **Terminate** for all inputs, OR
+- **Diverge** for some inputs (enter a non-terminating loop)
+
+**Important:** This is a **read-only code analysis task**. You may only use shell commands to view files. Do not execute any C++ code or modify any files. Only use commands like `cat`, `grep`, `find`, `ls`, `cd`, `head`, `tail`, `git`, etc. **You MUST NOT attempt to "implement a fix" or modify any file — only analyze.**
+
+## STEP 1: Clone the Repository (with verification)
+
+Run this clone command:
+```bash
+git clone https://github.com/weidai11/cryptopp /workspace/CryptoPP && cd /workspace/CryptoPP && git checkout 60f81a77e0c9a0e7ffc1ca1bc438ddfa2e43b78e
+```
+
+**Verify the clone actually worked** before continuing. The container can have transient network failures that make `git clone` produce *no output* while leaving `/workspace/CryptoPP` empty. After the clone, your VERY NEXT command MUST be:
+```bash
+ls /workspace/CryptoPP/.git >/dev/null 2>&1 && echo CLONE_OK || echo CLONE_FAILED
+```
+
+- If you see `CLONE_OK`, proceed to STEP 2.
+- If you see `CLONE_FAILED` (or no output), the clone silently failed. Retry by running:
+  ```bash
+  rm -rf /workspace/CryptoPP && git clone https://github.com/weidai11/cryptopp /workspace/CryptoPP && cd /workspace/CryptoPP && git checkout 60f81a77e0c9a0e7ffc1ca1bc438ddfa2e43b78e
+  ```
+  Then re-run the verify command. Retry up to **3 times** before giving up. Do NOT proceed to analyze the file until you have `CLONE_OK`.
+
+## STEP 2: Examine the Function
+
+Navigate to the repository and examine the function using read-only commands. Examples:
+```bash
+cd /workspace/CryptoPP
+cat allocate.cpp                              # View the entire file
+grep -n "CryptoPP::UnalignedAllocate" allocate.cpp    # Find the function's line number
+grep -A 50 "CryptoPP::UnalignedAllocate" allocate.cpp # View the function plus 50 lines after (of course you can view more).
+```
+
+## STEP 3: Analyze Dependencies
+Important: The function may call other functions, use external types, or depend on macros defined elsewhere. You must examine these dependencies to fully understand the code's behavior.
+- Find and read helper functions called within the target function
+- Examine header files for type definitions and macros
+- Check struct/class definitions to understand data types
+- Trace function pointers to their implementations
+
+Finding dependencies:
+```bash
+grep -rn "function_name" /workspace/CryptoPP/
+find . -name "*.h" | xargs grep "TypeName"
+cat path/to/header.h
+```
+
+## STEP 4: Classify the Function
+**"T" (Terminates)** - Function terminates for all possible inputs:
+- No blocking synchronization calls. All loops have reachable exit conditions. Loop variables progress correctly toward exit. Proper bounds checking and error handling
+**"NT" (Non-Termination)** - Designed to block or loop indefinitely (can be intentional by the user or a bug). Examples:
+- Thread synchronization primitives. Locks. Condition variables. Event loops or server loops that run until external signal.
+Worker thread functions waiting for tasks or termination signals.
+- Loop variable never modified or modified in wrong direction. `while(1)` or `for(;;)` without reachable `break` or `return`.
+Unbounded I/O operations without proper termination checks. Missing loop increment/decrement statements.
+
+## STEP 5: Submit Your Prediction
+
+**You MUST submit your prediction by running this shell command exactly once** — do NOT just print the JSON in a markdown block, actually run it:
+```bash
+submit_prediction '{"function_name": "CryptoPP::UnalignedAllocate", "file_path": "allocate.cpp", "prediction": "<T|NT>", "p_non_terminating": <0-100>, "confidence": "<high|medium|low>", "reason": "<one concise sentence>"}'
+```
+
+**Field definitions:**
+- `prediction`: "T" if the function terminates for all inputs, "NT" if it can loop/block indefinitely
+- `p_non_terminating`: integer 0–100 — your estimated probability (in %) that the function is non-terminating
+- `confidence`: "high" if the evidence is clear and unambiguous, "medium" if there is some uncertainty, "low" if the code is hard to fully trace or the behavior is unclear
+- `reason`: one concise sentence explaining the key factor driving your prediction
+
+**Guidelines:**
+- Execute one command per response in triple backticks
+- Read all relevant source and header files before making a prediction
+- Trace data flow to understand where loop bounds and conditions come from
+- Consider edge cases: zero values, type overflows, null pointers, EOF conditions
+- Only submit your prediction when you have thoroughly analyzed the code
+- **Always verify the clone succeeded before proceeding (STEP 1).** If after 3 retries the clone still fails, submit a prediction with `"prediction": "T"`, `"p_non_terminating": 50`, `"confidence": "low"`, and `"reason": "clone failed — could not analyze source"` — this is far better than burning turns producing no prediction at all.
+2026-06-18 09:09:45,976 - root - [INFO] - forager_base.py:342 - start_trajectory - =========== Starting new trajectory ==========
+2026-06-18 09:09:45,976 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 1
+2026-06-18 09:09:45,976 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 09:09:47,987 - root - [INFO] - logging.py:31 - log_time - Took 2.01s
+2026-06-18 09:09:47,994 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'git clone https://github.com/w' (timeout=120)
+2026-06-18 09:09:47,995 - root - [DEBUG] - des_container.py:319 - command - DES command: 'git clone https://github.com/weidai11/cryptopp /workspace/CryptoPP && cd /worksp'
+2026-06-18 09:09:54,782 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-18 09:09:54,782 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 2
+2026-06-18 09:09:54,782 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 09:09:55,239 - root - [INFO] - logging.py:31 - log_time - Took 0.46s
+2026-06-18 09:09:55,240 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'ls /workspace/CryptoPP/.git >/' (timeout=120)
+2026-06-18 09:09:55,240 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 3
+2026-06-18 09:09:55,240 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 09:09:56,071 - root - [INFO] - logging.py:31 - log_time - Took 0.83s
+2026-06-18 09:09:56,071 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'rm -rf /workspace/CryptoPP && ' (timeout=120)
+2026-06-18 09:09:56,071 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 4
+2026-06-18 09:09:56,071 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 09:09:56,450 - root - [INFO] - logging.py:31 - log_time - Took 0.38s
+2026-06-18 09:09:56,454 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cd /workspace/CryptoPP && ls -' (timeout=120)
+2026-06-18 09:09:56,455 - root - [DEBUG] - des_container.py:319 - command - DES command: 'cd /workspace/CryptoPP && ls -la\n'
+2026-06-18 09:10:01,580 - root - [DEBUG] - des_container.py:589 - _heartbeat_loop - VMVM heartbeat sent
+2026-06-18 09:10:15,744 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: total 7692
+drwxr-xr-x 8 root root  12288 Jun 18 09:09 .
+drwxr-xr-x 3 root root     42 Jun 18 09:09 ..
+-rw-r--r-- 1 root root   1131 Jun 18 09:09 .appveyor.yml
+-rw-r--r-- 1 root root   1674 Jun 18 09:09 .cirrus.yml
+drwxr-xr-x 8 root root    183 Jun 18 09:09 .git
+-rw-r--r-- 1 root root     12 Jun 18 09:09 .gitattributes
+drwxr-xr-x 3 root root     68 Jun 18 09:09 .github
+-rw-r--r-- 1 root root   3849 Jun 18 09:09 .gitignore
+-rw-r--r-- 1 root root  16601 Jun 18 09:09 .travis.yml
+-rw-r--r-- 1 root root   3568 Jun 18 09:09 3way.cpp
+-rw-r--r-- 1 root root   2082 Jun 18 09:09 3way.h
+-rw-r--r-- 1 root root 108752 Jun 18 09:09 Doxyfile
+-rw-r--r-- 1 root root  10953 Jun 18 09:09 Filelist.txt
+-rw-r--r-- 1 root root  62312 Jun 18 09:09 GNUmakefile
+-rw-r--r-- 1 root root  35959 Jun 18 09:09 GNUmakefile-cross
+-rw-r--r-- 1 root root  30775 Jun 18 09:09 History.txt
+-rw-r--r-- 1 root root  13310 Jun 18 09:09 Install.txt
+-rw-r--r-- 1 root root   4032 Jun 18 09:09 License.txt
+-rw-r--r-- 1 root root  24640 Jun 18 09:09 Readme.txt
+-rw-r--r-- 1 root root   1071 Jun 18 09:09 Security.md
+drwxr-xr-x 2 root root   4096 Jun 18 09:09 TestData
+drwxr-xr-x 2 root root   4096 Jun 18 09:09 TestPrograms
+drwxr-xr-x 2 root root   4096 Jun 18 09:09 TestScripts
+drwxr-xr-x 2 root root   4096 Jun 18 09:09 TestVectors
+-rw-r--r-- 1 root root    763 Jun 18 09:09 adhoc.cpp.proto
+-rw-r--r-- 1 root root   1382 Jun 18 09:09 adler32.cpp
+-rw-r--r-- 1 root root    835 Jun 18 09:09 adler32.h
+-rw-r--r-- 1 root root  56027 Jun 18 09:09 adv_simd.h
+-rw-r--r-- 1 root root   1174 Jun 18 09:09 aes.h
+-rw-r--r-- 1 root root  32114 Jun 18 09:09 aes_armv4.S
+-rw-r--r-- 1 root root   1079 Jun 18 09:09 aes_armv4.h
+-rw-r--r-- 1 root root   9609 Jun 18 09:09 algebra.cpp
+-rw-r--r-- 1 root root  16328 Jun 18 09:09 algebra.h
+-rw-r--r-- 1 root root   2075 Jun 18 09:09 algparam.cpp
+-rw-r--r-- 1 root root  18968 Jun 18 09:09 algparam.h
+-rw-r--r-- 1 root root   2501 Jun 18 09:09 allocate.cpp
+-rw-r--r-- 1 root root   3513 Jun 18 09:09 allocate.h
+-rw-r--r-- 1 root root   2459 Jun 18 09:09 arc4.cpp
+-rw-r--r-- 1 root root   3185 Jun 18 09:09 arc4.h
+-rw-r--r-- 1 root root   5650 Jun 18 09:09 argnames.h
+-rw-r--r-- 1 root root  12981 Jun 18 09:09 aria.cpp
+-rw-r--r-- 1 root root   2874 Jun 18 09:09 aria.h
+-rw-r--r-- 1 root root  12362 Jun 18 09:09 ariatab.cpp
+-rw-r--r-- 1 root root  13719 Jun 18 09:09 arm_simd.h
+-rw-r--r-- 1 root root  16949 Jun 18 09:09 asn.cpp
+-rw-r--r-- 1 root root  37170 Jun 18 09:09 asn.h
+-rw-r--r-- 1 root root   5293 Jun 18 09:09 authenc.cpp
+-rw-r--r-- 1 root root   4702 Jun 18 09:09 authenc.h
+-rw-r--r-- 1 root root   4331 Jun 18 09:09 base32.cpp
+-rw-r--r-- 1 root root   9526 Jun 18 09:09 base32.h
+-rw-r--r-- 1 root root   4821 Jun 18 09:09 base64.cpp
+-rw-r--r-- 1 root root   9074 Jun 18 09:09 base64.h
+-rw-r--r-- 1 root root   6073 Jun 18 09:09 basecode.cpp
+-rw-r--r-- 1 root root   5599 Jun 18 09:09 basecode.h
+-rw-r--r-- 1 root root   6812 Jun 18 09:09 bds10.zip
+-rw-r--r-- 1 root root   3759 Jun 18 09:09 bench.h
+-rw-r--r-- 1 root root  15824 Jun 18 09:09 bench1.cpp
+-rw-r--r-- 1 root root  12040 Jun 18 09:09 bench2.cpp
+-rw-r--r-- 1 root root  16546 Jun 18 09:09 bench3.cpp
+-rw-r--r-- 1 root root  14279 Jun 18 09:09 bfinit.cpp
+-rw-r--r-- 1 root root  25403 Jun 18 09:09 blake2.cpp
+-rw-r--r-- 1 root root  16862 Jun 18 09:09 blake2.h
+-rw-r--r-- 1 root root  44802 Jun 18 09:09 blake2b_simd.cpp
+-rw-r--r-- 1 root root  41580 Jun 18 09:09 blake2s_simd.cpp
+-rw-r--r-- 1 root root   2358 Jun 18 09:09 blowfish.cpp
+-rw-r--r-- 1 root root   1727 Jun 18 09:09 blowfish.h
+-rw-r--r-- 1 root root   1499 Jun 18 09:09 blumshub.cpp
+-rw-r--r-- 1 root root   2097 Jun 18 09:09 blumshub.h
+-rw-r--r-- 1 root root  22108 Jun 18 09:09 camellia.cpp
+-rw-r--r-- 1 root root   1412 Jun 18 09:09 camellia.h
+-rw-r--r-- 1 root root  11321 Jun 18 09:09 cast.cpp
+-rw-r--r-- 1 root root   3230 Jun 18 09:09 cast.h
+-rw-r--r-- 1 root root  29897 Jun 18 09:09 casts.cpp
+-rw-r--r-- 1 root root   1309 Jun 18 09:09 cbcmac.cpp
+-rw-r--r-- 1 root root   1921 Jun 18 09:09 cbcmac.h
+-rw-r--r-- 1 root root   4076 Jun 18 09:09 ccm.cpp
+-rw-r--r-- 1 root root   4575 Jun 18 09:09 ccm.h
+-rw-r--r-- 1 root root  20005 Jun 18 09:09 chacha.cpp
+-rw-r--r-- 1 root root   9836 Jun 18 09:09 chacha.h
+-rw-r--r-- 1 root root  18092 Jun 18 09:09 chacha_avx.cpp
+-rw-r--r-- 1 root root  36866 Jun 18 09:09 chacha_simd.cpp
+-rw-r--r-- 1 root root   8591 Jun 18 09:09 chachapoly.cpp
+-rw-r--r-- 1 root root  13321 Jun 18 09:09 chachapoly.h
+-rw-r--r-- 1 root root  15745 Jun 18 09:09 cham.cpp
+-rw-r--r-- 1 root root   6664 Jun 18 09:09 cham.h
+-rw-r--r-- 1 root root  17468 Jun 18 09:09 cham_simd.cpp
+-rw-r--r-- 1 root root   7920 Jun 18 09:09 channels.cpp
+-rw-r--r-- 1 root root   4605 Jun 18 09:09 channels.h
+-rw-r--r-- 1 root root   3725 Jun 18 09:09 cmac.cpp
+-rw-r--r-- 1 root root   2549 Jun 18 09:09 cmac.h
+-rw-r--r-- 1 root root   1141 Jun 18 09:09 config.h
+-rw-r--r-- 1 root root   3281 Jun 18 09:09 config_align.h
+-rw-r--r-- 1 root root  21010 Jun 18 09:09 config_asm.h
+-rw-r--r-- 1 root root  10320 Jun 18 09:09 config_cpu.h
+-rw-r--r-- 1 root root  11487 Jun 18 09:09 config_cxx.h
+-rw-r--r-- 1 root root   8208 Jun 18 09:09 config_dll.h
+-rw-r--r-- 1 root root  12044 Jun 18 09:09 config_int.h
+-rw-r--r-- 1 root root   8697 Jun 18 09:09 config_misc.h
+-rw-r--r-- 1 root root   3066 Jun 18 09:09 config_ns.h
+-rw-r--r-- 1 root root   6387 Jun 18 09:09 config_os.h
+-rw-r--r-- 1 root root   4619 Jun 18 09:09 config_ver.h
+-rw-r--r-- 1 root root  45778 Jun 18 09:09 cpu.cpp
+-rw-r--r-- 1 root root  38641 Jun 18 09:09 cpu.h
+-rw-r--r-- 1 root root   1502 Jun 18 09:09 cpuid64.asm
+-rw-r--r-- 1 root root  17215 Jun 18 09:09 crc.cpp
+-rw-r--r-- 1 root root   2671 Jun 18 09:09 crc.h
+-rw-r--r-- 1 root root   5069 Jun 18 09:09 crc_simd.cpp
+-rw-r--r-- 1 root root  14840 Jun 18 09:09 cryptdll.vcxproj
+-rw-r--r-- 1 root root  14016 Jun 18 09:09 cryptdll.vcxproj.filters
+-rw-r--r-- 1 root root  16049 Jun 18 09:09 cryptest.nmake
+-rw-r--r-- 1 root root   6389 Jun 18 09:09 cryptest.sln
+-rw-r--r-- 1 root root  18023 Jun 18 09:09 cryptest.vcxproj
+-rw-r--r-- 1 root root  16279 Jun 18 09:09 cryptest.vcxproj.filters
+-rw-r--r-- 1 root root    252 Jun 18 09:09 cryptest.vcxproj.user
+-rw-r--r-- 1 root root  33700 Jun 18 09:09 cryptlib.cpp
+-rw-r--r-- 1 root root 181761 Jun 18 09:09 cryptlib.h
+-rw-r--r-- 1 root root  25648 Jun 18 09:09 cryptlib.vcxproj
+-rw-r--r-- 1 root root  34073 Jun 18 09:09 cryptlib.vcxproj.filters
+-rw-r--r-- 1 root root    572 Jun 18 09:09 cryptopp.mapfile
+-rw-r--r-- 1 root root   2494 Jun 18 09:09 cryptopp.rc
+-rw-r--r-- 1 root root    141 Jun 18 09:09 cryptopp.supp
+-rw-r--r-- 1 root root   6776 Jun 18 09:09 darn.cpp
+-rw-r--r-- 1 root root   3841 Jun 18 09:09 darn.h
+-rw-r--r-- 1 root root  43950 Jun 18 09:09 datatest.cpp
+-rw-r--r-- 1 root root  11492 Jun 18 09:09 default.cpp
+-rw-r--r-- 1 root root  16211 Jun 18 09:09 default.h
+-rw-r--r-- 1 root root  13918 Jun 18 09:09 des.cpp
+-rw-r--r-- 1 root root   5564 Jun 18 09:09 des.h
+-rw-r--r-- 1 root root   6081 Jun 18 09:09 dessp.cpp
+-rw-r--r-- 1 root root    349 Jun 18 09:09 dh.cpp
+-rw-r--r-- 1 root root  12037 Jun 18 09:09 dh.h
+-rw-r--r-- 1 root root   2250 Jun 18 09:09 dh2.cpp
+-rw-r--r-- 1 root root   2763 Jun 18 09:09 dh2.h
+-rw-r--r-- 1 root root   5838 Jun 18 09:09 dll.cpp
+-rw-r--r-- 1 root root   1828 Jun 18 09:09 dll.h
+-rw-r--r-- 1 root root   6188 Jun 18 09:09 dlltest.cpp
+-rw-r--r-- 1 root root   6362 Jun 18 09:09 dlltest.vcxproj
+-rw-r--r-- 1 root root    468 Jun 18 09:09 dlltest.vcxproj.filters
+-rw-r--r-- 1 root root   3439 Jun 18 09:09 dmac.h
+-rw-r--r-- 1 root root   8092 Jun 18 09:09 donna.h
+-rw-r--r-- 1 root root  87507 Jun 18 09:09 donna_32.cpp
+-rw-r--r-- 1 root root 139971 Jun 18 09:09 donna_32.h
+-rw-r--r-- 1 root root  66925 Jun 18 09:09 donna_64.cpp
+-rw-r--r-- 1 root root 140662 Jun 18 09:09 donna_64.h
+-rw-r--r-- 1 root root  63049 Jun 18 09:09 donna_sse.cpp
+-rw-r--r-- 1 root root   3160 Jun 18 09:09 donna_sse.h
+-rw-r--r-- 1 root root  35805 Jun 18 09:09 drbg.h
+-rw-r--r-- 1 root root   1289 Jun 18 09:09 dsa.cpp
+-rw-r--r-- 1 root root   2294 Jun 18 09:09 dsa.h
+-rw-r--r-- 1 root root   1602 Jun 18 09:09 eax.cpp
+-rw-r--r-- 1 root root   3784 Jun 18 09:09 eax.h
+-rw-r--r-- 1 root root   8415 Jun 18 09:09 ec2n.cpp
+-rw-r--r-- 1 root root   4628 Jun 18 09:09 ec2n.h
+-rw-r--r-- 1 root root  36208 Jun 18 09:09 eccrypto.cpp
+-rw-r--r-- 1 root root  30681 Jun 18 09:09 eccrypto.h
+-rw-r--r-- 1 root root  13186 Jun 18 09:09 ecp.cpp
+-rw-r--r-- 1 root root   6234 Jun 18 09:09 ecp.h
+-rw-r--r-- 1 root root   5384 Jun 18 09:09 ecpoint.h
+-rw-r--r-- 1 root root    532 Jun 18 09:09 elgamal.cpp
+-rw-r--r-- 1 root root  13505 Jun 18 09:09 elgamal.h
+-rw-r--r-- 1 root root   1786 Jun 18 09:09 emsa2.cpp
+-rw-r--r-- 1 root root   2951 Jun 18 09:09 emsa2.h
+-rw-r--r-- 1 root root   3999 Jun 18 09:09 eprecomp.cpp
+-rw-r--r-- 1 root root   6699 Jun 18 09:09 eprecomp.h
+-rw-r--r-- 1 root root   6416 Jun 18 09:09 esign.cpp
+-rw-r--r-- 1 root root   5823 Jun 18 09:09 esign.h
+-rw-r--r-- 1 root root   7528 Jun 18 09:09 factory.h
+-rw-r--r-- 1 root root  18581 Jun 18 09:09 fhmqv.h
+-rw-r--r-- 1 root root   7563 Jun 18 09:09 files.cpp
+-rw-r--r-- 1 root root   7903 Jun 18 09:09 files.h
+-rw-r--r-- 1 root root  41832 Jun 18 09:09 filters.cpp
+-rw-r--r-- 1 root root  70660 Jun 18 09:09 filters.h
+-rw-r--r-- 1 root root   2310 Jun 18 09:09 fips140.cpp
+-rw-r--r-- 1 root root   5679 Jun 18 09:09 fips140.h
+-rw-r--r-- 1 root root  37695 Jun 18 09:09 fipsalgt.cpp
+-rw-r--r-- 1 root root  25540 Jun 18 09:09 fipstest.cpp
+-rw-r--r-- 1 root root   2087 Jun 18 09:09 fltrimpl.h
+-rw-r--r-- 1 root root  33392 Jun 18 09:09 gcm.cpp
+-rw-r--r-- 1 root root   5105 Jun 18 09:09 gcm.h
+-rw-r--r-- 1 root root  23803 Jun 18 09:09 gcm_simd.cpp
+-rw-r--r-- 1 root root    637 Jun 18 09:09 gf256.cpp
+-rw-r--r-- 1 root root   1503 Jun 18 09:09 gf256.h
+-rw-r--r-- 1 root root   1834 Jun 18 09:09 gf2_32.cpp
+-rw-r--r-- 1 root root   1576 Jun 18 09:09 gf2_32.h
+-rw-r--r-- 1 root root  26336 Jun 18 09:09 gf2n.cpp
+-rw-r--r-- 1 root root  13998 Jun 18 09:09 gf2n.h
+-rw-r--r-- 1 root root  19020 Jun 18 09:09 gf2n_simd.cpp
+-rw-r--r-- 1 root root  10775 Jun 18 09:09 gfpcrypt.cpp
+-rw-r--r-- 1 root root  45961 Jun 18 09:09 gfpcrypt.h
+-rw-r--r-- 1 root root   3527 Jun 18 09:09 gost.cpp
+-rw-r--r-- 1 root root   1780 Jun 18 09:09 gost.h
+-rw-r--r-- 1 root root   5628 Jun 18 09:09 gzip.cpp
+-rw-r--r-- 1 root root   6390 Jun 18 09:09 gzip.h
+-rw-r--r-- 1 root root    630 Jun 18 09:09 hashfwd.h
+-rw-r--r-- 1 root root  10323 Jun 18 09:09 hc128.cpp
+-rw-r--r-- 1 root root   2469 Jun 18 09:09 hc128.h
+-rw-r--r-- 1 root root   4221 Jun 18 09:09 hc256.cpp
+-rw-r--r-- 1 root root   2415 Jun 18 09:09 hc256.h
+-rw-r--r-- 1 root root   2233 Jun 18 09:09 hex.cpp
+-rw-r--r-- 1 root root   1780 Jun 18 09:09 hex.h
+-rw-r--r-- 1 root root  11879 Jun 18 09:09 hight.cpp
+-rw-r--r-- 1 root root   2796 Jun 18 09:09 hight.h
+-rw-r--r-- 1 root root   5967 Jun 18 09:09 hkdf.h
+-rw-r--r-- 1 root root   2044 Jun 18 09:09 hmac.cpp
+-rw-r--r-- 1 root root   2607 Jun 18 09:09 hmac.h
+-rw-r--r-- 1 root root  18737 Jun 18 09:09 hmqv.h
+-rw-r--r-- 1 root root   4838 Jun 18 09:09 hrtimer.cpp
+-rw-r--r-- 1 root root   4554 Jun 18 09:09 hrtimer.h
+-rw-r--r-- 1 root root  11936 Jun 18 09:09 ida.cpp
+-rw-r--r-- 1 root root   6552 Jun 18 09:09 ida.h
+-rw-r--r-- 1 root root   4031 Jun 18 09:09 idea.cpp
+-rw-r--r-- 1 root root   1774 Jun 18 09:09 idea.h
+-rw-r--r-- 1 root root 135569 Jun 18 09:09 integer.cpp
+-rw-r--r-- 1 root root  38735 Jun 18 09:09 integer.h
+-rw-r--r-- 1 root root   5654 Jun 18 09:09 iterhash.cpp
+-rw-r--r-- 1 root root   9112 Jun 18 09:09 iterhash.h
+-rw-r--r-- 1 root root  56659 Jun 18 09:09 kalyna.cpp
+-rw-r--r-- 1 root root   9984 Jun 18 09:09 kalyna.h
+-rw-r--r-- 1 root root 138230 Jun 18 09:09 kalynatab.cpp
+-rw-r--r-- 1 root root   2042 Jun 18 09:09 keccak.cpp
+-rw-r--r-- 1 root root   4484 Jun 18 09:09 keccak.h
+-rw-r--r-- 1 root root   8401 Jun 18 09:09 keccak_core.cpp
+-rw-r--r-- 1 root root 106119 Jun 18 09:09 keccak_simd.cpp
+-rw-r--r-- 1 root root  55182 Jun 18 09:09 lea.cpp
+-rw-r--r-- 1 root root   4013 Jun 18 09:09 lea.h
+-rw-r--r-- 1 root root  47133 Jun 18 09:09 lea_simd.cpp
+-rw-r--r-- 1 root root  10201 Jun 18 09:09 lsh.h
+-rw-r--r-- 1 root root  25339 Jun 18 09:09 lsh256.cpp
+-rw-r--r-- 1 root root  19427 Jun 18 09:09 lsh256_avx.cpp
+-rw-r--r-- 1 root root  22550 Jun 18 09:09 lsh256_sse.cpp
+-rw-r--r-- 1 root root  31418 Jun 18 09:09 lsh512.cpp
+-rw-r--r-- 1 root root  23678 Jun 18 09:09 lsh512_avx.cpp
+-rw-r--r-- 1 root root  32922 Jun 18 09:09 lsh512_sse.cpp
+-rw-r--r-- 1 root root   3414 Jun 18 09:09 lubyrack.h
+-rw-r--r-- 1 root root   6932 Jun 18 09:09 luc.cpp
+-rw-r--r-- 1 root root  13717 Jun 18 09:09 luc.h
+-rw-r--r-- 1 root root   3776 Jun 18 09:09 mars.cpp
+-rw-r--r-- 1 root root   1573 Jun 18 09:09 mars.h
+-rw-r--r-- 1 root root   6696 Jun 18 09:09 marss.cpp
+-rw-r--r-- 1 root root   3114 Jun 18 09:09 md2.cpp
+-rw-r--r-- 1 root root   1791 Jun 18 09:09 md2.h
+-rw-r--r-- 1 root root   2855 Jun 18 09:09 md4.cpp
+-rw-r--r-- 1 root root   1360 Jun 18 09:09 md4.h
+-rw-r--r-- 1 root root   4766 Jun 18 09:09 md5.cpp
+-rw-r--r-- 1 root root   1292 Jun 18 09:09 md5.h
+-rw-r--r-- 1 root root   2745 Jun 18 09:09 mdc.h
+-rw-r--r-- 1 root root   7991 Jun 18 09:09 mersenne.h
+-rw-r--r-- 1 root root  10519 Jun 18 09:09 misc.cpp
+-rw-r--r-- 1 root root 126868 Jun 18 09:09 misc.h
+-rw-r--r-- 1 root root  13887 Jun 18 09:09 modarith.h
+-rw-r--r-- 1 root root   9833 Jun 18 09:09 modes.cpp
+-rw-r--r-- 1 root root  26758 Jun 18 09:09 modes.h
+-rw-r--r-- 1 root root   1350 Jun 18 09:09 modexppc.h
+-rw-r--r-- 1 root root   4347 Jun 18 09:09 mqueue.cpp
+-rw-r--r-- 1 root root   5455 Jun 18 09:09 mqueue.h
+-rw-r--r-- 1 root root    959 Jun 18 09:09 mqv.cpp
+-rw-r--r-- 1 root root  12575 Jun 18 09:09 mqv.h
+-rw-r--r-- 1 root root  22204 Jun 18 09:09 naclite.h
+-rw-r--r-- 1 root root  25589 Jun 18 09:09 nbtheory.cpp
+-rw-r--r-- 1 root root  15737 Jun 18 09:09 nbtheory.h
+-rw-r--r-- 1 root root   5521 Jun 18 09:09 neon_simd.cpp
+-rw-r--r-- 1 root root    230 Jun 18 09:09 nr.h
+-rw-r--r-- 1 root root   3145 Jun 18 09:09 oaep.cpp
+-rw-r--r-- 1 root root   1941 Jun 18 09:09 oaep.h
+-rw-r--r-- 1 root root   9613 Jun 18 09:09 oids.h
+-rw-r--r-- 1 root root   9345 Jun 18 09:09 osrng.cpp
+-rw-r--r-- 1 root root  11557 Jun 18 09:09 osrng.h
+-rw-r--r-- 1 root root   5173 Jun 18 09:09 ossig.h
+-rw-r--r-- 1 root root   2780 Jun 18 09:09 padlkrng.cpp
+-rw-r--r-- 1 root root   5598 Jun 18 09:09 padlkrng.h
+-rw-r--r-- 1 root root  14395 Jun 18 09:09 panama.cpp
+-rw-r--r-- 1 root root   5187 Jun 18 09:09 panama.h
+-rw-r--r-- 1 root root     18 Jun 18 09:09 pch.cpp
+-rw-r--r-- 1 root root    758 Jun 18 09:09 pch.h
+-rw-r--r-- 1 root root   7633 Jun 18 09:09 pkcspad.cpp
+-rw-r--r-- 1 root root   5112 Jun 18 09:09 pkcspad.h
+-rw-r--r-- 1 root root  11314 Jun 18 09:09 poly1305.cpp
+-rw-r--r-- 1 root root  10983 Jun 18 09:09 poly1305.h
+-rw-r--r-- 1 root root  14815 Jun 18 09:09 polynomi.cpp
+-rw-r--r-- 1 root root  17490 Jun 18 09:09 polynomi.h
+-rw-r--r-- 1 root root   2796 Jun 18 09:09 power7_ppc.cpp
+-rw-r--r-- 1 root root   7504 Jun 18 09:09 power8_ppc.cpp
+-rw-r--r-- 1 root root   4088 Jun 18 09:09 power9_ppc.cpp
+-rw-r--r-- 1 root root   2759 Jun 18 09:09 ppc_simd.cpp
+-rw-r--r-- 1 root root 101369 Jun 18 09:09 ppc_simd.h
+-rw-r--r-- 1 root root  26268 Jun 18 09:09 primetab.cpp
+-rw-r--r-- 1 root root   6256 Jun 18 09:09 pssr.cpp
+-rw-r--r-- 1 root root   4386 Jun 18 09:09 pssr.h
+-rw-r--r-- 1 root root   8339 Jun 18 09:09 pubkey.cpp
+-rw-r--r-- 1 root root 102528 Jun 18 09:09 pubkey.h
+-rw-r--r-- 1 root root  16492 Jun 18 09:09 pwdbased.h
+-rw-r--r-- 1 root root  13872 Jun 18 09:09 queue.cpp
+-rw-r--r-- 1 root root   9634 Jun 18 09:09 queue.h
+-rw-r--r-- 1 root root   7735 Jun 18 09:09 rabbit.cpp
+-rw-r--r-- 1 root root   4878 Jun 18 09:09 rabbit.h
+-rw-r--r-- 1 root root   6410 Jun 18 09:09 rabin.cpp
+-rw-r--r-- 1 root root   4556 Jun 18 09:09 rabin.h
+-rw-r--r-- 1 root root   4288 Jun 18 09:09 randpool.cpp
+-rw-r--r-- 1 root root   4699 Jun 18 09:09 randpool.h
+-rw-r--r-- 1 root root   3716 Jun 18 09:09 rc2.cpp
+-rw-r--r-- 1 root root   3185 Jun 18 09:09 rc2.h
+-rw-r--r-- 1 root root   2023 Jun 18 09:09 rc5.cpp
+-rw-r--r-- 1 root root   1583 Jun 18 09:09 rc5.h
+-rw-r--r-- 1 root root   2413 Jun 18 09:09 rc6.cpp
+-rw-r--r-- 1 root root   1612 Jun 18 09:09 rc6.h
+-rw-r--r-- 1 root root   6357 Jun 18 09:09 rdrand.asm
+-rw-r--r-- 1 root root   8611 Jun 18 09:09 rdrand.cpp
+-rw-r--r-- 1 root root   5708 Jun 18 09:09 rdrand.h
+-rw-r--r-- 1 root root   6357 Jun 18 09:09 rdseed.asm
+-rw-r--r-- 1 root root   4481 Jun 18 09:09 rdtables.cpp
+-rw-r--r-- 1 root root   5775 Jun 18 09:09 regtest1.cpp
+-rw-r--r-- 1 root root   3857 Jun 18 09:09 regtest2.cpp
+-rw-r--r-- 1 root root   7695 Jun 18 09:09 regtest3.cpp
+-rw-r--r-- 1 root root   2322 Jun 18 09:09 regtest4.cpp
+-rw-r--r-- 1 root root    411 Jun 18 09:09 resource.h
+-rw-r--r-- 1 root root  41076 Jun 18 09:09 rijndael.cpp
+-rw-r--r-- 1 root root   4778 Jun 18 09:09 rijndael.h
+-rw-r--r-- 1 root root  25316 Jun 18 09:09 rijndael_simd.cpp
+-rw-r--r-- 1 root root  32078 Jun 18 09:09 ripemd.cpp
+-rw-r--r-- 1 root root   2507 Jun 18 09:09 ripemd.h
+-rw-r--r-- 1 root root   4683 Jun 18 09:09 rng.cpp
+-rw-r--r-- 1 root root   4293 Jun 18 09:09 rng.h
+-rw-r--r-- 1 root root  10178 Jun 18 09:09 rsa.cpp
+-rw-r--r-- 1 root root  11661 Jun 18 09:09 rsa.h
+-rw-r--r-- 1 root root   8300 Jun 18 09:09 rw.cpp
+-rw-r--r-- 1 root root   5316 Jun 18 09:09 rw.h
+-rw-r--r-- 1 root root   6473 Jun 18 09:09 safer.cpp
+-rw-r--r-- 1 root root   3205 Jun 18 09:09 safer.h
+-rw-r--r-- 1 root root  27668 Jun 18 09:09 salsa.cpp
+-rw-r--r-- 1 root root   4006 Jun 18 09:09 salsa.h
+-rw-r--r-- 1 root root  10100 Jun 18 09:09 scrypt.cpp
+-rw-r--r-- 1 root root   4679 Jun 18 09:09 scrypt.h
+-rw-r--r-- 1 root root   4898 Jun 18 09:09 seal.cpp
+-rw-r--r-- 1 root root   2004 Jun 18 09:09 seal.h
+-rw-r--r-- 1 root root  53781 Jun 18 09:09 secblock.h
+-rw-r--r-- 1 root root    896 Jun 18 09:09 secblockfwd.h
+-rw-r--r-- 1 root root  20694 Jun 18 09:09 seckey.h
+-rw-r--r-- 1 root root   5336 Jun 18 09:09 seed.cpp
+-rw-r--r-- 1 root root   1223 Jun 18 09:09 seed.h
+-rw-r--r-- 1 root root   3020 Jun 18 09:09 serpent.cpp
+-rw-r--r-- 1 root root   2377 Jun 18 09:09 serpent.h
+-rw-r--r-- 1 root root   9035 Jun 18 09:09 serpentp.h
+-rw-r--r-- 1 root root  45823 Jun 18 09:09 sha.cpp
+-rw-r--r-- 1 root root  10811 Jun 18 09:09 sha.h
+-rw-r--r-- 1 root root  29134 Jun 18 09:09 sha1_armv4.S
+-rw-r--r-- 1 root root    669 Jun 18 09:09 sha1_armv4.h
+-rw-r--r-- 1 root root  59489 Jun 18 09:09 sha256_armv4.S
+-rw-r--r-- 1 root root    692 Jun 18 09:09 sha256_armv4.h
+-rw-r--r-- 1 root root   2070 Jun 18 09:09 sha3.cpp
+-rw-r--r-- 1 root root   3931 Jun 18 09:09 sha3.h
+-rw-r--r-- 1 root root  42371 Jun 18 09:09 sha512_armv4.S
+-rw-r--r-- 1 root root    692 Jun 18 09:09 sha512_armv4.h
+-rw-r--r-- 1 root root  51300 Jun 18 09:09 sha_simd.cpp
+-rw-r--r-- 1 root root   5021 Jun 18 09:09 shacal2.cpp
+-rw-r--r-- 1 root root   2022 Jun 18 09:09 shacal2.h
+-rw-r--r-- 1 root root   3293 Jun 18 09:09 shacal2_simd.cpp
+-rw-r--r-- 1 root root   2512 Jun 18 09:09 shake.cpp
+-rw-r--r-- 1 root root   7186 Jun 18 09:09 shake.h
+-rw-r--r-- 1 root root   5346 Jun 18 09:09 shark.cpp
+-rw-r--r-- 1 root root   2049 Jun 18 09:09 shark.h
+-rw-r--r-- 1 root root 121955 Jun 18 09:09 sharkbox.cpp
+-rw-r--r-- 1 root root   4552 Jun 18 09:09 simeck.cpp
+-rw-r--r-- 1 root root   6127 Jun 18 09:09 simeck.h
+-rw-r--r-- 1 root root  16984 Jun 18 09:09 simon.cpp
+-rw-r--r-- 1 root root   8554 Jun 18 09:09 simon.h
+-rw-r--r-- 1 root root  31747 Jun 18 09:09 simon128_simd.cpp
+-rw-r--r-- 1 root root    206 Jun 18 09:09 simple.cpp
+-rw-r--r-- 1 root root  26288 Jun 18 09:09 simple.h
+-rw-r--r-- 1 root root   9283 Jun 18 09:09 siphash.h
+-rw-r--r-- 1 root root   6265 Jun 18 09:09 skipjack.cpp
+-rw-r--r-- 1 root root   2826 Jun 18 09:09 skipjack.h
+-rw-r--r-- 1 root root  10454 Jun 18 09:09 sm3.cpp
+-rw-r--r-- 1 root root   2810 Jun 18 09:09 sm3.h
+-rw-r--r-- 1 root root   8593 Jun 18 09:09 sm4.cpp
+-rw-r--r-- 1 root root   3982 Jun 18 09:09 sm4.h
+-rw-r--r-- 1 root root  10197 Jun 18 09:09 sm4_simd.cpp
+-rw-r--r-- 1 root root   6652 Jun 18 09:09 smartptr.h
+-rw-r--r-- 1 root root  24847 Jun 18 09:09 sosemanuk.cpp
+-rw-r--r-- 1 root root   2423 Jun 18 09:09 sosemanuk.h
+-rw-r--r-- 1 root root  15721 Jun 18 09:09 speck.cpp
+-rw-r--r-- 1 root root   8560 Jun 18 09:09 speck.h
+-rw-r--r-- 1 root root  26747 Jun 18 09:09 speck128_simd.cpp
+-rw-r--r-- 1 root root   5655 Jun 18 09:09 square.cpp
+-rw-r--r-- 1 root root   1699 Jun 18 09:09 square.h
+-rw-r--r-- 1 root root  32105 Jun 18 09:09 squaretb.cpp
+-rw-r--r-- 1 root root   3076 Jun 18 09:09 sse_simd.cpp
+-rw-r--r-- 1 root root   2485 Jun 18 09:09 stdcpp.h
+-rw-r--r-- 1 root root   8254 Jun 18 09:09 strciphr.cpp
+-rw-r--r-- 1 root root  33978 Jun 18 09:09 strciphr.h
+-rw-r--r-- 1 root root   4460 Jun 18 09:09 tea.cpp
+-rw-r--r-- 1 root root   5079 Jun 18 09:09 tea.h
+-rw-r--r-- 1 root root  36170 Jun 18 09:09 test.cpp
+-rw-r--r-- 1 root root  16383 Jun 18 09:09 tftables.cpp
+-rw-r--r-- 1 root root  19879 Jun 18 09:09 threefish.cpp
+-rw-r--r-- 1 root root   7745 Jun 18 09:09 threefish.h
+-rw-r--r-- 1 root root   6586 Jun 18 09:09 tiger.cpp
+-rw-r--r-- 1 root root   2348 Jun 18 09:09 tiger.h
+-rw-r--r-- 1 root root  44765 Jun 18 09:09 tigertab.cpp
+-rw-r--r-- 1 root root   7689 Jun 18 09:09 trap.h
+-rw-r--r-- 1 root root   2046 Jun 18 09:09 trunhash.h
+-rw-r--r-- 1 root root  12107 Jun 18 09:09 ttmac.cpp
+-rw-r--r-- 1 root root   1506 Jun 18 09:09 ttmac.h
+-rw-r--r-- 1 root root  24805 Jun 18 09:09 tweetnacl.cpp
+-rw-r--r-- 1 root root  20693 Jun 18 09:09 tweetnacl.h
+-rw-r--r-- 1 root root   4402 Jun 18 09:09 twofish.cpp
+-rw-r--r-- 1 root root   1812 Jun 18 09:09 twofish.h
+-rw-r--r-- 1 root root  62746 Jun 18 09:09 validat0.cpp
+-rw-r--r-- 1 root root  32685 Jun 18 09:09 validat1.cpp
+-rw-r--r-- 1 root root  71023 Jun 18 09:09 validat10.cpp
+-rw-r--r-- 1 root root  80738 Jun 18 09:09 validat2.cpp
+-rw-r--r-- 1 root root  49501 Jun 18 09:09 validat3.cpp
+-rw-r--r-- 1 root root  76028 Jun 18 09:09 validat4.cpp
+-rw-r--r-- 1 root root 135124 Jun 18 09:09 validat5.cpp
+-rw-r--r-- 1 root root  14447 Jun 18 09:09 validat6.cpp
+-rw-r--r-- 1 root root  20507 Jun 18 09:09 validat7.cpp
+-rw-r--r-- 1 root root  20449 Jun 18 09:09 validat8.cpp
+-rw-r--r-- 1 root root  26933 Jun 18 09:09 validat9.cpp
+-rw-r--r-- 1 root root  10897 Jun 18 09:09 validate.h
+-rw-r--r-- 1 root root   7884 Jun 18 09:09 vc60.zip
+-rw-r--r-- 1 root root  25928 Jun 18 09:09 vmac.cpp
+-rw-r--r-- 1 root root   3931 Jun 18 09:09 vmac.h
+-rw-r--r-- 1 root root  12635 Jun 18 09:09 vs2005.zip
+-rw-r--r-- 1 root root   2716 Jun 18 09:09 wake.cpp
+-rw-r--r-- 1 root root   1770 Jun 18 09:09 wake.h
+-rw-r--r-- 1 root root  42598 Jun 18 09:09 whrlpool.cpp
+-rw-r--r-- 1 root root   1618 Jun 18 09:09 whrlpool.h
+-rw-r--r-- 1 root root   6636 Jun 18 09:09 words.h
+-rw-r--r-- 1 root root  47829 Jun 18 09:09 x64dll.asm
+-rw-r--r-- 1 root root  38328 Jun 18 09:09 x64masm.asm
+-rw-r--r-- 1 root root  31346 Jun 18 09:09 xed25519.cpp
+-rw-r--r-- 1 root root  37348 Jun 18 09:09 xed25519.h
+-rw-r--r-- 1 root root   3473 Jun 18 09:09 xtr.cpp
+-rw-r--r-- 1 root root   5680 Jun 18 09:09 xtr.h
+-rw-r--r-- 1 root root   3542 Jun 18 09:09 xtrcrypt.cpp
+-rw-r--r-- 1 root root   1937 Jun 18 09:09 xtrcrypt.h
+-rw-r--r-- 1 root root  17230 Jun 18 09:09 xts.cpp
+-rw-r--r-- 1 root root  10780 Jun 18 09:09 xts.h
+-rw-r--r-- 1 root root  26265 Jun 18 09:09 zdeflate.cpp
+-rw-r--r-- 1 root root   6067 Jun 18 09:09 zdeflate.h
+-rw-r--r-- 1 root root  18476 Jun 18 09:09 zinflate.cpp
+-rw-r--r-- 1 root root   5519 Jun 18 09:09 zinflate.h
+-rw-r--r-- 1 root root   2695 Jun 18 09:09 zlib.cpp
+-rw-r--r-- 1 root root   2531 Jun 18 09:09 zlib.h
+2026-06-18 09:10:15,744 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 5
+2026-06-18 09:10:15,744 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 09:10:16,626 - root - [INFO] - logging.py:31 - log_time - Took 0.88s
+2026-06-18 09:10:16,631 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cd /workspace/CryptoPP\ncat all' (timeout=120)
+2026-06-18 09:10:16,631 - root - [DEBUG] - des_container.py:319 - command - DES command: 'cd /workspace/CryptoPP\ncat allocate.cpp\n'
+2026-06-18 09:10:19,908 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: // allocate.cpp - written and placed in the public domain by Jeffrey Walton
+
+// The functions in allocate.h and allocate.cpp were originally in misc.h
+// and misc.cpp. They were extracted in September 2019 to sidestep a circular
+// dependency with misc.h and secblock.h.
+
+#include "pch.h"
+#include "config.h"
+
+#ifndef CRYPTOPP_IMPORTS
+
+#include "allocate.h"
+#include "stdcpp.h"
+#include "misc.h"
+#include "trap.h"
+
+// for memalign
+#if defined(CRYPTOPP_MEMALIGN_AVAILABLE) || defined(CRYPTOPP_MM_MALLOC_AVAILABLE) || defined(QNX)
+# include <malloc.h>
+#endif
+// for posix_memalign
+#if defined(CRYPTOPP_POSIX_MEMALIGN_AVAILABLE)
+# include <stdlib.h>
+#endif
+
+NAMESPACE_BEGIN(CryptoPP)
+
+void CallNewHandler()
+{
+	std::new_handler newHandler = std::set_new_handler(NULLPTR);
+	if (newHandler)
+		std::set_new_handler(newHandler);
+
+	if (newHandler)
+		newHandler();
+	else
+		throw std::bad_alloc();
+}
+
+void * AlignedAllocate(size_t size)
+{
+	byte *p;
+#if defined(CRYPTOPP_MM_MALLOC_AVAILABLE)
+	while ((p = (byte *)_mm_malloc(size, 16)) == NULLPTR)
+#elif defined(CRYPTOPP_MEMALIGN_AVAILABLE)
+	while ((p = (byte *)memalign(16, size)) == NULLPTR)
+#elif defined(CRYPTOPP_MALLOC_ALIGNMENT_IS_16)
+	while ((p = (byte *)malloc(size)) == NULLPTR)
+#elif defined(CRYPTOPP_POSIX_MEMALIGN_AVAILABLE)
+	while (posix_memalign(reinterpret_cast<void**>(&p), 16, size) != 0)
+#else
+	while ((p = (byte *)malloc(size + 16)) == NULLPTR)
+#endif
+		CallNewHandler();
+
+#ifdef CRYPTOPP_NO_ALIGNED_ALLOC
+	size_t adjustment = 16-((size_t)p%16);
+	CRYPTOPP_ASSERT(adjustment > 0);
+	p += adjustment;
+	p[-1] = (byte)adjustment;
+#endif
+
+	// If this assert fires then there are problems that need
+	// to be fixed. Please open a bug report.
+	CRYPTOPP_ASSERT(IsAlignedOn(p, 16));
+	return p;
+}
+
+void AlignedDeallocate(void *p)
+{
+	// Guard pointer due to crash on AIX when CRYPTOPP_NO_ALIGNED_ALLOC
+	// is in effect. The guard was previously in place in SecBlock,
+	// but it was removed at f4d68353ca7c as part of GH #875.
+	CRYPTOPP_ASSERT(p);
+
+	if (p != NULLPTR)
+	{
+#ifdef CRYPTOPP_MM_MALLOC_AVAILABLE
+		_mm_free(p);
+#elif defined(CRYPTOPP_NO_ALIGNED_ALLOC)
+		p = (byte *)p - ((byte *)p)[-1];
+		free(p);
+#else
+		free(p);
+#endif
+	}
+}
+
+void * UnalignedAllocate(size_t size)
+{
+	void *p;
+	while ((p = malloc(size)) == NULLPTR)
+		CallNewHandler();
+	return p;
+}
+
+void UnalignedDeallocate(void *p)
+{
+	free(p);
+}
+
+NAMESPACE_END
+
+#endif  // CRYPTOPP_IMPORTS
+2026-06-18 09:10:19,908 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 6
+2026-06-18 09:10:19,908 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 09:10:20,642 - root - [INFO] - logging.py:31 - log_time - Took 0.73s
+2026-06-18 09:10:20,645 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'cat allocate.h\n' (timeout=120)
+2026-06-18 09:10:20,645 - root - [DEBUG] - des_container.py:319 - command - DES command: 'cat allocate.h\n'
+2026-06-18 09:10:24,064 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: // allocate.h - written and placed in the public domain by Jeffrey Walton
+
+// The functions in allocate.h and allocate.cpp were originally in misc.h
+// and misc.cpp. They were extracted in September 2019 to sidestep a circular
+// dependency with misc.h and secblock.h.
+
+/// \file allocate.h
+/// \brief Functions for allocating aligned buffers
+
+#ifndef CRYPTOPP_ALLOCATE_H
+#define CRYPTOPP_ALLOCATE_H
+
+#include "config.h"
+#include "cryptlib.h"
+
+NAMESPACE_BEGIN(CryptoPP)
+
+/// \brief Attempts to reclaim unused memory
+/// \throw bad_alloc
+/// \details In the normal course of running a program, a request for memory
+///  normally succeeds. If a call to AlignedAllocate or UnalignedAllocate fails,
+///  then CallNewHandler is called in n effort to recover. Internally,
+///  CallNewHandler calls set_new_handler(nullptr) in an effort to free memory.
+///  There is no guarantee CallNewHandler will be able to obtain more memory so
+///  an allocation succeeds. If the call to set_new_handler fails, then CallNewHandler
+///  throws a bad_alloc exception.
+/// \throw bad_alloc on failure
+/// \since Crypto++ 5.0
+/// \sa AlignedAllocate, AlignedDeallocate, UnalignedAllocate, UnalignedDeallocate
+CRYPTOPP_DLL void CRYPTOPP_API CallNewHandler();
+
+/// \brief Allocates a buffer on 16-byte boundary
+/// \param size the size of the buffer
+/// \details AlignedAllocate is primarily used when the data will be
+///  processed by SSE, NEON, ARMv8 or PowerPC instructions. The assembly
+///  language routines rely on the alignment. If the alignment is not
+///  respected, then a SIGBUS could be generated on Unix and Linux, and an
+///  EXCEPTION_DATATYPE_MISALIGNMENT could be generated on Windows.
+/// \details Formerly, AlignedAllocate and AlignedDeallocate were only
+///  available on certain platforms when CRYTPOPP_DISABLE_ASM was not in
+///  effect. However, Android and iOS debug simulator builds got into a
+///  state where the aligned allocator was not available and caused link
+///  failures.
+/// \since AlignedAllocate for SIMD since Crypto++ 1.0, AlignedAllocate
+///  for all builds since Crypto++ 8.1
+/// \sa AlignedDeallocate, UnalignedAllocate, UnalignedDeallocate, CallNewHandler,
+///  <A HREF="http://github.com/weidai11/cryptopp/issues/779">Issue 779</A>
+CRYPTOPP_DLL void* CRYPTOPP_API AlignedAllocate(size_t size);
+
+/// \brief Frees a buffer allocated with AlignedAllocate
+/// \param ptr the buffer to free
+/// \since AlignedDeallocate for SIMD since Crypto++ 1.0, AlignedAllocate
+///  for all builds since Crypto++ 8.1
+/// \sa AlignedAllocate, UnalignedAllocate, UnalignedDeallocate, CallNewHandler,
+///  <A HREF="http://github.com/weidai11/cryptopp/issues/779">Issue 779</A>
+CRYPTOPP_DLL void CRYPTOPP_API AlignedDeallocate(void *ptr);
+
+/// \brief Allocates a buffer
+/// \param size the size of the buffer
+/// \since Crypto++ 1.0
+/// \sa AlignedAllocate, AlignedDeallocate, UnalignedDeallocate, CallNewHandler,
+///  <A HREF="http://github.com/weidai11/cryptopp/issues/779">Issue 779</A>
+CRYPTOPP_DLL void * CRYPTOPP_API UnalignedAllocate(size_t size);
+
+/// \brief Frees a buffer allocated with UnalignedAllocate
+/// \param ptr the buffer to free
+/// \since Crypto++ 1.0
+/// \sa AlignedAllocate, AlignedDeallocate, UnalignedAllocate, CallNewHandler,
+///  <A HREF="http://github.com/weidai11/cryptopp/issues/779">Issue 779</A>
+CRYPTOPP_DLL void CRYPTOPP_API UnalignedDeallocate(void *ptr);
+
+NAMESPACE_END
+
+#endif  // CRYPTOPP_ALLOCATE_H
+2026-06-18 09:10:24,064 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 7
+2026-06-18 09:10:24,064 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 09:10:26,051 - root - [INFO] - logging.py:31 - log_time - Took 1.99s
+2026-06-18 09:10:26,064 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -n "NULLPTR\\|CRYPTOPP_IMP' (timeout=120)
+2026-06-18 09:10:26,064 - root - [DEBUG] - des_container.py:319 - command - DES command: 'grep -n "NULLPTR\\|CRYPTOPP_IMPORTS" config.h\n'
+2026-06-18 09:10:29,329 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-18 09:10:29,329 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 8
+2026-06-18 09:10:29,329 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 09:10:29,923 - root - [INFO] - logging.py:31 - log_time - Took 0.59s
+2026-06-18 09:10:29,927 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'find . -name "*.h" -o -name "*' (timeout=120)
+2026-06-18 09:10:29,927 - root - [DEBUG] - des_container.py:319 - command - DES command: 'find . -name "*.h" -o -name "*.cpp" | xargs grep -l "NULLPTR" | head -5\n'
+2026-06-18 09:10:31,283 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: ./adv_simd.h
+./algparam.h
+./allocate.cpp
+./asn.h
+./base32.h
+2026-06-18 09:10:31,283 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 9
+2026-06-18 09:10:31,283 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 09:10:31,669 - root - [INFO] - logging.py:31 - log_time - Took 0.39s
+2026-06-18 09:10:31,674 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -n "NULLPTR" cryptlib.h\n' (timeout=120)
+2026-06-18 09:10:31,674 - root - [DEBUG] - des_container.py:319 - command - DES command: 'grep -n "NULLPTR" cryptlib.h\n'
+2026-06-18 09:10:32,916 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 885:		{ProcessAndXorBlock(inBlock, NULLPTR, outBlock);}
+894:		{ProcessAndXorBlock(inoutBlock, NULLPTR, inoutBlock);}
+1140:	virtual byte * CreateUpdateSpace(size_t &size) {size=0; return NULLPTR;}
+1153:		{TruncatedFinal(NULLPTR, 0);}
+1726:			{size=0; return NULLPTR;}
+1749:			{return !!Put2(NULLPTR, 0, propagation < 0 ? -1 : propagation+1, blocking);}
+2258:			{return !!ChannelPut2(channel, NULLPTR, 0, propagation < 0 ? -1 : propagation+1, blocking);}
+2346:		virtual BufferedTransformation *AttachedTransformation() {CRYPTOPP_ASSERT(!Attachable()); return NULLPTR;}
+2361:		virtual void Detach(BufferedTransformation *newAttachment = NULLPTR) {
+2733:		BufferedTransformation *attachment=NULLPTR, const NameValuePairs &parameters = g_nullNameValuePairs) const;
+2767:		BufferedTransformation *attachment=NULLPTR, const NameValuePairs &parameters = g_nullNameValuePairs) const;
+3208:	ProtocolSession() : m_rng(NULLPTR), m_throwOnProtocolError(true), m_validState(false) {}
+2026-06-18 09:10:32,916 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 10
+2026-06-18 09:10:32,916 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 09:10:33,250 - root - [INFO] - logging.py:31 - log_time - Took 0.33s
+2026-06-18 09:10:33,254 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -rn "#define NULLPTR" .\n' (timeout=120)
+2026-06-18 09:10:33,255 - root - [DEBUG] - des_container.py:319 - command - DES command: 'grep -rn "#define NULLPTR" .\n'
+2026-06-18 09:10:34,687 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-18 09:10:34,687 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 11
+2026-06-18 09:10:34,687 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 09:10:35,128 - root - [INFO] - logging.py:31 - log_time - Took 0.44s
+2026-06-18 09:10:35,132 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'find . -name "*.h" | xargs gre' (timeout=120)
+2026-06-18 09:10:35,132 - root - [DEBUG] - des_container.py:319 - command - DES command: 'find . -name "*.h" | xargs grep -l "NULLPTR" | head -3\n'
+2026-06-18 09:10:36,604 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: ./adv_simd.h
+./algparam.h
+./asn.h
+2026-06-18 09:10:36,604 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 12
+2026-06-18 09:10:36,604 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 09:10:37,044 - root - [INFO] - logging.py:31 - log_time - Took 0.44s
+2026-06-18 09:10:37,049 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'grep -A5 -B5 "NULLPTR\\|nullptr' (timeout=120)
+2026-06-18 09:10:37,049 - root - [DEBUG] - des_container.py:319 - command - DES command: 'grep -A5 -B5 "NULLPTR\\|nullptr\\|NULL" config.h\n'
+2026-06-18 09:10:54,578 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 
+2026-06-18 09:10:54,578 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 13
+2026-06-18 09:10:54,578 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 09:10:55,117 - root - [INFO] - logging.py:31 - log_time - Took 0.54s
+2026-06-18 09:10:55,122 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'head -50 algparam.h | grep -n ' (timeout=120)
+2026-06-18 09:10:55,122 - root - [DEBUG] - des_container.py:319 - command - DES command: 'head -50 algparam.h | grep -n "NULLPTR\\|define"\n'
+2026-06-18 09:10:56,369 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: 7:#define CRYPTOPP_ALGPARAM_H
+32:	ConstByteArrayParameter(const char *data = NULLPTR, bool deepCopy = false)
+33:		: m_deepCopy(false), m_data(NULLPTR), m_size(0)
+45:		: m_deepCopy(false), m_data(NULLPTR), m_size(0)
+2026-06-18 09:10:56,369 - root - [DEBUG] - forager_base.py:350 - start_trajectory - Starting turn 14
+2026-06-18 09:10:56,369 - root - [INFO] - logging.py:26 - log_time - Querying the LLM
+2026-06-18 09:10:59,090 - root - [INFO] - logging.py:31 - log_time - Took 2.72s
+2026-06-18 09:10:59,095 - root - [DEBUG] - forager_base.py:382 - start_trajectory - Running action: 'submit_prediction \'{"function_' (timeout=120)
+2026-06-18 09:10:59,095 - root - [DEBUG] - des_container.py:319 - command - DES command: 'submit_prediction \'{"function_name": "CryptoPP::UnalignedAllocate", "file_path":'
+2026-06-18 09:11:18,710 - root - [DEBUG] - forager_base.py:389 - start_trajectory - Env response: !!submit!!
+{"function_name": "CryptoPP::UnalignedAllocate", "file_path": "allocate.cpp", "prediction": "T", "p_non_terminating": 0, "confidence": "high", "reason": "The function uses a bounded loop with proper error handling that will either return a valid pointer or throw an exception, ensuring termination for all inputs."}
+SUBMISSION_COMPLETE
+2026-06-18 09:11:18,710 - root - [INFO] - forager_base.py:408 - start_trajectory - Success regex matched in environment output: SUBMISSION_COMPLETE
+2026-06-18 09:11:18,710 - root - [INFO] - forager_locate_function_code_and_dep.py:88 - extract_submission - Found !!submit!! marker in environ item
+2026-06-18 09:11:18,711 - root - [INFO] - forager_locate_function_code_and_dep.py:91 - extract_submission - Extracted submission from environ: {'function_name': 'CryptoPP::UnalignedAllocate', 'file_path': 'allocate.cpp', 'prediction': 'T', 'p_non_terminating': 0, 'confidence': 'high', 'reason': 'The function uses a bounded loop with proper error handling that will either return a valid pointer or throw an exception, ensuring termination for all inputs.'}
+2026-06-18 09:11:18,711 - root - [INFO] - forager_locate_function_code_and_dep.py:181 - process_run - Submission validation: {'correct_function_name': True, 'correct_path': True, 'provided_prediction': True}
+2026-06-18 09:11:18,711 - root - [INFO] - forager_locate_function_code_and_dep.py:345 - run - All validation checks passed
+2026-06-18 09:11:18,711 - root - [INFO] - forager_locate_function_code_and_dep.py:366 - run - Run completed with outcome: success
+2026-06-18 09:11:18,716 - root - [INFO] - des_container.py:439 - shutdown - Shutting down DES container 145864484a6e920d4449b65596144574124bdc127c7af0ffc3549d42d34f5c32
+2026-06-18 09:11:18,716 - root - [INFO] - des_container.py:593 - _heartbeat_loop - VMVM heartbeat thread exiting
+2026-06-18 09:11:26,198 - root - [INFO] - des_container.py:239 - release_vm - Releasing VMVM session {"vmvm_session":{"id":"019ed9fb-49f5-7f32-bc73-4b088ed46f7e","ipAddr":"2803:6084:9828:977:b68a:3919:500:0","vaagentPort":25438,"vmPort":19245,"vaagentHostname":"twshared11233.01.snb3.facebook.com","faasInvocationId":"4|global|async_2347641|des_general_tier_prod|5130112338986680822|0|faas.F84F0D902E24F506CAD274B1E761C481|7473290001847972445","tw_task_handle":"tsp_snb/faas/workerpool_crackerjack_prod_bgm_ces/1193","region_shortname":"snb"},"auth_token":{"paseto":"v4.public.eyJpYXQiOiIyMDI2LTA2LTE4VDA5OjA2OjI4LjcwNzk0MzgwMSswMDowMCIsIm5iZiI6IjIwMjYtMDYtMThUMDk6MDY6MjhaIiwiZXhwIjoiMjAyNi0wNi0xOVQwOTowNjoyOFoiLCJzdWIiOiIwMTllZDlmYi00OWY1LTdmMzItYmM3My00YjA4OGVkNDZmN2UifaNRrmxdk-0JgsspdYXrktlmu_7Aa2LzDwZYWLLYC-jp5nh_OMkf3t8cExpmN2-xaPB_8h3X8D_hwmT16TIZxwU.eyJpcCI6IjI4MDM6NjA4NDo5ODI4Ojk3NzpiNjhhOjM5MTk6NTAwOjAiLCJwb3J0IjoiMTkyNDUiLCJraWQiOiJrNC5waWQuY2lHVTFlODBJNE9zRXRmUFVLNkcxUnhBVHR2VkltVnNWUXRUUGZiQXY5eGwiLCJ0ZW5hbnQiOiJhc3luY18yMzQ3NjQxIiwiZmFhc19pbnZvY2F0aW9uX2lkIjoiNHxnbG9iYWx8YXN5bmNfMjM0NzY0MXxkZXNfZ2VuZXJhbF90aWVyX3Byb2R8NTEzMDExMjMzODk4NjY4MDgyMnwwfGZhYXMuRjg0RjBEOTAyRTI0RjUwNkNBRDI3NEIxRTc2MUM0ODF8NzQ3MzI5MDAwMTg0Nzk3MjQ0NSJ9"}}
+2026-06-18 09:11:45,150 - root - [INFO] - des_container.py:249 - release_vm - VMVM session released
+2026-06-18 09:11:45,150 - root - [INFO] - run.py:227 - repo_task - Finishing repo: CryptoPP_60f81a77_allocate_cpp_CryptoPP_UnalignedAllocate_1
