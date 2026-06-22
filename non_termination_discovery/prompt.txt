@@ -1,0 +1,23 @@
+read the functions in the following repository:
+
+"repo":"{repo}","commit":"{commit}"
+
+Find and write the names (and files) of diverge functions (non-termination).
+
+**"NT" (Non-Termination)** - Designed to block or loop indefinitely (can be intentional by the user or a bug). Examples:
+
+- Thread synchronization primitives. Locks. Condition variables. Event loops or server loops that run until external signal.
+
+Worker thread functions waiting for tasks or termination signals.
+
+- Loop variable never modified or modified in wrong direction. `while(1)` or `for(;;)` without reachable `break` or `return`.
+Unbounded I/O operations without proper termination checks. Missing loop increment/decrement statements.
+
+
+Write into separate output csv file the non-termination predictions.
+
+csv file should has the following columns:
+
+project, repo, function, file, outcome, reasoning, lines
+
+where reasoning is the explanation of why the function may not terminate, and lines are the relevant line numbers of the non-terminating code.
