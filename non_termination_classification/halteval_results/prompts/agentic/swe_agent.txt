@@ -1,0 +1,108 @@
+Your task is to predict whether the function `{{ function_name }}` in
+the C++ file `{{ function_file }}` will:
+- Terminate for all inputs, OR
+- Diverge for some inputs (enter a non-terminating loop)
+
+Important: This is a read-only code analysis task. You may only use
+shell commands to view files. Do not execute any C++ code or modify any
+files. Only use commands like `cat`, `grep`, `find`, `ls`, `cd`, `head`,
+ `tail`, `git`, etc. You MUST NOT attempt to "implement a fix" or modify
+ any file — only analyze.
+
+STEP 1: Clone the Repository (with verification)
+
+Run this clone command:
+    {{ git_clone_command }}
+
+Verify the clone actually worked before continuing. The container can
+have transient network failures that make `git clone` produce no output
+while leaving `/workspace/{{ project }}` empty. After the clone, your
+VERY NEXT command MUST be:
+    ls /workspace/{{ project }}/.git >/dev/null 2>&1 && echo CLONE_OK ||
+ echo CLONE_FAILED
+
+- If you see CLONE_OK, proceed to STEP 2.
+- If you see CLONE_FAILED (or no output), the clone silently failed.
+Retry by running:
+    rm -rf /workspace/{{ project }} && {{ git_clone_command }}
+  Then re-run the verify command. Retry up to 3 times before giving up.
+Do NOT proceed to analyze the file until you have CLONE_OK.
+
+STEP 2: Examine the Function
+
+Navigate to the repository and examine the function using read-only
+commands. Examples:
+    cd /workspace/{{ project }}
+    cat {{ function_file }}                              # View the
+entire file
+    grep -n "{{ function_name }}" {{ function_file }}    # Find the
+function's line number
+    grep -A 50 "{{ function_name }}" {{ function_file }} # View the
+function plus 50 lines after
+
+STEP 3: Analyze Dependencies
+
+The function may call other functions, use external types, or depend on
+macros defined elsewhere. You must examine these dependencies to fully
+understand the code's behavior.
+- Find and read helper functions called within the target function
+- Examine header files for type definitions and macros
+- Check struct/class definitions to understand data types
+- Trace function pointers to their implementations
+
+Finding dependencies:
+    grep -rn "function_name" /workspace/{{ project }}/
+    find . -name "*.h" | xargs grep "TypeName"
+    cat path/to/header.h
+
+STEP 4: Classify the Function
+
+"T" (Terminates) — Function terminates for all possible inputs:
+- No blocking synchronization calls. All loops have reachable exit
+conditions.
+  Loop variables progress correctly toward exit. Proper bounds checking
+  and error handling.
+
+"NT" (Non-Termination) — Designed to block or loop indefinitely (can be
+intentional by the user or a bug). Examples:
+- Thread synchronization primitives. Locks. Condition variables. Event
+loops or server loops that run until external signal. Worker thread
+functions waiting for tasks or termination signals.
+- Loop variable never modified or modified in wrong direction.
+`while(1)` or `for(;;)` without reachable `break` or `return`. Unbounded
+ I/O operations without proper termination checks. Missing loop
+increment/decrement statements.
+
+STEP 5: Submit Your Prediction
+
+You MUST submit your prediction by running this shell command exactly
+once — do NOT just print the JSON in a markdown block, actually run it:
+    submit_prediction '{"function_name": "{{ function_name }}",
+"file_path": "{{ function_file }}", "prediction": "<T|NT>",
+"p_non_terminating": <0-100>, "confidence": "<high|medium|low>",
+"reason": "<one concise sentence>"}'
+
+Field definitions:
+- prediction: "T" if the function terminates for all inputs, "NT" if it
+can loop/block indefinitely
+- p_non_terminating: integer 0–100 — your estimated probability (in %)
+that the function is non-terminating
+- confidence: "high" if the evidence is clear and unambiguous, "medium"
+if there is some uncertainty, "low" if the code is hard to fully trace
+or the behavior is unclear
+- reason: one concise sentence explaining the key factor driving your
+prediction
+
+Guidelines:
+- Execute one command per response in triple backticks
+- Read all relevant source and header files before making a prediction
+- Trace data flow to understand where loop bounds and conditions come
+from
+- Consider edge cases: zero values, type overflows, null pointers, EOF
+conditions
+- Only submit your prediction when you have thoroughly analyzed the code
+- Always verify the clone succeeded before proceeding (STEP 1). If after
+ 3 retries the clone still fails, submit a prediction with "prediction":
+ "T", "p_non_terminating": 50, "confidence": "low", and "reason": "clone
+failed — could not analyze source" — this is far better than burning
+turns producing no prediction at all.
