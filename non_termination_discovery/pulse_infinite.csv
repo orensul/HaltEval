@@ -1,0 +1,221 @@
+Projects,False Positive function + code location,Category,Class,"Missing 
+Function 
+Involved","Fixed on 
+9/23/25 vers
+(jvan original)","Fixed on 
+10/14/25 vers
+(DPich v2)",Explaination
+proftpd,fgetpwent / pwgrent.c line 102,FP,Assume_Finite,No,No,No,Finiteness of input: Read from protected file on disk which is guaranteed finite
+proftpd,"delay_table_init_lookup / ""modules/mod_delay.c"" line 691 ",FP,Fixed,No,No,Yes,Unknown cause: for (s = (server_rec *) server_list->xas_list; s; s = s->next)
+proftpd,"find_extendedlogs / ""modules/mod_log.c"" line 1000 ",FP,Assume_Finite,No,Yes,Yes,Should assume finiteness of input: while (c != NULL) c = find_config_next2()
+proftpd,write_entry / scoreboard.c:332,Unintended,Real bug,,,No,
+proftpd,pr_ipbind_add_binds / bindings.c line 262 ,FP,Assume_Finite,No,Yes,Yes,Should assume finiteness of input:  while (c != NULL) c = find_config_next()
+proftpd,pr_env_unset / env.c line 110 ,FP,Assume_Finite,No,Yes,Yes,Should assume finiteness of environment read via pr_env_get()
+proftpd,"str_vreplace / ""src/str.c"" line 65 ",FP,Missing_constraint,No,Yes,Yes,Missing constraint: iteration controlled in a different variable max_replaces not part of the induction variable
+proftpd,"pr_str_text_to_array / ""src/str.c"" line 858 ",FP,Missing model,Yes,Yes,Yes,Unknown function without summary: while (ptr != NULL) ptr = memchr()
+proftpd,"pr_throttle_init / ""src/throttle.c"" line 113",FP,Assume_Finite,No,Yes,Yes,Should assume finiteness of input:  while (c != NULL) c = find_config_next()
+proftpd,"process_opts / ""utils/ftptop.c"" line 300",FP,Assume_Finite,Yes,Yes,Yes,"Should assume finiteness of input + need external function summary: while ((optc = getopt(argc, argv, prgopts)) != -1)"
+proftpd,rlock_scoreboard / scoreboard.c line 78,Intended,Concurrency,No,Yes,Yes,Concurrency: expected fcntl() will block until mutex taken
+proftpd,unlock_scoreboard.c / scoreboard.c line 107 ,Intended,Concurrency,No,Yes,Yes,Concurrency: expected fcntl() will block until mutex taken
+proftpd,util_scoreboard_scrub / scoreboard.c line 295,Intended,Concurrency,No,Yes,Yes,Concurrency: expected fcntl() will block until mutex taken
+bind,nsu_strsep (nsupdate.c line 350),FP,Missing_constraint,No,No,Yes,Missing reasoning: for (s = string; *s != '\0'; s++) thinks s is not induction variable but *s is?
+bind,"isc_log_setdebuglevel / ""lib/isc/log.c"" line 816",FP,Confusing_macro,No,Yes,Yes,"Missing constraint: due to macro: for (channel = ISC_LIST_HEAD(); channel; channel = ISC_LIST_NEXT(channel, link)"
+bind,"isc_log_closefilelogs / ""isc_log_closefilelogs"" line 894",FP,Confusing_macro,No,Yes,Yes,"Missing constraint: due to macro: for (channel = ISC_LIST_HEAD(); channel; channel = ISC_LIST_NEXT(channel, link)"
+bind,isc_rwlock_wrlock / rwlock.c line 242,Intended,Concurrency,No,Yes,Yes,Concurrency: Intended rwlock will block until acquired
+sqlite,completionNext / shell.c line 9170 - ,FP,State_Machine,No,No,Yes,Unable to understand state machine in loop: while( pCur->ePhase!=COMPLETION_EOF ) { ... }
+sqlite,procedure_start_line / shell.c line 1480 ,FP,Assume_Finite,No,No,Yes,Should assume finiteness of input: for(i=0; i<nAppend; i++){ ... } where nAppen comes indirectly from input
+sqlite,shell_callback / shell.c line 23111,FP,Fixed,No,No,Yes,Unknown cause:  for(i=0; i<nArg; i++){ ...} should not fire
+sqlite,tplt_linedir / tool/lemon.c line 3822,FP,Assume_Finite,No,No,Yes,Should assume finiteness of input: unable to understand while (*filename) with filename++ in the loop
+sqlite,tplt_print / tool/lemon.c line 3834,FP,Assume_Finite,No,No,Yes,Should assume finiteness of input: unable to understand that a string is finite while (*str) with str++ in the loop
+comdb2,bdb_direct_count (cursor.c),FP,Fixed,No,Yes,Yes,Unknown: FP (short loop)
+comdb2,bdb_checkpoint_list_delete_log ,FP,Missing function,Yes,Yes,Yes,Missing external func constraint: Pattern: while (listc_rtl(&lst) != NULL)
+comdb2,obdb_queuedb_size (file.c),FP,Fixed,No,Yes,Yes,Unknown: FP (short loop)
+comdb2,__db_vrfy_dbinfo_destroy (db_vrfyutil.c),FP,Confusing_macro,No,Yes,Yes,Unable to understand macro logic: for (c = LIST_FIRST(&vdp->subdbs); c != NULL; c = d)
+comdb2,__dbenv_clear_mintruncate_list (env_recover.c),FP,Missing function,No,Yes,Yes,Missing external func constraint: Pattern: while (listc_rtl(&lst) != NULL)
+comdb2,clear_sparse_map (lock_deadlock.c),FP,Fixed,No,Yes,Yes,Unknown cause: induction variable tested on param->field should not show up
+comdb2,lc_free (rep_record.c) ,FP,Confusing_macro,No,Yes,Yes,Unable to understand macro logic in berkdb
+comdb2,__truncate_repdb (rep_record.c) ,FP,Missing function,No,Yes,Yes,Missing external func constraint: Pattern: while (listc_rtl(&lst) != NULL)
+comdb2,__txn_remrem (txn_util.c) ,FP,Confusing_macro,No,Yes,Yes,Unable to understand macro logic in berkdb
+comdb2,__txn_remlock (txn_util.c) ,FP,Confusing_macro,No,Yes,Yes,Unable to understand macro logic in berkdb
+comdb2,__txn_doevents (txn_util.c) ,FP,Concurrency,No,Yes,Yes,Concurrency: unable to understand async code
+comdb2,cdb2_cluster_info (cdb2api.c) ,FP,Fixed,No,No,Yes,Unknown cause: maybe short loop
+comdb2,cdb2_string_escape (cdb2api.c) ,FP,Assume_finite,No,Yes,Yes,Finiteness of input: while (*src)) where *src does not change but src does!
+comdb2,lua_func_list_free (comdb2.c),FP,Confusing_macro,No,Yes,Yes,"Unable to understand macro logic: FP  LISTC_FOR_EACH_SAFE(list_ptr, item, tmp, lnk)"
+comdb2,clear_deferred_options ,FP,Missing function,No,Yes,Yes,Missing external func constraint: Pattern: while (listc_rtl(&lst) != NULL)
+comdb2,_access_control_clear (fdb_access.c),FP,Confusing_macro,No,Yes,Yes,"Unable to understand macro logic: FP  LISTC_FOR_EACH_SAFE(list_ptr, item, tmp, lnk)"
+comdb2,_fdb_svc_indexes_to_ondisk (fdb_bend_sql.c) ,FP,Fixed,No,Yes,Yes,Unknown cause: induction variable is tested on ptr->field but ptr is the param changing
+comdb2,_free_participants (osqlsession.c) ,FP,Missing function,No,Yes,Yes,Missing external func constraint: Pattern: while (listc_rtl(&lst) != NULL)
+comdb2,log_params (reqlog.c:1749),FP,Fixed,No,Yes,Yes,for (int i = 0; i < n; ++i) with n = parm_count(param->fiedval)
+comdb2,cleanresources (resource.c:177),FP,Missing function,No,Yes,Yes,Missing external func constraint: Pattern: while (listc_rtl(&lst) != NULL)
+comdb2,req_stats (sltdbt.c:81) ,FP,Fixed,No,Yes,Yes,Induction variable tested on param->field value should not show up
+comdb2,free_cached_idx (sqlglue.c:141) ,FP,Fixed,No,Yes,Yes,for (i = 0; i < MAXINDEX; i++) 
+comdb2,clear_participants (sqlglue.c) ,FP,Missing_constraint,No,Yes,Yes,Missing external func constraint: Pattern: while (listc_rtl(&lst) != NULL)
+comdb2,free_blob_buffers (tag.c5023) ,FP,Fixed,No,Yes,Yes,for (ii = 0; ii < nblobs; ii++) { ... } where nblobs comes from param
+comdb2,update_dbstore (tag.c:5949) ,FP,Fixed,No,Yes,Yes,for (int i = 0; i < sizeof db->dbstore / sizeof db->dbstore[0]; ++i)
+comdb2,free_blob_status_data_int (toblob.c:875),FP,Fixed,No,Yes,Yes,for (ii = 0; ii < MAXBLOBS; ii++)
+comdb2,comdb2ma_release (mem.c:668) ,FP,Confusing_macro,No,Yes,Yes,"Unable to understand macro logic LISTC_FOR_EACH(&(root.list), curpos, lnk) "
+comdb2,net_cleanup (net.c:2404) ,FP,Global_variable,No,Yes,Yes,Global Variable: for (uint8_t i = 0; i < num_dedicated_subnets; i++) {  ... } where num_dedicated_subnets is global 
+comdb2,clear_recs_list (sc_records.c:2069),FP,Confusing_macro,No,Yes,Yes,"Unable to understand macro logic LISTC_FOR_EACH_SAFE(l, rec, tmp, lnk)"
+comdb2,free_dests (sc_struct.c:73) ,FP,Missing function,Yes,Yes,Yes,Missing external function constraint: for (; s->dests.count > 0;) where dests.count is modified by listc_rbl(s->dests) called inside the loop
+comdb2,idxCreateFromWhere (sqllite3expert.c:1042) ,FP,Fixed,No,Yes,Yes,Unknown cause: Should assume finiteness of input: for(pCon=pScan->pRange; rc==SQLITE_OK && pCon; pCon=pCon->pNext){ ... }
+comdb2,idxCreateCandidates (sqllite3expert.c:1061),FP,Fixed,No,Yes,Yes,Unknown cause: Finiteness of input: for(pIter=p->pScan; pIter && rc==SQLITE_OK; pIter=pIter->pNextScan){ ... }
+comdb2,completionNext (completion.c:209) ,FP,State_Machine,No,Yes,Yes,Unable to understand FSM: while( pCur->ePhase!=COMPLETION_EOF ) { ... }
+comdb2,tplt_print (lemon.c) ,FP,Missing_constraint,No,No,Yes,while( *str ) { str++; } style loop
+comdb2,process_manifest (deserialise.cpp:126) ,FP,Missing function,Yes,No,Yes,Unable to understand eof() / getline() API for std::istringstream coming from finite string.
+comdb2,hash_for (plhash.c:1650) ,FP,Fixed,No,No,Yes,Unknown cause: Unable to understand bound value for induction variable coming from variable as ptr->field1.field2
+comdb2,comdb2_cheapstack_sym_valist (walkback.c:600) ,FP,Unknown_function,Yes,No,Yes,Unable to understand glibc's backtrace semantics without a summary
+comdb2,comdb2_cheapstack_sym_char_array (walkback.c:638) ,FP,Unknown_function,Yes,No,Yes,Unable to understand glibc's backtrace semantics without a summary
+comdb2,parserDoubleLinkSelect (parse.y:705) ,FP,Missing_constraint,No,No,Yes,FP unable to understand reverse walk of a linked list
+comdb2,phys_rep.c - physrep_worker,Intended,Concurrency,No,No,No,By Design: infinite goto loop repl_loop for thread
+comdb2,reqlog_free_events - (reqlog.c) ,Intended,Concurrency,No,Yes,Yes,Concurrency: while (logged->events) ... (looks by design)
+comdb2,stat4dump_thread - (sqlglue.c:11922),Intended,Concurrency,No,Yes,Yes,By Design: while (gbl_debug_stat4dump_loop) by thread design
+comdb2,cron_lock (cron.c) ,Intended,Concurrency,No,No,No,Concurrency: awaiting for an event to finish
+gpac,"gpac_suggest_arg / (""applications/gpac/gpac_help.c"":1098) ",FP,Missing_constraint,No,No,Yes,Missing Reasoning: while (args[i].name) with i changing
+gpac,"gpac_suggest_filter"" / (""applications/gpac/gpac_help.c"":1166)",FP,Missing_constraint,No,Yes,Yes,Missing Reasoning: while (doc_helps[i]) with only i changing
+gpac,"PrintHelpArg / """"applications/mp4box/mp4box.c"" line 1788 ",FP,Missing_constraint,No,No,Yes,Missing Reasoning: while (reg->args) does not change but recursion is controlled by break statement on other variables arg and j
+gpac,"gf_bifs_enc_commands / ""src/bifs/com_enc.c"" line 857 ",FP,Missing function,Yes,No,No,Missing constraint/model: while (gf_list_count(codec->encoded_nodes)) list_rm(codec->encoded_nodes)
+gpac,"MS_Modified / ""src/compositor/mpeg4_mediasensor.c"" line 122",FP,Missing function,Yes,Yes,No,"Missing constraint/model: while (gf_list_count(st->seg)) gf_list_rem(st->seg, 0);"
+gpac,"rtpin_setup_sdp / ""src/filters/in_rtp_sdp.c"" line 77 ",FP,Missing function,Yes,Yes,Yes,"Missing constraint/model: while ((media = (GF_SDPMedia*)gf_list_enum(sdp->media_desc, &i))) API"
+gpac,"rtpin_stream_new / ""src/filters/in_rtp_stream.c"" line 347 ",FP,Missing function,Yes,Yes,Yes,Missing constraint/model: Unable to understand gf_list_enum API
+gpac,"dump_escape_string / ""src/isomedia/box_dump.c"" line 474",FP,Fixed,No,Yes,Yes,FP short loop of for (i=0; i<len; i++) { where len = 0
+gpac,"ipma_box_size / ""src/isomedia/iff.c"" line 702 ",FP,Fixed,Yes,No,Yes,Missing constraint/model: for (i = 0; i < entry_count; i++) where entry_count is gf_list_count(p->entries) where p comes from input
+gpac,estimate_next_moof_earliest_presentation_time / movie_fragments.c 1639 ,FP,Fixed,Yes,No,Yes,Missing constraint/model: for (i=0; i<gf_list_count(moof->TrackList); i++) unknown API
+gpac,"gf_mpd_parse_segment_base_generic / ""src/media_tools/mpd.c"" line 360",FP,Missing function,Yes,Yes,Yes,"Missing constraint/model: unable to understand API:  while ( (child = gf_list_enum(root->content, &i)))"
+gpac,bs_handle_nbits_overflow / bitstream.c line 927 ,FP,Missing_constraint,No,Yes,Yes,(BV) Missing constraint/model: tool does not understand the constraint coming from the caller on max_shift (bad propagation!)
+gpac,check_header / gzio.c line 316 ,FP,Fixed,No,No,Yes,for (len = 0; len < 6; len++) (void)get_byte(s); NOT SURE WHY?
+gpac,"compositor_2d_set_aspect_ratio / ""src/compositor/compositor_2d.c"" line 1117 ",Intended,Concurrency,No,Yes,Yes,Concurrency: UI visual changed (from event by user)
+gpac,Remotery_MapMessageQueue / Remotery.c line 4827,Intended,Concurrency,No,No,No,Concurrency: Wait until the caller sets the custom data
+gpac,gf_read_line_input / os_divers.c line 3231,Intended,User_event,Yes,No,Yes,Call to readline() never comes back potentially
+gpac,svg_dump_path / svg_attributes.c:4062,Unintended,Real bug,,,No,
+exim,daemon_go - src/daemon.c 1978 ,FP,Assume Finite,Yes,Yes,Yes,"Should assume finiteness of strings manipulated through API: while ((s = string_nextinlist(&list, &sep, big_buffer, big_buffer_size)))"
+exim,print_dsn_diagnostic_code (deilver.c line 5695) ,FP,Fixed,No,Yes,Yes,Missing reasoning: FP - while (*s) where s++ happens in loop
+exim,options (exim_dbutil.c line 169) ,FP,Missing function,Yes,No,No,"Missing constraint/model: Does not understand API: while ((opt = getopt(argc, (char * const *)argv, CCS opts)) != -1)"
+exim,retry_update (retry.c line 582),FP,Fixed,No,No,Yes,short loop: for (int i = 0; i < 3; i++)
+exim,x509_stack_dump_cert_s_names (src/tls-openssl.c line 2044) ,FP,Fixed,Yes,Yes,Yes,Missing constraint/model: while (--idx >= 0) where idx is int idx = sk_X509_num(sk) and sk is param
+exim,tls_server_stapling_cb (src/tls-openssl.c line 2460),FP,Fixed,No,Yes,Yes,for (; olist; olist = olist->next)
+exim,"chain_from_pem_file (src/tls-openssl.c"" line 3237)",FP,Missing function,Yes,No,No,Missing constraint/model: Fail to understand API: while (sk_X509_num(verify_stack) > 0)  X509_free(sk_X509_pop(verify_stack));
+exim,send_fd_over_socket / log.c:338,Unintended,Real bug,,,No,
+open5gs,"mod_sqrt (lib/crypt/ecc.c"" line 1037)",FP,Fixed,Yes,Yes,Yes,for(i = vli_numBits(p1) - 1; i > 1; --i)
+open5gs,"fill_comment (""lib/ipfw/ipfw2.c"" line 3206) ",FP,Fixed,No,No,Yes,Missing reasoning: for (i = 0; av[i] != NULL; i++) where i is modified but induction is on av[i]
+open5gs,free_targets (rtd_rules.c line 397) ,FP,Confusing_macro,Yes,No,No,Missing constraint/model: while (!FD_IS_LIST_EMPTY(&TARGETS[i])) with strange logic for empty list
+open5gs,rtd_conf_reload (rtd_rules.c line 529),FP,Fixed,No,No,Yes,for (i = 0; i < RTD_TAR_MAX; i++) with RTD_TAR_MAX = 2
+open5gs,destroy_list (dictionary.c line 293) ,FP,Confusing_macro,Yes,No,No,Missing constraint/model: while (!FD_IS_LIST_EMPTY(head)) pattern again
+wireshark,nl80211_do_cmd capture/ws80211_utils.c 164,Intended,Concurrency,No,No,,Concurrency: Function nl_recvmsgs() will update err induction variable in while (err != 0)
+wireshark,print_macros dftest.c 146,FP,Global_variable,No,No,,Missing contraint: Global hash table eventually used to decide if the loop terminates
+wireshark,cap_pipe_read_data_bytes dumpcap.c 1688,FP,Fixed,No,No,,Unknown cause: wrongly flagged when local reasoning was sufficient
+wireshark,pcap_pipe_open_live dumpcap.c 2127,FP,Fixed,No,No,,Unknown cause: wrongly flagged when local reasoning was sufficient (maybe: goto breaking from loops)
+wireshark,try_convert_to_custom_column epan/column.c 354,FP,Fixed,No,No,,Unknown cause: wrongly flagged when local reasoning was sufficient (maybe: Global variable involved in inductive cond)
+wireshark,cmp_test_internal epan/dfilter/dfvm.c 1024,FP,Fixed,No,No,,Unknown cause: wrongly flagged when local reasoning was sufficient: for (size_t idx2 = 0; idx2 < fv2->len; idx2++)
+wireshark,prefs_6lowpan_apply epan/dissectors/packet-6lowpan.c 3694,FP,Fixed,No,No,,Unknown cause: wrongly flagged when local reasoning was sufficient: for (i = 0; i < LOWPAN_CONTEXT_MAX; i++)
+wireshark,get_ipv6_suffix epan/dissectors/packet-ipsec.c 732,FP,Fixed,No,No,,Unknown cause: wrongly flagged when local reasoning was sufficient: while ( (cpt_suffix < IPSEC_STRLEN_IPV6) && (ipv6_len - cpt -1 >= 0) && (found == FALSE))
+wireshark,dissect_nbap_HSDSCH_Information_to_Modify epan/dissectors/packet-nbap.c 24361,FP,Fixed,No,Yes,,Unknown cause: wrongly flagged when local reasoning was sufficient: for (i = 0; i < maxNrOfMACdFlows; i++) { ... } with maxNrOfMACdFlows is a constant 8
+wireshark,set_ue_keys epan/dissectors/packet-snmp.c 1491,FP,Fixed,No,No,,Unknown cause: wrongly flagged when local reasoning was sufficient: while (key_len < need_key_len) key_len += key_size with key_len is a constant
+wireshark,ssh_keylog_process_lines epan/dissectors/packet-ssh.c 2084,FP,Missing function,Yes,No,,inductive condition is based on return of memchr()
+wireshark,ssh_choose_enc_mac epan/dissectors/packet-ssh.c 2771,FP,Fixed,No,Yes,,Unknown cause: wrongly flagged when local reasoning was sufficient: for(int peer_cnt=0;peer_cnt<2;peer_cnt++)
+wireshark,get_body_parts epan/dissectors/packet-umts_mac.c 863,FP,Fixed,No,No,,Call to malloc (wrapped) in loop that otherwise looks like terminating just fine as malloc should not influence local variable i
+wireshark,xmpp_steal_element_by_names epan/dissectors/packet-xmpp-utils.c 452,FP,Fixed,No,Yes,,Unknown cause: Call to a function in a loop whose induction variable comes from parameter and looks correctly used as loop bound
+wireshark,write_csv_column_titles epan/print.c 1661,FP,Fixed,No,No,,"Unknown cause: Call to a function in a loop whose induction variable comes from a field of parameter, which looks correctly used as bound"
+wireshark,write_csv_columns epan/print.c 1679,FP,Fixed,No,No,,"Unknown cause: Call to a function in a loop whose induction variable comes from a field of parameter, which looks correctly used as bound"
+wireshark,output_fields_prime_edt epan/print.c 2351,FP,Fixed,No,No,,Unknown cause: Use of field in GPtrArray (Glib) len which will correctly iterate the loop and eventually terminate. Is GPtrArray an unknown type from Glib?
+wireshark,rel_oid_str_to_bytes epan/strutil.c 507,FP,Missing_constraint,No,No,,while (*p) { ... p++; } should assume finiteness of input
+wireshark,tap_listeners_dfilter_recompile epan/tap.c 643,FP,Fixed,No,Yes,,"Unknown cause: for loop is iterating over a list, which is correct if list is finite"
+wireshark,thread_pool_wait extcap.c 160,Intended,Concurrency,Yes,No,,Concurrency: thread is waiting for a condition to become true from another thread
+wireshark,extcap_get_extcap_paths_from_dir extcap.c 249,FP,Missing function,Yes,Yes,,g_dir_read function from glib is driving the recursion
+wireshark,run_capture_ios extcap/ciscodump.c 1670,FP,Missing function,Yes,Yes,,strtok() will drive breaking the loop and should be marked as returning NULL when input parameter str is NULL
+wireshark,run_capture_asa extcap/ciscodump.c 2064,FP,Missing function,Yes,Yes,,g_strstr_len() from glib is driving the recursion
+wireshark,nl_get_multicast_id extcap/dpauxmon.c 229,Intended,Concurrency,Yes,No,,Concurrency: nl_recvmsgs() registers callbacks that will make the ret variable go to 0 and break the loop
+wireshark,extcap_tokenize_sentences extcap_parser.c 231,FP,Fixed,Yes,No,,Constraints done on list_iter++ but while (*list_iter) is used e.g. expect constraint on the pointed value
+wireshark,df_func_ip_special_name plugins/epan/dfilter/ipaddr/ipaddr.c 50,FP,Fixed,No,No,,Unknown cause: for (unsigned i = 0; o < arg->len; i++) should be classified as finite
+wireshark,analyze_transform_hfrs plugins/epan/mate/mate_setup.c 258,FP,Missing function,Yes,Yes,,"Loop driven by call to extern func: while (avp = get_next_avp(t->replace,&cookie))"
+wireshark,tplt_print tools/lemon/lemon.c 3711,FP,Missing_constraint,No,No,,while (*str) str++ pattern should assume finiteness of input
+wireshark,add_extensions wiretap/file_access.c 115,FP,Missing function,Yes,No,,External function g_slist_next from glib is driving the loop
+wireshark,add_extensions_for_file_extensions_type wiretap/file_access.c 239,FP,Assume_finite,No,Yes,,for (extensionp = extensions_set; *extensionp != NULL; extensionp++) should assume finiteness of input
+wireshark,wtap_get_all_capture_file_extensions_list wiretap/file_access.c 2143,FP,Fixed,No,Yes,,Loop induction depends on glib type GArray not defined in the project
+wireshark,merge_files wiretap/merge.c 1434,FP,Fixed,No,No,,Unknown cause: for (i = 0; i < in_file_count; i++) should be proved terminating
+wireshark,wtap_block_free_options wiretap/wtap_opttypes.c 410,FP,Fixed,No,No,,for (i = 0; i < block->options->len; i++) is terminating where options is a GArray not defined in the project
+wireshark,wtap_block_foreach_option wiretap/wtap_opttypes.c 600,FP,Fixed,No,No,,for (i = 0; i < block->options->len; i++) is terminating where options is a GArray not defined in the project
+wireshark,_strdup_vasprintf wsutil/wmem/wmem_strutl.c 75,FP,Fixed,No,No,,Location is inside a macro but error message does not say which one
+openssl,"async_start_func / ""async.c 159",Intended,Concurrency,Yes,No,No,while (1) { async_fibre_swapcontext(); } may not terminate but are expected
+openssl,buffer_gets / crypto/bio/bf_buff.c 429,Unintended,Infinite BIO,,,,for (;;) { on a BIO_read may never terminate
+openssl,CONF_parse_list / conf_mod.c line 743,FP,Missing model,Yes,No,Yes,for (;;) loop will break based on return of strchr() and list_cb() callback (icall)
+openssl,engine_list_cleanup / eng_list.c 46,Unintended,Lack fuel,,,,while (iterator != NULL) { ENGINE_remove(iterator); } where API may not change list
+openssl,AES_ige_encrypt / aes_ige.c 156,FP,Fixed,No,No,Yes,Nested loop - should be marked terminating: for (n = 0; n < N_WORDS; ++n)
+openssl,ossl_synchronize_rcu / threads_pthread.c 495,Intended,Concurrency,No,No,No,while (lock) pthread_cond_wait() type of pattern
+openssl,update_qp / threads_pthread.c line 511,Intended,Concurrency,No,No,No,while (lock) pthread_cond_wait() type of pattern
+openssl,ossl_crypto_new_ex_data_ex / ex_data.c line 252,FP,Missing function,Yes,No,Yes,Loop terminating even given the indirect call as induction variable is not in callee scope
+openssl,i2r_IPAddressOrRanges / v3_addr.c line 179,FP,Missing function,Yes,No,Yes,ossl_check_const_IPAddressOrRange_sk_type() drives loop termination but is unknown
+openssl,fill_first_blocks / argon2.c 359,FP,Fixed,No,No,Yes,for (i = 0; i < ARGON2_QWORDS_IN_BLOCK; ++i) - this should not be a bug
+openssl,rtor_notify_other_threads / quic_reactor.c line 446,Intended,Concurrency,No,No,No,while (notify) ossl_crypto_condvar_wait() waits for another thread to break
+openssl,ossl_quic_reactor_leave_blocking_section / quic_reactor.c 586,Intended,Concurrency,No,No,No,while (notify) ossl_crypto_condvar_wait() waits for another thread to break
+openssl,aes_ecb_cipher / e_aes.c:2521,Unintended,Latent,,,,
+openssl,"""camellia_ecb_cipher"" / e_aes.c:2531",Unintended,Latent,,,,
+openssl," ""sm4_ecb_cipher"" / e_sm4.c:183",Unintended,Latent,,,,
+libxml,htmlSetMetaEncoding / HTMLtree.c 310,FP,Fixed,No,No,Yes,Obvious FP: for (meta = head->children; meta != NULL; meta = meta->next)
+libxml,xmlRelaxNGValidateState / relaxng.c 10202,FP,Fixed,No,No,Yes,Obvious FP: while (child != NULL) child = child->next;
+libxml,xmlRMutexLock / threads.c 246,Intended,Concurrency,No,No,No,while (tok->held) pthread_cond_wait() pattern
+libxml,xmlDOMWrapReconcileNamespaces / tree.c 7637,Unsure,Very Large loop,No,No,Yes,Possibly a real bug - to confirm
+libxml,"""xmlDictGrow"" / dict.c:626",Unintended,Latent,,,,
+libxml,xmlHashGrow / hash.c:373,Unintended,Latent,,,,
+libxml,xmlHashScanFull / hash.c:991,Unintended,Latent,,,,
+libxml,"""xmlHashScanFull3"" / hash.c1069",Unintended,Latent,,,,
+libgit2,insert_record / xpatience.c 105,Unintended,Arithmetic,No,No,,"if index starts by 0, the loop will continue forever"
+libgit2,write_at / indexer.c 690 ,Unintended,Manifest,No,No,,EINTR infinite loop on IO
+libgit2,git_config_foreach_match / config.c 639,FP,Missing function,Yes,No,,Use of git_config_next() and git_config_iterator_glob_new() global iterator confuses infer
+libgit2,midx_write / midix.c 680,FP,Missing function,Yes,No,Yes,"Use of git_str_len() driving the loop, which undefined symbol"
+libgit2,refdb_fs.c 1131 / reference_path_available,FP,Missing function,Yes,No,Yes,Loop is driven by git_sortedcache_entrycount() which is just wrapper for git_vector_len()
+CryptoPP,CryptoPP::AlignedAllocate / allocate.cpp line 40,Unintended,Real bug,,No,No,Infinite loop for memory allocation wrapper should use fuel pattern
+CryptoPP,CryptoPP::UnalignedAllocate / allocate.cpp line 89,Unintended,Real bug,,No,No,Infinite loop for memory allocation wrapper should use fuel pattern
+CryptoPP,CryptoPP::EncodedObjectFilter::Put / asn.cpp line 411,FP,Missing model,Yes,No,Yes,while (m_queue.AnyRetrievable()) pattern on m_queue global variable
+CryptoPP,"CryptoPP::IteratedHashBase<unsigned int,CryptoPP::HashTransformation>::Update / iterhash.cpp line 69",Unintended,Latent,No,No,No,"Will go infinite if Blocksize = 0, however all existing blocksize parameters seem non-0 for now"
+CryptoPP,CryptoPP::Tiger::Transform / tiger.cpp 242,FP,Missing constraint,No,No,Yes,Pulse-infinite does not capture break logic in a while (true) where break solely provide exit
+BDE,baltzo_defaultzoneinfocache.cpp 137 / defaultZoneinfoDataLocation,FP,Unknown,No,No,No,for (int ii = 0; ii < u::k_NUM_BALTZO_DATA_LOCATIONS; ++ii) clearly terminates
+BDE,balxml_typesprintutil.h 1937 printList<bsl::vector<char>_>,FP,Unknown,No,No,No,for (bsl::size_t idx = 1; idx != size; ++idx) clearly terminates
+BDE,bdlma_concurrentpoolallocator.cpp 157 allocate,Intended,Concurrency,No,No,No,while (1) never breaks if k_INITIALIZATING is infinitely returned from testAndSwap()
+BDE,bdlmt_eventscheduler.cpp 988 cancelEventAndWait,Intended,Concurrency,No,No,No,while (1) ... cond.wait(d_mutex) pattern may or may not terminate with a concurrent thread
+BDE,bdlmt_multiprioritythreadpool.cpp 91 worker,Intended,Concurrency,No,No,No,do { ... } while (e_RESUME != d_threadSuspendState) may not terminate
+BDE,bdlmt_multiqueuethreadpool.cpp 495 waitWhilePausing,Intended,Concurrency,No,No,No,while (e_PAUSING == d_runState) wait(lock) may not terminate unless a thread unlocks it
+BDE,bdlmt_threadpool.cpp 353 workerThread,Intended,Concurrency,No,No,No,while (0 == waitNode.d_hasJob) waitNode.wait(mutex); may execute forever
+BDE,bdlmt_timereventscheduler.cpp 420 yieldToDispatcher,Intended,Concurrency,No,No,No,while (it) yield() may not terminate unless broken by another thread
+BDE,bslalg_rbtreeutil.h 631 findUniqueInsertLocation<c830284f80f176f>,FP,Unknown,No,No,No,while (node) if (left) node = node->left(); else node = node->right() should be terminating if RBT is well formed
+BDE,bslmt_barrier.cpp 16 __infer_inner_destructor_~Barrier,Intended,Concurrency,No,No,No,while (1) lock(mutex) may not terminate without another thread
+BDE,bslmt_barrier.cpp 52 timedWait,FP,Missing model,No,No,No,timedWait(int s) should be modeled as a terminating API using manual summary
+BDE,bslmt_barrier.cpp 78 wait,Intended,Concurrency,No,No,No,while (cond) wait(mutex) will not terminate unless broken by another thread
+BDE,"bslmt_fastpostsemaphoreimpl.h 604 BloombergLP::bslmt::FastPostSemaphoreImpl<BloombergLP::bsls::AtomicOperations,BloombergLP::bslmt::Mutex,BloombergLP::bslmt::Condition,BloombergLP::bslmt::ThreadUtil>::disable",Intended,Concurrency,No,No,No,while (...) { LockGuard<MUTEX> guard(&d_waitMutex); } does not terminate if the mutex is not avail
+BDE,bslmt_latch.cpp 82 BloombergLP::bslmt::Latch::timedWait,FP,Missing model,No,No,No,while (...) timedWait(mutex) will terminate given the time parameter: to write a model for this
+BDE,bslmt_latch.cpp 96 BloombergLP::bslmt::Latch::timedWait,Intended,Concurrency,No,No,No,while (...) cond.wait(mutex) may not terminate if another thread does not unblock
+BDE,bslmt_readerwriterlock.cpp 64 lockRead,Intended,Concurrency,No,No,Yes,do { ... readCond.wait() } while (1) wont terminate unless another thread breaks it
+BDE,bslmt_readerwriterlock.cpp 149 BloombergLP::bslmt::ReaderWriterLock::lockWrite,Intended,Concurrency,No,No,No,while (...) cond.wait(mutex) wont terminate unless another thread breaks it
+BDE,bslmt_readerwriterlock.cpp 274 BloombergLP::bslmt::ReaderWriterLock::upgradeToWriteLock,Intended,Concurrency,No,No,No,while (...) cond.wait(mutex) wont terminate unless another thread breaks it
+BDE,bslmt_readerwriterlock.cpp 338 BloombergLP::bslmt::ReaderWriterLock::tryUpgradeToWriteLock,Intended,Concurrency,No,No,No,while (...) cond.wait(mutex) wont terminate unless another thread breaks it
+BDE,bslmt_sluice.cpp 126 BloombergLP::bslmt::Sluice::wait,Intended,Concurrency,No,No,No,for (;;) { if (signaled) break; } wont terminate unless another thread signals
+BDE,bsls_assertimputil.cpp 99 BloombergLP::bsls::AssertImpUtil::failBySleep,FP,Missing model,Yes,No,No,Need a model of sleep() to understand it is terminating
+BDE,bsls_bslonce.cpp 55 BloombergLP::bsls::BslOnce::doEnter,Intended,Concurrency,No,No,No,while (state != done) yield() may not terminate until another thread change state
+BDE,bsls_spinlock.h 568 BloombergLP::bsls::SpinLock::lockWithoutBackoff,Intended,Concurrency,No,No,No,do { if (acquire(state)) break; } while (1) may not terminate until another thread change state
+BDE,bslstl_stopstate.cpp 91 BloombergLP::bslstl::StopState::deregister,Intended,Concurrency,No,No,No,while (acquire()) yield() may not terminate until lock is acquired
+BDE,bslstl_stopstate.cpp 118 BloombergLP::bslstl::StopState::requestStop,Intended,Concurrency,No,No,No,while (true) { BslLockGuard(mutex); if (finish) break; }  may not terminate until another thread progress
+FreeImage,GetType.cpp 39 FreeImage_GetFileTypeFromHandle,FP,Fixed,No,No,Yes,for (int i = 0; i < fif_count; ++i) definitely terminates
+FreeImage,PluginDDS.cpp 229 GetBlockColors,FP,Fixed,No,No,Yes,for (i = 0; i < 2; i++) definitely terminates
+FreeImage,WuQuantizer.cpp 172 M3D,FP,Fixed,No,No,Yes,for(i = 0; i <= 32; i++) definitely terminates
+FreeImage,jdapistd.c 105 output_pass_setup,Unsure,Missing function,Yes,No,No,Unknown FPTR while (cinfo->master->is_dummy_pass) { (*cinfo->main->process_data)() }
+FreeImage,jdsample.c 211 int_upsample,Unintended,Real bug,No,No,Yes,if h_expand = 0 (coming from sample!) then loop while (outptr < outend) never progress
+FreeImage,jfdctint.c 846 jpeg_fdct_3x3,FP,Fixed,No,No,Yes,for (ctr = 0; ctr < 3; ctr++) { definitely terminates
+FreeImage,jidctint.c 970 jpeg_idct_3x3,FP,Fixed,No,No,Yes,for (ctr = 0; ctr < 3; ctr++) { definitely terminates
+FreeImage,transupp.c 701 do_rot_180,FP,Fixed,No,No,Yes,for (j = 0; j < DCTSIZE; j++) definitely terminates
+FreeImage,transupp.c 811 do_transverse,FP,Fixed,No,No,Yes,for (j = 0; j < DCTSIZE; j++) definitely terminates
+FreeImage,dcraw_common.cpp 1195 / layer_thumb,FP,Fixed,No,No,Yes,for (i=0; i < thumb_length; i++) where thumb_length is a global
+FreeImage,dcraw_common.cpp 4421 / ahd_interpolate_combine_homogeneous_pixels,FP,Fixed,No,No,Yes,for (direction = 0; direction < 2; direction++) definitely terminates
+FreeImage,dcraw_common.cpp 6526  / parse_riff,FP,Missing model,Yes,No,Yes,while (ftell()) ... needs summary for ftell
+FreeImage,libraw_x3f.cpp camf_decode_type4,Unintended,Real bug,No,No,Yes,
+FreeImage,tif_dirwrite.c 2509 / TIFFLinkDirectory,FP,Missing function,Yes,No,Yes,while (1) { if (ReadOK()) break; } where ReadOK is a macro calling a funcptr
+FreeImage,tif_predict.c 283 / horAcc8,Unintended,Real bug,,No,Yes,This is guarded by assert() so may not be triggerable - should do proper error return path
+FreeImage,tif_predict.c horAcc16,Unintended,Real bug,,No,Yes,This is guarded by assert() so may not be triggerable - should do proper error return path
+FreeImage,tif_predict.c horAcc32,Unintended,Real bug,,No,Yes,This is guarded by assert() so may not be triggerable - should do proper error return path
+FreeImage,tif_predict.c horDiff8,Unintended,Real bug,,No,Yes,This is guarded by assert() so may not be triggerable - should do proper error return path
+FreeImage,tif_predict.c horDiff16,Unintended,Real bug,,No,Yes,This is guarded by assert() so may not be triggerable - should do proper error return path
+FreeImage,tif_predict.c horDiff32,Unintended,Real bug,,No,Yes,This is guarded by assert() so may not be triggerable - should do proper error return path
+FreeImage,IexThrowErrnoExc.cpp 58 / Iex::throwErrnoExc,FP,Missing model,,No,No,"while (std::string::npos != (pos = tmp.find (""%T""))) tmp.replace(...) will terminate due to programming idiom"
+FreeImage,ImfRgbaFile.cpp 1104 / rotateBuf2,FP,Unknown,No,No,Yes,for (int i = 0; i < 3; ++i) definitely terminates. Note: exactly same loop earlier in func. Is there a cfg node issue?
+FreeImage,ImfScanLineInputFile.cpp 251 / reconstructLineOffsets,FP,Unknown,No,No,Yes,for (unsigned int i = 0; i < lineOffsets.size(); i++) definitely terminates
+FreeImage,IlmThreadPool.cpp 128 / run,Intended,Concurrency,Yes,No,Yes,while (true) { data.semaphore.wait(); if (data.stopped()) break; } need concurrent thread to terminate
+FreeImage,ImathMatrixAlgo.cpp 1193 / Imath::maxEigenVector<35744cde3aac9d8>,FP,Unknown,No,No,Yes,for(unsigned int i = 0; i < TV::dimensions(); ++i) terminates (note: has 2 exact copies of this loop in the code! bug due to optim?)
+FreeImage,ImathMatrixAlgo.cpp 1212 / Imath::minEigenVector<35744cde3aac9d8>,FP,Unknown,No,No,Yes,for(unsigned int i = 0; i < TV::dimensions(); ++i) terminates (note: has 2 exact copies of this loop in the code! bug due to optim?)
